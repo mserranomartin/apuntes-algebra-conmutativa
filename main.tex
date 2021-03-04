@@ -1,0 +1,74 @@
+\documentclass[a4paper,12pt]{book}
+\usepackage[a4paper]{geometry}
+\geometry{top=1.75cm, bottom=1.75cm, left=1.5cm, right=1.5cm}
+\usepackage{amsfonts,amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{verbatim}
+\usepackage{ragged2e}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{7pt}
+\usepackage{tikz}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{csquotes}
+\usepackage{polyglossia}
+\setdefaultlanguage{spanish}
+\usepackage[
+backend=biber,
+style=alphabetic,
+sorting=ynt
+]{biblatex}
+\addbibresource{references.bib}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\A}{\mathbb{A}}
+\newcommand{\x}{\texttt{x}}
+\newcommand{\p}{\mathfrak{p}}
+\newcommand{\q}{\mathfrak{q}}
+\newcommand{\af}{\mathfrak{a}}
+\newcommand{\bfr}{\mathfrak{b}}
+\newcommand{\cf}{\mathfrak{c}}
+\newcommand{\Nf}{\mathfrak{N}}
+\newcommand{\I}{\mathfrak{I}}
+\newcommand{\grad}{\text{grad}}
+\newcommand{\Hom}{\text{Hom}}
+\newcommand{\im}{\text{Im}}
+\newcommand{\gen}[1]{\langle #1 \rangle }
+\newcommand{\zeros}[1]{\mathcal{Z}(#1)}
+
+% THEOREMS
+\newtheorem{theorem}{Teorema}
+\newtheorem{corollary}[theorem]{Corolario}
+\newtheorem{lemma}[theorem]{Lema}
+\newtheorem{proposition}[theorem]{Proposición}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definición}
+\newtheorem{example}[theorem]{Ejemplo}
+\newtheorem{remark}[theorem]{Observación}
+
+\title{Álgebra conmutativa}
+\author{Iñaki Garrido and Pedro Montealegre and Miguel Serrano}
+\date{2021}
+
+\begin{document}
+\maketitle
+\chapter{Repaso estructuras}
+\subfile{chapter1-repaso}
+\chapter{Ideales}
+\subfile{chapter2}
+\chapter{Módulos}
+\subfile{chapter3}
+\appendix
+\chapter{Factorización de polinomios}
+\subfile{appendix-ejemplo}
+\end{document}

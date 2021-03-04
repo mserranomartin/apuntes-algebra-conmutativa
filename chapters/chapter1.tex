@@ -1,0 +1,82 @@
+\documentclass[./main.tex]{subfiles}
+\begin{document}
+\begin{definition} Un \emph{anillo} conmutativo unitario es una terna $(A,+,\cdot)$ de un conjunto con dos operaciones internas, suma $+$ y producto $\cdot$, donde $(A,+)$ es un grupo conmutativo, el producto es asociativo y conmutativo, se cumple la propiedad distributiva, y existe $1\in  A$ tal que $a\cdot 1 = 1\cdot a = a$ para todo $a\in A$.
+\end{definition}
+
+Todos los anillos con los que trabajaremos serán conmutativos y unitarios. Un subconjunto $S\subset A$ de un anillo es un \emph{subanillo} de $A$ si es un anillo con la suma y el producto de $A$.
+
+\begin{definition}
+Un \emph{ideal} de un anillo $A$ es un subconjunto $\mathfrak{a}\subset A$ que cumple:
+\begin{enumerate}
+  \item Para todo $a,b \in \mathfrak a$ se tiene $a+b\in \mathfrak a$.
+  \item Para todo $a\in \mathfrak a$ y $x \in  A$ se tiene $ax \in \mathfrak a$.
+\end{enumerate}
+\end{definition}
+
+Obviamente, si un ideal de un anillo $A$ contiene el $1\in A$, entonces es el total.
+
+Dado un subconjunto $S$ de un anillo $A$, se puede considerar $\gen S$ el menor ideal que lo contiene, que resulta ser
+
+\[ \gen S = \left \{  \sum_{i=1}^{m} s_i  a_i \big \vert \; s_i \in S, a_i \in A, m \in \mathbb N  \right \} \]
+
+Dado un ideal $\mathfrak{a}$ se puede definir una relación de equivalencia $x\sim y \iff x-y \in \mathfrak a$ y el conjunto cociente resultante $\faktor{A}{\mathfrak a}$ se dota de estructura de anillo con las operaciones $(a+\mathfrak a) + (b+\mathfrak a) := (a+b)+\mathfrak a$ y $(a+\mathfrak a) \cdot (b+\mathfrak a) := ab + \mathfrak a$. Es necesario que sea un ideal para que el producto esté bien definido.
+
+\begin{definition} Un anillo $A$ es un dominio de integridad (DI) si para cualesquiera $a,b\in A$ tales que $ab = 0$ se tiene $a = 0$ o bien $b=0$.
+\end{definition}
+
+\begin{definition} Sean $A,B$ anillos, un \emph{homomorfismo de anillos} entre $A$ y $B$ es una aplicación $\varphi:A\to B$ que tal que para todo $x,y\in A$ respeta la suma $\varphi(x+_Ay) = \varphi{x} +_B  \varphi{y}$, respeta el producto $\varphi(x\cdot_Ay) =  \varphi(x)\cdot_B\varphi(y)$, y además $\varphi(1_A) = 1_B$.
+\end{definition}
+
+Dado un homomorfismo de anillos $\varphi:A\to B$ el núcleo $\ker \varphi$ es un ideal de $A$ y la imagen $\im \varphi$ es un subanillo de $B$. Además, para todo $\mathfrak b$ ideal de $B$, la preimagen $\varphi^{-1}(\mathfrak b)$ es un ideal de $A$.
+
+\begin{theorem} \textbf{\emph{(de isomorfía)}}
+Dado un homomorfismo de anillos $\varphi:A\to B$, se cumple $\faktor{A}{\ker \varphi} \cong \im \varphi$. En particular, si $\varphi$ es sobreyectivo, entonces $\faktor{A}{\ker \varphi} \cong B$.
+\end{theorem}
+
+\begin{theorem} \textbf{\emph{(de la correspondencia)}}
+Sea $A$ una anillo y $\mathfrak a$ un ideal de $A$. Existe una biyección entre los ideales de $A$ que contienen a $\mathfrak a$ y los ideales del cociente $\faktor{A}{\mathfrak a}$. En particular, todos los ideales de $\faktor{A}{\mathfrak a}$ son de la forma  $\faktor{\mathfrak b}{\mathfrak a} = \{ x + \mathfrak a:\; x \in \mathfrak b \}$ donde $\mathfrak b$ es un ideal que contiene a $\mathfrak a$.
+\end{theorem}
+
+\begin{definition}
+Un ideal $\mathfrak p$ de un anillo $A$ se dice $\emph {primo}$ si es propio y para cualesquiera $a,b \in A$ tales que $ab \in \mathfrak p$ se tiene que $a\in \mathfrak p$ o $b \in  \mathfrak p$. Un ideal $\mathfrak m $ de $A$ se dice maximal si es propio y no está contenido en ningún otro ideal propio de $A$.
+\end{definition}
+
+Comprobar que un ideal $\mathfrak m$ de una anillo $A$ es maximal consiste en ver que si $\mathfrak a \supset \mathfrak m$ para otro $\mathfrak a$ ideal propio, entonces $\mathfrak a = \mathfrak m$.
+
+Tanto la maximalidad como la primalidad se conservan por el teorema de la correspondencia, es decir, $\mathfrak b $ es primo / maximal en $A$ si y solo si $\faktor{\mathfrak b}{\mathfrak a}$ es primo / maximal en $\faktor{A}{\mathfrak a}$.
+
+\begin{proposition}
+Un ideal $\mathfrak p$ de un anillo $A$ es primo si y solo si $\faktor{\mathfrak A}{ \mathfrak p }$ es DI. Un ideal $\mathfrak m$ de $A$ es maximal si y solo si $\faktor{\mathfrak A}{\mathfrak m}$ es un cuerpo.
+\end{proposition}
+
+Como todo cuerpo es dominio de integridad tenemos probado automáticamente que
+
+\begin{corollary}
+Todo ideal maximal es primo.
+\end{corollary}
+
+\section{Operaciones con ideales}
+Sea $A$ un anillo y sean dos ideales $\mathfrak a_1, \mathfrak a_2 \subset A$. Se define la \emph{suma} de los ideales como
+
+\[ \mathfrak a_1 + \mathfrak a_2 = \left \{ x+y \big \vert \; x \in \mathfrak a_1, y \in \mathfrak a_2 \right \} \]
+
+y resulta ser el menor ideal que contiene a ambos. De forma análoga, dada una familia $\{\af_i\}_{i\in I}$ de ideales en $A$, se define
+
+$$\underset{i\in I}{\Sigma}\af_i:=\left\{\underset{i\in F}{\Sigma} x_i\ \bigg | \ \ x_i\in\af_i\ \forall i\in F,\ F\subseteq I\ \text{finito}\right\},$$
+
+que es el menor ideal de $A$ que contiene a todos los ideales $\af_i$, $i\in I$.
+
+La \emph{intersección} de una familia arbitraria de ideales es la intersección conjuntista con las operaciones heredadas, y es el mayor ideal que está contenido en todos los ideales de la familia. El \emph{producto} de los ideales
+
+\[ \mathfrak a_1 \cdot \mathfrak a_2 = \left \{ \sum_{i=1}^m x_iy_i \big \vert \; x_i \in \mathfrak a_1, y_i \in \mathfrak a_2, m\in \mathbb N \right \} \]
+
+y también es un ideal.
+
+\begin{remark}
+  \begin{enumerate}
+    \item Las tres operaciones definidas son conmutativas y asociativas. También se verifica la ley distributiva para el producto y la suma de ideales$$\af(\bfr+\cf)=\af\bfr+\af\cf.$$
+    \item Se cumple $\mathfrak a_1 \cdot \mathfrak a_2 \subset \mathfrak a_1 \cap \mathfrak a_2$ (trivial), y se tiene la igualdad si $\mathfrak a_1 + \mathfrak a_2 = A$. Efectivamente, en tal caso, $1 = a_1 + a_2$ para ciertos $a_i \in \mathfrak a_i$, y entonces para todo $t\in \mathfrak a_1 \cap \mathfrak a_2$, $t = ta_1 + ta_2 \in \mathfrak a_1 \cdot \mathfrak a_2$. Cuando $\mathfrak a_1 + \mathfrak a_2 = A$ se dice que los ideales son \emph{comaximales}.
+    \item Dos ideales $\af$ y $\bfr$ son comaximales si, y sólo si, existen dos elementos $x\in\af$ y $y\in\bfr$ tales que $x+y=1$.
+
+\end{remark}
+\end{document}
