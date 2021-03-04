@@ -50,13 +50,13 @@ es un homomorfismo de $A$-módulos.
 \textit{ii)} Dados $A$ un anillo y $M$ un $A$-módulo, definimos el anulador de $A$ en $M$ como$$Anul_A M = \{\lambda\in A\ |\  \lambda\cdot m=0, \forall m\in M\}$$
 $Anul_A M$ es un ideal de $A$:
 \begin{itemize}
-     \item[1)]Dados $\lambda_1, \lambda_2\in Anul_A M$, para cada $m\in M$, $\lambda1\cdot m=\lambda2\cdot m=0$. Restando, se obtiene $(\lambda_1-\lambda_2)\cdot m=0 \rightarrow \lambda_1 -\lambda_2\in Anul_A M$
+     \item[1)]Dados $\lambda_1, \lambda_2\in Anul_A M$, para cada $m\in M$, $\lambda_1\cdot m=\lambda_2\cdot m=0$. Restando, se obtiene $(\lambda_1-\lambda_2)\cdot m=0 \rightarrow \lambda_1 -\lambda_2\in Anul_A M$
      \item[2)]Dado $\lambda\in Anul_AM$, para cada $\alpha\in A$ y para cada $m\in M$ se tiene $(\alpha\cdot\lambda)\cdot m=\alpha\cdot(\lambda\cdot m) =\alpha\cdot 0=0$, luego $\alpha\cdot\lambda\in Anul_AM$
 \end{itemize}
 Por tanto, $A/Anul_AM$ tiene estructura de anillo. Además, podemos ver a $M$ como un $A/Anul_AM$-módulo mediante la aplicación
 $$\begin{array}{rcl}
     A/Anul_AM\times M&\longrightarrow&M\\
-    (\lambda + M)\cdot m&\longmapsto&\lambda\cdot m
+    (\lambda + Anul_AM)\cdot m&\longmapsto&\lambda\cdot m
 \end{array}$$
 \textit{iii)} Dado un ideal $\mathfrak{a}\subset Anul_AM$, $M$ es un $A/\mathfrak{a}$-módulo. Los submódulos de $M$ como $A/\mathfrak{a}$-módulo son los submódulos de $M$ como $A$- módulo.
 
