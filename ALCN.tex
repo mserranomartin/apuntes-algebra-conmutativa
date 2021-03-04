@@ -30,8 +30,8 @@
 
 \begin{document}
 \title{Álgebra conmutativa}
-\author{}
-\date{}
+\author{Iñaki Garrido and Pedro Montealegre and Miguel Serrano}
+\date{2021}
 \maketitle
 
 \textbf{Definición}. Dado un homomorfismo de anillos unitarios, $\varphi: A\longrightarrow B$, decimos que $B$ es un \textit{$A$-álgebra}.
@@ -47,7 +47,7 @@
 
 \textbf{Definición}. Dadas $B$ y $C$ dos $A$-álgebras dadas por los homomorfismos $\varphi_B$ y $\varphi_C$ respectivamente, si existe $f: B\longrightarrow C$ homomorfismo de anillos de forma que $f\circ \varphi_B=\varphi_C$, decimos que $f$ es un \textit{homomorfismo de $A$-álgebras}.
 
-\textbf{Definición}. Sean un anillo $(A,+,\cdot)$ y un grupo abeliano $(M,+)$. 
+\textbf{Definición}. Sean un anillo $(A,+,\cdot)$ y un grupo abeliano $(M,+)$.
 Diremos que $(M,+)$ junto con una operación externa $\varphi: A\times M\longrightarrow M$, $\varphi(a,m):=a\cdot m$, que verifique
 \begin{itemize}
     \item[\textit{i})] $\forall\ m_1,m_2\in M\ \forall\ a\in A$\hspace{15pt} $a\cdot(m_1+m_2)=a\cdot m_1+a\cdot m_2$,
@@ -107,24 +107,24 @@ Más generalmente, dado $f: A\longrightarrow B$ un homomorfismo de anillos, $B$ 
 \end{itemize}
 Demostración. \textbf{(a)} Sea $\af\subsetneq A$ ideal. Definamos$$\Sigma:=\left\{\bfr\subsetneq A\ \text{ideal}\ |\ \af\subset\bfr \right\}.$$
 En primer lugar, $\Sigma\neq\varnothing$ puesto que $\af\in\Sigma$. Además, podemos definir en $\Sigma$ una relación de orden parcial, $\preceq$, de forma que$$\forall\ \bfr_1\bfr_2\in\Sigma\hspace{15pt}\bfr_1\preceq\bfr_2\Leftrightarrow\bfr_1\subseteq\bfr_2.$$
-Sea $\{\bfr_i\}_{i\in I}\subset\Sigma$ tal que $\forall\ i\neq j\hspace{5pt}\bfr_i\subseteq\bfr_j\ \text{o}\ \bfr_j\subseteq\bfr_i$. Se comprueba que $\bfr^*:=\bigcup_{i\in I}\bfr_i$ es un ideal tal que $\af\subset\bfr^*$. 
-Como $1_A\notin\bfr_i$ para toda $i\in I$, $1_A\notin\bfr^*$ y $\bfr^*$ es ideal propio de $A$ o, equivalentemente, $\bfr^*\in\Sigma$. Más aún, por construcción se verifica que $\bfr_i\subset\bfr^*$ para toda $i\in I$, luego $\bfr_i\preceq\bfr$. 
-De esta forma, la cadena $\{\bfr_i\}_{i\in I}$ admite un elemento maximal $\bfr^*$ y, como es arbitraria, estamos en las hipótesis del Lema de Zorn. 
+Sea $\{\bfr_i\}_{i\in I}\subset\Sigma$ tal que $\forall\ i\neq j\hspace{5pt}\bfr_i\subseteq\bfr_j\ \text{o}\ \bfr_j\subseteq\bfr_i$. Se comprueba que $\bfr^*:=\bigcup_{i\in I}\bfr_i$ es un ideal tal que $\af\subset\bfr^*$.
+Como $1_A\notin\bfr_i$ para toda $i\in I$, $1_A\notin\bfr^*$ y $\bfr^*$ es ideal propio de $A$ o, equivalentemente, $\bfr^*\in\Sigma$. Más aún, por construcción se verifica que $\bfr_i\subset\bfr^*$ para toda $i\in I$, luego $\bfr_i\preceq\bfr$.
+De esta forma, la cadena $\{\bfr_i\}_{i\in I}$ admite un elemento maximal $\bfr^*$ y, como es arbitraria, estamos en las hipótesis del Lema de Zorn.
 Es por esto que $\Sigma$ tiene un elemento maximal respecto del orden parcial $\preceq$ que llamaremos $\bfr_{\max}$.
 Por tenerse $\bfr_{\max}\in\Sigma$, éste es un ideal propio y $\af\subset\bfr_{\max}$. Además, si existe $\cf$ otro ideal propio de $A$ tal que $\cf\supset\bfr$, entonces $\cf\in\Sigma$ y $\bfr_{\max}\supset\cf$, es decir, $\cf=\bfr_{\max}$.
 
 \textbf{(b)} Probemos primero que, dado un anillo $(A,+,\cdot)$, existen ideales primos minimales. Por el apartado anterior, sabemos que existe un ideal maximal propio $\p\subset A$ y, por esta maximalidad, se tiene que es primo; es decir, el conjunto de los ideales primos de $A$ no es vacío. Sea $\p\subset A$ un ideal primo arbitrario.
 Definamos$$\Sigma_{\p}:=\left\{\q\subsetneq A\ \text{ideal primo}\ |\ \q\subseteq\p \right\}.$$Si vemos que existen ideales primos minimales de $A$ contenidos en $\p$, por ser arbitrario, habremos demostrado el resultado.
 
-De forma análoga al apartado anterior, $\Sigma_{\p}\neq\varnothing$ y $\preceq$ es un orden parcial en $\Sigma_{\p}$. Sea $\{\q_i\}_{i\in I}\subset\Sigma_{\p}$ tal que $\forall\ i\neq j\hspace{5pt}\q_i\subseteq\q_j\ \text{o}\ \q_j\subseteq\q_i$ y definamos $\q^*:=\bigcap_{i\in I}q_i$. 
-Se comprueba que $\q^*$ es un ideal, $\q^*\subseteq\p$ (por estas dos cosas $\q^*\in\Sigma$) y $\q^*\preceq\q_i$. 
+De forma análoga al apartado anterior, $\Sigma_{\p}\neq\varnothing$ y $\preceq$ es un orden parcial en $\Sigma_{\p}$. Sea $\{\q_i\}_{i\in I}\subset\Sigma_{\p}$ tal que $\forall\ i\neq j\hspace{5pt}\q_i\subseteq\q_j\ \text{o}\ \q_j\subseteq\q_i$ y definamos $\q^*:=\bigcap_{i\in I}q_i$.
+Se comprueba que $\q^*$ es un ideal, $\q^*\subseteq\p$ (por estas dos cosas $\q^*\in\Sigma$) y $\q^*\preceq\q_i$.
 Veamos que $\q^*$ es primo. Sean $ab\in\q^*$, por ser así, $ab\in\q_i$ para toda $i\in I$. Si $a\in\q_i\ \forall\ i\in I$, entonces $a\in\q^*$. Por otra parte, si existe $i_0\in I$ tal que $a\notin\q_{i_0}$, entonces $b\in\q_j\ \forall\ j\in I$:\begin{itemize}
     \item[·] si $\q_{i_0}\subseteq\q_j$, como $b\in\q_{i_0}$, se tiene que $b\in\q_j$ y,
     \item[·] si $\q_{i_0}\supseteq\q_j$, entonces $a\notin\q_j$; sin embargo, $ab\in\q_j$ y $\q_j$ es primo, es decir, $b\in\q_j$.
 \end{itemize}
 Sea ahora $\af\subsetneq A$ ideal y consideremos $A/\af$. Por la primera parte de este apartado, sabemos que existen ideales primos minimales de $A/\af$.
 Por el Teorema de Correspondencia, los ideales de $A/\af$ están en biyección con los de $A$ que contienen a $\af$.
-Además, esta biyección conserva la suma, la intersección, la relación de contenido, el ser primo y el ser maximal. 
+Además, esta biyección conserva la suma, la intersección, la relación de contenido, el ser primo y el ser maximal.
 Por tanto, un ideal primo minimal de $A/\af$ es de la forma $\p'/\af$, donde $\p'$ es un ideal primo minimal para la relación de contenido entre los ideales primos que contienen a $\af$.
 
 \textbf{(c)} Veamos en primer lugar que $\Nf_A$ es un ideal. Sean $x,y\in\Nf_A$ y $\nu,\nu'\in\N$ de forma que $x^\nu=y^{\nu'}=0$. Si desarrollamos el binomio $(x\pm y)^{\nu+\nu'}$, cada uno de los sumandos será de la forma $a_{k,l}x^ky^l$ donde $k+l=\nu+\nu'$. Por ser esto así $k\geq\nu$ o $l\geq\nu'$ y, en cualquier caso, $x^ky^l=0$. Así, $(x\pm y)^{\nu+\nu'}=0$ y $x\pm y\in\Nf_A$. Por otra parte, si $z\in A$, $(xz)^\nu=x^\nu z^\nu=0$ y $xz\in\Nf_A$.
@@ -132,10 +132,10 @@ Por tanto, un ideal primo minimal de $A/\af$ es de la forma $\p'/\af$, donde $\p
 Es claro que $$\Nf_A\subseteq\underset{\p\subset A\ \text{primo}}{\bigcap}\p.$$ Sean $\p\subset A$ un ideal primo arbitrario, $x\in\Nf$ y $\nu\in\N$ tales que $x^\nu=0_A$. Como $0_A\in\p$, $x\in\p$ o $\x^{\nu-1}\in\p$: en el primer caso hemos acabado y, si se da el segundo, repetimos el proceso con $x$ y $x^{\nu-2}$. Iterando y por ser $\nu$ finito se concluye que $x\in\p$. Como $\p$ es arbitrario, tenemos el contenido deseado.
 
 Veamos el otro contenido. Para ello, probaremos el contrarrecíproco: si $x\notin\Nf$, entonces $x\notin\bigcap_{\ \p\subset A\ \text{primo }}\p$ o, de forma equivalente, existe $\p\subset A$ primo tal que $x\notin\p$. Sea$$\Sigma:=\left\{\af\subsetneq A\ \text{ideal}\ |\ \forall\ n\in\N\ x^n\notin\af \right\}.$$
-En primer lugar, $\Sigma\neq\varnothing$ puesto que $\langle 0\rangle\in\Sigma$ y $x\notin\langle 0\rangle$. 
+En primer lugar, $\Sigma\neq\varnothing$ puesto que $\langle 0\rangle\in\Sigma$ y $x\notin\langle 0\rangle$.
 Definimos de nuevo en $\Sigma$ el orden parcial $\preceq$, consideramos una cadena $\{\af_i\}_{i\in I}\subset\Sigma$ tal que $\forall\ i\neq j\hspace{5pt}\af_i\subseteq\af_j\ \text{o}\ \af_j\subseteq\af_i$ y tomamos $\af^*:=\bigcup_{i\in I}a_i$. Se comprueba que $\af^*$ es ideal propio y $x\notin\af^*$, i.e., $\af^*\in\Sigma$.\newline
 Así, por el Lema de Zorn, sabemos que existe $\p\in\Sigma$ ideal maximal. Veamos que es ideal primo de $A$. Por la definición de ideal primo, dados $a,b\in A$, si $a\notin\p$ y $b\notin\p$, entonces $ab\notin\p$.
-Si $a,b\notin\p$, $aA+\p$ y $bA+\p$ son ideales que contienen estrictamente a $\p$. Así, $aA+\p,bA+\p\notin\Sigma$; es decir, existen $\nu$ y $\nu'$ tales que $x^\nu\in aA+\p$ y $x^{\nu'}\in bA+\p$. 
+Si $a,b\notin\p$, $aA+\p$ y $bA+\p$ son ideales que contienen estrictamente a $\p$. Así, $aA+\p,bA+\p\notin\Sigma$; es decir, existen $\nu$ y $\nu'$ tales que $x^\nu\in aA+\p$ y $x^{\nu'}\in bA+\p$.
 De modo que, para ciertos $\lambda,\mu\in A$ y $p_1,p_2\in\p$,$$x^\nu=a\lambda+p_1\ \text{y}\  x^{\nu'}=b\mu+p_2~~\Rightarrow~~ x^{\nu+\nu'}=ab\lambda\mu+a\lambda p_2+b\mu p_1+p_1p_2~~\Rightarrow~~ ab\notin\p.$$
 La última implicación se da porque, si $ab\in\p$, entonces $x^{\nu+\nu'}\in\p\in\Sigma$, que es absurdo.\newline
 Podemos concluir de esto junto con el apartado (b) que$$\Nf_A=\underset{\p\subset A\ \text{primo}}{\bigcap}\p=\underset{\text{primo minimal}}{\bigcap_{\p\subset A\ \text{ideal}}}\p.$$
@@ -249,7 +249,7 @@ es decir, $d-d'\in\af_l$. Sean ahora $\lambda\in A$ y $d\in\af\{0_A\}$ (el caso 
 
 Por hipótesis, existe $\{d_{l_1},\dots,d_{l_{m_l}}\}\subseteq A$ de forma que existe $i\in\{1,\dots,m_l\}$ tal que $d_{l_i}\in A\setminus\{0_A\}$ y $\af_l=\langle d_{l_1},\dots,d_{l_{m_l}}\rangle$. Para cada uno de los $d_{l_i}$ mencionados antes denotemos por $g_{l_i}:=d_{l_i}x^l+p_{l_i,l-1}x^{l-1}+\cdots+\lambda p_{l_i,1}x+\lambda p_{l_i,0}$ que existen por construcción de $\af_l$.
 
-Tras estas consideraciones, vamos a comprobar que $\mathfrak{i}=\langle f_i,g_{l_j}\rangle_{i\in\{1,\dots,s\},\ l\in\{0,\dots,\nu\},\ j\in\{1,\dots,m_l\}}=:\mathfrak{j}$. Por construcción, el contenido ``$\supseteq$'' se tiene. Sean $F(x)\in\mathfrak{i}$ y $\mu:=\grad(F)$, que podemos suponer finito (si es $0$, entonces se tiene la pertenencia). $F$ es de la forma $F(x)=b_\mu x^\mu+p_{\mu-1}x^{\mu-1}+\cdots+p_1x+p_0$. 
+Tras estas consideraciones, vamos a comprobar que $\mathfrak{i}=\langle f_i,g_{l_j}\rangle_{i\in\{1,\dots,s\},\ l\in\{0,\dots,\nu\},\ j\in\{1,\dots,m_l\}}=:\mathfrak{j}$. Por construcción, el contenido ``$\supseteq$'' se tiene. Sean $F(x)\in\mathfrak{i}$ y $\mu:=\grad(F)$, que podemos suponer finito (si es $0$, entonces se tiene la pertenencia). $F$ es de la forma $F(x)=b_\mu x^\mu+p_{\mu-1}x^{\mu-1}+\cdots+p_1x+p_0$.
 Como $F\in\mathfrak{i}$, $b_\mu\in\af$; así, $b_\mu=\sum_{i=1}^se_ic_i$ donde $\{e_i\}\subseteq A$ y $\{c_i\}\subseteq\af$. Si definimos$$F_1(x):=F(x)-\sum e_ix^{\mu-\nu}f_i(x),$$
 resulta que $\grad(F_1)\in\{0,\dots,\mu-1\}$ y $F(x)\in\mathfrak{j}$ si, y sólo si, $F_1\in\mathfrak{j}$. Si $\grad(F_1)\ge\nu$, repetimos el proceso hasta conseguir un polinomio $F_{*}$ tal que $\grad(F_*)<\nu$. En este punto, tenemos representado $F$ como la suma de dos polinomios $F_*$ y $G\in\mathfrak{j}$. Es por esto que $F\in\mathfrak{j}$ si, y sólo si, $F_*\in\mathfrak{j}$.
 
@@ -308,7 +308,7 @@ es un homomorfismo de $A$-módulos.
 \textbf{Observaciones}. \textit{i}) Si $A$ es un anillo, $\af\subseteq A$ un ideal y $M$ un $A$-módulo entonces el conjunto$$\af M:=\left\{\sum_{i=1}^ra_im_i\ |\ r\in\N,\ a_i\in\af,\ m_i\in\N\right\}$$ es un submódulo de $A$.
 
 \textit{ii)} Dados $A$ un anillo y $M$ un $A$-módulo, definimos el anulador de $A$ en $M$ como$$Anul_A M = \{\lambda\in A\ |\  \lambda\cdot m=0, \forall m\in M\}$$
-$Anul_A M$ es un ideal de $A$: 
+$Anul_A M$ es un ideal de $A$:
 \begin{itemize}
      \item[1)]Dados $\lambda_1, \lambda_2\in Anul_A M$, para cada $m\in M$, $\lambda1\cdot m=\lambda2\cdot m=0$. Restando, se obtiene $(\lambda_1-\lambda_2)\cdot m=0 \rightarrow \lambda_1 -\lambda_2\in Anul_A M$
      \item[2)]Dado $\lambda\in Anul_AM$, para cada $\alpha\in A$ y para cada $m\in M$ se tiene $(\alpha\cdot\lambda)\cdot m=\alpha\cdot(\lambda\cdot m) =\alpha\cdot 0=0$, luego $\alpha\cdot\lambda\in Anul_AM$
@@ -395,12 +395,12 @@ Se tiene que $(\bigoplus_{i\in I}M_i,+)$ es un grupo abeliano y $\bigoplus_{i\in
 
 \textbf{Observaciones}. \textit{\textit{i})} Para cada $j\in I$, tenemos definida $p_j:\bigoplus_{i\in I}M_i\rightarrow M_j$, la proyección a cada $M_j$. No es más que la restricción a $\bigoplus_{i\in I}M_i$ de la proyección $\Pi_j$ definida sobre el producto cartesiano $\Pi_{i\in I}M_i$. $p_j$ es un homomorfismo de $A$-módulos.
 
-\textit{ii)} Para cada $j\in I$, definimos la inclusión 
+\textit{ii)} Para cada $j\in I$, definimos la inclusión
 $$\begin{array}{rrcl}
 q_j:&M_j&\longrightarrow&\bigoplus_{i\in I}M_i\\
 &x&\longmapsto&  (x) := \left\{ \begin{array}{ll}
          0 & \mbox{si $i\neq j$};\\
-         x & \mbox{si $i=j$}.\end{array} \right.  
+         x & \mbox{si $i=j$}.\end{array} \right.
 \end{array}$$
 
 $q_j$ es un homomorfismo de anillos.
@@ -427,7 +427,7 @@ Para cada $\omega \in \bigoplus_{i\in I} M_i$, existen unos únicos $i_1,...,i_r
 
 \textbf{Definición-proposición}. Sea $A$ un anillo y $M$ un $A$-módulo. Son equivalentes
 \begin{itemize}
-    \item[1)] Existe $B:={\{m_i\}}_{i\in I}\subseteq M$ tal que para cada $x\in M$ existe $F\subseteq I$ cumpliendo que $x$ se puede expresar de forma única como$$x=\underset{\lambda_j\in A}{\sum_{j\in F}}\lambda_j m_j$$ y 
+    \item[1)] Existe $B:={\{m_i\}}_{i\in I}\subseteq M$ tal que para cada $x\in M$ existe $F\subseteq I$ cumpliendo que $x$ se puede expresar de forma única como$$x=\underset{\lambda_j\in A}{\sum_{j\in F}}\lambda_j m_j$$ y
     \item[2)] $M\approx A^{(I)}$.
 \end{itemize}
 Si se da cualquiera de ellas se dice que $M$ es un \textit{$A$-módulo libre} y $B$ es una base. Además, en estas condiciones, dos bases $B$ y $B'$ de $M$ tienen el mismo cardinal, que se llama \textit{rango de $M$}.
@@ -437,7 +437,7 @@ $$\begin{array}{rccl}
     \varphi_i:&A&\longrightarrow&M\\
     &1_A&\longmapsto&m_i.
 \end{array}$$
-por definición, para cada $i\in I$ y cada $\lambda\in A$ se verifica $\varphi_i(\lambda)=\lambda m_i$. 
+por definición, para cada $i\in I$ y cada $\lambda\in A$ se verifica $\varphi_i(\lambda)=\lambda m_i$.
 De esta forma, $\varphi_i$ es un homomorfismo de $A$-módulos entre $A$ y $M$ para cada $i\in I$ y, por el lema previo, $\varphi:=\bigoplus_{i\in I}\varphi_i: A^{(I)}\longrightarrow M$ es a su vez un homomorfismo de $A$-módulos.
 
 Por otro lado, dado que por hipótesis todo $x\in M$ admite una representación única como combinación lineal finita de elementos de $B$, definimos para cada $i\in I$ las aplicaciones
@@ -449,7 +449,7 @@ donde $\lambda_i$ es el correspondiente escalar asociado al elemento $m_i$ en la
 $$\begin{array}{rccl}
     \psi:&M&\longrightarrow&A^I
 \end{array}$$
-verificando $p_i\circ\psi=\psi_i$ es un homomorfismo de $A$-módulos y es único. Más aún, para cada $x\in M$ existe $F\subseteq I$ finito de forma que, $\psi_i(x)=0_A$ si $i\in I\setminus F$; es decir, $\psi(M)\subseteq A^{(I)}$. 
+verificando $p_i\circ\psi=\psi_i$ es un homomorfismo de $A$-módulos y es único. Más aún, para cada $x\in M$ existe $F\subseteq I$ finito de forma que, $\psi_i(x)=0_A$ si $i\in I\setminus F$; es decir, $\psi(M)\subseteq A^{(I)}$.
 
 Por último, es claro por definición de los homomorfismos que $\varphi\circ\psi=Id_{M}$ y $\psi\circ\varphi=Id_{A^{(I)}}$.
 
@@ -458,10 +458,10 @@ $$\begin{array}{rccl}
     e_i= \left\{ \begin{array}{ll}
          e_{ij}=0 & \mbox{si $i\neq j$};\\
          e_{ii}=1_A & \mbox{}\end{array} \right.
-\end{array}$$    
-Veamos que ${m_i:i\in I}$ verifica 1). Para cada $m\in M$, por ser $\phi$ sobreyectiva, existe un $\underline{x}\in A^{(I)}$ tal que $\phi(\underline{x})=m$. A su vez, existen $i_1,...,i_r\in I$ tales que 
-$$\underline{x}=q_{i_1}(x_{i_1})+...+q_{i_r}(x_{i_r})=x_{i_1}q_{i_1}(1_A)+...+x_{i_r}q_{i_r}(1_A)$$ 
-Por tanto, 
+\end{array}$$
+Veamos que ${m_i:i\in I}$ verifica 1). Para cada $m\in M$, por ser $\phi$ sobreyectiva, existe un $\underline{x}\in A^{(I)}$ tal que $\phi(\underline{x})=m$. A su vez, existen $i_1,...,i_r\in I$ tales que
+$$\underline{x}=q_{i_1}(x_{i_1})+...+q_{i_r}(x_{i_r})=x_{i_1}q_{i_1}(1_A)+...+x_{i_r}q_{i_r}(1_A)$$
+Por tanto,
 $$\phi(\underline{x})=x_{i_1}\phi(e_{i_1})+...+x_{i_r}\phi(e_{i_r})=x_{i_1}m_{i_1}+...+x_{i_1}m_{i_r}=m$$
 Hemos escrito $m$ como una combinación lineal de elementos ${m_i:i\in I}$
 
@@ -471,8 +471,8 @@ $$\phi(\lambda_{i_1}e_{i_1}+\cdots+\lambda_{i_r}e_{i_r})=0_M\Longleftrightarrow\
 
 Falta ver que todas las bases tienen un mismo cardinal. Para ello, usaremos las observaciones previas a la proposición.
 
-Supongamos $M\cong A^{(I)}$, $\mathfrak{m}$ un ideal maximal de $A$. Sea ${m_i:i\in I}$ una base de $M$. Por 1), $$\mathfrak{m}M=\{\sum_{i=1}^r \lambda_i\cdot m_i\ |\  \lambda_i\in \mathfrak{m}, m_i\in M\}$$ 
-es un submódulo de $M$. 
+Supongamos $M\cong A^{(I)}$, $\mathfrak{m}$ un ideal maximal de $A$. Sea ${m_i:i\in I}$ una base de $M$. Por 1), $$\mathfrak{m}M=\{\sum_{i=1}^r \lambda_i\cdot m_i\ |\  \lambda_i\in \mathfrak{m}, m_i\in M\}$$
+es un submódulo de $M$.
 
 \textbf{Corolario}. Sea $M$ es un $A$-módulo libre, es decir, existe un conjunto $I$ tal que $M\cong A^{(I)}$, y sea $N$ otro $A$-módulo. Dados ${n_i:i\in I}\subset N$, existe un único homomorfismo de $A$-módulos $f:M\rightarrow N$ tal que $f(m_i)=n_i$ para cada $i\in I$, donde ${m_i: i\in I}$ es una base de $M$
 \end{document}
