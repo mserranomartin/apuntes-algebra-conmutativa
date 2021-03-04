@@ -212,7 +212,23 @@ $$\Phi(\lambda_{i_1}e_{i_1}+\cdots+\lambda_{i_r}e_{i_r})=0_M\Longleftrightarrow\
 
 Falta ver que todas las bases tienen un mismo cardinal. Para ello, usaremos las observaciones previas a la proposición.
 
-Supongamos $M\cong A^{(I)}$, $\mathfrak{m}$ un ideal maximal de $A$. Sea ${m_i:i\in I}$ una base de $M$. Por 1), $\mathfrak{m}M={\sum_{i=1}^r \lambda_i\cdot}$
+Supongamos $M\approx A^{(I)}$. Sean $\mathfrak{m}$ un ideal maximal de $A$ (sabemos que existe) y ${\{m_i\}}_{i\in I}$ una base de $M$. 
+Tenemos que $\mathfrak{m}M$ es un submódulo de $M$ y, como $\mathfrak{m}\subset\Ann_A\left(\faktor{M}{\mathfrak{m}M}\right)$, $\faktor{M}{\mathfrak{m}M}$ tiene estructura de $\faktor{A}{\mathfrak{m}}$-espacio vectorial.
 
+Tomemos $M=A^{(I)}$ y veamos que $\faktor{A^{(I)}}{\mathfrak{m}A^{(I)}}\approx\left(\faktor{A}{\mathfrak{m}}\right)^{(I)}$, que es un $\faktor{A}{\mathfrak{m}}$-espacio vectorial de dimensión $\#(I)$.
+
+En primer lugar, definamos para cada $i\in I$ las siguientes aplicaciones
+$$\begin{array}{rrcl}
+\tau_i:&A&\longrightarrow&\left(\faktor{A}{\mathfrak{m}}\right)^{(I)}\\
+&1_A&\longmapsto&\tau_i(1_A)={(a_j+\mathfrak{m})}_{j\in I}:=\left\{\begin{array}{lc}
+a_j+\mathfrak{m}=\mathfrak{m}&\text{si }i\neq j\\
+a_j+\mathfrak{m}=1+\mathfrak{m}&\text{si }i=j 
+\end{array}\right.
+\end{array}.$$
+Se comprueba que, para cada $i\in I$, $\tau_i$ es homomorfismo de $A$-módulos y, por lo tanto, $\bigoplus_{i\in I}\tau_i:A^{(I)}\longrightarrow\left(\faktor{A}{\mathfrak{m}}\right)^{(I)}$ es también un homomorfismo de $A$-módulos.
+
+Además, $\bigoplus_{i\in I}\tau_i$ es sobreyectivo y $\ker{\bigoplus_{i\in I}\tau_i}=\mathfrak{m}A^{(I)}$. Así, por el Primer Teorema de Isomorfía, $\bigoplus_{i\in I}\tau_i$ induce un isomorfismo de $\faktor{A}{\mathfrak{m}}$-módulos, $\widehat{\bigoplus_{i\in I}\tau_i}:\faktor{A^{(I)}}{\mathfrak{m}A^{(I)}}\longrightarrow\left(\faktor{A}{\mathfrak{m}}\right)^{(I)}$
+
+Ahora, dados dos conjuntos de índices no vacíos $I$ y $J$, supongamos que existe un isomorfismo de $A$-módulos $\Phi:A^{(I)}\longrightarrow A^{(J)}$. Por ser así, en concreto se tiene que $\Phi(\mathfrak{m}A^{(I)})=\mathfrak{m}A^{(J)}$ y $\Phi$ induce otro isomorfismo de $\faktor{A}{\mathfrak{m}}$-módulos, $\widehat{\Phi}:\faktor{A^{(I)}}{\mathfrak{m}A^{(I)}}\longrightarrow\faktor{A^{(J)}}{\mathfrak{m}A^{(J)}}$. De esta forma, resulta que $(\faktor{A}{\mathfrak{m}})^(I)\approx(\faktor{A}{\mathfrak{m}})^(J)$ y $\#(I)=\#(J)$.
 \textbf{Corolario}. Sea $M$ es un $A$-módulo libre, es decir, existe un conjunto $I$ tal que $M\cong A^{(I)}$, y sea $N$ otro $A$-módulo. Dados ${n_i:i\in I}\subset N$, existe un único homomorfismo de $A$-módulos $f:M\rightarrow N$ tal que $f(m_i)=n_i$ para cada $i\in I$, donde ${m_i: i\in I}$ es una base de $M$
 \end{document}
