@@ -45,7 +45,20 @@ $$\begin{array}{rcl}
 es un homomorfismo de $A$-módulos.
 \end{remark}
 
-\textbf{Observaciones}. \textit{i}) Si $A$ es un anillo, $\af\subseteq A$ un ideal y $M$ un $A$-módulo entonces el conjunto$$\af M:=\left\{\sum_{i=1}^ra_im_i\ |\ r\in\N,\ a_i\in\af,\ m_i\in\N\right\}$$
+\textbf{Observaciones}. \textit{i}) Si $A$ es un anillo, $\af\subseteq A$ un ideal y $M$ un $A$-módulo entonces el conjunto$$\af M:=\left\{\sum_{i=1}^ra_im_i\ |\ r\in\N,\ a_i\in\af,\ m_i\in\N\right\}$$es un submódulo de $A$.
+
+\textit{ii)} Dados $A$ un anillo y $M$ un $A$-módulo, definimos el anulador de $A$ en $M$ como$$Anul_A M = \{\lambda\in A\ |\  \lambda\cdot m=0, \forall m\in M\}$$
+$Anul_A M$ es un ideal de $A$:
+\begin{itemize}
+     \item[1)]Dados $\lambda_1, \lambda_2\in Anul_A M$, para cada $m\in M$, $\lambda1\cdot m=\lambda2\cdot m=0$. Restando, se obtiene $(\lambda_1-\lambda_2)\cdot m=0 \rightarrow \lambda_1 -\lambda_2\in Anul_A M$
+     \item[2)]Dado $\lambda\in Anul_AM$, para cada $\alpha\in A$ y para cada $m\in M$ se tiene $(\alpha\cdot\lambda)\cdot m=\alpha\cdot(\lambda\cdot m) =\alpha\cdot 0=0$, luego $\alpha\cdot\lambda\in Anul_AM$
+\end{itemize}
+Por tanto, $A/Anul_AM$ tiene estructura de anillo. Además, podemos ver a $M$ como un $A/Anul_AM$-módulo mediante la aplicación
+$$\begin{array}{rcl}
+    A/Anul_AM\times M&\longrightarrow&M\\
+    (\lambda + M)\cdot m&\longmapsto&\lambda\cdot m
+\end{array}$$
+\textit{iii)} Dado un ideal $\mathfrak{a}\subset Anul_AM$, $M$ es un $A/\mathfrak{a}$-módulo. Los submódulos de $M$ como $A/\mathfrak{a}$-módulo son los submódulos de $M$ como $A$- módulo.
 
 \begin{definition}. Dados $M$ y $N$ dos $A$-módulos, definimos \textit{el conjunto de aplicaciones $A$-lineales entre $M$ y $N$}
 $$\Hom_A(M,N):=\{f:M\longrightarrow N\ |\ f\text{ es aplicación }A\text{-lineal}\}
