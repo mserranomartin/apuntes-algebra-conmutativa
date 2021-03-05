@@ -32,7 +32,7 @@ tiene estructura de grupo abeliano. Esto es así puesto que $(M,+)$ es un grupo 
 \begin{definition}. Sean $(A,+,\cdot)$ un anillo, $M$ un $A$-módulo y $N\subseteq M$ un submódulo. Definiendo la aplicación
 $$\begin{array}{rcl}
     A\times M/N&\longrightarrow&M/N\\
-    (\lambda,n)&\longmapsto&\lambda[m]_N:=[\lambda m]_N
+    (\lambda,[m])&\longmapsto&\lambda[m]_N:=[\lambda m]_N
 \end{array}$$
 dotamos a $M/N$ de estructura de $A$-módulo y lo denominamos \textit{módulo cociente}.
 \end{definition}
@@ -212,7 +212,7 @@ $$\Phi(\lambda_{i_1}e_{i_1}+\cdots+\lambda_{i_r}e_{i_r})=0_M\Longleftrightarrow\
 
 Falta ver que todas las bases tienen un mismo cardinal. Para ello, usaremos las observaciones previas a la proposición.
 
-Supongamos $M\approx A^{(I)}$. Sean $\mathfrak{m}$ un ideal maximal de $A$ (sabemos que existe) y ${\{m_i\}}_{i\in I}$ una base de $M$. 
+Supongamos $M\approx A^{(I)}$. Sean $\mathfrak{m}$ un ideal maximal de $A$ (sabemos que existe) y ${\{m_i\}}_{i\in I}$ una base de $M$.
 Tenemos que $\mathfrak{m}M$ es un submódulo de $M$ y, como $\mathfrak{m}\subset\Ann_A\left(\faktor{M}{\mathfrak{m}M}\right)$, $\faktor{M}{\mathfrak{m}M}$ tiene estructura de $\faktor{A}{\mathfrak{m}}$-espacio vectorial.
 
 Tomemos $M=A^{(I)}$ y veamos que $\faktor{A^{(I)}}{\mathfrak{m}A^{(I)}}\approx\left(\faktor{A}{\mathfrak{m}}\right)^{(I)}$, que es un $\faktor{A}{\mathfrak{m}}$-espacio vectorial de dimensión $\#(I)$.
@@ -222,7 +222,7 @@ $$\begin{array}{rrcl}
 \tau_i:&A&\longrightarrow&\left(\faktor{A}{\mathfrak{m}}\right)^{(I)}\\
 &1_A&\longmapsto&\tau_i(1_A)={(a_j+\mathfrak{m})}_{j\in I}:=\left\{\begin{array}{lc}
 a_j+\mathfrak{m}=\mathfrak{m}&\text{si }i\neq j\\
-a_j+\mathfrak{m}=1+\mathfrak{m}&\text{si }i=j 
+a_j+\mathfrak{m}=1+\mathfrak{m}&\text{si }i=j
 \end{array}\right.
 \end{array}.$$
 Se comprueba que, para cada $i\in I$, $\tau_i$ es homomorfismo de $A$-módulos y, por lo tanto, $\bigoplus_{i\in I}\tau_i:A^{(I)}\longrightarrow\left(\faktor{A}{\mathfrak{m}}\right)^{(I)}$ es también un homomorfismo de $A$-módulos.
