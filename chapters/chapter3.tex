@@ -4,6 +4,9 @@
 \begin{definition}. Dado un anillo $A$ y un $A$-módulo $M$, diremos que $S\subset M$ es un \textit{submódulo de $M$} si es un subgrupo de $M$ cerrado para la multiplicación por elementos de $A$.
 \end{definition}
 
+\begin{remark} Si $A$ es un anillo, $\af\subseteq A$ un ideal y $M$ un $A$-módulo entonces el conjunto$$\af M:=\left\{\sum_{i=1}^ra_im_i\ |\ r\in\N,\ a_i\in\af,\ m_i\in\N\right\}$$es un submódulo de $A$.
+\end{remark}
+
 \begin{definition}. Sean $(A,+,\cdot)$ anillo, $M$ y $N$ $A$-módulos. Una aplicación $f:M\longrightarrow N$ se dice que es un homomorfismo de $A$-módulos o, simplemente, que es una aplicación $A$-lineal si verifica
 \begin{itemize}
     \item[\textit{i})] $\forall\ m_1,m_2\in M\hspace{15pt} f(m_1+m_2)=f(m_1)+f(m_2)$ y
@@ -45,21 +48,23 @@ $$\begin{array}{rcl}
 es un homomorfismo de $A$-módulos.
 \end{remark}
 
-\textbf{Observaciones}. \textit{i}) Si $A$ es un anillo, $\af\subseteq A$ un ideal y $M$ un $A$-módulo entonces el conjunto$$\af M:=\left\{\sum_{i=1}^ra_im_i\ |\ r\in\N,\ a_i\in\af,\ m_i\in\N\right\}$$es un submódulo de $A$.
+\begin{definition} Dados $A$ un anillo y $M$ un $A$-módulo, definimos el anulador de $A$ en $M$ como$$Anul_A M = \{\lambda\in A\ |\  \lambda\cdot m=0, \forall m\in M\}$$
+\end{definition}
 
-\textit{ii)} Dados $A$ un anillo y $M$ un $A$-módulo, definimos el anulador de $A$ en $M$ como$$Anul_A M = \{\lambda\in A\ |\  \lambda\cdot m=0, \forall m\in M\}$$
-$Anul_A M$ es un ideal de $A$:
+\begin{remark} \textit{i)} $Anul_A M$ es un ideal de $A$:
+
 \begin{itemize}
+
      \item[1)]Dados $\lambda_1, \lambda_2\in Anul_A M$, para cada $m\in M$, $\lambda_1\cdot m=\lambda_2\cdot m=0$. Restando, se obtiene $(\lambda_1-\lambda_2)\cdot m=0 \rightarrow \lambda_1 -\lambda_2\in Anul_A M$
      \item[2)]Dado $\lambda\in Anul_AM$, para cada $\alpha\in A$ y para cada $m\in M$ se tiene $(\alpha\cdot\lambda)\cdot m=\alpha\cdot(\lambda\cdot m) =\alpha\cdot 0=0$, luego $\alpha\cdot\lambda\in Anul_AM$
 \end{itemize}
 Por tanto, $A/Anul_AM$ tiene estructura de anillo. Además, podemos ver a $M$ como un $A/Anul_AM$-módulo mediante la aplicación
 $$\begin{array}{rcl}
-    A/Anul_AM\times M&\longrightarrow&M\\
+    \faktor{A}{Anul_AM}\times M&\longrightarrow&M\\
     (\lambda + Anul_AM)\cdot m&\longmapsto&\lambda\cdot m
 \end{array}$$
-\textit{iii)} Dado un ideal $\mathfrak{a}\subset Anul_AM$, $M$ es un $A/\mathfrak{a}$-módulo. Los submódulos de $M$ como $A/\mathfrak{a}$-módulo son los submódulos de $M$ como $A$-módulo.
-
+\textit{ii)} Dado un ideal $\mathfrak{a}\subset Anul_AM$, $M$ es un $A/\mathfrak{a}$-módulo. Los submódulos de $M$ como $A/\mathfrak{a}$-módulo son los submódulos de $M$ como $A$-módulo.
+\end{remark}
 \begin{definition}. Dados $M$ y $N$ dos $A$-módulos, definimos \textit{el conjunto de aplicaciones $A$-lineales entre $M$ y $N$}
 $$\Hom_A(M,N):=\{f:M\longrightarrow N\ |\ f\text{ es aplicación }A\text{-lineal}\}
 $$
@@ -232,4 +237,19 @@ Además, $\bigoplus_{i\in I}\tau_i$ es sobreyectivo y $\ker{\bigoplus_{i\in I}\t
 Ahora, dados dos conjuntos de índices no vacíos $I$ y $J$, supongamos que existe un isomorfismo de $A$-módulos $\Phi:A^{(I)}\longrightarrow A^{(J)}$. Por ser así, en concreto se tiene que $\Phi(\mathfrak{m}A^{(I)})=\mathfrak{m}A^{(J)}$ y $\Phi$ induce otro isomorfismo de $\faktor{A}{\mathfrak{m}}$-módulos, $\widehat{\Phi}:\faktor{A^{(I)}}{\mathfrak{m}A^{(I)}}\longrightarrow\faktor{A^{(J)}}{\mathfrak{m}A^{(J)}}$. De esta forma, resulta que $(\faktor{A}{\mathfrak{m}})^(I)\approx(\faktor{A}{\mathfrak{m}})^(J)$ y $\#(I)=\#(J)$.
 
 \textbf{Corolario}. Sea $M$ es un $A$-módulo libre, es decir, existe un conjunto $I$ tal que $M\cong A^{(I)}$, y sea $N$ otro $A$-módulo. Dados ${n_i:i\in I}\subset N$, existe un único homomorfismo de $A$-módulos $f:M\rightarrow N$ tal que $f(m_i)=n_i$ para cada $i\in I$, donde ${m_i: i\in I}$ es una base de $M$
+
+\section{Sucesiones exactas}
+
+\begin{definition} Una sucesión de homomorfismos de $A$-módulos$$...\longrightarrow M_{i-1}\longrightarrow M_i\longrightarrow M_{i+1}\longrightarrow...$$ se dice exacta si $ker(\Phi_{i+1})=im(\Phi_i)$, donde para cada $i$, $M_i$ es un $A$-módulo y $\Phi_i:M_i\rightarrow M_{i+1}$ es un homomorfismo de $A$-módulos.
+\end{definition}
+\begin{definition} Decimos que una sucesión de homomorfismos de $A$-módulos es corta si es de la forma$$0\longrightarrow M_1\longrightarrow M_2\longrightarrow M_3\longrightarrow 0$$
+\end{definition}
+\begin{remark} Una sucesión corta es exacta si y sólo si $f:M_1\rightarrow M_2$ es inyectiva, $g:M_2\rightarrow M_3$ es suprayectiva y $im(f)=ker(g)$
+\end{remark}
+\begin{remark} Una sucesión corta estándar viene dada por $N\subset M$, donde $N$ y $M$ son $A$-módulos, con$$0\longrightarrow N\longrightarrow M\longrightarrow\faktor{M}{N}\longrightarrow 0$$
+\end{remark}
+\begin{definition} Dado $M$ un $A$-módulo, un subconjunto $S\subset M$ es un sistema de generadores de $M$ si para cada $x\in M$ existen $\{s_1,...,s_n\}\subset S$ tales que$$x=\lambda_1s_1+...+\lambda_ns_n$$ con $\lambda_i\in A$ para cada $i\in\{1,...,n\}$.
+
+Es decir, el menor submódulo de $M$ que contiene a $S$ es el propio $M$.
+\end{definition}
 \end{document}
