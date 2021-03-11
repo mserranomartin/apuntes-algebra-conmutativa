@@ -240,16 +240,41 @@ Ahora, dados dos conjuntos de índices no vacíos $I$ y $J$, supongamos que exis
 
 \section{Sucesiones exactas}
 
-\begin{definition} Una sucesión de homomorfismos de $A$-módulos$$...\longrightarrow M_{i-1}\longrightarrow M_i\longrightarrow M_{i+1}\longrightarrow...$$ se dice exacta si $ker(\Phi_{i+1})=im(\Phi_i)$, donde para cada $i$, $M_i$ es un $A$-módulo y $\Phi_i:M_i\rightarrow M_{i+1}$ es un homomorfismo de $A$-módulos.
+\begin{definition} Una sucesión de homomorfismos de $A$-módulos$$...\longrightarrow M_{i-1}\overset{\Phi_{i-1}}{\longrightarrow} M_i\overset{\Phi_i}{\longrightarrow}M_{i+1}\longrightarrow...$$ se dice exacta si $ker(\Phi_{i+1})=im(\Phi_i)$, donde para cada $i$, $M_i$ es un $A$-módulo y $\Phi_i:M_i\rightarrow M_{i+1}$ es un homomorfismo de $A$-módulos.
 \end{definition}
-\begin{definition} Decimos que una sucesión de homomorfismos de $A$-módulos es corta si es de la forma$$0\longrightarrow M_1\longrightarrow M_2\longrightarrow M_3\longrightarrow 0$$
+\begin{definition} Decimos que una sucesión de homomorfismos de $A$-módulos es corta si es de la forma$$0\longrightarrow M_1\overset{f}{\longrightarrow} M_2\overset{g}{\longrightarrow} M_3\longrightarrow 0$$
 \end{definition}
 \begin{remark} Una sucesión corta es exacta si y sólo si $f:M_1\rightarrow M_2$ es inyectiva, $g:M_2\rightarrow M_3$ es suprayectiva y $im(f)=ker(g)$
 \end{remark}
-\begin{remark} Una sucesión corta estándar viene dada por $N\subset M$, donde $N$ y $M$ son $A$-módulos, con$$0\longrightarrow N\longrightarrow M\longrightarrow\faktor{M}{N}\longrightarrow 0$$
+\begin{example} \textit{1)} Dados $N\subset M$ $A$-módulos,$$0\longrightarrow N\longrightarrow M\longrightarrow\faktor{M}{N}\longrightarrow 0$$ es una sucesión corta exacta.
+
+\textit{2)} Dados $M$ y $N$ $A$-módulos,$$0\longrightarrow M\overset{q_M}{\longrightarrow} M\bigoplus N\overset{p_N}{\longrightarrow} N\longrightarrow 0$$ es una también una sucesión corta exacta.
+\end{example}
+\begin{remark} Toda sucesión de homomorfismos de $A$-módulos se puede descomponer en varias sucesiones cortas.
 \end{remark}
 \begin{definition} Dado $M$ un $A$-módulo, un subconjunto $S\subset M$ es un sistema de generadores de $M$ si para cada $x\in M$ existen $\{s_1,...,s_n\}\subset S$ tales que$$x=\lambda_1s_1+...+\lambda_ns_n$$ con $\lambda_i\in A$ para cada $i\in\{1,...,n\}$.
 
 Es decir, el menor submódulo de $M$ que contiene a $S$ es el propio $M$.
 \end{definition}
+\begin{definition} Dado un conjunto de $A$-módulos $\zeta$, una aplicación $\lambda:\zeta\rightarrow\mathbb{N}$ se dice aditiva si para cada $M$, $M'$ y $M''\in\zeta$ y para cada sucesión corta y exacta$$0\longrightarrow M'\longrightarrow M\longrightarrow M''\longrightarrow 0$$ se verifica $\lambda(M) = \lambda(M')+\lambda(M'')$.
+\end{definition}
+\begin{remark} Dado $K$ cuerpo, los $K$-módulos son los $K$-espacios vectoriales. Tomando $\zeta$ como los $K$-espacios vectoriales de dimensión finita,
+$$\begin{array}{rcl}
+    \zeta&\longrightarrow&\mathbb{N}\\
+    M&\longmapsto&dim(M)
+\end{array}$$
+es una aplicación aditiva.
+\end{remark}
+\begin{proposition} Sea$$0\longrightarrow M'\overset{f}{\longrightarrow} M\overset{g}{\longrightarrow} M''\longrightarrow 0$$ una sucesión corta y exacta de $A$-módulos. Son equivalentes:
+\begin{itemize}
+    \item [i)] Existe $\pi:M\longrightarrow M'$ homomorfismo de $A$-módulos tal que $\pi\circ f=º_{M'}$
+    \item[ii)] Existe $\sigma:M''\longrightarrow M$ homomorfismo de $A$-módulos tal que $g\circ\sigma=1_{M''}$
+    \item[iii)] $M\cong M'\bigoplus M''$ vía $f$ y $g$, es decir, existe $\Phi:M\longrightarrow M'\bigoplus M''$ isomorfismo de $A$-módulos tal que los diagramas son conmutativos.
+\end{itemize}
+    En tal caso, se dice que la sucesión corta es escindida.
+\end{proposition}
+Demostración. \textit{$1)\Rightarrow 2)$} Sea $m''\in M''$. Por ser $g$ sobreyectiva, existe $m\in M$ tal que $g(m)=m''$. Definimos $$\begin{array}{rcl}
+    \sigma:M''&\longrightarrow&M\\
+    m''&\longmapsto&m-(f\circ\pi)(m)
+\end{array}$$
 \end{document}
