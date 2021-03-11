@@ -266,15 +266,59 @@ $$\begin{array}{rcl}
 es una aplicación aditiva.
 \end{remark}
 \begin{proposition} Sea$$0\longrightarrow M'\overset{f}{\longrightarrow} M\overset{g}{\longrightarrow} M''\longrightarrow 0$$ una sucesión corta y exacta de $A$-módulos. Son equivalentes:
-\begin{itemize}
-    \item [i)] Existe $\pi:M\longrightarrow M'$ homomorfismo de $A$-módulos tal que $\pi\circ f=º_{M'}$
-    \item[ii)] Existe $\sigma:M''\longrightarrow M$ homomorfismo de $A$-módulos tal que $g\circ\sigma=1_{M''}$
-    \item[iii)] $M\cong M'\bigoplus M''$ vía $f$ y $g$, es decir, existe $\Phi:M\longrightarrow M'\bigoplus M''$ isomorfismo de $A$-módulos tal que los diagramas son conmutativos.
-\end{itemize}
-    En tal caso, se dice que la sucesión corta es escindida.
+	\begin{itemize}
+		\item [i)] Existe $\tau:M\longrightarrow M'$ homomorfismo de $A$-módulos tal que $\tau\circ f=\text{id}_{M'}$
+		\item[ii)] Existe $\sigma:M''\longrightarrow M$ homomorfismo de $A$-módulos tal que $g\circ\sigma=\text{id}_{M''}$
+		\item[iii)] $M\cong M'\bigoplus M''$ vía $f$ y $g$, es decir, existe $\Phi:M\longrightarrow M'\bigoplus M''$ isomorfismo de $A$-módulos tal que los diagramas son conmutativos.
+	\end{itemize}
+	En tal caso, se dice que la sucesión corta es \textit{escindida}.
 \end{proposition}
-Demostración. \textit{$1)\Rightarrow 2)$} Sea $m''\in M''$. Por ser $g$ sobreyectiva, existe $m\in M$ tal que $g(m)=m''$. Definimos $$\begin{array}{rcl}
-    \sigma:M''&\longrightarrow&M\\
-    m''&\longmapsto&m-(f\circ\pi)(m)
-\end{array}$$
+Demostración. $(1\Rightarrow 2)$ Dado $m''\in M''$, por ser $g$ sobreyectiva existe $m\in M$ tal que $g(m)=m''$. Considero $$m^*:=m-f\circ\tau(m)\in M$$
+y afirmo que $m^*$ no depende de la elección hecha de $m\in M$ de forma que $g(m)=m''$. Supongamos que existe otro $m_1\in M$ tal que $g(m_1)=m''$. Por ser así,
+$$g(m-m_1)=g(m)-g(m_1)=0_{M''}.$$
+Como $\ker (g)=\text{im} (f)$, existe $m'\in M'$ tal que $f(m')=m-m_1$. Dado que por hipótesis $\tau\circ f=\text{id}_{M'}$, tenemos
+$$m-m_1=f(m')=f\circ\tau(m-m_1)=f\circ\tau(m)-f\circ\tau(m_1)$$
+y
+$$m-f\circ\tau(m)=m_1-f\circ\tau(m_1).$$
+Vemos así que $m^*$ no depende del $m\in M$ escogido con tal de que se tenga $g(m)=m''$.
+
+Por esto que acabamos de ver, la aplicación
+$$\begin{array}{rrcl}
+\sigma:&M''&\longrightarrow&M\\
+&m''&\longmapsto&m^*=m-f\circ\tau(m) 
+\end{array},$$
+donde $m$ verifica $g(m)=m''$, está bien definida. Además, para cada $m''\in M''$,
+$$g\cir\sigma(m'')=g(\sigma(m''))=g(m-f\circ\tau(m))=g(m)=m'',$$
+es decir, $g\circ\sigma=\text{id}_{M''}$.
+
+Falta por comprobar que $\sigma$ es homomorfismo de $A$-módulos. Sean $\lambda,\mu\in A$ y $m_1'',m_2''\in M''$ arbitrarios. 
+Usamos que $f,g$ y $\tau$ son homomorfismos de $A$-módulos. en primer lugar, es claro que, si $m_1,m_2\in M$ verifican $g(m_i)=m_i''$, entonces $g(\lambda m_1)=\lambda m_1''$, $g(\mu m_2)=\mu m_2''$ y $g(\lambda m_1+\mu m_2)=\lambda m_1''+\mu m_2''$. Teniendo esto en cuenta,
+\begin{align*}
+	\sigma(\lambda m_1''+\mu m_2'')&=(\lambda m_1+\mu m_2)-f\circ\tau(\lambda m_1+\mu m_2)=\\
+	&=\lambda m_1-f\circ\tau(\lambda m_1)+\mu m_2-f\circ\tau(\mu m_2)=\sigma(\lambda m_1'')+\sigma(\mu m_2'')
+\end{align*}
+como queríamos.
+
+$(2\Rightarrow 1)$ Partiendo ahora de la existencia de $\sigma:M''\longrightarrow M$ verificando $g\circ\sigma=\text{id}_{M''}$, buscamos definir $\tau:M\longrightarrow M'$ cumpliendo $\tau\circ f=\text{id}_M'$. Dado $m\in M$, $m-\sigma(g(m))\in\ker(g)=im(f)$ y, como antes, existe $m'\in M'$ tal que $f(m')=m-\sigma(g(m))$ único por la inyectividad de $f$. Así, la aplicación
+$$\begin{array}{rrcl}
+\tau:&M&\longrightarrow&M'\\
+&m&\longmapsto&m'
+\end{array},$$
+donde $m'$ es el único elemento en $M'$ tal que $f(m')=m-\sigma(g(m))$, está bien definida. Además, es claro que para cada $m'\in M'$ se cumple $\tau\circ f(m')=m'$. La comprobación de que $\tau$ es homomorfismo de $A$-módulos es análoga al caso anterior.
+
+$(2\Rightarrow 3)$ En primer lugar, como se verifica $2)$ también tenemos $1)$; es decir, contamos con las aplicaciones $\tau$ y $\sigma$ verificando las condiciones del enunciado.
+
+Definimos así $\Phi:M'\oplus M'':\longrightarrow M$ como el único homomorfismo de $A$-módulos que hace $\Phi\circ q_{M'}=f$ y $\Phi\circ q_{M''}$. $\Phi$ está bien definido por la propia contrucción de la suma directa $M'\oplus M''$.
+Veamos que es sobreyectivo. Sea $m\in M$ y tomemos $m':=\tau(m-\sigma(g(m))$ y $m'':=g(m)$. De nuevo, $m-\sigma(g(m))\in\ker(g)=\text{im}(f)$ y existe $m^*\in M'$ tal que $f(m^*)=m-\sigma(g(m))$. Por esto,
+\begin{align*}
+	\Phi(m',m'')=&\Phi((m',0)+(0,m''))=\Phi\circ q_{M'}(m')+\Phi\circ q_{M''}(m'')=\\
+	=&f(\tau(m-\sigma(g(m))))+\sigma(g(m))=f\circ\tau\circ f(m^*)+\sigma\circ g(m)=\\
+	=&f(m^*)+\sigma\circ g(m)=m-\sigma(g(m))+\sigma(g(m))=m.
+\end{align*}
+Veamos ahora que $\Phi$ es inyectiva. Supongamos que $\Phi(m',m'')=0_M$, es decir, $f(m')+\sigma(m'')=0_M$. Aplicando $g$ tenemos que $m''=g\circ\sigma(m'')=0_{M''}$. Por su parte, como $f$ es inyectiva, $f(m')=0_{M'}$ implica $m'=0_{M'}$.
+
+Por último, si $m\in M$, $\Phi^{-1}(m)=(m',m'')$, con $m''=g(m)$. Así, ${p_{M''}}^{-1}=g$.
+
+$(3\Rightarrow 2)$ Basta tomar $\sigma:= \Phi\circ q_{M''}$.
+
 \end{document}
