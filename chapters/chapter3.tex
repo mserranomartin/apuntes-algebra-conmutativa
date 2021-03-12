@@ -25,6 +25,7 @@ También se desprende que, para $\lambda\in A$ y $m\in M$ fijados (arbitrarios),
 \textit{ii}) Dado un homomorfismo de $A$-módulos, $f:M\longrightarrow N$, se tiene que $\ker(f):=\{x\in M\ |\ f(x)=0_N\}$ es un submódulo de $M$ y que $\text{im}(f):=\{y\in N\ |\ \exists\ x\in M\ \text{tal que}\ f(x)=y\}$ es un submódulo de $N$.
 
 \section{Construcciones con $A$-módulos}
+\subsection{Módulos cociente}
 Dados $(A,+,\cdot)$ un anillo, $M$ un $A$-módulo y $N\subset M$ un submódulo. Denotemos para cada $m\in M$ como $[m]_N$ a la clase de $m$ en $M/N$. Tras esta consideración, se tiene que $M/N$ junto a la aplicación
 $$\begin{array}{rcl}
     M/N\times M/N&\longrightarrow&M/N\\
@@ -47,7 +48,7 @@ $$\begin{array}{rcl}
 \end{array}$$
 es un homomorfismo de $A$-módulos.
 \end{remark}
-
+\begin{subsection}{Anuladores}
 \begin{definition} Dados $A$ un anillo y $M$ un $A$-módulo, definimos el anulador de $A$ en $M$ como$$Anul_A M = \{\lambda\in A\ |\  \lambda\cdot m=0, \forall m\in M\}$$
 \end{definition}
 
@@ -65,6 +66,8 @@ $$\begin{array}{rcl}
 \end{array}$$
 \textit{ii)} Dado un ideal $\mathfrak{a}\subset Anul_AM$, $M$ es un $A/\mathfrak{a}$-módulo. Los submódulos de $M$ como $A/\mathfrak{a}$-módulo son los submódulos de $M$ como $A$-módulo.
 \end{remark}
+\end{subsection}
+\begin{subsection}{Aplicaciones A-lineales}
 \begin{definition}. Dados $M$ y $N$ dos $A$-módulos, definimos \textit{el conjunto de aplicaciones $A$-lineales entre $M$ y $N$}
 $$\Hom_A(M,N):=\{f:M\longrightarrow N\ |\ f\text{ es aplicación }A\text{-lineal}\}
 $$
@@ -119,7 +122,24 @@ Comprobemos por último que el producto exterior cumple los cuatro axiomas de la
     \item[\textit{iii})] $((\lambda\mu)f)(m)=(\lambda\mu)(f(m))=\lambda(\mu(f(m))=\lambda((\mu f)(m))=(\lambda(\mu f))(m)$ y
     \item[\textit{iv})] $(1_A f)(m)=1_A(f(m))=f(m)$.
 \end{itemize}
+\end{subsection}
+\begin{subsection}{Pullbacks}
+Dados $M_1$, $M_2$ y $N$ $A$-módulos y dada $\varphi\in\Hom_A(M_1,M_2)$, podemos definir
+$$\begin{array}{rrcl}
+    \varphi^{\ast}:&Hom_A(M_2,N)&\longrightarrow&Hom_A(M_1,N)\\
+    &g&\longmapsto&g\circ\varphi
+\end{array}$$ que resulta ser un homomorfismo de $A$-módulos y se denota $\varphi^{\ast}=Hom_A(\varphi\_)$.
 
+Análogamente, dados $M$, $N_1$ y $N_2$ $A$-módulos y dada $\psi\in\Hom_A(N_1,N_2)$,
+$$\begin{array}{rrcl}
+    \psi^{\ast}:&Hom_A(M,N_1)&\longrightarrow&Hom_A(M,N_2)\\
+    &g&\longmapsto&\psi\circ g
+\end{array}$$
+es un homomorfismo de $A$-módulos.
+
+Nótese que si tenemos $M_1$, $M_2$ y $M_3$ $A$-módulos y $\varphi\in Hom_A(M_1,M_2)$ y $\psi\in Hom_A(M_2,M_3)$, entonces $(\psi\circ\varphi)^{\ast}=\varphi^{\ast}\circ\psi^{\ast}$
+\end{subsection}
+\begin{subsection}{Suma directa}
 \begin{definition}. Sean $(A,+,\cdot)$ un anillo conmutativo unitario y $\{M_i\}_{i\in I}$ una familia no vacía de $A$-módulos. Definimos el conjunto
 $$
 \bigoplus_{i\in I}M_i:=\left\{{(m_i)}_{i\in I}\in\prod_{i\in I}M_i\ |\ m_i=0_{M_i},\forall\ i\in I\setminus F,\ F\subseteq I\ \text{finito}\right\}
@@ -154,7 +174,7 @@ $q_j$ es un homomorfismo de anillos.
 \textit{iii)} Para cada $x=(x_i)\in \bigoplus_{i\in I}M_i$, existe un número finito de índices $i_1,...,i_r$ tal que $x_{i_r}\neq 0$. Entonces, expresamos $x=\sum_{i\in {i_{i_1},...i_{i_r}}} q_i(x_i)$.
 
 \textbf{Notación.} Dado $A$ un anillo, $I$ un conjunto no vacío, denotamos $A^{(I)}=\bigoplus_{i\in i} A_i$, donde para cada $i\in I$, $A_i=A$. $A^{(I)}$ es un submódulo de $A^{I} = \prod_{i\in I} A_i$, con $A_i=A$ para cada $i\in I$.
-
+\end{subsection}
 \section{A-módulos libres}
 
 \begin{definition}. Dado un homomorfismo de $A$-módulos, $f:M\rightarrow N$, se dice que es un isomorfismo de $A$-módulos si existe $g:N\rightarrow M$ homomorfismo de $A$-módulos tal que $g\circ f = Id_M$ y $f\circ g = Id_N$, es decir, una inversa de $f$.
@@ -258,20 +278,20 @@ Es decir, el menor submódulo de $M$ que contiene a $S$ es el propio $M$.
 \end{definition}
 \begin{definition} Dado un conjunto de $A$-módulos $\zeta$, una aplicación $\lambda:\zeta\rightarrow\mathbb{N}$ se dice aditiva si para cada $M$, $M'$ y $M''\in\zeta$ y para cada sucesión corta y exacta$$0\longrightarrow M'\longrightarrow M\longrightarrow M''\longrightarrow 0$$ se verifica $\lambda(M) = \lambda(M')+\lambda(M'')$.
 \end{definition}
-\begin{remark} Dado $K$ cuerpo, los $K$-módulos son los $K$-espacios vectoriales. Tomando $\zeta$ como los $K$-espacios vectoriales de dimensión finita,
+\begin{example} Dado $K$ cuerpo, los $K$-módulos son los $K$-espacios vectoriales. Tomando $\zeta$ como los $K$-espacios vectoriales de dimensión finita,
 $$\begin{array}{rcl}
     \zeta&\longrightarrow&\mathbb{N}\\
     M&\longmapsto&dim(M)
 \end{array}$$
 es una aplicación aditiva.
-\end{remark}
+\end{example}
 \begin{proposition} Sea$$0\longrightarrow M'\overset{f}{\longrightarrow} M\overset{g}{\longrightarrow} M''\longrightarrow 0$$ una sucesión corta y exacta de $A$-módulos. Son equivalentes:
-	\begin{itemize}
-		\item [i)] Existe $\tau:M\longrightarrow M'$ homomorfismo de $A$-módulos tal que $\tau\circ f=\text{id}_{M'}$
-		\item[ii)] Existe $\sigma:M''\longrightarrow M$ homomorfismo de $A$-módulos tal que $g\circ\sigma=\text{id}_{M''}$
-		\item[iii)] $M\cong M'\bigoplus M''$ vía $f$ y $g$, es decir, existe $\Phi:M\longrightarrow M'\bigoplus M''$ isomorfismo de $A$-módulos tal que los diagramas son conmutativos.
-	\end{itemize}
-	En tal caso, se dice que la sucesión corta es \textit{escindida}.
+\begin{itemize}
+    \item [i)] Existe $\pi:M\longrightarrow M'$ homomorfismo de $A$-módulos tal que $\pi\circ f=º_{M'}$
+    \item[ii)] Existe $\sigma:M''\longrightarrow M$ homomorfismo de $A$-módulos tal que $g\circ\sigma=1_{M''}$
+    \item[iii)] $M\cong M'\bigoplus M''$ vía $f$ y $g$, es decir, existe $\Phi:M\longrightarrow M'\bigoplus M''$ isomorfismo de $A$-módulos tal que los diagramas son conmutativos.
+\end{itemize}
+    En tal caso, se dice que la sucesión corta es escindida.
 \end{proposition}
 Demostración. $(1\Rightarrow 2)$ Dado $m''\in M''$, por ser $g$ sobreyectiva existe $m\in M$ tal que $g(m)=m''$. Considero $$m^*:=m-f\circ\tau(m)\in M$$
 y afirmo que $m^*$ no depende de la elección hecha de $m\in M$ de forma que $g(m)=m''$. Supongamos que existe otro $m_1\in M$ tal que $g(m_1)=m''$. Por ser así,
@@ -284,25 +304,25 @@ Vemos así que $m^*$ no depende del $m\in M$ escogido con tal de que se tenga $g
 
 Por esto que acabamos de ver, la aplicación
 $$\begin{array}{rrcl}
-\sigma:&M''&\longrightarrow&M\\
-&m''&\longmapsto&m^*=m-f\circ\tau(m) 
+    \sigma:&M''&\longrightarrow&M\\
+    &m''&\longmapsto&m^*=m-f\circ\tau(m)
 \end{array},$$
 donde $m$ verifica $g(m)=m''$, está bien definida. Además, para cada $m''\in M''$,
 $$g\cir\sigma(m'')=g(\sigma(m''))=g(m-f\circ\tau(m))=g(m)=m'',$$
 es decir, $g\circ\sigma=\text{id}_{M''}$.
 
-Falta por comprobar que $\sigma$ es homomorfismo de $A$-módulos. Sean $\lambda,\mu\in A$ y $m_1'',m_2''\in M''$ arbitrarios. 
+Falta por comprobar que $\sigma$ es homomorfismo de $A$-módulos. Sean $\lambda,\mu\in A$ y $m_1'',m_2''\in M''$ arbitrarios.
 Usamos que $f,g$ y $\tau$ son homomorfismos de $A$-módulos. en primer lugar, es claro que, si $m_1,m_2\in M$ verifican $g(m_i)=m_i''$, entonces $g(\lambda m_1)=\lambda m_1''$, $g(\mu m_2)=\mu m_2''$ y $g(\lambda m_1+\mu m_2)=\lambda m_1''+\mu m_2''$. Teniendo esto en cuenta,
 \begin{align*}
-	\sigma(\lambda m_1''+\mu m_2'')&=(\lambda m_1+\mu m_2)-f\circ\tau(\lambda m_1+\mu m_2)=\\
-	&=\lambda m_1-f\circ\tau(\lambda m_1)+\mu m_2-f\circ\tau(\mu m_2)=\sigma(\lambda m_1'')+\sigma(\mu m_2'')
+    \sigma(\lambda m_1''+\mu m_2'')&=(\lambda m_1+\mu m_2)-f\circ\tau(\lambda m_1+\mu m_2)=\\
+    &=\lambda m_1-f\circ\tau(\lambda m_1)+\mu m_2-f\circ\tau(\mu m_2)=\sigma(\lambda m_1'')+\sigma(\mu m_2'')
 \end{align*}
 como queríamos.
 
 $(2\Rightarrow 1)$ Partiendo ahora de la existencia de $\sigma:M''\longrightarrow M$ verificando $g\circ\sigma=\text{id}_{M''}$, buscamos definir $\tau:M\longrightarrow M'$ cumpliendo $\tau\circ f=\text{id}_M'$. Dado $m\in M$, $m-\sigma(g(m))\in\ker(g)=im(f)$ y, como antes, existe $m'\in M'$ tal que $f(m')=m-\sigma(g(m))$ único por la inyectividad de $f$. Así, la aplicación
 $$\begin{array}{rrcl}
-\tau:&M&\longrightarrow&M'\\
-&m&\longmapsto&m'
+    \tau:&M&\longrightarrow&M'\\
+    &m&\longmapsto&m'
 \end{array},$$
 donde $m'$ es el único elemento en $M'$ tal que $f(m')=m-\sigma(g(m))$, está bien definida. Además, es claro que para cada $m'\in M'$ se cumple $\tau\circ f(m')=m'$. La comprobación de que $\tau$ es homomorfismo de $A$-módulos es análoga al caso anterior.
 
@@ -311,14 +331,13 @@ $(2\Rightarrow 3)$ En primer lugar, como se verifica $2)$ también tenemos $1)$;
 Definimos así $\Phi:M'\oplus M'':\longrightarrow M$ como el único homomorfismo de $A$-módulos que hace $\Phi\circ q_{M'}=f$ y $\Phi\circ q_{M''}$. $\Phi$ está bien definido por la propia contrucción de la suma directa $M'\oplus M''$.
 Veamos que es sobreyectivo. Sea $m\in M$ y tomemos $m':=\tau(m-\sigma(g(m))$ y $m'':=g(m)$. De nuevo, $m-\sigma(g(m))\in\ker(g)=\text{im}(f)$ y existe $m^*\in M'$ tal que $f(m^*)=m-\sigma(g(m))$. Por esto,
 \begin{align*}
-	\Phi(m',m'')=&\Phi((m',0)+(0,m''))=\Phi\circ q_{M'}(m')+\Phi\circ q_{M''}(m'')=\\
-	=&f(\tau(m-\sigma(g(m))))+\sigma(g(m))=f\circ\tau\circ f(m^*)+\sigma\circ g(m)=\\
-	=&f(m^*)+\sigma\circ g(m)=m-\sigma(g(m))+\sigma(g(m))=m.
+    \Phi(m',m'')=&\Phi((m',0)+(0,m''))=\Phi\circ q_{M'}(m')+\Phi\circ q_{M''}(m'')=\\
+    =&f(\tau(m-\sigma(g(m))))+\sigma(g(m))=f\circ\tau\circ f(m^*)+\sigma\circ g(m)=\\
+    =&f(m^*)+\sigma\circ g(m)=m-\sigma(g(m))+\sigma(g(m))=m.
 \end{align*}
 Veamos ahora que $\Phi$ es inyectiva. Supongamos que $\Phi(m',m'')=0_M$, es decir, $f(m')+\sigma(m'')=0_M$. Aplicando $g$ tenemos que $m''=g\circ\sigma(m'')=0_{M''}$. Por su parte, como $f$ es inyectiva, $f(m')=0_{M'}$ implica $m'=0_{M'}$.
 
 Por último, si $m\in M$, $\Phi^{-1}(m)=(m',m'')$, con $m''=g(m)$. Así, ${p_{M''}}^{-1}=g$.
 
 $(3\Rightarrow 2)$ Basta tomar $\sigma:= \Phi\circ q_{M''}$.
-
 \end{document}
