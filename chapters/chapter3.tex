@@ -268,7 +268,7 @@ Ahora, dados dos conjuntos de índices no vacíos $I$ y $J$, supongamos que exis
 \end{remark}
 \begin{example} \textit{1)} Dados $N\subset M$ $A$-módulos,$$0\longrightarrow N\longrightarrow M\longrightarrow\faktor{M}{N}\longrightarrow 0$$ es una sucesión corta exacta.
 
-\textit{2)} Dados $M$ y $N$ $A$-módulos,$$0\longrightarrow M\overset{q_M}{\longrightarrow} M\bigoplus N\overset{p_N}{\longrightarrow} N\longrightarrow 0$$ es una también una sucesión corta exacta.
+\textit{2)} Dados $M$ y $N$ $A$-módulos,$$0\longrightarrow M\overset{q_M}{\longrightarrow} M\oplus N\overset{p_N}{\longrightarrow} N\longrightarrow 0$$ es una también una sucesión corta exacta.
 \end{example}
 \begin{remark} Toda sucesión de homomorfismos de $A$-módulos se puede descomponer en varias sucesiones cortas.
 \end{remark}
@@ -287,13 +287,14 @@ es una aplicación aditiva.
 \end{example}
 \begin{proposition} Sea$$0\longrightarrow M'\overset{f}{\longrightarrow} M\overset{g}{\longrightarrow} M''\longrightarrow 0$$ una sucesión corta y exacta de $A$-módulos. Son equivalentes:
 \begin{itemize}
-    \item [i)] Existe $\pi:M\longrightarrow M'$ homomorfismo de $A$-módulos tal que $\pi\circ f=º_{M'}$
+    \item [i)] Existe $\pi:M\longrightarrow M'$ homomorfismo de $A$-módulos tal que $\pi\circ f=1_{M'}$
     \item[ii)] Existe $\sigma:M''\longrightarrow M$ homomorfismo de $A$-módulos tal que $g\circ\sigma=1_{M''}$
-    \item[iii)] $M\cong M'\bigoplus M''$ vía $f$ y $g$, es decir, existe $\Phi:M\longrightarrow M'\bigoplus M''$ isomorfismo de $A$-módulos tal que los diagramas son conmutativos.
+    \item[iii)] $M\cong M'oplus M''$ vía $f$ y $g$, es decir, existe $\Phi:M\longrightarrow M'\oplus M''$ isomorfismo de $A$-módulos tal que los diagramas son conmutativos.
 \end{itemize}
     En tal caso, se dice que la sucesión corta es escindida.
 \end{proposition}
-Demostración. $(1\Rightarrow 2)$ Dado $m''\in M''$, por ser $g$ sobreyectiva existe $m\in M$ tal que $g(m)=m''$. Considero $$m^*:=m-f\circ\tau(m)\in M$$
+
+\begin{proof} $(1\Rightarrow 2)$ Dado $m''\in M''$, por ser $g$ sobreyectiva existe $m\in M$ tal que $g(m)=m''$. Considero $$m^*:=m-f\circ\tau(m)\in M$$
 y afirmo que $m^*$ no depende de la elección hecha de $m\in M$ de forma que $g(m)=m''$. Supongamos que existe otro $m_1\in M$ tal que $g(m_1)=m''$. Por ser así,
 $$g(m-m_1)=g(m)-g(m_1)=0_{M''}.$$
 Como $\ker (g)=\text{im} (f)$, existe $m'\in M'$ tal que $f(m')=m-m_1$. Dado que por hipótesis $\tau\circ f=\text{id}_{M'}$, tenemos
@@ -340,4 +341,5 @@ Veamos ahora que $\Phi$ es inyectiva. Supongamos que $\Phi(m',m'')=0_M$, es deci
 Por último, si $m\in M$, $\Phi^{-1}(m)=(m',m'')$, con $m''=g(m)$. Así, ${p_{M''}}^{-1}=g$.
 
 $(3\Rightarrow 2)$ Basta tomar $\sigma:= \Phi\circ q_{M''}$.
+\end{proof}
 \end{document}

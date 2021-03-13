@@ -1,0 +1,194 @@
+\documentclass[./main.tex]{subfiles}
+\begin{document}
+
+\section{Hoja 1}
+
+\paragraph{Ejercicio 1} Sea $u\in A$ una unidad y $x\in A$ un elemento nilpotente. Demostrar que $u+x$ es una unidad.
+
+Comenzamos probando que si $x\in \mathfrak N_A$, entonces $1+x\in \mathcal U(A)$. Existe $n>0$ tal que $x^n=0$, y entonces observamos que $(1+x)x^{n-1}=x^{n-1}$. Así:
+\begin{multline}
+(1+x^{n-1})(1+x) = 1+2x^{n-1} =1+2x^{n-1}(1+x)\\
+=(1+x^{n-1})(1+x)-2x^{n-1}(1+x)=1\\
+=(1+x^{n-1}-2x^{n-1})(1+x)=1\\
+=1-x^{n-1})(1+x)=1
+\end{multline}
+
+Por otra parte, si $u\in \mathcal U(A)$, existe $v\in A$ tal que $uv=1$. Además, por ser $\mathfrak N_A$ un ideal, $vx \in \mathfrak N_A$ con mismo índice de nilpotencia, y podemos aplicar lo anterior
+$$
+(1-(vx)^{n-1})(1+vx)=1
+$$
+Ahora podemos escribir $1+vx = v(u+x)$ y por tanto la anterior identidad queda escrita como
+$$
+[v(1-(vx)^{n-1})](u+x)=1
+$$
+
+
+\paragraph{Ejercicio 2} Sea $A,A_1,A_2$ anillos y supongamos que $A\cong A_1\times A_2$.
+\begin{enumerate}[label=(\roman*)]
+    \item Sea $\mathfrak a \subset A$ un ideal. Demostrar que $\mathfrak a \cong \mathfrak a' \times \mathfrak a''$ para ciertos ideales $\mathfrak a' \subset A_1$ y $\mathfrak a'' \subset A_2$.
+    \item Sea $\mathfrak p \subset A$ un ideal primo. Demostrar que $\mathfrak p \cong \mathfrak  p' \times A_2$ o bien $\mathfrak p \cong A_1 \mathfrak p''$ para ciertos ideales primos $\mathfrak p' \subset A_1$ y $\mathfrak p'' \subset A_2$.
+\end{enumerate}
+
+(i) En general, si $\phi:A\to B$ es un isomorfismo, y $\mathfrak a \sub A$ un ideal, entonces $\phi(\mathfrak a)$ es un ideal de $B$:
+
+- Para todo $\phi(x),\phi(y)\in \phi(\mathfrak a)$ tenemos que $\phi(x)+\phi(y) = \phi(\underset{\in \mathfrak a}{x+y}) \in \phi(\mathfrak a)$.
+- Para todo $\phi(x)\in \phi(\mathfrak a),z\in B$ existe $w\in A$ tal que $\phi(w) = z$, y entonces $z\phi(x) = \phi(\underset{\in \mathfrak a}{wx}) \in \phi(\mathfrak a)$.
+
+Y todo ideal del producto $\mathfrak b \sub A_1\times A_2$, es un producto de ideales $\mathfrak b_1 \times \mathfrak b_2$. Efectivamente, sea
+$$
+\mathfrak b_1 = \{x\in A_1: \; \exist y\in A_2//(x,y)\in \mathfrak b\}
+$$
+y veamos que es un ideal:
+
+- Para todo $x, x' \in \mathfrak b_1$ existen $y,y' \in A_2$ tales que $(x,y),(x',y')\in \mathfrak b$ y por ser un ideal tenemos $\mathfrak b \ni (x,y)+(x',y') = (x+x',y+y')$ y por tanto $x+x' \in \mathfrak b_1$.
+- Para todo $x\in \mathfrak b_1$ y todo $z\in A_1$ existe $y\in A_2$ tal que $(x,y)\in \mathfrak b$, y además $(z,0)\in A_1\times A_2$, y por ser un ideal se tiene $\mathfrak b\ni (x,y)(z,0) = (xz,0)$ con lo que $xz \in \mathfrak b_1$.
+
+Con esto queda probado que todo $\mathfrak a \sub A$ es isomorfo a un producto de ideales.
+
+(ii) En general, si $\phi:A\to B$ es un isomorfismo, y $\mathfrak p \sub A$ un ideal primo, entonces $\phi(\mathfrak p)$ es un ideal primo de $B$:
+
+- Sean $x',y' \in B$ tales que $x' = \phi(x), y' = \phi(y)\in \phi(\mathfrak p)$, entonces $\phi(\mathfrak p) \ni x'y' = \phi(x)\phi(y) = \phi(xy) $ por tanto $xy\in \mathfrak p$ y como es un ideal primo, $x \in \mathfrak p$ o $y\in \mathfrak p$ $\iff$ $x' \in \phi(\mathfrak p)$ o $y' \in \phi(\mathfrak p)$.
+
+Si $\mathfrak p \sub A_1\times A_2$ es un ideal primo, entonces sabemos de a)  que $\mathfrak p = \mathfrak a_1\times \mathfrak a_2$ producto de ideales. Veamos que o bien $\mathfrak p = \mathfrak p_1\times A_2$ con $\mathfrak p_1$ primo, o bien $\mathfrak p = A_1\times \mathfrak p_2$ con $\mathfrak p_2$ primo. Supongamos $\mathfrak p_1 \neq A_1$:
+
+- Para todo $x,y \in A_1$ tales que $xy\in \mathfrak p_1$  existe $z\in A_2$ tal que $(xy,z)\in \mathfrak p$. Entonces se tiene $\mathfrak p \ni (xy,z) = (x,z)(y,1)$ y por lo tanto $(x,z)\in \mathfrak p$ o bien $(y,1)\in \mathfrak p$ lo que implica que $x\in \mathfrak p_1$ o $y \in \mathfrak p_1$. Por tanto $\mathfrak p_1$ es un ideal primo.
+- Más aún, dado $x\in \mathfrak p_1$, obviamente se cumple $1\cdot x \in \mathfrak p_1$. Siguiendo lo de arriba, $(1,z)(x,1) \in \mathfrak p$, y como $\mathfrak p_1\neq A_1$ no puede ser que $(1,z)\in \mathfrak p$, luego necesariamente $(x,1)\in \mathfrak p$ y por lo tanto $1\in\mathfrak p_2$ y así $\mathfrak p_2 = A_2$.
+
+
+
+\paragraph{Ejercicio 3} Sea $\mathfrak a \subset A$ un ideal. Demostrar que:
+\[\sqrt{\mathfrak a} = \bigcap_{\substack{\mathfrak p\in \operatorname{Spec}(A)\\ \mathfrak a \subset \mathfrak p}} \mathfrak p\]
+
+Utilizando la caracterización que conocemos del nilradical de un anillo aplicado al cociente, y teniendo en cuenta que la biyección del teorema de la correspondencia conserva la primalidad, tenemos que:
+\begin{multline}
+x\in \sqrt {\mathfrak a} \iff x+\mathfrak a \in \mathfrak N_{A/\mathfrak a} = \bigcap_{\bar {\mathfrak p}\in \operatorname{Spec}(A/\mathfrak a)}\bar {\mathfrak p} \iff\\ \forall \bar {\mathfrak p} \in \operatorname{Spec}(A/\mathfrak a), \, x+\mathfrak a \in  \bar {\mathfrak p}  \iff\\ \forall \mathfrak p\in\operatorname{Spec}(A),\;  x\in \mathfrak p
+\end{multline}
+
+
+\paragraph{Ejercicio 4} Sea $A$ un anillo y $f=a_nX^n + \ldots + a_1 X+ a_0 \in A[X]$. Demostrar que $f$ es una unidad en $A[X]$ si y solo si $a_0$ es unidad y todos los $a_i$ son nilpotentes.
+
+$\Leftarrow)$ Sabemos que $\mathfrak N_A$ es un ideal, así que $\sum_{j=1}^n a_j X^j\in \mathfrak N_A$, y como $a_0\in \mathcal U(A)$, en virtud del ejercicio 1 se tiene que $\sum_{j=1}^n a_j X^j+a_0 = f \in \mathcal U(A)$.
+
+$\Rightarrow)$ Como $f$ es una unidad, existe $g =\sum_{j=1}^m b_j X^j \in A[X]$ tal que $fg = 1$. En primer lugar, esto implica que $a_0b_0 = 1$ luego $a_0\in \mathcal U(A)$.
+
+FALTA LA SEGUNDA PARTE
+
+\paragraph{Ejercicio 5} \textit{Sea $A$ un DIP. Si $\mathfrak a $ es un ideal propio, demostrar que son equivalentes
+\begin{enumerate}[label=\alph*)]
+    \item $\mathfrak a$ es un ideal primo,
+    \item $\mathfrak a$ es un ideal maximal,
+    \item existe $f\in A$ irreducible tal que $\mathfrak a = \gen{f}$.
+\end{enumerate}
+Si $a,b \in A \setminus \{0\}$ no son unidades, y $d,m\in A$ tales que $\gen{a} + \gen{b} = \gen{d}$, $\gen{a}\cap \gen{b} = \gen{m}$, demostrar que $d = \gcd(a,b)$ y $m = \operatorname{lcm}(a,b)$.}
+
+$a)\iff b)$ La implicación $\Leftarrow$ se tiene siempre. Sea $\mathfrak a = aA$ un ideal primo, y supongamos que existe $\mathfrak b = bA$ tal que $\mathfrak a\subsetneq \mathfrak b$. Existe $x\in A$ tal que $bx = a\in \mathfrak a$ primo, luego $b\in \mathfrak a$ o $x\in \mathfrak a$. No puede ser que $b\in \mathfrak a$ porque en tal caso existiría un $z\in A$ tal que $az = b$ y entonces para todo $t\in  A$ se tendría que $bt = a(zt) \in aA = \mathfrak a$ y por tanto $\mathfrak b \subseteq \mathfrak a$, en contra de nuestra hipótesis. Por tanto $x \in \mathfrak a$, y existe $w\in A$ tal que $x = aw$, entonces $a(bw) = a$ y por tanto $1=bw   \in \mathfrak b$, con lo que $\mathfrak b = A$. Así $\mathfrak a$ es maximal.
+
+$b)\iff c)$ Sea $\mathfrak a =aA$ un ideal, y supongamos que $a$ se puede expresar como $a=uv$ con $u,v\not\in \mathcal U(A)$. Entonces $\mathfrak a\subseteq uA$ y, además, $uA\neq A$ porque $u$ no es unidad. Veamos que $uA \not \subseteq \mathfrak a$, o equivalentemente, $u\not \in \mathfrak a$. Si $u\in \mathfrak a$ existe un $w$ tal que $u = aw =u(vw)$ y por tanto $u(1-vw)=0$ luego $1=vw$, ya que $u\neq 0$ pues si no $\mathfrak a = 0$ que no es maximal. Esto va en contra de la suposición de que $v \not \in \mathcal U(A)$. Así que $\mathfrak a \subsetneq uA\subsetneq A$ y por tanto no es un ideal maximal.
+
+Supongamos ahora que $a$ es irreducible, y existe $\mathfrak b=bA \supset \mathfrak a$. Existe $w \in A$ tal que $a = bw$, y como $a$ es irreducible entonces $b\in \mathcal U(A)$ o $w\in \mathcal U(A)$, en cualquier caso $\mathfrak b = A$, y por tanto $\mathfrak a$ es maximal.
+
+\paragraph{Ejercicio 6}\textit{
+\begin{enumerate}[label=(\roman*)]
+    \item Sea $A$ un anillo, demostrar que existe una biyección entre las descomposiciones $\Phi:A\to A_1 \times\ldots \times A_n$ via un isomorfismo de anillos y los conjuntos de idempotentes ortogonales de $A$, ie. $\{e_1,\ldots,e_n\}\subset A$ tales que $\sum_{i=1}^ne_i = 1_A$ y $e_ie_j  = \delta_{ij}e_i$.
+    \item Demostrar que dada una descomposición, los $A_i$ se identifican con ideales de $A$, no con subanillos. ¿Qué descomposición corresponde al conjunto de idempotentes $\{0_A, 1_A\}$.
+\end{enumerate}
+}
+
+(i) Veamos este apartado de dos formas: una donde los idempotentes son endomorfismos y otra donde son elementos de $A$.
+
+1. Si tenemos $A = A_1\times \dots \times A_n = \bigoplus_{i=1}^n A_i$, entonces podemos tomar la proyección $A\to A_i$ compuesta con la inclusión $A_i \to A$ que resulta en un endomorfismo de $A$ que denotamos $e_i$. Este endomorfismo es idempotente. Efectivamente, si tomamos $x=(x_1,\dots,x_n)\in A = \bigoplus_{i=1}^n A_i$ entonces $e_i\circ e_i(x) = e_i(0,\dots,0,x_i,0,\dots,0) = (0,\dots,0,x_i,0,\dots,0)$. Son ortogonales porque $e_j(0,\dots,0,x_i,0,\dots,0) = (0,\dots, 0)$. Y también tenemos que suman la identidad porque para cualquier $x\in A$:
+
+\begin{multline}
+e_1(x)+\ldots+e_i(x)+e_j(x)+\ldots +e_n(x)=\\=(x_1,0,\dots,0)+\dots+(0,\dots,x_i,0,\dots,0)+(0,\dots,0,x_j,\dots,0)+ (0,\dots,0,x_n) =\\= (x_1,\dots,x_i,x_j,\dots,x_n) = x
+\end{multline}
+
+​	Por otra parte, si tenemos un subconjunto $\{e_i\}_{i=1}^r$ tal que  $\sum_{i=1}^r e_i = 1$ y $e_ie_j=\delta_{ij}e_i$ podemos definir una descomposición de 	$A$ tomando $A_i$ las imágenes de los $e_i$.
+
+2. Dado el isomorfismo $\Phi:\bigoplus A_i \to A$, este determina un conjunto de idempotentes según a donde envíe a los elementos siguientes:
+\begin{align*}
+\Phi: A_1\times\ldots \times A_n &\to A\\
+(1,0,\dots,0)&\mapsto e_1\\
+(0,1,\dots,0)&\mapsto e_2\\
+&\vdots\\
+(0,0,\dots,1)&\mapsto e_n
+\end{align*}
+
+Efectivamente, por ser homomorfismo ha de cumplirse que
+
+\begin{align}
+   1_A&=\Phi(1,1,\dots,1) = \Phi(1,0,\ldots,0)+\dots+\Phi(0,0,\ldots, 1) = e_1+e_2+\ldots e_n\\
+   0_A &= \Phi(0,0,\dots,0) = \Phi((0,\dots,\overset{i)}{0},\dots,0)\cdot (0,\dots,\overset{j)}{0},\dots,0)) \quad i\neq j\\
+   e_i &= \Phi((0,\dots,\overset{i}{1},\ldots,0)\cdot(0,\dots,\overset{i}{1},\ldots,0)) = e_ie_i
+\end{align}
+
+Recíprocamente, dados $\{e_i\}_{i=1}^r$ tomemos los ideales $\mathfrak a_i =e_iA$ de $A$. Estos tienen estructura de anillo conmutativo unitario con las operaciones heredadas y tomando $1_{\mathfrak a_i} = e_i$. En efecto, todo el resto de propiedades se cumple automáticamente y comprobamos que esa es la unidad: para todo $x\in \mathfrak a_i$ existe $a\in A$ tal que $x=e_ia$ y entonces $xe_i = e_ix = e_i e_i a = e_i a = x$.
+
+Ahora consideramos $\phi_i:A\to \mathfrak a_i$ dado por $x\mapsto\phi_i(x) = xe_i$ que es un homomorfismo suprayectivo (esto segundo es obvio porque $\mathfrak a_i = e_iA$):
+
+\begin{align}
+    \phi_i(x+y) &= (x+y)e_i = xe_i+ye_i = \phi_i(x)+\phi_i(y)\\
+\phi_i(xy) &= xye_i = xye_ie_i = (xe_i)(ye_i) = \phi_i(x)\phi_i(y)
+\end{align}
+
+Finalmente podemos coger $\Phi:A\to \bigoplus\mathfrak a_i$ como $\Phi=\bigoplus_i\phi_i$ que es homomorfismo suprayectivo por serlo cada una de las coordendas, y además es inyectivo porque si $x\in A$ es tal que $0 = \Phi(x) = (xe_1,\dots,xe_n)$ entonces $0 = \sum_ixe_i  = x\sum_i e_i = x$. Por lo tanto $\Phi$ es el isomorfismo que buscabamos.
+
+(ii) Claramente $A_i \cong 0\times \ldots\times A_i\times \ldots \times 0$ y este es un ideal de $A_1\times \ldots\times A_n \cong A$ lo que demuestra la identificación. Efectivamente dados $a,b\in A_i$, y $(x_1,\ldots,x_n)\in A_1\times \ldots\times A_n$ tenemos
+
+\begin{equation}
+(0,\dots,\overset{i)}{a},\ldots,0)-(0,\dots,\overset{i)}{b},\ldots,0) = (0,\dots,\overset{i)}{a-b},\ldots,0)\in 0\times \ldots\times A_i\times \ldots \times 0
+\end{equation}
+\begin{equation}
+(x_1,\ldots,x_n)\cdot (0,\dots,\overset{i)}{a},\ldots,0) = (0,\dots,\overset{i)}{x_ia},\ldots,0) \in  0\times \ldots\times A_i\times \ldots \times 0
+\end{equation}
+
+No es un subanillo porque carece del elemento unidad de $A_1\times \ldots \times A_n$ que es la tupla con todo unos.
+
+Finalmente, si tomamos el conjunto de idempotentes ${0_A,1_A}$ obtenemos la descomposición trivial $A = \{0_A\}\times A$. Si seguimos la forma 2. de proceder, el isomorfismo $\Phi:A_1\times A_2 \to A$ debería asignar $(1,0)\mapsto 0_A$ y $(0,1)\mapsto 1_A$.  Está bien definido porque se cumple que $1_A = 0_A+1_A = \Phi(1,0)+\Phi(0,1) =\Phi(1,1)$ como debe ser.
+
+
+\paragraph{Ejercicio 7} \textit{Encontrar un sistema de idempotentes ortogonales no trivial y una descomposición asociada para
+\begin{enumerate}[label=(\roman*)]
+    \item $\Z_{nm}$ con $\gcd(n,m) = 1$.
+    \item $\Q[X]/\gen{x^2(x-1)}$.
+    \item $K[X]/\gen{fg}$ con $\gcd(f,g) = 1$.
+\end{enumerate}}
+
+(i) Sabemos que si $m,n$ son coprimos entonces $\mathbb Z_{mn} \cong \mathbb Z_m \times \mathbb Z_n$. Esta es nuestra descomposición. Para sacar los idempotentes ortogonales nos valemos de la identidad de Bezout: por ser coprimos existen $\mu, \nu $ tales que $\mu m+ \nu n = 1_\Z$. Además tenemos que
+\begin{align}
+[\mu m] +[\nu n] &= [1_\Z] = 1_{\Z_{mn}}\\
+[\mu m] [\nu n] &= [\mu \nu] [nm] = [0]\\
+[\mu m] [\mu m] &= [\mu m][1-\nu n] = [\mu m]
+\end{align}
+Por tanto, $e_1 = [\mu m]$ y $e_2 = [\nu n]$ son los elementos que buscamos. La descomposición viene dada por los ideales $[\mu m]\Z_{mn}$ y $[\nu n]\Z_{mn}$. Veamos que son precisamente $\Z_n$ y $\Z_m$ respectivamente. Los elementos del ideal $[\mu m]\Z_{mn}$ son los restos de la división $\frac{\mu m x}{mn} = \frac{\mu x}{n}$, es decir, son restos que determina una clase en $\Z_n$, por tanto $[\mu m]\Z_{mn} \subset \Z_n$. Pero además, si $[x],[y]\in \Z_{mn}$ son tales que $[\mu mx] = [\mu m y]$ en $\Z_{mn}$, entonces $\mu m(x-y)\in mn\Z$ por lo tanto $x-y \in n\Z$. Es decir, que hay exactamente $n$ clases en nuestro ideal, por tanto $[\mu m]\Z_{mn} = \Z_n$.
+
+(ii) $A=\Q[x] / \langle x^2(x-1)\rangle$. Este ejemplo es el mismo que el anterior pero en un anillo de polinomios. En ambos casos tenemos un dominio euclídeo y por tanto una identidad de Bezout para el máximo común divisor. En concreto, $\gcd(x^2,x-1) = 1$ que sale en la primera división $x^2 = x(x-1)+1$ o equivalentemente $x^2+x(1-x) = 1$, y podemos tomar como conjunto de idempotentes ortogonales $\{x^2, x(1-x)\}$ que cumplirán, análogamente a lo dicho en a), que $A = \Q[x]/\langle x^2\rangle \times \Q[x]/\langle x(1-x)\rangle$.
+
+(iii) Literalmente lo mismo que el (ii) pero ahora genérico. Se cumple exactamente lo mismo.
+
+
+
+\paragraph{Ejercicio 9} \textit{Sea $A$ un anillo y $\mathfrak a \subset A$ un ideal. Denotamos
+\[\mathfrak a [X] = \{ f \in A[X] \vert \; f \text{ tiene sus coeficientes en } \mathfrak a\}\]
+Demostrar que $\mathfrak a[X]$ es el extendido de $\mathfrak a$ via la inclusión. Si $\mathfrak p$ es ideal primo de $A$, ¿es $\mathfrak p[X]$ un ideal primo de $A[X]$?}
+
+Estamos considerando la extensión de $\mathfrak a$ por la inclusión $i:A\hookrightarrow A[X]$, entonces
+$$
+\mathfrak a^e = \langle \mathfrak i(a) \rangle \equiv \langle \mathfrak a\rangle_{A[X]} = \left\{\sum_{i=0}^n a_i g_i\big \vert\; a_i \in \mathfrak a, g_i \in A[X],n\in \N   \right\}
+$$
+Ahora bien, $\sum_{i=0}^n a_i g_i = \sum_{i=0}^n a_i \sum_{j=0}^m b^i_j X^j = \sum_{i,j}(a_ib^i_j) X^j$ y se cumple  $a_ib^i_j \in  \mathfrak a$ para todo $i,j$ por ser un ideal.
+
+Lo que sigue está mal:
+
+---
+
+Sea $\mathfrak p$ un ideal primo de $A$. Sean $f,g \in A[X]$ que identificamos con sucesiones $(a_n)_n,(b_n)_n$ donde a partir de algún término son todos nulos. Supongamos $h = fg \in \mathfrak p[X]$, de coeficientes $(c_n)_n$.
+
+Tenemos $a_0b_0 = c_0 \in \mathfrak p$. Supongamos $a_0 \not\in \mathfrak p$. El siguiente coeficiente del producto es $a_0b_1+a_1b_0 = c_1 \in \mathfrak p$. Por ser un ideal $a_1b_0\in\mathfrak p$, y por tanto $a_0b_1 = c_1-a_1b_0 \in \mathfrak p$. Tenemos entonces $b_1 \in \mathfrak p$. Si hubiésemos comenzado al contrario, tendríamos $a_0,a_1 \in \mathfrak p$. Observamos que para todos estos cálculos no hace falta suponer que ninguno de los términos es distinto de $0$.
+
+Suponemos entonces que para todo $k\leq n$ se cumple que $b_k\in \mathfrak p$ y comprobemos que $b_n \in \mathfrak p$. La primera vez que hace su aparición es en la expresión $c_n = \sum_{i+j = n} a_ib_j$. Por hipótesis de inducción $a_0b_n = c_n - \sum_{\substack{i+j = n\\j\neq n}} a_ib_j \in \mathfrak p$
+
+Tomamos el siguiente coeficiente $a_0b_2+a_1b_1+a_2b_0 = c_2 \in\mathfrak p$. Si $a_0 \not \in \mathfrak p$
+
+\end{document}
+
+---

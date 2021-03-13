@@ -1,6 +1,5 @@
 \documentclass[a4paper,12pt]{book}
 \usepackage[a4paper]{geometry}
-\geometry{top=1.75cm, bottom=1.75cm, left=1.5cm, right=1.5cm}
 \usepackage{amsfonts,amsmath,amssymb}
 \usepackage{graphicx}
 \usepackage{enumitem}
@@ -15,6 +14,7 @@
 \usepackage{amssymb}
 \usepackage{amsmath}
 \usepackage{amsfonts}
+\usepackage{appendix}
 \usepackage{amsthm}
 \usepackage{csquotes}
 \usepackage{polyglossia}
@@ -50,7 +50,7 @@ sorting=ynt
 \newcommand{\Ann}{\text{Ann}}
 
 % THEOREMS
-\newtheorem{theorem}{Teorema}
+\newtheorem{theorem}{Teorema}[section]
 \newtheorem{corollary}[theorem]{Corolario}
 \newtheorem{lemma}[theorem]{Lema}
 \newtheorem{proposition}[theorem]{Proposición}
@@ -72,4 +72,11 @@ sorting=ynt
 \subfile{chapters/chapter2.tex}
 \chapter{Módulos}
 \subfile{chapters/chapter3.tex}
+
+
+\appendix
+\chapter{Ejemplo factorización polinomio}
+\subfile{chapters/appendix-ejemplo}
+\chapter{Ejercicios}
+\subfile{chapters/ejercicios}
 \end{document}

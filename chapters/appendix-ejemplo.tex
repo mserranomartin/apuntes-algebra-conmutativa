@@ -1,0 +1,50 @@
+\documentclass[./main.tex]{subfiles}
+\begin{document}
+Factorizamos el siguiente polinomio $f$ como $F_1(F_2)^2\dots (F_r)^r$ para ciertos polinomios $F_i$ que tienen todos sus factores irreducibles de multiplicidad 1.
+
+\[ f(x) = (x - 3)^4(x - 2)^2(x + 7)^2(x^2+1) \]
+
+Calculamos su derivada formal, que comparte con $f$ los factores irreducibles múltiples de $f$. El máximo común divisor $f_1$ entre $f$ y $f'$ tiene como factores irreducibles exactamente a los factores irreducibles con multiplicidad mayor o igual a 2 de $f$, pero ahora con multiplicidad 1 menos que en
+$f$.
+
+\[ f_1 = \gcd(f, f') =  (x - 3)^3 (x - 2) (x + 7)\]
+
+Por lo tanto, al dividir $f$ entre $f_1$ nos queda un polinomio con todos los factores irreducibles de $f$ pero ahora con multiplicidad 1.
+\[g_1 =\frac{f}{f_1}= (x - 3) (x - 2) (x + 7) (x^2+1)\]
+
+Ahora tomamos $f_1$ y repetimos el proceso. Este comparte con su derivada sus factores irreducibles múltiples, que son los factores irreducibles de multiplicidad mayor o igual a 3 de $f$. Esos son exactamente los factores irreducibles del máximo común divisor $f_2$ entre ambos, en el cual aparecen con multiplicidad 1 menos que en $f_1$, es decir, con multiplicidad 2 menos que en $f$.
+
+\[f_2 = \gcd(f_1, f_1') = (x-3)^2\]
+
+Ahora al calcular el cociente $\frac{f_1}{f_2}$ obtenemos un polinomio que tiene por factores irreducibles exactamente los de $f$ de multiplicidad mayor o igual a 2, pero ahora son simples.
+
+\[g_2 = \frac{f_1}{f_2}=(x-3)(x-2)(x+7)\]
+
+Finalmente, podemos sacar $F_1$, el primero de los polinomios que necesitamos para la factorización, sin más que dividir $g_1$ entre $g_2$. Efectivamente, $g_1$ tiene por factores irreducibles todos los de $f$ pero con multiplicidad 1, y $g_2$ todos los múltiples de $f$ pero con multiplicidad 1. Así al dividir solo quedarán los factores irreducibles simples.
+\[F_1 = \frac{g_1}{g_2}= x^2+1\]
+
+Ahora repetimos el proceso para $f_1$, es decir, en lo anterior hacer $f = f_1$. De esta forma obtendremos un polinomio que tiene por factores irreducibles exactamente a los factores irreducibles simples de
+$f_1$, que son los factores irreducibles dobles de $f$. Observamos que ya tenemos calculados el primer paso $\gcd(f_1, f_1') = f_2$, y el segundo $\frac{f_1}{f_2} = g_2$, así que sacamos
+\begin{align*}
+    f_3 &= \gcd(f_2, f_2') = x - 3\\
+    g_3 &= \frac{f_2}{f_3} = x - 3 \\
+    F_2 &= \frac{g_2}{g_3} = (x - 2) (x + 7)
+\end{align*}
+
+
+Repetimos dos veces más
+
+\begin{align*}
+    f_4 &= \gcd(f_3, f_3') = 1 &&& f_5 &= \gcd(f_3, f_3') = 1\\
+    g_4 &= \frac{f_3}{f_4} = x - 3&&&g_5 &= \frac{f_3}{f_4} = 1  \\
+    F_3 &= \frac{g_3}{g_4} = 1&&&F_4 &= \frac{g_3}{g_4} = x-3
+\end{align*}
+
+¿Cómo sabemos cuando parar? Precisamente si intentamos repetir una vez más, obtenemos $f_6=g_6=F_5=1$, y como las siguientes etapas las construimos a partir de estos polinomios, quiere decir que todo lo que obtendremos a partir de ahora serán 1, así que debemos concluir el proceso con $F_4$. Esto nosotros lo sabíamos de antemano porque hemos escrito el polinomio factorizado en sus factores irreducibles y 4 era la mayor multiplicidad que teníamos, pero el criterio anterior es un criterio de parada general.
+
+De esta forma tenemos$f$ factorizado como
+
+\[ f= F_1(F_2)^2(F_3)^3(F_4)^4 \]
+
+Además, el producto $f_{\operatorname{red}} = F_1F_2F_3F_4$ es un polinomio que tiene mismos ceros que $f$ pero todos ellos simples.
+\end{document}

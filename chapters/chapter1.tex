@@ -60,23 +60,15 @@ Sea $A$ un anillo y sean dos ideales $\mathfrak a_1, \mathfrak a_2 \subset A$. S
 
 \[ \mathfrak a_1 + \mathfrak a_2 = \left \{ x+y \big \vert \; x \in \mathfrak a_1, y \in \mathfrak a_2 \right \} \]
 
-y resulta ser el menor ideal que contiene a ambos. De forma análoga, dada una familia $\{\af_i\}_{i\in I}$ de ideales en $A$, se define
-
-$$\underset{i\in I}{\Sigma}\af_i:=\left\{\underset{i\in F}{\Sigma} x_i\ \bigg | \ \ x_i\in\af_i\ \forall i\in F,\ F\subseteq I\ \text{finito}\right\},$$
-
-que es el menor ideal de $A$ que contiene a todos los ideales $\af_i$, $i\in I$.
-
-La \emph{intersección} de una familia arbitraria de ideales es la intersección conjuntista con las operaciones heredadas, y es el mayor ideal que está contenido en todos los ideales de la familia. El \emph{producto} de los ideales
+y resulta ser el menor ideal que contiene a ambos. La \emph{intersección} de los ideales es la intersección conjuntista con las operaciones heredadas, y es el mayor ideal que está contenido en ambos ideales. El \emph{producto} de los ideales
 
 \[ \mathfrak a_1 \cdot \mathfrak a_2 = \left \{ \sum_{i=1}^m x_iy_i \big \vert \; x_i \in \mathfrak a_1, y_i \in \mathfrak a_2, m\in \mathbb N \right \} \]
 
 y también es un ideal.
 
 \begin{remark}
-  \begin{enumerate}
-    \item Las tres operaciones definidas son conmutativas y asociativas. También se verifica la ley distributiva para el producto y la suma de ideales$$\af(\bfr+\cf)=\af\bfr+\af\cf.$$
-    \item Se cumple $\mathfrak a_1 \cdot \mathfrak a_2 \subset \mathfrak a_1 \cap \mathfrak a_2$ (trivial), y se tiene la igualdad si $\mathfrak a_1 + \mathfrak a_2 = A$. Efectivamente, en tal caso, $1 = a_1 + a_2$ para ciertos $a_i \in \mathfrak a_i$, y entonces para todo $t\in \mathfrak a_1 \cap \mathfrak a_2$, $t = ta_1 + ta_2 \in \mathfrak a_1 \cdot \mathfrak a_2$. Cuando $\mathfrak a_1 + \mathfrak a_2 = A$ se dice que los ideales son \emph{comaximales}.
-    \item Dos ideales $\af$ y $\bfr$ son comaximales si, y sólo si, existen dos elementos $x\in\af$ y $y\in\bfr$ tales que $x+y=1$.
+Se cumple $\mathfrak a_1 \cdot \mathfrak a_2 \subset \mathfrak a_1 \cap \mathfrak a_2$ (trivial), y se tiene la igualdad si $\mathfrak a_1 + \mathfrak a_2 = A$. Efectivamente, en tal caso, $1 = a_1 + a_2$ para ciertos $a_i \in \mathfrak a_i$, y entonces para todo $t\in \mathfrak a_1 \cap \mathfrak a_2$, $t = ta_1 + ta_2 \in \mathfrak a_1 \cdot \mathfrak a_2$.
 
+Cuando $\mathfrak a_1 + \mathfrak a_2 = A$ se dice que los ideales son \emph{comaximales}.
 \end{remark}
 \end{document}

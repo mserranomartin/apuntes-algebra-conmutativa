@@ -101,7 +101,7 @@ En el caso particular en que $A\subset B$, entonces $B$ es una $A$-álgebra fini
         A \ni a &\mapsto a
     \end{align*}
     El homomorfismo $\operatorname{eval}_{b_1,\dots, b_r}$ es suprayectivo porque los elementos de $B$ son expresiones polinomiales en $b_1,\dots, b_r$. Aplicando el primer teorema de isomorfía tenemos
-    \[\faktor{A[X_1,\dots,X_r}{\ker \operatorname{eval}_{b_1,\dots, b_r}} \cong B\]
+    \[\faktor{A[X_1,\dots,X_r]}{\ker \operatorname{eval}_{b_1,\dots, b_r}} \cong B\]
     \item Más generalmente, si $B$ es una $A$-álgebra finitamente generada, también es una $f(A)$-álgebra finitamente generada y se puede repetir el ejemplo anterior con $f(A)$, que es subanillo de $B$.
 \end{enumerate}
 
@@ -190,6 +190,18 @@ Veamos que $\mathfrak p^*$ es primo, equivalentemente, que si $x, y \not \in \ma
 \[x_0^{m+n} = x_0^n x_0^m = (p+x)(q+y) = \underset{\in \mathfrak p}{pq} + \underset{\in (xy)}{py} + \overset{\in (xy)}{qx} + \overset{\in (xy)}{xy} \in \mathfrak p^* + (xy) \]
 
 Por tanto $\mathfrak p^*+(xy) \not \in \Sigma$, y como $\mathfrak p^* \in \Sigma $, entonces $xy \not \in \mathfrak p ^*$.
+\end{proof}
+
+\begin{definition} Un ideal $\mathfrak q$ de un anillo $A$ se dice \emph{primario} si cumple que, si $ab \in \mathfrak q$, entonces $a \in \mathfrak q$ o bien existe $n$ con $b^n\in\mathfrak q$.
+\end{definition}
+
+\begin{proposition}
+Un ideal $\mathfrak q$ es primario si y solo si $\mathfrak N_{A/\mathfrak q}$ coincide con el conjunto de divisores de $0$ de $A/\mathfrak q$.
+\end{proposition}
+\begin{proof}
+$\Rightarrow$) Obviamente todos los elementos de $\mathfrak N_{A/\mathfrak q}$ son divisores de $0$. Supongamos que $(a+\mathfrak q)(b+\mathfrak q) = 0+\mathfrak q$, entonces $ab \in \mathfrak q$. Por tanto $a \in \mathfrak q$ y entonces $a +\mathfrak q = 0 +\mathfrak q \in \mathfrak N_{A/\mathfrak q}$, o bien existe $n$ tal que $b^n \in \mathfrak q$ y así $b^n+\mathfrak q = (b+\mathfrak q)^n = 0+\mathfrak q$ y por tanto $b+\mathfrak q \in \mathfrak N_{A/\mathfrak q}$.
+
+$\Leftarrow)$ Si $ab \in \mathfrak q$ y supongamos que $a\not \in \mathfrak q$, entonces $0+\mathfrak q = ab+\mathfrak q =(a+\mathfrak q)(b+\mathfrak q)$. Como $a+\mathfrak q \neq 0+\mathfrak q$, o bien $b\in \mathfrak q$, o bien $b+\mathfrak q$ es un divisor de $0$, y por tanto está en el nilradical del cociente, y existe $n$ tal que $(b+\mathfrak q)^n = b^n+\mathfrak q = 0+\mathfrak q$, es decir, $b^n \in \mathfrak q$ como queríamos.
 \end{proof}
 
 \section{Extensión y contracción de ideales}
