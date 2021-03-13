@@ -29,27 +29,27 @@ $$
     \item Sea $\mathfrak p \subset A$ un ideal primo. Demostrar que $\mathfrak p \cong \mathfrak  p' \times A_2$ o bien $\mathfrak p \cong A_1 \mathfrak p''$ para ciertos ideales primos $\mathfrak p' \subset A_1$ y $\mathfrak p'' \subset A_2$.
 \end{enumerate}
 
-(i) En general, si $\phi:A\to B$ es un isomorfismo, y $\mathfrak a \sub A$ un ideal, entonces $\phi(\mathfrak a)$ es un ideal de $B$:
+(i) En general, si $\phi:A\to B$ es un isomorfismo, y $\mathfrak a \subset A$ un ideal, entonces $\phi(\mathfrak a)$ es un ideal de $B$:
 
 - Para todo $\phi(x),\phi(y)\in \phi(\mathfrak a)$ tenemos que $\phi(x)+\phi(y) = \phi(\underset{\in \mathfrak a}{x+y}) \in \phi(\mathfrak a)$.
 - Para todo $\phi(x)\in \phi(\mathfrak a),z\in B$ existe $w\in A$ tal que $\phi(w) = z$, y entonces $z\phi(x) = \phi(\underset{\in \mathfrak a}{wx}) \in \phi(\mathfrak a)$.
 
-Y todo ideal del producto $\mathfrak b \sub A_1\times A_2$, es un producto de ideales $\mathfrak b_1 \times \mathfrak b_2$. Efectivamente, sea
+Y todo ideal del producto $\mathfrak b \subset A_1\times A_2$, es un producto de ideales $\mathfrak b_1 \times \mathfrak b_2$. Efectivamente, sea
 $$
-\mathfrak b_1 = \{x\in A_1: \; \exist y\in A_2//(x,y)\in \mathfrak b\}
+\mathfrak b_1 = \{x\in A_1: \; \exists y\in A_2//(x,y)\in \mathfrak b\}
 $$
 y veamos que es un ideal:
 
 - Para todo $x, x' \in \mathfrak b_1$ existen $y,y' \in A_2$ tales que $(x,y),(x',y')\in \mathfrak b$ y por ser un ideal tenemos $\mathfrak b \ni (x,y)+(x',y') = (x+x',y+y')$ y por tanto $x+x' \in \mathfrak b_1$.
 - Para todo $x\in \mathfrak b_1$ y todo $z\in A_1$ existe $y\in A_2$ tal que $(x,y)\in \mathfrak b$, y además $(z,0)\in A_1\times A_2$, y por ser un ideal se tiene $\mathfrak b\ni (x,y)(z,0) = (xz,0)$ con lo que $xz \in \mathfrak b_1$.
 
-Con esto queda probado que todo $\mathfrak a \sub A$ es isomorfo a un producto de ideales.
+Con esto queda probado que todo $\mathfrak a \subset A$ es isomorfo a un producto de ideales.
 
-(ii) En general, si $\phi:A\to B$ es un isomorfismo, y $\mathfrak p \sub A$ un ideal primo, entonces $\phi(\mathfrak p)$ es un ideal primo de $B$:
+(ii) En general, si $\phi:A\to B$ es un isomorfismo, y $\mathfrak p \subset A$ un ideal primo, entonces $\phi(\mathfrak p)$ es un ideal primo de $B$:
 
 - Sean $x',y' \in B$ tales que $x' = \phi(x), y' = \phi(y)\in \phi(\mathfrak p)$, entonces $\phi(\mathfrak p) \ni x'y' = \phi(x)\phi(y) = \phi(xy) $ por tanto $xy\in \mathfrak p$ y como es un ideal primo, $x \in \mathfrak p$ o $y\in \mathfrak p$ $\iff$ $x' \in \phi(\mathfrak p)$ o $y' \in \phi(\mathfrak p)$.
 
-Si $\mathfrak p \sub A_1\times A_2$ es un ideal primo, entonces sabemos de a)  que $\mathfrak p = \mathfrak a_1\times \mathfrak a_2$ producto de ideales. Veamos que o bien $\mathfrak p = \mathfrak p_1\times A_2$ con $\mathfrak p_1$ primo, o bien $\mathfrak p = A_1\times \mathfrak p_2$ con $\mathfrak p_2$ primo. Supongamos $\mathfrak p_1 \neq A_1$:
+Si $\mathfrak p \subset A_1\times A_2$ es un ideal primo, entonces sabemos de a)  que $\mathfrak p = \mathfrak a_1\times \mathfrak a_2$ producto de ideales. Veamos que o bien $\mathfrak p = \mathfrak p_1\times A_2$ con $\mathfrak p_1$ primo, o bien $\mathfrak p = A_1\times \mathfrak p_2$ con $\mathfrak p_2$ primo. Supongamos $\mathfrak p_1 \neq A_1$:
 
 - Para todo $x,y \in A_1$ tales que $xy\in \mathfrak p_1$  existe $z\in A_2$ tal que $(xy,z)\in \mathfrak p$. Entonces se tiene $\mathfrak p \ni (xy,z) = (x,z)(y,1)$ y por lo tanto $(x,z)\in \mathfrak p$ o bien $(y,1)\in \mathfrak p$ lo que implica que $x\in \mathfrak p_1$ o $y \in \mathfrak p_1$. Por tanto $\mathfrak p_1$ es un ideal primo.
 - Más aún, dado $x\in \mathfrak p_1$, obviamente se cumple $1\cdot x \in \mathfrak p_1$. Siguiendo lo de arriba, $(1,z)(x,1) \in \mathfrak p$, y como $\mathfrak p_1\neq A_1$ no puede ser que $(1,z)\in \mathfrak p$, luego necesariamente $(x,1)\in \mathfrak p$ y por lo tanto $1\in\mathfrak p_2$ y así $\mathfrak p_2 = A_2$.
@@ -177,18 +177,28 @@ $$
 $$
 Ahora bien, $\sum_{i=0}^n a_i g_i = \sum_{i=0}^n a_i \sum_{j=0}^m b^i_j X^j = \sum_{i,j}(a_ib^i_j) X^j$ y se cumple  $a_ib^i_j \in  \mathfrak a$ para todo $i,j$ por ser un ideal.
 
-Lo que sigue está mal:
+% Lo que sigue está mal:
+%
+% ---
+%
+% Sea $\mathfrak p$ un ideal primo de $A$. Sean $f,g \in A[X]$ que identificamos con sucesiones $(a_n)_n,(b_n)_n$ donde a partir de algún término son todos nulos. Supongamos $h = fg \in \mathfrak p[X]$, de coeficientes $(c_n)_n$.
+%
+% Tenemos $a_0b_0 = c_0 \in \mathfrak p$. Supongamos $a_0 \not\in \mathfrak p$. El siguiente coeficiente del producto es $a_0b_1+a_1b_0 = c_1 \in \mathfrak p$. Por ser un ideal $a_1b_0\in\mathfrak p$, y por tanto $a_0b_1 = c_1-a_1b_0 \in \mathfrak p$. Tenemos entonces $b_1 \in \mathfrak p$. Si hubiésemos comenzado al contrario, tendríamos $a_0,a_1 \in \mathfrak p$. Observamos que para todos estos cálculos no hace falta suponer que ninguno de los términos es distinto de $0$.
+%
+% Suponemos entonces que para todo $k\leq n$ se cumple que $b_k\in \mathfrak p$ y comprobemos que $b_n \in \mathfrak p$. La primera vez que hace su aparición es en la expresión $c_n = \sum_{i+j = n} a_ib_j$. Por hipótesis de inducción $a_0b_n = c_n - \sum_{\substack{i+j = n\\j\neq n}} a_ib_j \in \mathfrak p$
+%
+% Tomamos el siguiente coeficiente $a_0b_2+a_1b_1+a_2b_0 = c_2 \in\mathfrak p$. Si $a_0 \not \in \mathfrak p$
+%
+% \paragraph{Ejercicio 10} \textit{Sea $A$ un anillo, $M$ un $A$-módulo y $\mathfrak a$ un ideal contenido en $\Ann (M)$. Demostrar que $M$ tiene estructura de $A/\mathfrak a$-módulo.}
+%
+% Solo hay que ver que la multiplicación por escalares de $A/\mathfrak a$ está bien definida. Si $x+\mathfrak a = y+\mathfrak a$ entonces $x-y \in \mathfrak a \subset \Ann(M)$, es decir, $(x-y)m = 0$ para todo $m\in M$, o equivalentemente $xm = ym$ para todo $m\in M$, lo que implica que $(x+\mathfrak a)m = (y+\mathfrak a)m$, y así el producto externo está bien definido.
 
----
+\paragraph{Ejercicio 11} \textit{Sea $A$ un anillo, $\mathfrak a$ un ideal, y $\mathfrak p_1, \ldots, \mathfrak p_n$ ideales primos. Si $\mathfrak a \subset \bigcup_{i=1}^n \mathfrak p_i$, entonces $\mathfrak a \subset \mathfrak p_i$ para algún $i\in \{1, \ldots, n\}$.}
 
-Sea $\mathfrak p$ un ideal primo de $A$. Sean $f,g \in A[X]$ que identificamos con sucesiones $(a_n)_n,(b_n)_n$ donde a partir de algún término son todos nulos. Supongamos $h = fg \in \mathfrak p[X]$, de coeficientes $(c_n)_n$.
+Probamos el contrarrecíproco por inducción sobre $n$. El caso $n=1$ es obvio. Supongamos que si tenemos $n$ ideales primos y $\mathfrak a \not \subset \mathfrak p_i$ para ningún $i$, entonces $\mathfrak a \not \subset \bigcup_{i=1}^n \mathfrak p_i$, y estudiamos el caso $n+1$.  Vamos a encontrar un elemento de $\mathfrak a$ que no pertenece a ningún $\mathfrak p_i$.
 
-Tenemos $a_0b_0 = c_0 \in \mathfrak p$. Supongamos $a_0 \not\in \mathfrak p$. El siguiente coeficiente del producto es $a_0b_1+a_1b_0 = c_1 \in \mathfrak p$. Por ser un ideal $a_1b_0\in\mathfrak p$, y por tanto $a_0b_1 = c_1-a_1b_0 \in \mathfrak p$. Tenemos entonces $b_1 \in \mathfrak p$. Si hubiésemos comenzado al contrario, tendríamos $a_0,a_1 \in \mathfrak p$. Observamos que para todos estos cálculos no hace falta suponer que ninguno de los términos es distinto de $0$.
+Para cada $j$ consideramos un $z_j \in \mathfrak a \setminus \bigcup_{i\neq j} \mathfrak p_i \neq \varnothing$. La diferencia conjuntista es efectivamente no vacía por hipótesis de inducción, pues hay $n$ ideales primos en esa unión. Además, podemos suponer que $z_j \in \mathfrak p_j$ para cada $j$, pues en caso contrario existe algún $z_j$ que no pertenece a ninguno de los ideales primos y hemos terminado. Afirmamos que el elemento $z= z_1\cdot\ldots\cdot z_n + z_{n+1}\in \mathfrak a$ no pertenece a la unión.
 
-Suponemos entonces que para todo $k\leq n$ se cumple que $b_k\in \mathfrak p$ y comprobemos que $b_n \in \mathfrak p$. La primera vez que hace su aparición es en la expresión $c_n = \sum_{i+j = n} a_ib_j$. Por hipótesis de inducción $a_0b_n = c_n - \sum_{\substack{i+j = n\\j\neq n}} a_ib_j \in \mathfrak p$
-
-Tomamos el siguiente coeficiente $a_0b_2+a_1b_1+a_2b_0 = c_2 \in\mathfrak p$. Si $a_0 \not \in \mathfrak p$
+Si perteneciese, a algún $\mathfrak p_j$ para $j\leq n$, entonces $z_{n+1} = z_j -z_1\cdot\ldots\cdot z_n  \in \mathfrak p_j $, en contra de la construcción. Por otro lado, si $z\in \mathfrak p_{n+1}$, entonces $z_1\cdot\ldots\cdot z_n = z-z_{n+1} \in \mathfrak p_{m+1}$ y por ser este un ideal primo alguno de los $z_i$, con $1 \leq i \leq n$, pertenece a $\mathfrak p_{n+1}$, de nuevo en contra de la construcción de $z$.
 
 \end{document}
-
----
