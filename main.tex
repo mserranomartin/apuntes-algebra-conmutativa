@@ -9,6 +9,8 @@
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{7pt}
 \usepackage{tikz}
+\usepackage{faktor}
+\usepackage{subfiles}
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{amsmath}
@@ -23,6 +25,7 @@ style=alphabetic,
 sorting=ynt
 ]{biblatex}
 \addbibresource{references.bib}
+
 
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\Z}{\mathbb{Z}}
@@ -44,6 +47,7 @@ sorting=ynt
 \newcommand{\im}{\text{Im}}
 \newcommand{\gen}[1]{\langle #1 \rangle }
 \newcommand{\zeros}[1]{\mathcal{Z}(#1)}
+\newcommand{\Ann}{\text{Ann}}
 
 % THEOREMS
 \newtheorem{theorem}{Teorema}
@@ -63,12 +67,9 @@ sorting=ynt
 \begin{document}
 \maketitle
 \chapter{Repaso estructuras}
-\subfile{chapter1-repaso}
+\subfile{chapters/chapter1.tex}
 \chapter{Ideales}
-\subfile{chapter2}
+\subfile{chapters/chapter2.tex}
 \chapter{Módulos}
-\subfile{chapter3}
-\appendix
-\chapter{Factorización de polinomios}
-\subfile{appendix-ejemplo}
+\subfile{chapters/chapter3.tex}
 \end{document}
