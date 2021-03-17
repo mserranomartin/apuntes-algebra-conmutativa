@@ -1,6 +1,33 @@
 \documentclass[./main.tex]{subfiles}
 \begin{document}
+\begin {definition} \label{modulo}
+Sea $A$ un anillo, se llama $A$-módulo a cualquier grupo abeliano $(M,+)$ sobre el que $A$ actúa linealmente, es decir, un grupo $M$ con junto con una operación externa $A\times M \to M$ que cumple que para todo $m,n \in M, a,b \in A$:
+\begin{enumerate}
+  \item $a(m+n) = am + an$
+  \item $(a+b)m = am+bm$
+  \item $(ab)m = a(bm)$
+  \item $1_Am = m$.
+\end{enumerate}
+\end{definition}
 
+\begin{example}
+\begin{enumerate}
+  \item Si $\mathbb K $ es un cuerpo, todo $\mathbb K$-espacio vectorial es un $\mathbb K$-módulo..
+  \item Si $V$ es un $\mathbb K$-espacio vectorial de dimensión finita y $f:V\to V$ un endomorfismo, entonces $V$ es un $\mathbb K[x]$-módulo via la aplicación
+
+  \begin{align*}
+    {\mathbb K[x]\times V} & \to     V                                 \\
+    {(p(x),v)}             & \mapsto p(f) = a_nf^{(n)}+\dots+a_1 f+a_0
+  \end{align*}
+  siendo $p(x) = a_nx^n+\dots+a_1x + a_0$ y $f^(k) = f\circ \overset{k)}{\dots} \circ f$.
+  \item Toda $A$-álgebra $B$ de un anillo $A$ es un $A$-módulo. $B$ es un anillo luego $(B,+)$ es un grupo abeliano. Por ser $A$-álgebra, existe un homomorfismo $\varphi:A\to B$, y entonces podemos definir la operación externa de la definición \ref{modulo} como $A\times B \to B$ que hace corresponder $(a,b) \mapsto\varphi(a)b$.
+\end{enumerate}
+\end{example}
+
+\begin{remark} \label{prop_adicional}
+Atendiendo al último ejemplo resulta que dados dos anillos $A, B$, dar a $B$ estructura de $A$-álgebra es equivalente a darle estructura de $A$-módulo junto con la propiedad adicional de que
+\[\forall b, b' \in B, \; \forall a \in  A \quad a \cdot_{\text{ext}} (bb') = (a\cdot_{\text{ext}} b) b'\]
+\end{remark}
 \begin{definition}. Dado un anillo $A$ y un $A$-módulo $M$, diremos que $S\subset M$ es un \textit{submódulo de $M$} si es un subgrupo de $M$ cerrado para la multiplicación por elementos de $A$.
 \end{definition}
 
