@@ -1,4 +1,4 @@
-\documentclass[./main.tex]{subfiles}
+\documentclass[../main.tex]{subfiles}
 \begin{document}
 
 \section{Hoja 1}
@@ -200,5 +200,19 @@ Probamos el contrarrecíproco por inducción sobre $n$. El caso $n=1$ es obvio. 
 Para cada $j$ consideramos un $z_j \in \mathfrak a \setminus \bigcup_{i\neq j} \mathfrak p_i \neq \varnothing$. La diferencia conjuntista es efectivamente no vacía por hipótesis de inducción, pues hay $n$ ideales primos en esa unión. Además, podemos suponer que $z_j \in \mathfrak p_j$ para cada $j$, pues en caso contrario existe algún $z_j$ que no pertenece a ninguno de los ideales primos y hemos terminado. Afirmamos que el elemento $z= z_1\cdot\ldots\cdot z_n + z_{n+1}\in \mathfrak a$ no pertenece a la unión.
 
 Si perteneciese, a algún $\mathfrak p_j$ para $j\leq n$, entonces $z_{n+1} = z_j -z_1\cdot\ldots\cdot z_n  \in \mathfrak p_j $, en contra de la construcción. Por otro lado, si $z\in \mathfrak p_{n+1}$, entonces $z_1\cdot\ldots\cdot z_n = z-z_{n+1} \in \mathfrak p_{m+1}$ y por ser este un ideal primo alguno de los $z_i$, con $1 \leq i \leq n$, pertenece a $\mathfrak p_{n+1}$, de nuevo en contra de la construcción de $z$.
+
+\paragraph{Ejercicio 13} Sea $A$ un anillo e $I\subset A[X_1,\ldots, X_n]$ un ideal. Demostrar que $A[X_1,\ldots, X_n]/I \cong A$ y que si $A$ es un cuerpo, $I$ es maximal.
+
+La última afirmación es evidente, porque un ideal es maximal si y solo si el cociente es un cuerpo.  Para ver el isomorfismo solo hace falta coger el homomorfismo suprayectivo $\operatorname{eval}_{a_1,\ldots, a_n}:A[X_1,\ldots,X_n]\to A$ cuyo núcleo son los polinomios de la forma $\sum_i (x_i-a_i)f$, pues todos sus términos deben anularse, y entonces $\ker \operatorname{eval}_{a_1,\ldots, a_n} = I$ y hemos terminado.
+
+\paragraph{Ejercicio 15}
+
+Se trata de repetir las demostraciones sobre extensiones finitas de cuerpos y la algebricidad de los generadores.
+
+$\Rightarrow$) Si $A$ es un $K$-espacio vectorial de dimensión finita $m$, entonces para cada $i$ las potencias $1, x_i, \ldots, x_i^m$ son $m+1$ vectores del espacio y por tanto son linealmente dependientes. Esto implica que existen $\lambda^i_0, \dots, \lambda^i_m \in K$ tales que $\lambda^i_0 + \lambda^i_1x_i + \ldots+\lambda^i_mx_i^m = 0$, es decir, que el polinomio no nulo $f_i(T) = \lambda^i_0 + \lambda^i_1 T + \ldots+\lambda^i_m T^m \in K[T]$ tiene a $x_i$ por raíz.
+
+$\Leftarrow$) Lo probamos por inducción. Escribimos solo el caso base $A=K[x_1]$. Consideramos el homomorfismo evaluación $\operatorname{eval}_{x_1}:K[T]\to A$. El núcleo $\ker \operatorname{eval}_{x_1}$ es un ideal primo de $K[T]$. Efectivamente, si $f, g \in K[T]$ son tales que $0 = fg (x_1) = f(x_1)g(x_1)$ entonces por ser $A$ un DI, $f(x_1)=0$ ó $g(x_1) = 0$, como queríamos probar. Por ser $K$ un cuerpo, $K[T]$ es un DIP (es dominio euclídeo) y así $\ker \operatorname{eval}_{x_1}$ es un ideal maximal, está generado por un elemento irreducible $f$, y entonces por la caracterización de maximales $K[T]/\gen{f} \cong \im \operatorname{eval}_{x_1}$ es un cuerpo. Dado que la imagen es un cuerpo que contiene a $K$ y a $x_1$ y está contenida en $A$, debe coincidir con A.
+
+Tomamos $f$ el único polinomio mónico irreducible que genera el núcleo. Resulta que el grado  $n$ de $f$ es la dimensión de $K[x_1]$. Efectivamente, $1+\gen{f}, \dots, T^{n-1}+\gen{f}$ es una base de $K[T]/\gen{f}$ (demostración en el libro de Gamboa). Además el isomorfismo $g+\gen{f} \mapsto g(x_1)$ entre $K[T]/\gen{f}$ e $\im \operatorname{eval}_{x_1}$ es un isomorfismo de $K$-espacios vectoriales porque deja fijos todos los elementos de $K$. Entonces $1, x_1, \ldots, x_1^{n-1}$ es una base de $A=K[x_1]$.
 
 \end{document}
