@@ -368,6 +368,23 @@ Denotemos por $\text{CRing}$ a la categoría de anillos conmutativos unitarios. 
 	\varphi:=f^{-1}\circ\psi:&M&\longrightarrow&N'
 	\end{array}$$
 	está bien definido. Así, componiendo $f$ por la izquierda tenemos la igualdad $\psi=f\circ\varphi$; de forma equivalente, $\psi\in\text{im}(f_*)$ como queríamos probar.
+	
+	Probemos ahora $2$). Sea $\psi\in\Hom_A(M'',N)$ tal que $\psi\circ\psi\eqiv0$. Como $g$ es suprayectiva, la suposición anterior implica que $M''=\text{im}(g)\subset\ker\psi$; es decir, $\psi\equiv0_{\Hom_A(M'',N)}$ y $g^*$ es inyectiva.
+	
+	Veamos ahora que $\text{im}(g^*)=\ker(f^*)$. En primer lugar, si $\psi\in\text{im}(g^*)$, existe $\varphi\in\Hom_A(M'',N)$ tal que $\psi=\varphi\circ g$. Por ser esto así, se tiene
+	$$f^*(\psi)=\psi\circ f=(\varphi\circ g)\circ f=\varphi\circ(g\circ f)=\varphi\circ 0_{\Hom_A(M',M'')}=0_{\Hom_A(M',N)},
+	$$
+	es decir, $\text{im}(g^*)\subset\ker(f^*)$.
+	
+	Ahora, sea $\psi\in\ker(f^*)$, i.e, $\psi\circ f\equiv0_{\Hom_A(M',N)}$. Por un lado, $\ker(g)=\text{im}(f)\subset\ker(\psi)$. Por otro, como $g$ es sobreyectiva, para todo $x\in M''$ existe $m_x\in M$ tal que $g(m_x)=x$. Podemos definir así la siguiente aplicación
+	$$\begin{array}{rrcl}
+	\varphi&M''&\longrightarrow&N\\
+	&x&\longmapsto&\psi(m_x) 
+	\end{array}.$$
+	Veamos que está bien definida. Supongamos que existen $m_x,{m_x}'\in M$ distintos de forma que $g(m_x)=g({m_x}')=x$. Por darse $\ker(g)\subset\ker(\psi)$ y ser $g$ homomorfismo de $A$-módulos, $m_x-{m_x}'\in\ker(g)\subset\ker(\psi)$, es decir, $\psi(m_x)=\psi({m_x}')$. 
+	Tras comprobar que $\varphi$ es un homomorfismo de $A$-módulos, tenemos que para cada $x\in M$ se verifica
+	$$\varphi(g(x))=\psi(x);$$
+	es decir, $\psi=\varphi\circ g$.
 \end{proof}
 
 \section{Módulos proyectivos}
