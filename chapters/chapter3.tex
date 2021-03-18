@@ -452,7 +452,126 @@ también es exacta. Por $\ref{pry}$, esto es equivalente a que para cualesquiera
 	Por hipótesis, $M$ es $A$-módulo proyectivo, es decir, tomando $\pi\in\Hom_A(A^{(I)},M)$ suprayectivo y $1_M\in\Hom_A(M,M)$, existe $h\in\Hom_A(M,A^{(I)})$ tal que $\pi\circ h=1_M$; es decir, por $\ref{esc}$ la sucesión anterior es escindida y $A^{(I)}\cong \ker\pi\oplus M$.
 \end{proof}
 
-%%% ESTO ES PARA METERLO DONDE SEA
-\include{remark_ker.tex}
+\section{Producto tensorial de módulos}
+\begin{definition} Sean $M$, $N$ y $P$ $A$-módulos. Una aplicación$$\Phi:M\times N\longrightarrow P$$ se dice $A$-bilineal si se verfican las siguientes condiciones.\begin{itemize}
+    \item [1)] Para cada $m_1,m_2\in M$, $n\in N$, $\Phi(m_1+m_2,n)=\Phi(m_1,n)+\^Phi(m_2,n)$
+    \item [2)] Para cada $m\in M$, $n_1,n_2\in N$, $\Phi(m,n_1+n_2)=\Phi(m,n_1)+\Phi(m,n_2)$
+    \item [3)] Para cada $m\in M$, $n\in N$, $\lambda\in A$, $\Phi(\lambda m,n)=\Phi(m,\lambda n)=\lambda\Phi(m,n)$
+\end{itemize}
+\end{definition}
+\begin{remark} Análogamente, podemos definir el concepto de aplicaciones multilineales de la siguiente forma. Dados $M_1,\dots ,M_r$ $A$-módulos,$$\Phi:M_1\times\dots\times M_r\longrightarrow P$$ se dice multilineal si para cada $i\in\{1,\dots,r\}$\begin{itemize}
+    \item $Phi(m_1,\dots,m_i+m_i',\dots,m_r)=\Phi(m_1,\dots,m_i,\dots,m_r)+\Phi(m_1,\dots,m_i',\dots,m_r)$
+    \item $\Phi(m_1,\dots,\lambda m_i,\dots,m_r)=\lambda\Phi(m_1,\dots,m_i,\dots,m_r)$
+\end{itemize}
+Con $\lambda\in A$ y $m_j\in M_j$ para cada $j\in\{1,\dots,r\}$
+\end{remark}
+\begin{remark}
+  Si $M, M'$ son $A$-módulos, $g:M\to M'$ es suprayectiva, y $N\subset \ker g$, entonces el siguiente diagrama conmuta
+  \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt
 
+  \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+  %uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+  %Curve Lines [id:da06639929221173313]
+  \draw    (291.8,208.9) .. controls (262.25,195.11) and (335.54,182.29) .. (307.17,208.67) ;
+  \draw [shift={(305.8,209.9)}, rotate = 318.81] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+  %Curve Lines [id:da2113069658179978]
+  \draw    (281.8,154.9) .. controls (252.1,141.04) and (350.79,127.18) .. (300.37,156.01) ;
+  \draw [shift={(298.8,156.9)}, rotate = 330.95] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+  % Text Node
+  \draw (241,82.4) node [anchor=north west][inner sep=0.75pt]    {$M$};
+  % Text Node
+  \draw (391,162.4) node [anchor=north west][inner sep=0.75pt]    {$M'$};
+  % Text Node
+  \draw (346,92.4) node [anchor=north west][inner sep=0.75pt]    {$g$};
+  % Text Node
+  \draw (217,163.4) node [anchor=north west][inner sep=0.75pt]    {$M/\ker g$};
+  % Text Node
+  \draw (229,252.4) node [anchor=north west][inner sep=0.75pt]    {$M/N$};
+  % Text Node
+  \draw (145,255.4) node [anchor=north west][inner sep=0.75pt]    {$m+N$};
+  % Text Node
+  \draw (134,163.4) node [anchor=north west][inner sep=0.75pt]    {$m+\ker g$};
+  % Text Node
+  \draw (161,81.4) node [anchor=north west][inner sep=0.75pt]    {$m$};
+  % Text Node
+  \draw (440,162.4) node [anchor=north west][inner sep=0.75pt]    {$g( m)$};
+  % Connection
+  \draw    (262,96.3) -- (386.23,161.46) ;
+  \draw [shift={(388,162.39)}, rotate = 207.68] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+  % Connection
+  \draw    (250,102) -- (250,159) ;
+  \draw [shift={(250,159)}, rotate = 270] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (17.64,-3.29) .. controls (13.66,-1.4) and (10.02,-0.3) .. (6.71,0) .. controls (10.02,0.3) and (13.66,1.4) .. (17.64,3.29)(10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+  % Connection
+  \draw    (250.43,248) -- (250.07,183) ;
+  \draw [shift={(250.07,183)}, rotate = 449.68] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (17.64,-3.29) .. controls (13.66,-1.4) and (10.02,-0.3) .. (6.71,0) .. controls (10.02,0.3) and (13.66,1.4) .. (17.64,3.29)(10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+  % Connection
+  \draw    (270.77,248) -- (386.28,179.6) ;
+  \draw [shift={(388,178.59)}, rotate = 509.37] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+  % Connection
+  \draw    (286,170.76) -- (386,170.11) ;
+  \draw [shift={(388,170.1)}, rotate = 539.62] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+  % Connection
+  \draw    (168.15,249) -- (168.85,185) ;
+  \draw [shift={(168.87,183)}, rotate = 450.62] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+  \draw [shift={(168.15,249)}, rotate = 450.62] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (0,5.59) -- (0,-5.59)   ;
+  % Connection
+  \draw    (168.59,103) -- (168.91,157) ;
+  \draw [shift={(168.93,159)}, rotate = 269.65] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+  \draw [shift={(168.59,103)}, rotate = 269.65] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (0,5.59) -- (0,-5.59)   ;
+
+  \end{tikzpicture}
+\end{remark}
+\begin{proposition} Dados dos $A$-módulos $M$ y $N$, existe un $A$-módulo $M\otimes_AN$ y una aplicación $A$-bilineal $\delta:M\times N\rightarrow M\otimes_AN$ tal que para cada $A$-módulo $P$ y para cada $F:M\times N\rightarrow P$ $A$-bilineal, existe una única aplicación $A$-lineal $f:M\otimes_AN:\rightarrow P$ tal que $f\circ\delta =F$.
+
+Además, el par $(\delta,M\otimes_AN)$ es único, en el sentido que de existir otro par $(\delta',T)$ que verifique las condiciones del enunciado, se tiene que $T\cong M\otimes_AN$.
+
+Al $A$-módulo $M\otimes_AN$ se le llama producto tensorial de $M$ y $N$.
+\end{proposition}
+\begin{proof}
+Para ver la unicidad, supongamos que $(\delta,T)$ y $(\delta',T')$  cumplen las condiciones de la proposición. Poniendo a $T'$ como $P$ y a $\delta'$ como $F$, el resultado garantiza la existencia de $j:T\rightarrow T'$ tal que $\delta'=j\circ\delta$. Intercambiando los roles de $T$ y $T'$, se tiene $j':T'\rightarrow T$ tal que $\delta=j'\circ\delta'$. Entonces, cada una de las composiciones $j\circ j'$ y $j'\circ j$ son la identidad, lo cual garantiza que $j$ sea un isomorfismo.
+
+Para la existencia, procedemos como sigue. Consideremos $A^{(M\times N)}$, la suma directa de $A$ tantas veces como elementos tenga $M\times N$. Definimos el siguiente subconjunto de $A^{(M\times N)}$ $$S=\{e_{(m+m',n)}-e_{(m,n)}-e_{(m',n)}, e_{(m,n+n')}-e_{(m,n)}-e_{(m,n')}, e_{(m,\lambda n)}-\lambda e_{(m,n)}, e_{(\lambda m,n)}-\lambda e_{(m,n)}\}$$   con $m,m'\in M$, $n,n'\in N$ y $\lambda\in A$.
+
+Ahora tomamos $\Sigma$ el submódulo generado por $S$. Se cumple $\Sigma\subset A^{(M\times N)}$, luego podemos definir el cociente $A^{(M\times N)}/\Sigma$, que es un $A$-módulo. Entonces, definimos
+$$\begin{array}{rcl}
+    M\times N&\overset{\delta}{\longrightarrow}&\faktor{A^{(M\times N)}}{\Sigma}\\
+    (m,n)&\longmapsto&[e_{(m,n)}]
+    \end{array}$$
+Ver que $\delta$ es bilineal es trivial por cómo se ha definido $S$. Por ejemplo, dados $m,m'\in M$, $n\in N$, $\delta(m+m',n)=[e_{(m+m',n)}]=[e_{(m,n)}+e_{(m',n)}]=[e_{(m,n)}]+[e_{(m',n)}]=\delta(m,n)+\delta(m',n)$.
+
+Ponemos $M\otimes_AN=A^{(M\times N)}/\Sigma$. Definimos
+$$\begin{array}{rrcl}
+	f_0:&A^{M\times N}&\longrightarrow&P  \\
+	&e_{(m,n)}&\longmapsto&F(m,n)
+	\end{array}$$
+que está bien definida ya que $\{e_{(m,n)}:(m,n)\in M\times N\}$ es un sistema de generadores de $A^{M\times N}$. Nótese que entonces $\{[e_{(m,n)}]: (m,n)\in M\times N\}$ es un sistema de generadores de $M\otimes_AN$. Por ser $F$ homomorfismo, $f_0$ es homomorfismo de $A$-módulos.
+
+Veamos que $\Sigma\subset ker(f_0)$. Com $\Sigma$ está generado por $S$, basta ver $S\subset ker(f_0)$. Pero esto es directo por ser $F$ bilineal y la definición de $S$. Por ejemplo, $$f_0(e_{(m+m',n)}-e_{(m,n)}-e_{(m',n)})=F(e_{(m+m',n)}-e_{(m,n)}-e_{(m',n)}=0$$
+Por tanto, siguiendo la observación anterior a la proposición, podemos definir
+$$\begin{array}{rrcl}
+	\tilde{f_0}:&\faktor{A^{M\times N}}{\Sigma}&\longrightarrow&P  \\
+	&[e_{(m,n)}]&\longmapsto&F(m,n)
+	\end{array}$$
+que está bien definida y cumple las condiciones del teorema.
+\end{proof}
+\begin{remark}
+\texit{1)} A las clases $[e_{(m,n)}]$ se les denota $m\otimes_An$ o simplemente $m\otimes n$.
+
+Todo elemento de $M\otimes_AN$ es suma $\sum_{i=1}^rm_j\otimes n_j$, para ciertos $m_j\in M$, $n_j\in N$ y $r\in\mathbb{N}$, ya que $[\lambda e_{(m,n)}]=[e_{(\lambda m,n)}]=[e_{(m,\lambda n)}]$ por la definición inicial de $S$.
+
+\textit{2)} Las aplicaciones bilineales de $M\times N$ en $P$, $Bil_A(M\times N,P)$ están en correspondencia biyectiva con $Hom_A(M\otimes_AN,P)$.
+
+En particular, si tomamos $A$ como $K$ cuerpo y $M$ y $N$ $K$-espacios vectoriales,$$Hom_A(M\otimes_KN,K)=(M\otimes_KN)^{\ast}=Bil_K(M\times N,K)$$
+\end{remark}
+La construcción del producto tensorial de módulos se puede generalizar. Dados $M_1,\dots,M_r$ $A$-módulos, existe un $A$-módulo $M_1\otimes_A\dots\otimes_AM_r$ y$$\delta:M_1\times\dots\times,M_r\longrightarrow M_1\otimes_A\dots\otimes_AM_r$$ multilineal tal que para cualquier $$\Phi:M_1\times\dots\times,M_r\longrightarrow P$$ $A$-multilineal, existe una única $$f:M_1\otimes_A\dots\otimes_AM_r\longrightarrow P$$ $A$-lineal tal que $f\circ\delta=F$
+
+En estas construcciones se tienen las siguientes propiedades.\begin{itemize}
+    \item [1)] Dados $M_1,M_2$ y $M_3$ $A$-módulos, $M_1\otimes_AM_2\otimes M_3\overset{isom}{\cong}(M_1\otimes_AM_2)\otimes_AM_3\overset{isom}{\cong}M_1\otimes_A(M_2\otimes_AM_3)$
+    \item [2)] $M\otimes_AN=N\otimes_AM$
+    \item [3)] Dados $f:M_1'\rightarrow M_1$ y $g:M_2'\rightarrowM_2$ $A$-lineales, existe $f\otimes g:M_1'\otimes_AM_2'\rightarrow M_1\otimes M_2$ $A$-lineal tal que el diagrama es conmutativo.
+
+    En particular, si $M\in Obj(Mod_A)$, $M\otimes\_$ es un funtor covariante de $Mod_A$ en $Mod_A$ (Véase Apéndice A)
+    \end{itemize}
 \end{document}
