@@ -373,48 +373,69 @@ Ahora, dados dos conjuntos de índices no vacíos $I$ y $J$, supongamos que exis
 Denotemos por $\text{CRing}$ a la categoría de anillos conmutativos unitarios. Dado $A\in\text{Obj}(\text{CRing})$, denotaremos a su vez por $\text{Mod}_A$ a la categoría de $A$-módulos.
 
 \begin{proposition}\label{pry}
-	Dados $M,M',M'',N,N',N''\in\Obj(\Mod_A)$, se tiene lo siguiente siguiente.
-	\begin{itemize}
-		\item[1)] Si$$0\longrightarrow N'\overset{f}{\longrightarrow}N\overset{g}{\longrightarrow}N''$$
-		es una sucesión exacta, entonces$$0\longrightarrow \Hom_A(M,N')\overset{\Hom_A(M,f)}{\longrightarrow}\Hom_A(M,N)\overset{\Hom_A(M,g)}{\longrightarrow}\Hom_A(M,N'')$$
-		es también una sucesión exacta.
-		\item[2)] Si$$M'\overset{f}{\longrightarrow}M\overset{g}{\longrightarrow}M''\longrightarrow 0$$
-		es una sucesión exacta, entonces
-		$$0\longrightarrow\Hom_A(M'',N)\overset{\Hom_A(g,N)}{\longrightarrow}\Hom_A(M,N)\overset{\Hom_A(f,N)}{\longrightarrow}\Hom_A(M',N)$$
-		es también una sucesión exacta.
-	\end{itemize}
+\begin{itemize}
+    \item[1)] Sea\begin{equation}\label{equation:s1}
+        0\longrightarrow N'\overset{f}{\longrightarrow}N\overset{g}{\longrightarrow}N''
+    \end{equation}
+    una sucesión de $A$-módulos y homomorfismos. Entonces (\ref{equation:s1}) es exacta si, y sólo si, para todo $N\in\Obj(\Mod_A)$ la sucesión\begin{equation}\label{equation:s1'}
+        0\longrightarrow \Hom_A(M,N')\overset{\Hom_A(M,f)}{\longrightarrow}\Hom_A(M,N)\overset{\Hom_A(M,g)}{\longrightarrow}\Hom_A(M,N'')
+    \end{equation}
+    es también una sucesión exacta.
+    \item[2)] Sea\begin{equation}\label{equation:s2}
+        M'\overset{f}{\longrightarrow}M\overset{g}{\longrightarrow}M''\longrightarrow 0
+    \end{equation}
+    una sucesión de $A$-módulos y homomorfismos. Entonces (\ref{equation:s2}) es exacta si, y sólo si, para todo $M\in\Obj(\Mod_A)$ la sucesión
+    \begin{equation}\label{equation:s2'}0\longrightarrow\Hom_A(M'',N)\overset{\Hom_A(g,N)}{\longrightarrow}\Hom_A(M,N)\overset{\Hom_A(f,N)}{\longrightarrow}\Hom_A(M',N)\end{equation}
+    es también una sucesión exacta.
+\end{itemize}
 \end{proposition}
 \begin{proof}
-	Veamos $1$). Denotemos $f_*:=\Hom_A(M,f)$ y $g_*:=\Hom_A(M,g)$. En primer lugar, por definición de $f_*$ y dado $\varphi\in\Hom_A(M,N')$, si $f\circ\varphi\equiv0_{N}$, entonces para toda $x\in M$ se tiene $\varphi(x)=0$ por la inyectividad de $f$ (si existiera $x\in M$ tal que $\varphi(x)\neq0_{N'}$, entonces $f(\varphi(x))\neq0_N$). Así, vemos que $f_*$ es inyectiva.
+Veamos $(\Rightarrow)$ en $1$). Denotemos $f_*:=\Hom_A(M,f)$ y $g_*:=\Hom_A(M,g)$. En primer lugar, por definición de $f_*$ y dado $\varphi\in\Hom_A(M,N')$, si $f\circ\varphi\equiv0_{N}$, entonces para toda $x\in M$ se tiene $\varphi(x)=0$ por la inyectividad de $f$ (si existiera $x\in M$ tal que $\varphi(x)\neq0_{N'}$, entonces $f(\varphi(x))\neq0_N$). Así, vemos que $f_*$ es inyectiva.
 
-	Comprobemos ahora que $\text{im}(f_*)=\ker(g_*)$. En primer lugar, dado que $g_*\circ f_*=(g\circ f)_*$ y $g\circ f=0_{N''}$ resulta
-	$$g_*\circ f_*=0_{\Hom_A(M,N'')},$$
-	es decir, $\text{im}(f_*)\subset\ker(g_*)$.
-	Ahora, dado $\psi\in\Hom_A(M,N)$ tal que $g\circ\psi\equiv0$, se tiene que $\text{im}(\psi)\subset\ker(g)=\text{im}(f)$. Como $f$ es un isomorfismo sobre su imagen, el homomorfismo de $A$-módulos
-	$$\begin{array}{rrcl}
-	\varphi:=f^{-1}\circ\psi:&M&\longrightarrow&N'
-	\end{array}$$
-	está bien definido. Así, componiendo $f$ por la izquierda tenemos la igualdad $\psi=f\circ\varphi$; de forma equivalente, $\psi\in\text{im}(f_*)$ como queríamos probar.
+Comprobemos ahora que $\text{im}(f_*)=\ker(g_*)$. En primer lugar, dado que $g_*\circ f_*=(g\circ f)_*$ y $g\circ f=0_{N''}$ resulta
+$$g_*\circ f_*=0_{\Hom_A(M,N'')},$$
+es decir, $\text{im}(f_*)\subset\ker(g_*)$.
+Ahora, dado $\psi\in\Hom_A(M,N)$ tal que $g\circ\psi\equiv0$, se tiene que $\text{im}(\psi)\subset\ker(g)=\text{im}(f)$. Como $f$ es un isomorfismo sobre su imagen, el homomorfismo de $A$-módulos
+$$\begin{array}{rrcl}
+    \varphi:=f^{-1}\circ\psi:&M&\longrightarrow&N'
+\end{array}$$
+está bien definido. Así, componiendo $f$ por la izquierda tenemos la igualdad $\psi=f\circ\varphi$; de forma equivalente, $\psi\in\text{im}(f_*)$ como queríamos probar.
 
-	Probemos ahora $2$). Sea $\psi\in\Hom_A(M'',N)$ tal que $\psi\circ\psi\eqiv0$. Como $g$ es suprayectiva, la suposición anterior implica que $M''=\text{im}(g)\subset\ker\psi$; es decir, $\psi\equiv0_{\Hom_A(M'',N)}$ y $g^*$ es inyectiva.
+Probemos ahora $(\Rightarrow)$ en $2$). Sea $\psi\in\Hom_A(M'',N)$ tal que $\psi\circ\psi\equiv0$. Como $g$ es suprayectiva, la suposición anterior implica que $M''=\text{im}(g)\subset\ker\psi$; es decir, $\psi\equiv0_{\Hom_A(M'',N)}$ y $g^*$ es inyectiva.
 
-	Veamos ahora que $\text{im}(g^*)=\ker(f^*)$. En primer lugar, si $\psi\in\text{im}(g^*)$, existe $\varphi\in\Hom_A(M'',N)$ tal que $\psi=\varphi\circ g$. Por ser esto así, se tiene
-	$$f^*(\psi)=\psi\circ f=(\varphi\circ g)\circ f=\varphi\circ(g\circ f)=\varphi\circ 0_{\Hom_A(M',M'')}=0_{\Hom_A(M',N)},
-	$$
-	es decir, $\text{im}(g^*)\subset\ker(f^*)$.
+Veamos ahora que $\text{im}(g^*)=\ker(f^*)$. En primer lugar, si $\psi\in\text{im}(g^*)$, existe $\varphi\in\Hom_A(M'',N)$ tal que $\psi=\varphi\circ g$. Por ser esto así, se tiene
+$$f^*(\psi)=\psi\circ f=(\varphi\circ g)\circ f=\varphi\circ(g\circ f)=\varphi\circ 0_{\Hom_A(M',M'')}=0_{\Hom_A(M',N)},
+$$
+es decir, $\text{im}(g^*)\subset\ker(f^*)$.
 
-	Ahora, sea $\psi\in\ker(f^*)$, i.e, $\psi\circ f\equiv0_{\Hom_A(M',N)}$. Por un lado, $\ker(g)=\text{im}(f)\subset\ker(\psi)$. Por otro, como $g$ es sobreyectiva, para todo $x\in M''$ existe $m_x\in M$ tal que $g(m_x)=x$. Podemos definir así la siguiente aplicación
-	$$\begin{array}{rrcl}
-	\varphi&M''&\longrightarrow&N\\
-	&x&\longmapsto&\psi(m_x)
-	\end{array}.$$
-	Veamos que está bien definida. Supongamos que existen $m_x,{m_x}'\in M$ distintos de forma que $g(m_x)=g({m_x}')=x$. Por darse $\ker(g)\subset\ker(\psi)$ y ser $g$ homomorfismo de $A$-módulos, $m_x-{m_x}'\in\ker(g)\subset\ker(\psi)$, es decir, $\psi(m_x)=\psi({m_x}')$.
-	Tras comprobar que $\varphi$ es un homomorfismo de $A$-módulos, tenemos que para cada $x\in M$ se verifica
-	$$\varphi(g(x))=\psi(x);$$
-	es decir, $\psi=\varphi\circ g$.
+Ahora, sea $\psi\in\ker(f^*)$, i.e, $\psi\circ f\equiv0_{\Hom_A(M',N)}$. Por un lado, $\ker(g)=\text{im}(f)\subset\ker(\psi)$. Por otro, como $g$ es sobreyectiva, para todo $x\in M''$ existe $m_x\in M$ tal que $g(m_x)=x$. Podemos definir así la siguiente aplicación
+$$\begin{array}{rrcl}
+    \varphi&M''&\longrightarrow&N\\
+    &x&\longmapsto&\psi(m_x)
+\end{array}.$$
+Veamos que está bien definida. Supongamos que existen $m_x,{m_x}'\in M$ distintos de forma que $g(m_x)=g({m_x}')=x$. Por darse $\ker(g)\subset\ker(\psi)$ y ser $g$ homomorfismo de $A$-módulos, $m_x-{m_x}'\in\ker(g)\subset\ker(\psi)$, es decir, $\psi(m_x)=\psi({m_x}')$.
+Tras comprobar que $\varphi$ es un homomorfismo de $A$-módulos, tenemos que para cada $x\in M$ se verifica
+$$\varphi(g(x))=\psi(x);$$
+es decir, $\psi=\varphi\circ g$.
+
+Ahora vamos a probar las implicaciones $(\Leftarrow)$ tanto en $1$) como en $2$). Comenzamos con la de $2$). Para ver que $g$ es suprayectiva, tomamos en primer lugar $N:=\faktor{M''}{\text{im}(g)}$ en (\ref{equation:s2'}). Si consideramos la aplicación cociente $c:M''\longrightarrow N$, se tiene que $g^*(c)=c\circ g=0_{\Hom_A(M,N)}$; es decir, como $g^*$ es inyectiva, $c\equiv 0_{\Hom_A(M'',N)}$ y $M''=\text{im}(g)$.
+
+Tomemos ahora $N:=\faktor{M}{\text{im}(f)}$. De nuevo, si consideramos la aplicación cociente $c:M\longrightarrow N$, se tiene que $f^*(c)=c\circ f=0_{\Hom_A(M',N)}$ y $c\in\ker(f^*)$. Por esto último, existe $\varphi\in\Hom_A(M'',N)$ tal que $c=\varphi\circ g$. Si $x\in M$ es tal que $g(x)=0$, entonces $c(x)=0_N$ y $x\in\text{im}(f)$. Así, $\ker(g)\subset\text{im}(f)$. Para ver que $\ker(g)\supset\text{im}(f)$ basta tomar $N:=M''$ y observar que $$g^*(1_{M''})=g\in\ker(f^*);$$ es decir, $g\circ f=0_{\Hom_A(M',M'')}$ y se tiene lo que buscábamos.
+
+Comprobemos por último la suficiencia en $1$). Para ver que $f$ es inyectiva, tomemos $M:=\ker(f)$ y la inclusión $i:M\longrightarrow N'$, que es inyectiva. Por esta elección, tenemos que
+$$f_*(i)=f\circ i=0_{\Hom_A(M,N')}$$
+y , como por hipótesis $f_*$ es inyectiva, $i\equiv 0_{\Hom_A(M,N')}$. Ahora, como $i$ es inyectiva, se tiene que $\ker(f)=\{0_{N'}\}$, es decir, $f$ es inyectiva.
+
+Para ver $\ker(g)=\text{im}(f)$, veamos las dos inclusiones. En primer lugar, tomando $M:=N'$ y $1_{N'}\in\Hom_A(M,N')$, se tiene que
+$$f_*(1_{N'})=f\in\text{im}(f_*)=\ker(g_*),$$
+es decir, $g\circ f=0_{\Hom_A(N',N'')}$ y $\ker(g)\supset\text{im}(f)$. Para el otro contenido, definamos de forma análoga al caso anterior $M:=\ker(g)$ y consideremos la inclusión $i\in\Hom_A(M,N)$. Por esta elección tenemos que
+$$g_*(i)=g\circ i=0_{\Hom_A(M,N'')},$$
+es decir, $i\in\ker(g_*)=\text{im}(f_*)$ y por lo tanto existe $\varphi\in\Hom_A(M,N')$ de forma que $i=f\circ\varphi$. Es por esto que, dado $x\in M$ se verifica
+$$x=i(x)=f(\varphi(x))\in\text{im}(f).$$
+Así, $\ker(g)\subset\text{im}(f)$.
 \end{proof}
 
-\section{Módulos proyectivos}
+\section{Módulos proyectivos y módulos inyectivos}
 Supongamos $M\in\Obj(\Mod_A)$ tal que, siempre que se tenga una sucesión exacta
 $$0\longrightarrow N'\overset{f}{\longrightarrow}N\overset{g}{\longrightarrow}N''\longrightarrow 0,$$
 se tuviera que la sucesión
@@ -451,6 +472,29 @@ también es exacta. Por $\ref{pry}$, esto es equivalente a que para cualesquiera
 
 	Por hipótesis, $M$ es $A$-módulo proyectivo, es decir, tomando $\pi\in\Hom_A(A^{(I)},M)$ suprayectivo y $1_M\in\Hom_A(M,M)$, existe $h\in\Hom_A(M,A^{(I)})$ tal que $\pi\circ h=1_M$; es decir, por $\ref{esc}$ la sucesión anterior es escindida y $A^{(I)}\cong \ker\pi\oplus M$.
 \end{proof}
+
+Ahora, supongamos que $N\in\Obj(\Mod_A)$ es tal que, si la sucesión
+$$0\longrightarrow M'\overset{f}{\longrightarrow}M$$
+es exacta, entonces la sucesión
+$$\Hom_A(M,N)\overset{\Hom_A(f,N)}{\longrightarrow}\Hom_A(M',N)\longrightarrow0$$
+también lo es; es decir, para cualquier $\varphi\in\Hom_A(M',N)$, existe $\Phi\in\Hom_A(M,N)$ de forma que $\varphi=\Phi\circ f$. Por ser $f$ inyectiva, podemos interpretar $M'$ como un submódulo de $M$ (entender $f$ como una inclusión) y, por esto, nuestro problema se trata de un problema de extensión.
+
+Esta extensión no va a ser posible en general como muestra el siguiente ejemplo.
+\begin{example}
+    Sea $n\in\Z$ y consideremos $\langle n\rangle\subset\Z$ submódulo. Si definimos la aplicación
+    $$\begin{array}{rcl}
+        \langle n\rangle&\longrightarrow&\Z\\
+        n&\longmapsto&1_{\Z}\\
+        \lambda n&\longmapsto&\lambda
+    \end{array},$$
+    se comprueba que no puede extenderse a $\Z$.
+\end{example}
+
+Surge la siguiente definición.
+
+\begin{definition}
+    Diremos que $N\in\Obj(\Mod_A)$ es un $A$-módulo inyectivo si, para cualesquiera $M,M'\in\Obj(\Mod_A)$, $f\in\Hom_A(M',M)$ inyectiva y $\varphi\in\Hom_A(M',N)$, se tiene que existe $\Phi\in\Hom_A(M,N)$ de forma que $\varphi=\Phi\circ f$.
+\end{definition}
 
 \section{Producto tensorial de módulos}
 \begin{definition} Sean $M$, $N$ y $P$ $A$-módulos. Una aplicación$$\Phi:M\times N\longrightarrow P$$ se dice $A$-bilineal si se verfican las siguientes condiciones.\begin{itemize}
