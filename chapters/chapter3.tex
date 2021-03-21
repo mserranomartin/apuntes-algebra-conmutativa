@@ -31,7 +31,7 @@ Atendiendo al último ejemplo resulta que dados dos anillos $A, B$, dar a $B$ es
 \begin{definition}. Dado un anillo $A$ y un $A$-módulo $M$, diremos que $S\subset M$ es un \textit{submódulo de $M$} si es un subgrupo de $M$ cerrado para la multiplicación por elementos de $A$.
 \end{definition}
 
-\begin{remark} Si $A$ es un anillo, $\af\subseteq A$ un ideal, y $M$ un $A$-módulo entonces el conjunto$$\af M:=\left\{\sum_{i=1}^ra_im_i\ |\ r\in\N,\ a_i\in\af,\ m_i\in\N\right\}$$es un submódulo de $A$.
+\begin{remark} Si $A$ es un anillo, $\af\subseteq A$ un ideal, y $M$ un $A$-módulo entonces el conjunto$$\af M:=\left\{\sum_{i=1}^ra_im_i\ |\ r\in\N,\ a_i\in\af,\ m_i\in\N\right\}$$es un submódulo de $M$.
 \end{remark}
 
 \begin{definition}. Sean $(A,+,\cdot)$ anillo, $M$ y $N$ $A$-módulos. Una aplicación $f:M\longrightarrow N$ se dice que es un homomorfismo de $A$-módulos o, simplemente, que es una aplicación $A$-lineal si verifica
@@ -41,15 +41,17 @@ Atendiendo al último ejemplo resulta que dados dos anillos $A, B$, dar a $B$ es
 \end{itemize}
 \end{definition}
 
-\textbf{Observaciones}. \textit{\textit{i})} En un $A$-módulo $M$ se tiene que\begin{align*}
-    &\forall\ m\in M \hspace{15pt}0_Am=0_M\\
-    &\forall\ \lambda\in A \hspace{15pt}\lambda0_M=0_M.
-\end{align*}
-Para ver lo primero basta observar que para todo $m\in M$ se tiene que $0_Am+m=(0_A+1_A)m=1_Am=m$, es decir, $0_Am=0_M$. De aquí se desprende también que $$(-1_A)(1_M)=-1_M=(1_A)(-1_M)$$ puesto que $0_M=0_A1_M=(1_A-1_A)1_M=1_A1_M+(-1_A)(1_M)=1_M+(-1_A)(1_M)$.
+\begin{remark}
+\begin{enumerate}
+  \item En un $A$-módulo $M$ se tiene que\begin{align*}
+      &\forall\ m\in M \hspace{15pt}0_Am=0_M\\
+      &\forall\ \lambda\in A \hspace{15pt}\lambda0_M=0_M.
+  \end{align*}
+  Para ver lo primero basta observar que para todo $m\in M$ se tiene que $0_Am+m=(0_A+1_A)m=1_Am=m$, es decir, $0_Am=0_M$. De aquí se desprende también que $$(-1_A)(1_M)=-1_M=(1_A)(-1_M)$$ puesto que $0_M=0_A1_M=(1_A-1_A)1_M=1_A1_M+(-1_A)(1_M)=1_M+(-1_A)(1_M)$. También se desprende que, para $\lambda\in A$ y $m\in M$ fijados (arbitrarios), $\lambda0_M=\lambda(0_Am)=(\lambda0_A)m=0_Am=0_M$; esto es, la segunda propiedad.
 
-También se desprende que, para $\lambda\in A$ y $m\in M$ fijados (arbitrarios), $\lambda0_M=\lambda(0_Am)=(\lambda0_A)m=0_Am=0_M$; esto es, la segunda propiedad.
-
-\textit{ii}) Dado un homomorfismo de $A$-módulos, $f:M\longrightarrow N$, se tiene que $\ker(f):=\{x\in M\ |\ f(x)=0_N\}$ es un submódulo de $M$ y que $\text{im}(f):=\{y\in N\ |\ \exists\ x\in M\ \text{tal que}\ f(x)=y\}$ es un submódulo de $N$.
+  \item Dado un homomorfismo de $A$-módulos, $f:M\longrightarrow N$, se tiene que $\ker(f):=\{x\in M\ |\ f(x)=0_N\}$ es un submódulo de $M$ y que $\text{im}(f):=\{y\in N\ |\ \exists\ x\in M\ \text{tal que}\ f(x)=y\}$ es un submódulo de $N$.
+\end{enumerate}
+\end{remark}
 
 \section{Construcciones con $A$-módulos}
 \subsection{Módulos cociente}
@@ -75,33 +77,38 @@ $$\begin{array}{rcl}
 \end{array}$$
 es un homomorfismo de $A$-módulos.
 \end{remark}
-\begin{subsection}{Anuladores}
+\subsection{Anuladores}
 \begin{definition} Dados $A$ un anillo y $M$ un $A$-módulo, definimos el anulador de $A$ en $M$ como$$Anul_A M = \{\lambda\in A\ |\  \lambda\cdot m=0, \forall m\in M\}$$
 \end{definition}
 
-\begin{remark} \textit{i)} $Anul_A M$ es un ideal de $A$:
+\begin{remark} \textit{i)}
 
-\begin{itemize}
-
-     \item[1)]Dados $\lambda_1, \lambda_2\in Anul_A M$, para cada $m\in M$, $\lambda_1\cdot m=\lambda_2\cdot m=0$. Restando, se obtiene $(\lambda_1-\lambda_2)\cdot m=0 \rightarrow \lambda_1 -\lambda_2\in Anul_A M$
-     \item[2)]Dado $\lambda\in Anul_AM$, para cada $\alpha\in A$ y para cada $m\in M$ se tiene $(\alpha\cdot\lambda)\cdot m=\alpha\cdot(\lambda\cdot m) =\alpha\cdot 0=0$, luego $\alpha\cdot\lambda\in Anul_AM$
-\end{itemize}
-Por tanto, $A/Anul_AM$ tiene estructura de anillo. Además, podemos ver a $M$ como un $A/Anul_AM$-módulo mediante la aplicación
-$$\begin{array}{rcl}
-    \faktor{A}{Anul_AM}\times M&\longrightarrow&M\\
-    (\lambda + Anul_AM)\cdot m&\longmapsto&\lambda\cdot m
-\end{array}$$
-\textit{ii)} Dado un ideal $\mathfrak{a}\subset Anul_AM$, $M$ es un $A/\mathfrak{a}$-módulo. Los submódulos de $M$ como $A/\mathfrak{a}$-módulo son los submódulos de $M$ como $A$-módulo.
+\begin{enumerate}
+  \item $Anul_A M$ es un ideal de $A$.
+  \begin{enumerate}
+    \item Dados $\lambda_1, \lambda_2\in Anul_A M$, para cada $m\in M$, $\lambda_1\cdot m=\lambda_2\cdot m=0$. Restando, se obtiene $(\lambda_1-\lambda_2)\cdot m=0 \rightarrow \lambda_1 -\lambda_2\in Anul_A M$
+    \item Dado $\lambda\in Anul_AM$, para cada $\alpha\in A$ y para cada $m\in M$ se tiene $(\alpha\cdot\lambda)\cdot m=\alpha\cdot(\lambda\cdot m) =\alpha\cdot 0=0$, luego $\alpha\cdot\lambda\in Anul_AM$
+  \end{enumerate}
+  Por tanto, $A/Anul_AM$ tiene estructura de anillo. Además, podemos ver a $M$ como un $A/Anul_AM$-módulo mediante la aplicación
+  $$\begin{array}{rcl}
+      \faktor{A}{Anul_AM}\times M&\longrightarrow&M\\
+      (\lambda + Anul_AM)\cdot m&\longmapsto&\lambda\cdot m
+  \end{array}$$
+  \item Dado un ideal $\mathfrak{a}\subset Anul_AM$, $M$ es un $A/\mathfrak{a}$-módulo. Los submódulos de $M$ como $A/\mathfrak{a}$-módulo son los submódulos de $M$ como $A$-módulo.
+\end{enumerate}
 \end{remark}
-\end{subsection}
-\begin{subsection}{Aplicaciones A-lineales}
+
+\subsection{Aplicaciones A-lineales}
 \begin{definition}. Dados $M$ y $N$ dos $A$-módulos, definimos \textit{el conjunto de aplicaciones $A$-lineales entre $M$ y $N$}
 $$\Hom_A(M,N):=\{f:M\longrightarrow N\ |\ f\text{ es aplicación }A\text{-lineal}\}
 $$
 \end{definition}
-\textbf{Proposición}. Dados $M$ y $N$ dos $A$-módulos, $\Hom_A(M,N)$ tiene estructura de $A$-módulo.
 
-Demostración. En primer lugar, definamos para cada $\lambda\in A$ y cada $f\in\Hom_A(M,N)$ la aplicación
+\begin{proposition}
+  Dados $M$ y $N$ dos $A$-módulos, $\Hom_A(M,N)$ tiene estructura de $A$-módulo.
+\end{proposition}
+\begin{proof}
+En primer lugar, definamos para cada $\lambda\in A$ y cada $f\in\Hom_A(M,N)$ la aplicación
 $$\begin{array}{rccl}
     \lambda f:&M&\longrightarrow&N\\
     &m&\longmapsto&\lambda(f(m))
@@ -149,8 +156,9 @@ Comprobemos por último que el producto exterior cumple los cuatro axiomas de la
     \item[\textit{iii})] $((\lambda\mu)f)(m)=(\lambda\mu)(f(m))=\lambda(\mu(f(m))=\lambda((\mu f)(m))=(\lambda(\mu f))(m)$ y
     \item[\textit{iv})] $(1_A f)(m)=1_A(f(m))=f(m)$.
 \end{itemize}
-\end{subsection}
-\begin{subsection}{Pullbacks}
+\end{proof}
+
+\subsection{Pullbacks}
 Dados $M_1$, $M_2$ y $N$ $A$-módulos y dada $\varphi\in\Hom_A(M_1,M_2)$, podemos definir
 $$\begin{array}{rrcl}
     \varphi^{\ast}:&Hom_A(M_2,N)&\longrightarrow&Hom_A(M_1,N)\\
@@ -165,8 +173,8 @@ $$\begin{array}{rrcl}
 es un homomorfismo de $A$-módulos.
 
 Nótese que si tenemos $M_1$, $M_2$ y $M_3$ $A$-módulos y $\varphi\in Hom_A(M_1,M_2)$ y $\psi\in Hom_A(M_2,M_3)$, entonces $(\psi\circ\varphi)^{\ast}=\varphi^{\ast}\circ\psi^{\ast}$
-\end{subsection}
-\begin{subsection}{Suma directa}
+
+\subsection{Suma directa}
 \begin{definition}. Sean $(A,+,\cdot)$ un anillo conmutativo unitario y $\{M_i\}_{i\in I}$ una familia no vacía de $A$-módulos. Definimos el conjunto
 $$
 \bigoplus_{i\in I}M_i:=\left\{{(m_i)}_{i\in I}\in\prod_{i\in I}M_i\ |\ m_i=0_{M_i},\forall\ i\in I\setminus F,\ F\subseteq I\ \text{finito}\right\}
@@ -174,34 +182,24 @@ $$
 y lo llamamos \textit{suma directa} de los $A$-módulos $\{M_i\}_{i\in I}$.
 \end{definition}
 
-\textbf{Proposición}. Sean $A$ un anillo y una familia $\{M_i\}_{i\in I}$ de $A$-módulos. Definamos las aplicaciones
-$$\begin{array}{rrcl}
-    +:&\bigoplus_{i\in I}M_i\times\bigoplus_{i\in I}M_i&\longrightarrow&\bigoplus_{i\in I}M_i\\
-    &({(m_i)}_i,{(m'_i)}_i)&\longmapsto&{(m_i)}_i+{(m'_i)}_i:={(m_i+m'_i)}_i,
-\end{array}$$
-y
-$$\begin{array}{rcl}
-    A\times\bigoplus_{i\in I}M_i&\longrightarrow&\bigoplus_{i\in I}M_i\\
-    (\lambda,{(m_i)}_i)&\longmapsto&\lambda{(m_i)}_i:={(\lambda m_i)}_i.
-\end{array}$$
-Se tiene que $(\bigoplus_{i\in I}M_i,+)$ es un grupo abeliano y $\bigoplus_{i\in I}M_i$ es un $A$-módulo mediante el producto exterior definido.
+\begin{proposition}
+  Sean $A$ un anillo y una familia $\{M_i\}_{i\in I}$ de $A$-módulos. Entonces $\bigoplus_{i\in I}M_i$ con la suma por coordenadas y el producto por escalares por coordenadas es un $A$-módulo.
+\end{proposition}
 
-\textbf{Observaciones}. \textit{\textit{i})} Para cada $j\in I$, tenemos definida $p_j:\bigoplus_{i\in I}M_i\rightarrow M_j$, la proyección a cada $M_j$. No es más que la restricción a $\bigoplus_{i\in I}M_i$ de la proyección $\Pi_j$ definida sobre el producto cartesiano $\Pi_{i\in I}M_i$. $p_j$ es un homomorfismo de $A$-módulos.
+\begin{remark}
+  \begin{enumerate}
+    \item Para cada $j\in I$, tenemos definida $p_j:\bigoplus_{i\in I}M_i\rightarrow M_j$, la proyección a cada $M_j$. No es más que la restricción a $\bigoplus_{i\in I}M_i$ de la proyección $\Pi_j$ definida sobre el producto cartesiano $\Pi_{i\in I}M_i$. $p_j$ es un homomorfismo de $A$-módulos.
+    \item Para cada $j\in I$, la inclusión $q_j:M_j \hookrightarrow \bigoplus_{i\in I}M_i$ es homomorfismo de anillos.
+  \end{enumerate}
+\end{remark}
+ \textit{\textit{i})}
 
-\textit{ii)} Para cada $j\in I$, definimos la inclusión
-$$\begin{array}{rrcl}
-q_j:&M_j&\longrightarrow&\bigoplus_{i\in I}M_i\\
-&x&\longmapsto&  (x) := \left\{ \begin{array}{ll}
-         0 & \mbox{si $i\neq j$};\\
-         x & \mbox{si $i=j$}.\end{array} \right.
-\end{array}$$
-
-$q_j$ es un homomorfismo de anillos.
+\textit{ii)}
 
 \textit{iii)} Para cada $x=(x_i)\in \bigoplus_{i\in I}M_i$, existe un número finito de índices $i_1,...,i_r$ tal que $x_{i_r}\neq 0$. Entonces, expresamos $x=\sum_{i\in {i_{i_1},...i_{i_r}}} q_i(x_i)$.
 
 \textbf{Notación.} Dado $A$ un anillo, $I$ un conjunto no vacío, denotamos $A^{(I)}=\bigoplus_{i\in i} A_i$, donde para cada $i\in I$, $A_i=A$. $A^{(I)}$ es un submódulo de $A^{I} = \prod_{i\in I} A_i$, con $A_i=A$ para cada $i\in I$.
-\end{subsection}
+
 \section{A-módulos libres}
 
 \begin{definition}. Dado un homomorfismo de $A$-módulos, $f:M\rightarrow N$, se dice que es un isomorfismo de $A$-módulos si existe $g:N\rightarrow M$ homomorfismo de $A$-módulos tal que $g\circ f = Id_M$ y $f\circ g = Id_N$, es decir, una inversa de $f$.
@@ -213,23 +211,36 @@ $q_j$ es un homomorfismo de anillos.
 \begin{lemma} Sean ${M_i:i\in I}$ un conjunto de $A$-módulos y sea $N$ otro $A$-módulo. Un homomorfismo $\Phi:\bigoplus_{i\in I} M_i \rightarrow N$ viene unívocamente determinado por los homomorfismos $\Phi \circ q_i:M_i \rightarrow N$. Análogamente, los homomorfismos $\Phi:N\rightarrow \bigoplus_{i\in I} M_i$ vienen unívocamente determinados por los homomorfismos $p_i\circ \Phi:N\rightarrow M_i$.
 \end{lemma}
 
-Demostración. Sea $\Phi:\bigoplus_{i\in I} M_i \rightarrow N$ un homomorfismo de $A$-módulos. Para cada $i\in I$, $\Phi \circ q_i$ es una composición de homomorfismos, luego es un homomorfismo de anillos.
+\begin{proof}
+Sea $\Phi:\bigoplus_{i\in I} M_i \rightarrow N$ un homomorfismo de $A$-módulos. Para cada $i\in I$, $\Phi \circ q_i$ es una composición de homomorfismos, luego es un homomorfismo de anillos.
 
 Recíprocamente, dados $\Phi_i:M_i\rightarrow N$ homomorfismo de $A$-módulos, para cada $i\in I$, definimos $\Phi:\bigoplus_{i\in I} M_i\rightarrow N$ de la siguiente forma:
 
 Para cada $\omega \in \bigoplus_{i\in I} M_i$, existen unos únicos $i_1,...,i_r$, todos ellos distintos, tales que $\omega=q_{i_1}(\omega_{i_1})+\cdots q_{i_r}(\omega_{i_r})$. Entonces, ponemos $\Phi(\omega)=\Phi_{i_1}(\omega_{i_1})+...+\Phi_{i_r}(\omega_{i_r})$. En el caso en el que $\omega$ sea $0$, ponemos $\Phi(\omega)=0$. $\Phi$ es un homomorfismo de anillos que cumple $\Phi\circ q_i = \Phi_i$, para cada $i\in I$.
+\end{proof}
 
 \textbf{Notación}. Denotamos al $\Phi$ de la demostración anterior como $\bigoplus_{i\in I} \Phi_i$
 
-\begin{proposition} Sea $A$ un anillo y $M$ un $A$-módulo. Son equivalentes
-\begin{itemize}
-    \item[1)] Existe $B:={\{m_i\}}_{i\in I}\subseteq M$ tal que para cada $x\in M$ existe $F\subseteq I$ cumpliendo que $x$ se puede expresar de forma única como$$x=\underset{\lambda_j\in A}{\sum_{j\in F}}\lambda_j m_j$$ y
-    \item[2)] $M\approx A^{(I)}$.
-\end{itemize}
-Si se da cualquiera de ellas se dice que $M$ es un \textit{$A$-módulo libre} y $B$ es una base. Además, en estas condiciones, dos bases $B$ y $B'$ de $M$ tienen el mismo cardinal, que se llama \textit{rango de $M$}.
-\end{proposition}
+\begin{definition}
+  Se dice que $M$ es un \textit{$A$-módulo libre} si $M \cong A^{(I)}$ para cierto conjunto $I$.
+\end{definition}
 
-Demostración. $(1\Rightarrow 2)$ En primer lugar, para cada $i\in I$ definimos las aplicaciones
+\begin{proposition} $M$ es un $A$-módulo libre si y solo si existe $B:={\{m_i\}}_{i\in I}\subseteq M$ tal que para cada $x\in M$ existe $F\subseteq I$ cumpliendo que $x$ se puede expresar de forma única como$$x=\underset{\lambda_j\in A}{\sum_{j\in F}}\lambda_j m_j$$. Si dos subconjuntos $B$ y $B'$ cumplen lo anterior, entonces tienen el mismo cardinal.
+\end{proposition}
+\begin{proof}
+$(2\Rightarrow 1)$ Supongamos que existe $\phi: A^{(I)}\rightarrow M$ un isomorfismo de $A$-módulos, para cierto conjunto de índices $I$. Sea, para cada $i\in I$, $m_i:=\phi(e_i)$, donde $e_i\in A^{(I)}$ viene dado por
+$$\begin{array}{rccl}
+    e_i= \left\{ \begin{array}{ll}
+         e_{ij}=0 & \mbox{si $i\neq j$};\\
+         e_{ii}=1_A & \mbox{}\end{array} \right.
+\end{array}$$
+Veamos que ${m_i:i\in I}$ verifica 1). Para cada $m\in M$, por ser $\phi$ sobreyectiva, existe un $\underline{x}\in A^{(I)}$ tal que $\phi(\underline{x})=m$. A su vez, existen $i_1,...,i_r\in I$ tales que $\underline{x}=q_{i_1}(x_{i_1})+...+q_{i_r}(x_{i_r})=x_{i_1}q_{i_1}(1_A)+...+x_{i_r}q_{i_r}(1_A)$. Por tanto, $\phi(\underline{x})=x_{i_1}\phi(e_{i_1})+...+x_{i_r}\phi(e_{i_r})=x_{i_1}m_{i_1}+...+x_{i_1}m_{i_r}=m$. Hemos escrito $m$ como una combinación lineal de elementos ${m_i:i\in I}$
+
+Supongamos ahora que para ciertos ${\{i_j\}}_{j\in\{1,\dots,r\}}\subset I$$$\lambda_{i_1}m_{i_1}+\cdots+\lambda_{i_r}m_{i_r}=0_M,\hspace{15pt}\lambda_{i_j}\in A.$$
+Por ser así, tenemos
+$$\Phi(\lambda_{i_1}e_{i_1}+\cdots+\lambda_{i_r}e_{i_r})=0_M\Longleftrightarrow\lambda_{i_1}e_{i_1}+\cdots+\lambda_{i_r}e_{i_r}=0_{A^{(I)}}\Longleftrightarrow\lambda_{i_j}=0_A\hspace{15pt}\forall\ j\in\{1,\dots,r\}.$$
+
+$(1\Rightarrow 2)$ En primer lugar, para cada $i\in I$ definimos las aplicaciones
 $$\begin{array}{rccl}
     \varphi_i:&A&\longrightarrow&M\\
     &1_A&\longmapsto&m_i.
@@ -249,18 +260,6 @@ $$\begin{array}{rccl}
 verificando $p_i\circ\psi=\psi_i$ es un homomorfismo de $A$-módulos y es único. Más aún, para cada $x\in M$ existe $F\subseteq I$ finito de forma que, $\psi_i(x)=0_A$ si $i\in I\setminus F$; es decir, $\psi(M)\subseteq A^{(I)}$.
 
 Por último, es claro por definición de los homomorfismos que $\varphi\circ\psi=Id_{M}$ y $\psi\circ\varphi=Id_{A^{(I)}}$.
-
-$(2\Rightarrow 1)$ Supongamos que existe $\phi: A^{(I)}\rightarrow M$ un isomorfismo de $A$-módulos, para cierto conjunto de índices $I$. Sea, para cada $i\in I$, $m_i:=\phi(e_i)$, donde $e_i\in A^{(I)}$ viene dado por
-$$\begin{array}{rccl}
-    e_i= \left\{ \begin{array}{ll}
-         e_{ij}=0 & \mbox{si $i\neq j$};\\
-         e_{ii}=1_A & \mbox{}\end{array} \right.
-\end{array}$$
-Veamos que ${m_i:i\in I}$ verifica 1). Para cada $m\in M$, por ser $\phi$ sobreyectiva, existe un $\underline{x}\in A^{(I)}$ tal que $\phi(\underline{x})=m$. A su vez, existen $i_1,...,i_r\in I$ tales que $\underline{x}=q_{i_1}(x_{i_1})+...+q_{i_r}(x_{i_r})=x_{i_1}q_{i_1}(1_A)+...+x_{i_r}q_{i_r}(1_A)$. Por tanto, $\phi(\underline{x})=x_{i_1}\phi(e_{i_1})+...+x_{i_r}\phi(e_{i_r})=x_{i_1}m_{i_1}+...+x_{i_1}m_{i_r}=m$. Hemos escrito $m$ como una combinación lineal de elementos ${m_i:i\in I}$
-
-Supongamos ahora que para ciertos ${\{i_j\}}_{j\in\{1,\dots,r\}}\subset I$$$\lambda_{i_1}m_{i_1}+\cdots+\lambda_{i_r}m_{i_r}=0_M,\hspace{15pt}\lambda_{i_j}\in A.$$
-Por ser así, tenemos
-$$\Phi(\lambda_{i_1}e_{i_1}+\cdots+\lambda_{i_r}e_{i_r})=0_M\Longleftrightarrow\lambda_{i_1}e_{i_1}+\cdots+\lambda_{i_r}e_{i_r}=0_{A^{(I)}}\Longleftrightarrow\lambda_{i_j}=0_A\hspace{15pt}\forall\ j\in\{1,\dots,r\}.$$
 
 Falta ver que todas las bases tienen un mismo cardinal. Para ello, usaremos las observaciones previas a la proposición.
 
@@ -282,8 +281,15 @@ Se comprueba que, para cada $i\in I$, $\tau_i$ es homomorfismo de $A$-módulos y
 Además, $\bigoplus_{i\in I}\tau_i$ es sobreyectivo y $\ker{\bigoplus_{i\in I}\tau_i}=\mathfrak{m}A^{(I)}$. Así, por el Primer Teorema de Isomorfía, $\bigoplus_{i\in I}\tau_i$ induce un isomorfismo de $\faktor{A}{\mathfrak{m}}$-módulos, $\widehat{\bigoplus_{i\in I}\tau_i}:\faktor{A^{(I)}}{\mathfrak{m}A^{(I)}}\longrightarrow\left(\faktor{A}{\mathfrak{m}}\right)^{(I)}$
 
 Ahora, dados dos conjuntos de índices no vacíos $I$ y $J$, supongamos que existe un isomorfismo de $A$-módulos $\Phi:A^{(I)}\longrightarrow A^{(J)}$. Por ser así, en concreto se tiene que $\Phi(\mathfrak{m}A^{(I)})=\mathfrak{m}A^{(J)}$ y $\Phi$ induce otro isomorfismo de $\faktor{A}{\mathfrak{m}}$-módulos, $\widehat{\Phi}:\faktor{A^{(I)}}{\mathfrak{m}A^{(I)}}\longrightarrow\faktor{A^{(J)}}{\mathfrak{m}A^{(J)}}$. De esta forma, resulta que $(\faktor{A}{\mathfrak{m}})^(I)\approx(\faktor{A}{\mathfrak{m}})^(J)$ y $\#(I)=\#(J)$.
+\end{proof}
 
-\textbf{Corolario}. Sea $M$ es un $A$-módulo libre, es decir, existe un conjunto $I$ tal que $M\cong A^{(I)}$, y sea $N$ otro $A$-módulo. Dados ${n_i:i\in I}\subset N$, existe un único homomorfismo de $A$-módulos $f:M\rightarrow N$ tal que $f(m_i)=n_i$ para cada $i\in I$, donde ${m_i: i\in I}$ es una base de $M$
+\begin{definition}
+  A cualquier conjunto $B$ que cumpla la proposición anterior se le llama base del $A$-módulo libre $M$, y a su cardinal se le llama \textit{rango de $M$}.
+\end{definition}
+
+\begin{corollary}
+  Sea $M$ es un $A$-módulo libre, es decir, existe un conjunto $I$ tal que $M\cong A^{(I)}$, y sea $N$ otro $A$-módulo. Dados ${n_i:i\in I}\subset N$, existe un único homomorfismo de $A$-módulos $f:M\rightarrow N$ tal que $f(m_i)=n_i$ para cada $i\in I$, donde ${m_i: i\in I}$ es una base de $M$.
+\end{corollary}
 
 \section{Sucesiones exactas}
 
@@ -293,9 +299,12 @@ Ahora, dados dos conjuntos de índices no vacíos $I$ y $J$, supongamos que exis
 \end{definition}
 \begin{remark} Una sucesión corta es exacta si y sólo si $f:M_1\rightarrow M_2$ es inyectiva, $g:M_2\rightarrow M_3$ es suprayectiva y $im(f)=ker(g)$
 \end{remark}
-\begin{example} \textit{1)} Dados $N\subset M$ $A$-módulos,$$0\longrightarrow N\longrightarrow M\longrightarrow\faktor{M}{N}\longrightarrow 0$$ es una sucesión corta exacta.
+\begin{example}
+  \begin{enumerate}
+    \item Dados $N\subset M$ $A$-módulos,$$0\longrightarrow N\longrightarrow M\longrightarrow\faktor{M}{N}\longrightarrow 0$$ es una sucesión corta exacta.
 
-	\textit{2)} Dados $M$ y $N$ $A$-módulos,$$0\longrightarrow M\overset{q_M}{\longrightarrow} M\oplus N\overset{p_N}{\longrightarrow} N\longrightarrow 0$$ es una también una sucesión corta exacta.
+    \item Dados $M$ y $N$ $A$-módulos,$$0\longrightarrow M\overset{q_M}{\longrightarrow} M\oplus N\overset{p_N}{\longrightarrow} N\longrightarrow 0$$ es una también una sucesión corta exacta.
+  \end{enumerate}
 \end{example}
 \begin{remark} Toda sucesión de homomorfismos de $A$-módulos se puede descomponer en varias sucesiones cortas.
 \end{remark}

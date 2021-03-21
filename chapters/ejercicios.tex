@@ -215,4 +215,49 @@ $\Leftarrow$) Lo probamos por inducción. Escribimos solo el caso base $A=K[x_1]
 
 Tomamos $f$ el único polinomio mónico irreducible que genera el núcleo. Resulta que el grado  $n$ de $f$ es la dimensión de $K[x_1]$. Efectivamente, $1+\gen{f}, \dots, T^{n-1}+\gen{f}$ es una base de $K[T]/\gen{f}$ (demostración en el libro de Gamboa). Además el isomorfismo $g+\gen{f} \mapsto g(x_1)$ entre $K[T]/\gen{f}$ e $\im \operatorname{eval}_{x_1}$ es un isomorfismo de $K$-espacios vectoriales porque deja fijos todos los elementos de $K$. Entonces $1, x_1, \ldots, x_1^{n-1}$ es una base de $A=K[x_1]$.
 
+\paragraph{Ejercicio 17} \textit{Sea $A$ un anillo y $f, g\in A[T]$ dos polinomios primitivos. Probar que $fg$ es un polinomio primitivo.}
+
+Supongamos que $fg$ no es primitivo. Entonces el ideal $\mathfrak a$ que generan sus coeficientes no es el total. Sea $\mathfrak m$ un ideal maximal que contiene a $\mathfrak a$.
+
+Consideramos $A/\mathfrak m [T] \cong (A/\mathfrak m)[T]$. Esto es cierto, podemos definir el homomorfismo suprayectivo $A[T] \to (A/\mathfrak m)[T]$ dado por $f= \sum a_iT^i \mapsto \sum (a_i+\mathfrak m) T^i$, cuyo núcleo es $\mathfrak m[T]$. Ese cociente es un cuerpo, en particular un dominio de integridad. La clase de $fg$ se anula en el cociente, pero no las clases de $f, g$ porque sus coeficientes generan todo $A$, y si se anulasen significaría que $\mathfrak m = A$. Y esto es absurdo porque $[fg] = [f][g]$.
+
+\paragraph{Ejercicio 18} \textit{Sea $A$ un anillo y $M$ un $A$-módulo. Definimos en $A\times M$ la multiplicación $(a,m)(b,n) = (ab,an+bm)$ con la suma natural y el producto de $A$-módulo. Probar que $A\times M$ es una $A$-álgebra con la suma natural y ese producto. ¿Es el homomorfismo $a\mapsto (a,0_M)$ inyectivo?}
+
+Para ver que es $A$-álgebra solo hay que demostrar que $A\times M$ es un anillo (conmutativo unitario). Como $(A,+)$ y $(M,+)$ son grupos abelianos, $(A\times M, +)$. donde la suma es por coordenadas, también es un grupo abeliano.
+
+El producto es conmutativo $(b,n)(a,m) = (ba,bm+an) = (ab,an+bm) = (a,m)(b,n)$ y distributivo:
+\begin{multline}
+  (a,m)[(b,m)+(c,k)]=(a,m)(b+c,m+k) = \left(a(b+c),a(n+k)+(b+c)m\right) = (ab+ac,an+ak+bm+cm) =\\ (ab,an+bm)+(ac,ak+cm) = (a,m)(b,n)+(a,m)(c,k)
+\end{multline}
+y tiene unidad $(a,m)(1_A,0) = (a1_A,a0+1_A m) = (a,m)$.
+
+
+Obviamente la inclusión de un factor en un producto cartesiano es siempre inyectiva.
+
+\paragraph{Ejercicio 19}
+
+\subparagraph{Ejercicio 17 del Atiyah}
+
+Comprobamos las dos condiciones para ser base. En primer lugar $\bigcup_{f\in A}X_f = \bigcup_{f\in A}\Spec A \setminus V(f) = \Spec A \setminus \bigcap_{f\in A}V(f) = \Spec A$. Esto último es porque $V(f)\cap V(g) = V(\{f,g\})$ para cualesquiera $f,g \in A$, luego $\bigcap_{f\in A}V(f) = V(A) = V(\gen{1}) = \varnothing$. En segundo lugar, sean $f, g \in A$ y $\mathfrak p \in X_f\cap X_g = \Spec A \setminus (V(f) \cup V(g))$. Entonces $f, g\not\in \mathfrak p$, y por ser primo $fg \not \in \mathfrak p$, luego $\mathfrak p \in X_{fg}$. Y si $\mathfrak q \in X_fg$, entonces $fg \not \in \mathfrak q$, y por ser ideal esto implica que $f \not \in \mathfrak q$ y $g \not \in \mathfrak q$, por tanto $X_fg \subset X_f \cap X_g$, lo que termina la demostración de que ese conjunto es base de la topología. Además tenemos los dos contenidos lo que demuestra (i).
+
+(i) $X_f \cap X_g = X_{fg}$.
+
+(ii) $\varnothing = \Spec A \setminus V(f) \iff V(f) = \Spec A \iff f \in \bigcap_{\mathfrak p \in \Spec A} \mathfrak p = \mathfrak N_A$.
+
+(iii) Sabemos que si $f\not\in \mathcal U(A)$, entonces existe un ideal maximal que lo contiene, en particular existe un ideal primo que lo contiene. Luego si ningún ideal primo lo contiene, no existe maximal que lo contenga, entonces no es unidad:  $\varnothing = V(f) \Rightarrow pf \not \in \mathfrak p \forall \mathfrak p \in \Spec A \Rightarrow f \not\in \mathcal U(A)$. Por otra parte, si $f$ es unidad, no puede estar contenido en ningún ideal que no sea el total, y por tanto no hay primo (un ideal propio) que lo contenga.
+
+(iv) $X_f = X_g \iff V(f) = V(g)$, y $\gen{f}$ es el menor radical que contiene a $f$, luego $\forall \mathfrak p \in V(f)$ se tiene $\gen{f} \subset \mathfrak p$ y que $\sqrt{\gen{f}} = \bigcap_{\mathfrak p \in V(f)} \mathfrak p = \bigcap_{\mathfrak p \in V(g)} \mathfrak{p} = \sqrt{\gen{g}}$.
+Recíprocamente, si $\bigcap_{\mathfrak p \in V(f)} \mathfrak p = \bigcap_{\mathfrak q \in V(g)} \mathfrak{q}$, dado $\mathfrak p \in V(f)$, $ \bigcap_{\mathfrak{q} \in V(g)} \mathfrak{q} \subset \mathfrak{p}$ y por ende $g \in \mathfrak p$ luego $\mathfrak p \in V(g)$; el otro contenido es análogo. Luego $V(f) = V(g)$ y por tanto $X_f = X_g$.
+
+(v) Basta comprobarlo para un recubrimiento por abiertos de la base. Sea $\{X_{f_i}\}_{i\in I}$ recubrimiento de $\Spec A$, y comprobemos que $\gen{\{f_i\}_{i\in I}} = \gen{1}$. Efectivamente, como $\Spec A = \bigcup{i\in I}X_{f_i} $, entonces
+
+\begin{equation}
+  \varnothing = \bigcap_{i\in I} V(f_i) = V(\{f_i\}_{i\in I}) = V(\gen{\{f_i\}_{i\in I}})
+\end{equation}
+
+lo que quiere decir que no hay ningún primo que contenga a $\gen{\{f_i\}_{i\in I}}$, en particular no hay ningún maximal que lo contenga, es decir, que $\gen{\{f_i\}_{i\in I}} = \gen{1}$. Entonces existe $J\subset I$ finito y existen $\set{\lambda_j}_{j\in J}$ tales que $1 = \sum_{j\in J} \lambda_j f_j$.
+Por tanto $\gen{ \set{f_j}_{j\in J}} = \gen{ 1}$ y así  $V(\gen{\{f_j\}_{j\in J}} )= \varnothing$ lo que implica $\bigcup_{j\in J} X_{f_j} = \Spec A$. COn lo que $\set{X_{f_j}}_{j\in J}$ es subrrecubrimiento finito de $\{X_{f_i}\}_{i\in I}$.
+
+(vi) Consideramos $(X_{g_i})_{i\in I}$ recubrimiento de $X_f$. Podemos completarlo a un recubrimiento de $\Spec A$, y por ser este compacto, admite un subrrecubrimiento finito $(X_{g_j})_{j\in J}$
+
 \end{document}
