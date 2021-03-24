@@ -494,76 +494,20 @@ Surge la siguiente definición.
 \end{definition}
 
 \section{Producto tensorial de módulos}
-\begin{definition} Sean $M$, $N$ y $P$ $A$-módulos. Una aplicación$$\Phi:M\times N\longrightarrow P$$ se dice $A$-bilineal si se verfican las siguientes condiciones.\begin{itemize}
-    \item [1)] Para cada $m_1,m_2\in M$, $n\in N$, $\Phi(m_1+m_2,n)=\Phi(m_1,n)+\^Phi(m_2,n)$
+\begin{definition} Sean $M$, $N$ y $P$ $A$-módulos. Una aplicación$\Phi:M\times N\longrightarrow P$ se dice $A$-bilineal si se verfican las siguientes condiciones.
+\begin{itemize}
+    \item [1)] Para cada $m_1,m_2\in M$, $n\in N$, $\Phi(m_1+m_2,n)=\Phi(m_1,n)+\Phi(m_2,n)$
     \item [2)] Para cada $m\in M$, $n_1,n_2\in N$, $\Phi(m,n_1+n_2)=\Phi(m,n_1)+\Phi(m,n_2)$
     \item [3)] Para cada $m\in M$, $n\in N$, $\lambda\in A$, $\Phi(\lambda m,n)=\Phi(m,\lambda n)=\lambda\Phi(m,n)$
 \end{itemize}
 \end{definition}
 \begin{remark} Análogamente, podemos definir el concepto de aplicaciones multilineales de la siguiente forma. Dados $M_1,\dots ,M_r$ $A$-módulos,$$\Phi:M_1\times\dots\times M_r\longrightarrow P$$ se dice multilineal si para cada $i\in\{1,\dots,r\}$\begin{itemize}
-    \item $Phi(m_1,\dots,m_i+m_i',\dots,m_r)=\Phi(m_1,\dots,m_i,\dots,m_r)+\Phi(m_1,\dots,m_i',\dots,m_r)$
+    \item $\Phi(m_1,\dots,m_i+m_i',\dots,m_r)=\Phi(m_1,\dots,m_i,\dots,m_r)+\Phi(m_1,\dots,m_i',\dots,m_r)$
     \item $\Phi(m_1,\dots,\lambda m_i,\dots,m_r)=\lambda\Phi(m_1,\dots,m_i,\dots,m_r)$
 \end{itemize}
 Con $\lambda\in A$ y $m_j\in M_j$ para cada $j\in\{1,\dots,r\}$
 \end{remark}
-\begin{remark}
-  Si $M, M'$ son $A$-módulos, $g:M\to M'$ es suprayectiva, y $N\subset \ker g$, entonces el siguiente diagrama conmuta
-  \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt
-
-  \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
-  %uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
-
-  %Curve Lines [id:da06639929221173313]
-  \draw    (291.8,208.9) .. controls (262.25,195.11) and (335.54,182.29) .. (307.17,208.67) ;
-  \draw [shift={(305.8,209.9)}, rotate = 318.81] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
-  %Curve Lines [id:da2113069658179978]
-  \draw    (281.8,154.9) .. controls (252.1,141.04) and (350.79,127.18) .. (300.37,156.01) ;
-  \draw [shift={(298.8,156.9)}, rotate = 330.95] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
-
-  % Text Node
-  \draw (241,82.4) node [anchor=north west][inner sep=0.75pt]    {$M$};
-  % Text Node
-  \draw (391,162.4) node [anchor=north west][inner sep=0.75pt]    {$M'$};
-  % Text Node
-  \draw (346,92.4) node [anchor=north west][inner sep=0.75pt]    {$g$};
-  % Text Node
-  \draw (217,163.4) node [anchor=north west][inner sep=0.75pt]    {$M/\ker g$};
-  % Text Node
-  \draw (229,252.4) node [anchor=north west][inner sep=0.75pt]    {$M/N$};
-  % Text Node
-  \draw (145,255.4) node [anchor=north west][inner sep=0.75pt]    {$m+N$};
-  % Text Node
-  \draw (134,163.4) node [anchor=north west][inner sep=0.75pt]    {$m+\ker g$};
-  % Text Node
-  \draw (161,81.4) node [anchor=north west][inner sep=0.75pt]    {$m$};
-  % Text Node
-  \draw (440,162.4) node [anchor=north west][inner sep=0.75pt]    {$g( m)$};
-  % Connection
-  \draw    (262,96.3) -- (386.23,161.46) ;
-  \draw [shift={(388,162.39)}, rotate = 207.68] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
-  % Connection
-  \draw    (250,102) -- (250,159) ;
-  \draw [shift={(250,159)}, rotate = 270] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (17.64,-3.29) .. controls (13.66,-1.4) and (10.02,-0.3) .. (6.71,0) .. controls (10.02,0.3) and (13.66,1.4) .. (17.64,3.29)(10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
-  % Connection
-  \draw    (250.43,248) -- (250.07,183) ;
-  \draw [shift={(250.07,183)}, rotate = 449.68] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (17.64,-3.29) .. controls (13.66,-1.4) and (10.02,-0.3) .. (6.71,0) .. controls (10.02,0.3) and (13.66,1.4) .. (17.64,3.29)(10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
-  % Connection
-  \draw    (270.77,248) -- (386.28,179.6) ;
-  \draw [shift={(388,178.59)}, rotate = 509.37] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
-  % Connection
-  \draw    (286,170.76) -- (386,170.11) ;
-  \draw [shift={(388,170.1)}, rotate = 539.62] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
-  % Connection
-  \draw    (168.15,249) -- (168.85,185) ;
-  \draw [shift={(168.87,183)}, rotate = 450.62] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
-  \draw [shift={(168.15,249)}, rotate = 450.62] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (0,5.59) -- (0,-5.59)   ;
-  % Connection
-  \draw    (168.59,103) -- (168.91,157) ;
-  \draw [shift={(168.93,159)}, rotate = 269.65] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
-  \draw [shift={(168.59,103)}, rotate = 269.65] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (0,5.59) -- (0,-5.59)   ;
-
-  \end{tikzpicture}
-\end{remark}
+\include{remark_ker.tex}
 \begin{proposition} Dados dos $A$-módulos $M$ y $N$, existe un $A$-módulo $M\otimes_AN$ y una aplicación $A$-bilineal $\delta:M\times N\rightarrow M\otimes_AN$ tal que para cada $A$-módulo $P$ y para cada $F:M\times N\rightarrow P$ $A$-bilineal, existe una única aplicación $A$-lineal $f:M\otimes_AN:\rightarrow P$ tal que $f\circ\delta =F$.
 
 Además, el par $(\delta,M\otimes_AN)$ es único, en el sentido que de existir otro par $(\delta',T)$ que verifique las condiciones del enunciado, se tiene que $T\cong M\otimes_AN$.
@@ -610,14 +554,12 @@ que está bien definida y cumple las condiciones del teorema.
   Al $A$-módulo $M\otimes_AN$ se le llama \emph{producto tensorial} de $M$ y $N$.
 \end{definition}
 
-<<<<<<< Updated upstream
 En particular, si tomamos $A$ como $K$ cuerpo y $M$ y $N$ $K$-espacios vectoriales,$$Hom_A(M\otimes_KN,K)=(M\otimes_KN)^{\ast}=Bil_K(M\times N,K)$$
 
 \textit{3)} La construcción del producto tensorial de módulos se puede generalizar. Dados $M_1,\dots,M_r$ $A$-módulos, existe un $A$-módulo $M_1\otimes_A\dots\otimes_AM_r$ y$$\delta:M_1\times\dots\times,M_r\longrightarrow M_1\otimes_A\dots\otimes_AM_r$$ multilineal tal que para cualquier $$\Phi:M_1\times\dots\times,M_r\longrightarrow P$$ $A$-multilineal, existe una única $$f:M_1\otimes_A\dots\otimes_AM_r\longrightarrow P$$ $A$-lineal tal que $f\circ\delta=F$
-=======
->>>>>>> Stashed changes
+
 \end{remark}
-\begin{lemma} Sean $Z$ y $Z'$ dos $A$-módulos. Sea $\{z_i\}_{i\in I}$ un sistema de generadores de $Z$ y sea $\{z_j'\}_{j\in J}$ un sistema de generadores de $Z'$. Entonces, $\{z_i\otimes z_j:(i,j)\in I\times J\}$ es un sistema de generadores de $Z\otimes_AZ'$.
+\begin{lemma} \label{generadores} Sean $Z$ y $Z'$ dos $A$-módulos. Sea $\{z_i\}_{i\in I}$ un sistema de generadores de $Z$ y sea $\{z_j'\}_{j\in J}$ un sistema de generadores de $Z'$. Entonces, $\{z_i\otimes z_j:(i,j)\in I\times J\}$ es un sistema de generadores de $Z\otimes_AZ'$.
 \end{lemma}
 \begin{proposition} Sea $A$ un anillo conmutativo unitario. Se cumple:\begin{enumerate}
     \item Dados $M,N$ y $P$ $A$-módulos, $$M\otimes_AN\otimes P\overset{isom}{\cong}(M\otimes_AN)\otimes_AP$$
@@ -628,34 +570,261 @@ En particular, si tomamos $A$ como $K$ cuerpo y $M$ y $N$ $K$-espacios vectorial
     \end{enumerate}
 \end{proposition}
 \begin{proof}
-\textit{1.} Definimos
+Comprobamos cada cosa.
+
+\textit{1.} Definimos la aplicación $A$-trilineal
 $$ \begin{array}{rrcl}
      F:&M\times N\times P&\longrightarrow&(M\otimes_AN)\otimes_AP\\
      &(m,n,p)&\longmapsto&(m\otimes n)\otimes p
 \end{array}
 $$
-Es una comprobación rutinaria ver que $F$ es una aplicación trilineal. Por tanto, existe una única $f:M\otimes_AN\otimes_AP\rightarrow (M\otimes_AN)\otimes_AP$ tal que $f(m\otimes n\otimes p)=f(\delta(m,n,p))=F(m,n,p)=(m\otimes n)\otimes p$, donde $\delta:M\otimes N\otimes P\rightarrow M\otimes_AN\otimes_AP$ es la aplicación que se obtiene en la proposición anterior.
+Existe una única $f:M\otimes_AN\otimes_AP\rightarrow (M\otimes_AN)\otimes_AP$ tal que $f(m\otimes n\otimes p)=F(m,n,p)=(m\otimes n)\otimes p$,
 
-Veamos como definir la flecha en sentido contrario. Para cada $p\in P$, definimos
+\begin{figure}
+  \centering
+
+  \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt
+
+  \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+  %uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+
+  % Text Node
+  \draw (178.2,82.9) node [anchor=north west][inner sep=0.75pt]    {$M\times N\times P$};
+  % Text Node
+  \draw (347.7,82.9) node [anchor=north west][inner sep=0.75pt]    {$( M\otimes N) \otimes P$};
+  % Text Node
+  \draw (177.2,183.4) node [anchor=north west][inner sep=0.75pt]    {$M\otimes N\otimes P$};
+  % Text Node
+  \draw (291.7,65.4) node [anchor=north west][inner sep=0.75pt]    {$F$};
+  % Text Node
+  \draw (319.2,143.9) node [anchor=north west][inner sep=0.75pt]    {$f$};
+  % Connection
+  \draw    (259.2,90.5) -- (342.7,90.5) ;
+  \draw [shift={(344.7,90.5)}, rotate = 180] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+  % Connection
+  \draw    (217.08,102.5) -- (216.34,177) ;
+  \draw [shift={(216.32,179)}, rotate = 270.57] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+  % Connection
+  \draw    (237.21,179) -- (369.45,103.49) ;
+  \draw [shift={(371.19,102.5)}, rotate = 510.27] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+  \end{tikzpicture}
+\end{figure}
+
+Veamos como definir la flecha en sentido contrario. Para cada $p\in P$ definimos la aplicación $A$-bilineal
 $$\begin{array}{rrcl}
 	\Phi_p:&M\times N&\longrightarrow&M\otimes_AN\otimes_AP  \\
 	&(m,n)&\longmapsto&m\otimes n\otimes p
 	\end{array}$$
-Es una comprobación rutinaria ver que es una apliación $A$-bilineal. Por tanto, existe una única $\varphi_p:M\otimes_AN\rightarrow M\otimes_AN\otimes_AP$ tal que $\varphi_p(m\otimes n)=\Phi_p(m,n)=m\otimes n\otimes p$.
+Existe una única $\varphi_p:M\otimes_AN\rightarrow M\otimes_AN\otimes_AP$ tal que $\varphi_p(m\otimes n)=\Phi_p(m,n)=m\otimes n\otimes p$
 
-Se comprueba también que para cada $p,p'\in P, \lambda\in A$, $\varphi_p\circ\varphi_{p'}=\varphi_{p+p'}$ y $\varphi_{\lambda p}=\lambda\varphi_p$. Entonces, definimos
+\begin{figure}
+  \centering
+
+  \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt
+
+  \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+  %uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+
+  % Text Node
+  \draw (178.2,82.9) node [anchor=north west][inner sep=0.75pt]    {$M\times N$};
+  % Text Node
+  \draw (347.7,82.9) node [anchor=north west][inner sep=0.75pt]    {$M\otimes N\otimes P$};
+  % Text Node
+  \draw (177.2,183.4) node [anchor=north west][inner sep=0.75pt]    {$M\otimes N$};
+  % Text Node
+  \draw (272.7,66.4) node [anchor=north west][inner sep=0.75pt]    {$\Phi _{p}$};
+  % Text Node
+  \draw (319.2,143.9) node [anchor=north west][inner sep=0.75pt]    {$\varphi _{p}$};
+  % Connection
+  \draw    (230.2,90.5) -- (342.7,90.5) ;
+  \draw [shift={(344.7,90.5)}, rotate = 180] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+  % Connection
+  \draw    (202.58,102.5) -- (201.84,177) ;
+  \draw [shift={(201.82,179)}, rotate = 270.57] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+  % Connection
+  \draw    (223.79,179) -- (362.85,103.45) ;
+  \draw [shift={(364.61,102.5)}, rotate = 511.49] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+  \end{tikzpicture}
+\end{figure}
+
+Observamos que si $p,p'\in P$, entonces $\varphi_p + \varphi_{p'}=\varphi_{p+p'}$ por unicidad ya que ambas completan el diagrama: $\varphi_p(m\otimes n)+\varphi_{p'}(m\otimes n) = m\otimes n\otimes p + m\otimes n\otimes p' = m\otimes n\otimes (p+p') = \varphi_{p+p'}(m\otimes n)$. Lo mismo ocurre con $\lambda \varphi_p = \varphi_{\lambda p}$.
+
+Sea entonces la aplicación $A$-bilineal
 $$\begin{array}{rrcl}
 	G:&(M\otimes_AN)\times P&\longrightarrow&M\otimes_AN\otimes_AP  \\
 	&(z,p)&\longmapsto&\varphi_p(z)
 	\end{array}$$
-Vuelve a ser rutinario ver que $G$ es $A$-bilineal. Entonces, existe una única $g:(M\otimes_AN)\otimes_AP\rightarrow M\otimes_AN\otimes_AP$ $A$-lineal tal que $g((m\otimes n)\otimes p)=G((m\otimes n),p)=\varphi_p(m\otimes n)=m\otimes n\otimes p$.
+Existe una única $g:(M\otimes_AN)\otimes_AP\rightarrow M\otimes_AN\otimes_AP$ aplicación $A$-lineal que hace conmutativo el diagrama siguiente
 
-<<<<<<< Updated upstream
-Por un lado, $(g\circ f)(m\otimes n\otimes p)=g((m\otimes n)\otimes p)=m\otimes n\otimes p$. Por tanto, $g\circ f=Id_{M\otimes N\otimes P}$
+\begin{figure}
+  \centering
+  \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt
 
-Por otro, $\{m\otimes n:(m,n)\in M\times N\}$ es sistema de generadores de $M\otimes_AN$. Por el lema anterior, $\{(m\otimes n)\otimes p: (m,n,p)\in M\times N\times P\}$ es sistema de generadores de $(M\otimes_AN)\otimes_AP$. Evaluando, $(f\circ g)((m\otimes n)\otimes p)=(m\otimes n)\otimes p)$ y concluimos $f\circ g)=Id_{(M\otimes_AN)\otimes_AP}$
+  \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+  %uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+
+  % Text Node
+  \draw (178.2,82.9) node [anchor=north west][inner sep=0.75pt]    {$( M\otimes N) \times P$};
+  % Text Node
+  \draw (347.7,82.9) node [anchor=north west][inner sep=0.75pt]    {$M\otimes N\otimes P$};
+  % Text Node
+  \draw (178.2,183.4) node [anchor=north west][inner sep=0.75pt]    {$( M\otimes N) \otimes P$};
+  % Text Node
+  \draw (291.7,66.9) node [anchor=north west][inner sep=0.75pt]    {$G$};
+  % Text Node
+  \draw (319.2,143.9) node [anchor=north west][inner sep=0.75pt]    {$g$};
+  % Connection
+  \draw    (270.2,90.5) -- (342.7,90.5) ;
+  \draw [shift={(344.7,90.5)}, rotate = 180] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+  % Connection
+  \draw    (222.7,102.5) -- (222.7,177) ;
+  \draw [shift={(222.7,179)}, rotate = 270] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+  % Connection
+  \draw    (242.28,179) -- (365.41,103.55) ;
+  \draw [shift={(367.12,102.5)}, rotate = 508.5] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+  \end{tikzpicture}
+\end{figure}
+
+Veamos entonces que la composición de ambas es la identidad. Para ello solo hace falta ver que deja los generadores de cada $A$-módulo invariantes. Efectivamente,
+
+\begin{figure}
+  \centering
+  \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt
+
+  \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+  %uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+
+  % Text Node
+  \draw (211.2,82.9) node [anchor=north west][inner sep=0.75pt]    {$( M\otimes N) \times P$};
+  % Text Node
+  \draw (373.7,82.9) node [anchor=north west][inner sep=0.75pt]    {$M\otimes N\otimes P$};
+  % Text Node
+  \draw (323.7,67.4) node [anchor=north west][inner sep=0.75pt]    {$g$};
+  % Text Node
+  \draw (59.2,83.9) node [anchor=north west][inner sep=0.75pt]    {$M\otimes N\otimes P$};
+  % Text Node
+  \draw (160.2,69.9) node [anchor=north west][inner sep=0.75pt]    {$f$};
+  % Text Node
+  \draw (62.2,122.9) node [anchor=north west][inner sep=0.75pt]    {$m\otimes n\otimes p$};
+  % Text Node
+  \draw (216.7,123.4) node [anchor=north west][inner sep=0.75pt]    {$( m\otimes n) \otimes p$};
+  % Text Node
+  \draw (376.7,122.9) node [anchor=north west][inner sep=0.75pt]    {$m\otimes n\otimes p$};
+  % Connection
+  \draw    (303.2,90.5) -- (368.7,90.5) ;
+  \draw [shift={(370.7,90.5)}, rotate = 180] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+  % Connection
+  \draw    (140.2,91.23) -- (206.2,90.81) ;
+  \draw [shift={(208.2,90.8)}, rotate = 539.64] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+  % Connection
+  \draw    (136.2,130.62) -- (211.7,130.86) ;
+  \draw [shift={(213.7,130.87)}, rotate = 180.18] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+  \draw [shift={(136.2,130.62)}, rotate = 180.18] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (0,5.59) -- (0,-5.59)   ;
+  % Connection
+  \draw    (301.7,130.85) -- (371.7,130.63) ;
+  \draw [shift={(373.7,130.62)}, rotate = 539.81] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+  \draw [shift={(301.7,130.85)}, rotate = 539.81] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (0,5.59) -- (0,-5.59)   ;
+
+  \end{tikzpicture}
+\end{figure}
+
+Por tanto, $g\circ f=Id_{M\otimes N\otimes P}$
+
+Por otro, $\{m\otimes n:(m,n)\in M\times N\}$ es sistema de generadores de $M\otimes_AN$. Por el lema \ref{generadores}, $\{(m\otimes n)\otimes p: (m,n,p)\in M\times N\times P\}$ es sistema de generadores de $(M\otimes_AN)\otimes_AP$. Evaluando, $(f\circ g)((m\otimes n)\otimes p)=(m\otimes n)\otimes p)$ y concluimos $f\circ g)=Id_{(M\otimes_AN)\otimes_AP}$
+
+\textit{3.} Definimos la aplicación $A$-bilineal $M_1\times N_1 \to M_2\times N_2$ dada por $(m_1,n_1) \mapsto f(m_1)\otimes g(n_1)$. Entonces existe una única $M_1\otimes N_1 \to M_2 \otimes N_2$ lineal que completa el diagrama conmutativo habitual.
+
+Lo mismo sucede con $M_2\times N_2 \to M_3\times N_3$, de forma que obtenemos el diagrama
+
+\begin{figure}
+  \centering
+
+
+  \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt
+
+  \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+  %uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+
+  % Text Node
+  \draw (311.2,61.9) node [anchor=north west][inner sep=0.75pt]    {$M_{2} \times N_{2}$};
+  % Text Node
+  \draw (174.7,60.9) node [anchor=north west][inner sep=0.75pt]    {$M_{1} \otimes N_{1}$};
+  % Text Node
+  \draw (245.7,39.9) node [anchor=north west][inner sep=0.75pt]    {$f_{1} \otimes g_{1}$};
+  % Text Node
+  \draw (383.7,40.9) node [anchor=north west][inner sep=0.75pt]    {$f_{2} \otimes g_{2}$};
+  % Text Node
+  \draw (451.7,61.4) node [anchor=north west][inner sep=0.75pt]    {$M_{3} \times N_{3}$};
+  % Text Node
+  \draw (271.2,132.4) node [anchor=north west][inner sep=0.75pt]    {$( f_{2} \otimes g_{2}) \circ ( f_{1} \otimes g_{1})$};
+  % Connection
+  \draw    (241.7,69.26) -- (306.2,69.73) ;
+  \draw [shift={(308.2,69.74)}, rotate = 180.42] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+  % Connection
+  \draw    (378.2,69.88) -- (446.7,69.63) ;
+  \draw [shift={(448.7,69.62)}, rotate = 539.8] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+  % Connection
+  \draw    (227.94,81.5) .. controls (303.73,130.68) and (381.17,131.1) .. (460.25,82.73) ;
+  \draw [shift={(461.44,82)}, rotate = 508.3] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+  \end{tikzpicture}
+\end{figure}
+
+Podemos definir la aplicación $A$-bilineal $M_1\times N_1 \to M_3 \otimes N_3$ dada por $(m_1,n_1)\mapsto(f_2\circ f_1)(m_1)\otimes (g_2\circ g_1)(n_1)$, y así existe una única aplicación $M_1\otimes N_1 \to M_3 \otimes N_3$ que cierra el diagrama conmutativo, y por unicidad ha de coincidir con la composición de arriba.
+
+\textit{4.} Queremos definir un producto externo. Empezamos definiendo para cada $b\in B$ la aplicación $A$-lineal $\Phi_b:B\times M \to  B\otimes M$ dada por $(b',m)\mapsto bb'\otimes m$. Entonces existe una única aplicación lineal del producto tensorial que cierra el diagrama
+
+\begin{figure}
+  \centering
+
+  \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt
+
+  \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+  %uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+
+  % Text Node
+  \draw (201.2,63.4) node [anchor=north west][inner sep=0.75pt]    {$B\times M$};
+  % Text Node
+  \draw (311.7,62.4) node [anchor=north west][inner sep=0.75pt]    {$B\otimes M$};
+  % Text Node
+  \draw (200.2,142.4) node [anchor=north west][inner sep=0.75pt]    {$B\otimes M$};
+  % Text Node
+  \draw (263.2,40.9) node [anchor=north west][inner sep=0.75pt]    {$\Phi _{p}$};
+  % Text Node
+  \draw (287.2,111.4) node [anchor=north west][inner sep=0.75pt]    {$\varphi _{p}$};
+  % Connection
+  \draw    (224.05,83) -- (223.38,136) ;
+  \draw [shift={(223.35,138)}, rotate = 270.73] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+  % Connection
+  \draw    (250.2,70.76) -- (306.7,70.25) ;
+  \draw [shift={(308.7,70.24)}, rotate = 539.48] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+  % Connection
+  \draw    (239.92,138) -- (316.35,83.17) ;
+  \draw [shift={(317.97,82)}, rotate = 504.34] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+  \end{tikzpicture}
+\end{figure}
+
+Se cumple que $\varphi_{b_1+b_2} = \varphi_{b_1}+\varphi_{b_2}$ y que $\varphi_{b_1b_2} = \varphi_{b_1}\circ\varphi_{b_2}$ por la unicidad. De esta forma podemos definir la aplicación
+
+\begin{align}
+  \Phi: B\times(B\otimes M) &\to B\otimes M\\
+  (b,z) &\mapsto \varphi_b(z)
+\end{align}
+que está bien definida y con la cual $B\otimes M$ cumple los axiomas de $A$-módulo.
+
 \end{proof}
-=======
+
+
 En estas construcciones se tienen las siguientes propiedades.
 \begin{itemize}
     \item [1)] Dados $M_1,M_2$ y $M_3$ $A$-módulos, $M_1\otimes_A M_2\otimes M_3\overset{isom}{\cong}(M_1\otimes_AM_2)\otimes_AM_3\overset{isom}{\cong}M_1\otimes_A(M_2\otimes_AM_3)$
@@ -666,5 +835,4 @@ En estas construcciones se tienen las siguientes propiedades.
 \end{itemize}
 
 
->>>>>>> Stashed changes
 \end{document}
