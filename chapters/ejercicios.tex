@@ -166,33 +166,9 @@ Por tanto, $e_1 = [\mu m]$ y $e_2 = [\nu n]$ son los elementos que buscamos. La 
 (iii) Literalmente lo mismo que el (ii) pero ahora genérico. Se cumple exactamente lo mismo.
 
 \paragraph{Ejercicio 8}
-(a) En primer lugar, veamos que $f(x,y):=x^2-y^2-1$ es irreducible en $\R[x,y]$. Para ver esto, tomemos $(a_1x+a_2y+a_3),(b_1x+b_2y+b_3)\in\R[x,y]$, cuyo producto es:
-\begin{align*}
-&(a_1x+a_2y+a_3)(b_1x+b_2y+b_3)=\\
-a_1b_1x^2+a_2b_2y^2+a_3&b_3+(a_1b_2+a_2b_1)xy+(a_1b_3+a_3b_1)x+(a_2b_3+a_3b_2)y.
-\end{align*}
-De esto se desprende que, en caso de que $f$ sea reducible, por ser de grado $2$ ambos factores deben tener grado $1$ y sus coeficientes deben verficar las ecuaciones
-\begin{align*}
-a_1b_1=&\ 1,\\
-a_2b_2=&\ 1,\\
-a_3b_3=&-1,\\
-a_1b_2+a_2b_1=&0,\\
-a_1b_3+a_3b_1=&0\ \text{y}\\
-a_2b_3+a_3b_2=&0.
-\end{align*}
-Distingamos casos.\begin{itemize}
-	\item Si $a_1>0$, entonces $b_1>0$. Igualmente, si $a_2>0$, $b_2>0$ y $a_1b_2+a_2b_1>0$. De igual forma, si $a_2<0$, $b_2<0$ y $a_1b_2+a_2b_1<0$. En ambos casos llegamos a un absurdo.
-	\item Si $a_1<0$, entonces $b_1<0$ y llegamos de forma análoga al caso anterior a los mismos absurdos.
-\end{itemize}
-Así, tenemos que $f$ es irreducible en $\R[x,y]$. Como $\R[x,y]$ es DFU (basta verlo como $(\R[x])[y]$), tenemos que $\langle f\rangle$ es un ideal primo de $\R[x,y]$. Si $hg\in\langle f\rangle$, tenemos que $hg=\lambda f$ para cierto $\lambda\in\R[x,y]$. Por ser $f$ irreducible y la factorización de 
-$$hg:=h_1\cdots h_rg_1\cdots g_s$$
-única, $f=h_i$ para cierta $i\in\{1,\dots,r\}$ o $f=g_j$ para cierta $j\in\{1,\dots, s\}$; en el primer caso $h\in\langle f\rangle$ y en el segundo $h\in\langle f\rangle$. 
-
-Por ser $\langle f\rangle$ primo, $A$ es un $DI$. Supongamos $\af=[p]$ para cierto $[p]\in A$. De ser así, se tendría que $[x-1]=[\lambda_1][p]$ y $[y]=[\lambda_2][p]$ para ciertos $[\lambda_1],[\lambda_2]\in A$ y
-\begin{align*}
-0=[x^2+y^2-1]=[(x+1)(x-1)+y^2]=([x+1][\lambda_1]+[y][\lambda_2])[p]
-\end{align*}
-FALTARÍA COMPROBAR QUE $[x+1][\lambda_1]+[y][\lambda_2]\neq0$
+(a) Dado que $\langle x-1,y\rangle\supset\langle x^2+y^2-1\rangle$ los Teoremas de Isomorfía nos dan
+$$\faktor{\faktor{\R[x,y]}{\langle x^2+y^2-1\rangle}}{\faktor{\langle x-1,y\rangle}{\langle x^2+y^2-1\rangle}}\simeq\faktor{\R[x,y]}{\langle x-1,y\rangle}\simeq\R;$$
+es decir, $\langle x^2+y^2-1\rangle$ es maximal en $\R[x,y]$ y $A$ tiene estructura de cuerpo. Por ser esto así, los únicos ideales que posibles en él son el trivial y el total.
 
 (b) Comprobemos ahora que $\langle[x-(1+iy)]\rangle=\bfr$. En primer lugar, teniendo en cuenta 
 \begin{align*}
