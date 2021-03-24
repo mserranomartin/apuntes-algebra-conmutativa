@@ -515,58 +515,63 @@ Además, el par $(\delta,M\otimes_AN)$ es único, en el sentido que de existir o
 \begin{proof}
 Para ver la unicidad, supongamos que $(\delta,T)$ y $(\delta',T')$  cumplen las condiciones de la proposición. Poniendo a $T'$ como $P$ y a $\delta'$ como $F$, el resultado garantiza la existencia de $j:T\rightarrow T'$ tal que $\delta'=j\circ\delta$. Intercambiando los roles de $T$ y $T'$, se tiene $j':T'\rightarrow T$ tal que $\delta=j'\circ\delta'$. Entonces, cada una de las composiciones $j\circ j'$ y $j'\circ j$ son la identidad, lo cual garantiza que $j$ sea un isomorfismo.
 
-Para la existencia, procedemos como sigue. Consideremos $A^{(M\times N)}$, la suma directa de $A$ tantas veces como elementos tenga $M\times N$. Definimos el siguiente subconjunto de $A^{(M\times N)}$ $$S=\{e_{(m+m',n)}-e_{(m,n)}-e_{(m',n)}, e_{(m,n+n')}-e_{(m,n)}-e_{(m,n')}, e_{(m,\lambda n)}-\lambda e_{(m,n)}, e_{(\lambda m,n)}-\lambda e_{(m,n)}\}$$   con $m,m'\in M$, $n,n'\in N$ y $\lambda\in A$.
+Para la existencia, procedemos como sigue. Consideremos $A^{(M\times N)}$, la suma directa de $A$ tantas veces como elementos tenga $M\times N$. Definimos el siguiente subconjunto de $A^{(M\times N)}$
+\begin{multline}
+  S=\{e_{(m+m',n)}-e_{(m,n)}-e_{(m',n)}, e_{(m,n+n')}-e_{(m,n)}-e_{(m,n')}, \\ e_{(m,\lambda n)}-\lambda e_{(m,n)}, e_{(\lambda m,n)}-\lambda e_{(m,n)}\}
+\end{multline}
+con $m,m'\in M$, $n,n'\in N$ y $\lambda\in A$.
 
-Ahora tomamos $\Sigma$ el submódulo generado por $S$. Se cumple $\Sigma\subset A^{(M\times N)}$, luego podemos definir el cociente $A^{(M\times N)}/\Sigma$, que es un $A$-módulo. Entonces, definimos
+Ahora tomamos $\Sigma$ el submódulo generado por $S$. Se cumple $\Sigma\subset A^{(M\times N)}$, luego podemos definir el cociente $A^{(M\times N)}/\Sigma$, que es un $A$-módulo:
 $$\begin{array}{rcl}
     M\times N&\overset{\delta}{\longrightarrow}&\faktor{A^{(M\times N)}}{\Sigma}\\
     (m,n)&\longmapsto&[e_{(m,n)}]
     \end{array}$$
-Ver que $\delta$ es bilineal es trivial por cómo se ha definido $S$. Por ejemplo, dados $m,m'\in M$, $n\in N$, $\delta(m+m',n)=[e_{(m+m',n)}]=[e_{(m,n)}+e_{(m',n)}]=[e_{(m,n)}]+[e_{(m',n)}]=\delta(m,n)+\delta(m',n)$.
+La aplicación $\delta$ es bilineal. Por ejemplo, dados $m,m'\in M$, $n\in N$, $\delta(m+m',n)=[e_{(m+m',n)}]=[e_{(m,n)}+e_{(m',n)}]=[e_{(m,n)}]+[e_{(m',n)}]=\delta(m,n)+\delta(m',n)$.
 
-Ponemos $M\otimes_AN=A^{(M\times N)}/\Sigma$. Definimos
+Ponemos $M\otimes_A N=A^{(M\times N)}/\Sigma$. Definimos
 $$\begin{array}{rrcl}
 	f_0:&A^{M\times N}&\longrightarrow&P  \\
 	&e_{(m,n)}&\longmapsto&F(m,n)
 	\end{array}$$
-que está bien definida ya que $\{e_{(m,n)}:(m,n)\in M\times N\}$ es un sistema de generadores de $A^{M\times N}$. Nótese que entonces $\{[e_{(m,n)}]: (m,n)\in M\times N\}$ es un sistema de generadores de $M\otimes_AN$. Por ser $F$ homomorfismo, $f_0$ es homomorfismo de $A$-módulos.
+Entonces $\{[e_{(m,n)}]: (m,n)\in M\times N\}$ es un sistema de generadores de $M\otimes_A N$, y por ser $F$ homomorfismo, $f_0$ es homomorfismo de $A$-módulos.
 
-Veamos que $\Sigma\subset ker(f_0)$. Com $\Sigma$ está generado por $S$, basta ver $S\subset ker(f_0)$. Pero esto es directo por ser $F$ bilineal y la definición de $S$. Por ejemplo, $$f_0(e_{(m+m',n)}-e_{(m,n)}-e_{(m',n)})=F(e_{(m+m',n)}-e_{(m,n)}-e_{(m',n)}=0$$
-Por tanto, siguiendo la observación anterior a la proposición, podemos definir
+Veamos que $\Sigma\subset ker(f_0)$. Como $\Sigma$ está generado por $S$, basta ver $S\subset ker(f_0)$. Pero esto es directo por ser $F$ bilineal y la definición de $S$. Por ejemplo, $$f_0(e_{(m+m',n)}-e_{(m,n)}-e_{(m',n)})=F(e_{(m+m',n)}-e_{(m,n)}-e_{(m',n)}=0$$
+Por tanto, siguiendo la observación anterior a la proposición, sea
 $$\begin{array}{rrcl}
 	\tilde{f_0}:&\faktor{A^{M\times N}}{\Sigma}&\longrightarrow&P  \\
 	&[e_{(m,n)}]&\longmapsto&F(m,n)
 	\end{array}$$
 que está bien definida y cumple las condiciones del teorema.
 \end{proof}
-\begin{remark}
-\begin{enumerate}
-  \item A las clases $[e_{(m,n)}]$ se les denota $m\otimes_An$ o simplemente $m\otimes n$.
-
-  Todo elemento de $M\otimes_AN$ es suma $\sum_{i=1}^rm_j\otimes n_j$, para ciertos $m_j\in M$, $n_j\in N$ y $r\in\mathbb{N}$, ya que $[\lambda e_{(m,n)}]=[e_{(\lambda m,n)}]=[e_{(m,\lambda n)}]$ por la definición inicial de $S$.
-
-  \item Las aplicaciones bilineales de $M\times N$ en $P$, $Bil_A(M\times N,P)$ están en correspondencia biyectiva con $Hom_A(M\otimes_AN,P)$.
-
-  En particular, si tomamos $A$ como $K$ cuerpo y $M$ y $N$ $K$-espacios vectoriales,$$Hom_A(M\otimes_KN,K)=(M\otimes_KN)^{\ast}=Bil_K(M\times N,K)$$
-\end{enumerate}
 
 \begin{definition}
-  Al $A$-módulo $M\otimes_AN$ se le llama \emph{producto tensorial} de $M$ y $N$.
+  Al $A$-módulo $M\otimes N$ se le llama \emph{producto tensorial} de $M$ y $N$.
 \end{definition}
 
-En particular, si tomamos $A$ como $K$ cuerpo y $M$ y $N$ $K$-espacios vectoriales,$$Hom_A(M\otimes_KN,K)=(M\otimes_KN)^{\ast}=Bil_K(M\times N,K)$$
+\begin{remark}
+De ahora en adelante omitiremos el subíndice de $\otimes_A$, escribiendo $M \otimes N$ siempre que no de lugar a confusión. Entonces
+\begin{enumerate}
+  \item A las clases $[e_{(m,n)}]$ se les denota $m\otimes n$ o simplemente $m\otimes n$.
 
-\textit{3)} La construcción del producto tensorial de módulos se puede generalizar. Dados $M_1,\dots,M_r$ $A$-módulos, existe un $A$-módulo $M_1\otimes_A\dots\otimes_AM_r$ y$$\delta:M_1\times\dots\times,M_r\longrightarrow M_1\otimes_A\dots\otimes_AM_r$$ multilineal tal que para cualquier $$\Phi:M_1\times\dots\times,M_r\longrightarrow P$$ $A$-multilineal, existe una única $$f:M_1\otimes_A\dots\otimes_AM_r\longrightarrow P$$ $A$-lineal tal que $f\circ\delta=F$
+  Todo elemento de $M\otimes N$ es suma $\sum_{i=1}^rm_j\otimes n_j$, para ciertos $m_j\in M$, $n_j\in N$ y $r\in\mathbb{N}$, ya que $[\lambda e_{(m,n)}]=[e_{(\lambda m,n)}]=[e_{(m,\lambda n)}]$ por la definición inicial de $S$.
 
+  \item Las aplicaciones bilineales de $M\times N$ en $P$, $Bil_A(M\times N,P)$ están en correspondencia biyectiva con $Hom_A(M\otimes N,P)$.
+
+  En particular, si tomamos $A$ como $K$ cuerpo y $M$ y $N$ $K$-espacios vectoriales,$$Hom_A(M\otimes_KN,K)=(M\otimes_KN)^{\ast}=Bil_K(M\times N,K)$$
+
+  \item La construcción del producto tensorial de módulos se puede generalizar. Dados unos $A$-módulos $M_1,\dots,M_r$, existe un $A$-módulo $M_1\otimes \dots\otimes M_r$ y $\delta:M_1\times\dots\times,M_r\longrightarrow M_1\otimes \dots\otimes M_r$ multilineal tal que para cualquier aplicación $A$-multilineal $\Phi:M_1\times\dots\times,M_r\longrightarrow P$, existe una única $f:M_1\otimes \dots\otimes M_r\longrightarrow P$ $A$-lineal tal que $f\circ\delta=F$
+
+\end{enumerate}
 \end{remark}
-\begin{lemma} \label{generadores} Sean $Z$ y $Z'$ dos $A$-módulos. Sea $\{z_i\}_{i\in I}$ un sistema de generadores de $Z$ y sea $\{z_j'\}_{j\in J}$ un sistema de generadores de $Z'$. Entonces, $\{z_i\otimes z_j:(i,j)\in I\times J\}$ es un sistema de generadores de $Z\otimes_AZ'$.
+
+\begin{lemma} \label{generadores} Sean $Z$ y $Z'$ dos $A$-módulos. Sea $\{z_i\}_{i\in I}$ un sistema de generadores de $Z$ y sea $\{z_j'\}_{j\in J}$ un sistema de generadores de $Z'$. Entonces, $\{z_i\otimes z_j:(i,j)\in I\times J\}$ es un sistema de generadores de $Z\otimes Z'$.
 \end{lemma}
 \begin{proposition} Sea $A$ un anillo conmutativo unitario. Se cumple:\begin{enumerate}
-    \item Dados $M,N$ y $P$ $A$-módulos, $$M\otimes_AN\otimes P\overset{isom}{\cong}(M\otimes_AN)\otimes_AP$$
-    \item $M\otimes_AN=N\otimes_AM$
-    \item Dados $f:M_1\rightarrow M_2$ y $g:N_1\rightarrow N_2$ $A$-lineales, existe $f\otimes g:M_1\otimes_AN_1\rightarrow M_2\otimes N_2$ $A$-lineal tal que si tenemos $f':M_2\rightarrow M_3$ y $g':N_2\rightarrow N_3$ homomorfismos de $A$-módulos, $$M_1\otimes_AN_1\overset{f\otimes_Ag}{\longrightarrow} M_2\otimes_AN_2\overset{f'\otimes_Ag'}{\longrightarrow} M_3\otimes_AN_3$$ se cumple $$(f'\otimes_Ag')\circ(f\otimes_Ag)=(f'\circ f)\otimes_A(g'\circ g)$$
-    \item Si $B$ es un $A$-álgebra, $B\otimes_AM$ es un $B$-módulo
-    \item Si $B$ y $C$ son $A$-álgebras, $B\otimes_AC$ es un $A$-álgebra, un $B$-módulo y un $C$-módulo
+    \item Dados $M,N$ y $P$ $A$-módulos, $$M\otimes N\otimes P\cong(M\otimes N)\otimes P$$
+    \item $M\otimes N=N\otimes M$
+    \item Dados $f:M_1\rightarrow M_2$ y $g:N_1\rightarrow N_2$ $A$-lineales, existe $f\otimes g:M_1\otimes N_1\rightarrow M_2\otimes N_2$ $A$-lineal tal que si tenemos $f':M_2\rightarrow M_3$ y $g':N_2\rightarrow N_3$ homomorfismos de $A$-módulos, $$M_1\otimes N_1\overset{f\otimes g}{\longrightarrow} M_2\otimes N_2\overset{f'\otimes g'}{\longrightarrow} M_3\otimes N_3$$ se cumple $$(f'\otimes g')\circ(f\otimes g)=(f'\circ f)\otimes (g'\circ g)$$
+    \item Si $B$ es un $A$-álgebra, $B\otimes M$ es un $B$-módulo
+    \item Si $B$ y $C$ son $A$-álgebras, $B\otimes C$ es un $A$-álgebra, un $B$-módulo y un $C$-módulo
     \end{enumerate}
 \end{proposition}
 \begin{proof}
@@ -574,13 +579,13 @@ Comprobamos cada cosa.
 
 \textit{1.} Definimos la aplicación $A$-trilineal
 $$ \begin{array}{rrcl}
-     F:&M\times N\times P&\longrightarrow&(M\otimes_AN)\otimes_AP\\
+     F:&M\times N\times P&\longrightarrow&(M\otimes N)\otimes P\\
      &(m,n,p)&\longmapsto&(m\otimes n)\otimes p
 \end{array}
 $$
-Existe una única $f:M\otimes_AN\otimes_AP\rightarrow (M\otimes_AN)\otimes_AP$ tal que $f(m\otimes n\otimes p)=F(m,n,p)=(m\otimes n)\otimes p$,
+Existe una única $f:M\otimes N\otimes P\rightarrow (M\otimes N)\otimes P$ tal que $f(m\otimes n\otimes p)=F(m,n,p)=(m\otimes n)\otimes p$,
 
-\begin{figure}
+\begin{figure}[h!]
   \centering
 
   \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt
@@ -614,12 +619,12 @@ Existe una única $f:M\otimes_AN\otimes_AP\rightarrow (M\otimes_AN)\otimes_AP$ t
 
 Veamos como definir la flecha en sentido contrario. Para cada $p\in P$ definimos la aplicación $A$-bilineal
 $$\begin{array}{rrcl}
-	\Phi_p:&M\times N&\longrightarrow&M\otimes_AN\otimes_AP  \\
+	\Phi_p:&M\times N&\longrightarrow&M\otimes N\otimes P  \\
 	&(m,n)&\longmapsto&m\otimes n\otimes p
 	\end{array}$$
-Existe una única $\varphi_p:M\otimes_AN\rightarrow M\otimes_AN\otimes_AP$ tal que $\varphi_p(m\otimes n)=\Phi_p(m,n)=m\otimes n\otimes p$
+Existe una única $\varphi_p:M\otimes N\rightarrow M\otimes N\otimes P$ tal que $\varphi_p(m\otimes n)=\Phi_p(m,n)=m\otimes n\otimes p$
 
-\begin{figure}
+\begin{figure}[h!]
   \centering
 
   \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt
@@ -655,12 +660,12 @@ Observamos que si $p,p'\in P$, entonces $\varphi_p + \varphi_{p'}=\varphi_{p+p'}
 
 Sea entonces la aplicación $A$-bilineal
 $$\begin{array}{rrcl}
-	G:&(M\otimes_AN)\times P&\longrightarrow&M\otimes_AN\otimes_AP  \\
+	G:&(M\otimes N)\times P&\longrightarrow&M\otimes N\otimes P  \\
 	&(z,p)&\longmapsto&\varphi_p(z)
 	\end{array}$$
-Existe una única $g:(M\otimes_AN)\otimes_AP\rightarrow M\otimes_AN\otimes_AP$ aplicación $A$-lineal que hace conmutativo el diagrama siguiente
+Existe una única $g:(M\otimes N)\otimes P\rightarrow M\otimes N\otimes P$ aplicación $A$-lineal que hace conmutativo el diagrama siguiente
 
-\begin{figure}
+\begin{figure}[h!]
   \centering
   \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt
 
@@ -693,57 +698,20 @@ Existe una única $g:(M\otimes_AN)\otimes_AP\rightarrow M\otimes_AN\otimes_AP$ a
 
 Veamos entonces que la composición de ambas es la identidad. Para ello solo hace falta ver que deja los generadores de cada $A$-módulo invariantes. Efectivamente,
 
-\begin{figure}
-  \centering
-  \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt
-
-  \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
-  %uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
-
-
-  % Text Node
-  \draw (211.2,82.9) node [anchor=north west][inner sep=0.75pt]    {$( M\otimes N) \times P$};
-  % Text Node
-  \draw (373.7,82.9) node [anchor=north west][inner sep=0.75pt]    {$M\otimes N\otimes P$};
-  % Text Node
-  \draw (323.7,67.4) node [anchor=north west][inner sep=0.75pt]    {$g$};
-  % Text Node
-  \draw (59.2,83.9) node [anchor=north west][inner sep=0.75pt]    {$M\otimes N\otimes P$};
-  % Text Node
-  \draw (160.2,69.9) node [anchor=north west][inner sep=0.75pt]    {$f$};
-  % Text Node
-  \draw (62.2,122.9) node [anchor=north west][inner sep=0.75pt]    {$m\otimes n\otimes p$};
-  % Text Node
-  \draw (216.7,123.4) node [anchor=north west][inner sep=0.75pt]    {$( m\otimes n) \otimes p$};
-  % Text Node
-  \draw (376.7,122.9) node [anchor=north west][inner sep=0.75pt]    {$m\otimes n\otimes p$};
-  % Connection
-  \draw    (303.2,90.5) -- (368.7,90.5) ;
-  \draw [shift={(370.7,90.5)}, rotate = 180] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
-  % Connection
-  \draw    (140.2,91.23) -- (206.2,90.81) ;
-  \draw [shift={(208.2,90.8)}, rotate = 539.64] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
-  % Connection
-  \draw    (136.2,130.62) -- (211.7,130.86) ;
-  \draw [shift={(213.7,130.87)}, rotate = 180.18] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
-  \draw [shift={(136.2,130.62)}, rotate = 180.18] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (0,5.59) -- (0,-5.59)   ;
-  % Connection
-  \draw    (301.7,130.85) -- (371.7,130.63) ;
-  \draw [shift={(373.7,130.62)}, rotate = 539.81] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
-  \draw [shift={(301.7,130.85)}, rotate = 539.81] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (0,5.59) -- (0,-5.59)   ;
-
-  \end{tikzpicture}
-\end{figure}
+\begin{align*}
+  M\otimes N \otimes P &\overset{f}{\longrightarrow}(M\otimes N )\otimes P \overset{g}{\longrightarrow}M\otimes N \otimes P\\
+  m\otimes n\otimes p &\longmapsto (m\otimes n)\otimes p \longmapsto m\otimes n\otimes p
+\end{align*}
 
 Por tanto, $g\circ f=Id_{M\otimes N\otimes P}$
 
-Por otro, $\{m\otimes n:(m,n)\in M\times N\}$ es sistema de generadores de $M\otimes_AN$. Por el lema \ref{generadores}, $\{(m\otimes n)\otimes p: (m,n,p)\in M\times N\times P\}$ es sistema de generadores de $(M\otimes_AN)\otimes_AP$. Evaluando, $(f\circ g)((m\otimes n)\otimes p)=(m\otimes n)\otimes p)$ y concluimos $f\circ g)=Id_{(M\otimes_AN)\otimes_AP}$
+Por otro, $\{m\otimes n:(m,n)\in M\times N\}$ es sistema de generadores de $M\otimes N$. Por el lema \ref{generadores}, $\{(m\otimes n)\otimes p: (m,n,p)\in M\times N\times P\}$ es sistema de generadores de $(M\otimes N)\otimes P$. Evaluando, $(f\circ g)((m\otimes n)\otimes p)=(m\otimes n)\otimes p)$ y concluimos $f\circ g)=Id_{(M\otimes N)\otimes P}$
 
 \textit{3.} Definimos la aplicación $A$-bilineal $M_1\times N_1 \to M_2\times N_2$ dada por $(m_1,n_1) \mapsto f(m_1)\otimes g(n_1)$. Entonces existe una única $M_1\otimes N_1 \to M_2 \otimes N_2$ lineal que completa el diagrama conmutativo habitual.
 
 Lo mismo sucede con $M_2\times N_2 \to M_3\times N_3$, de forma que obtenemos el diagrama
 
-\begin{figure}
+\begin{figure}[h!]
   \centering
 
 
@@ -782,7 +750,7 @@ Podemos definir la aplicación $A$-bilineal $M_1\times N_1 \to M_3 \otimes N_3$ 
 
 \textit{4.} Queremos definir un producto externo. Empezamos definiendo para cada $b\in B$ la aplicación $A$-lineal $\Phi_b:B\times M \to  B\otimes M$ dada por $(b',m)\mapsto bb'\otimes m$. Entonces existe una única aplicación lineal del producto tensorial que cierra el diagrama
 
-\begin{figure}
+\begin{figure}[h!]
   \centering
 
   \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt
@@ -827,9 +795,9 @@ que está bien definida y con la cual $B\otimes M$ cumple los axiomas de $A$-mó
 
 En estas construcciones se tienen las siguientes propiedades.
 \begin{itemize}
-    \item [1)] Dados $M_1,M_2$ y $M_3$ $A$-módulos, $M_1\otimes_A M_2\otimes M_3\overset{isom}{\cong}(M_1\otimes_AM_2)\otimes_AM_3\overset{isom}{\cong}M_1\otimes_A(M_2\otimes_AM_3)$
-    \item [2)] $M\otimes_AN=N\otimes_AM$
-    \item [3)] Dados $f:M_1'\to M_1$ y $g:M_2'\to M_2$ $A$-lineales, existe $f\otimes g:M_1'\otimes_A M_2'\rightarrow M_1\otimes M_2$ $A$-lineal tal que el diagrama es conmutativo.
+    \item [1)] Dados $M_1,M_2$ y $M_3$ $A$-módulos, $M_1\otimes  M_2\otimes M_3\cong(M_1\otimes  M_2)\otimes  M_3\cong M_1\otimes (M_2\otimes  M_3)$
+    \item [2)] $M\otimes N=N\otimes M$
+    \item [3)] Dados $f:M_1'\to M_1$ y $g:M_2'\to M_2$ $A$-lineales, existe $f\otimes g:M_1'\otimes  M_2'\rightarrow M_1\otimes M_2$ $A$-lineal tal que el diagrama es conmutativo.
 
     En particular, si $M\in Obj(Mod_A)$, $M\otimes\_$ es un funtor covariante de $Mod_A$ en $Mod_A$ (Véase Apéndice A)
 \end{itemize}
