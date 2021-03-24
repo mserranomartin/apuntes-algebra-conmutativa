@@ -258,6 +258,17 @@ Recíprocamente, si $\bigcap_{\mathfrak p \in V(f)} \mathfrak p = \bigcap_{\math
 lo que quiere decir que no hay ningún primo que contenga a $\gen{\{f_i\}_{i\in I}}$, en particular no hay ningún maximal que lo contenga, es decir, que $\gen{\{f_i\}_{i\in I}} = \gen{1}$. Entonces existe $J\subset I$ finito y existen $\set{\lambda_j}_{j\in J}$ tales que $1 = \sum_{j\in J} \lambda_j f_j$.
 Por tanto $\gen{ \set{f_j}_{j\in J}} = \gen{ 1}$ y así  $V(\gen{\{f_j\}_{j\in J}} )= \varnothing$ lo que implica $\bigcup_{j\in J} X_{f_j} = \Spec A$. COn lo que $\set{X_{f_j}}_{j\in J}$ es subrrecubrimiento finito de $\{X_{f_i}\}_{i\in I}$.
 
-(vi) Consideramos $(X_{g_i})_{i\in I}$ recubrimiento de $X_f$. Podemos completarlo a un recubrimiento de $\Spec A$, y por ser este compacto, admite un subrrecubrimiento finito $(X_{g_j})_{j\in J}$
+(vi) Consideramos $(X_{g_i})_{i\in I}$ recubrimiento de $X_f$. Podemos suponer spg. que $X_f = \bigcup_{i\in I} X_{f_i}$ por ser abierto. Entonces tenemos $V(f) = V(\gen{f_i}_{i\in I})$ y por tanto $f\in \sqrt{\gen{f_i}_{i\in I}}$ de forma que existe un $n>0$ tal que $f^n \in \gen{f_i}_{i\in I}$.
+Por tanto, existe $J\subset I$ finito y $\set{a_j}_{j\in J}$ tales que $f^n = \sum_{j\in J}a_j f_j$.
+
+Esto implica que para todo $\mathfrak p \in  V(\gen{f_j}_{j\in J})$ se cumple $\gen{f} \subset \mathfrak p$, y a su vez $f \in \mathfrak p$, de manera que $ V(\gen{f_j}_{j\in J}) \subset V(f)$. Los complementarios cumplen la inclusión contraria
+
+\[ X_f = \Spec A \setminus V(f) \subset \Spec A \setminus V(\gen{f_j}_{j\in J}) = \bigcup_{j\in J} X_{f_j} \]
+
+y por tanto $\set{X_{f_j}}_{j\in J}$ es un subrrecubrimiento finito.
+
+(vii) $\Rightarrow)$ Supongamos que $A$ es abierto y compacto. Por ser abierto es unión de abiertos de la base, $A=\bigcup_{i\in I}X_{f_i}$, estos forman un recubrimiento y por ser compacto podemos quedarnos con un subrrecubrimiento finito: $A=\bigcup_{i=1}^n X_{f_i}$.
+
+$\Leftarrow)$ Si $A=\bigcup_{i=1}^n X_{f_i}$, entonces es abierto por ser unión de abiertos. Sea $(X_{g_j})_{j\in J}$ un recubrimiento de $A$, en particular recubren cada $X_{f_i}$. Para cada $i=1,\dots, n$ por ser compacto existe $F_i \subset J$ finito tal que $X_{f_i}\subset \bigcup_{j \in F_i} X_{g_j}$. Por tanto $A \subset \bigcup{i=1}^n \bigcup_{j \in F_i} X_{g_j}$.
 
 \end{document}

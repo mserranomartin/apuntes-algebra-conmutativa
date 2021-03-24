@@ -111,14 +111,8 @@ Sea $A$ anillo, existe un ideal primo minimal\footnote{Un ideal primo que no con
 Sabemos que existe un ideal maximal $\mathfrak{p} \subset A$, y este es primo por ser maximal. Consideramos $\Sigma$ el conjunto de los ideales primos de $A$, que es no vacío porque $\mathfrak p \in \Sigma$, y lo ordenamos parcialmente con la inclusión tal que $\mathfrak p \leq \mathfrak p' \iff \mathfrak p \supset \mathfrak p'$ . Sea $\{\mathfrak{q}_{i}\}_{i \in I} \subset \Sigma$ una cadena y consideramos $\mathfrak{q}^{*}:=\bigcap_{i \in I} q_{i}$. Este es un ideal (la intersección siempre lo es) y $\mathfrak{q}^{*} \subset \mathfrak{q}_{i}$ para todo $i\in I$, por tanto es cota superior (para nuestro orden) de la cadena.
 
 Veamos que $\mathfrak{q}^{*}$ es primo. Sean $a b \in \mathfrak{q}^{*},$ por ser así, $a b \in \mathfrak{q}_{i}$ para toda $i \in I .$ Si $a \in \mathfrak{q}_{i} \forall i \in I,$ entonces $a \in \mathfrak{q}^{*}$. Por otra parte, si existe $i_{0} \in I$ tal que $a \notin \mathfrak{q}_{i_{0}}$
-$$
-\begin{array}{l}
-\text { entonces } b \in \mathfrak{q}_{j} \forall j \in I: \\
-\qquad \text { si } \mathfrak{q}_{i_{0}} \subseteq \mathfrak{q}_{j}, \text { como } b \in \mathfrak{q}_{i_{0}}, \text { se tiene que } b \in \mathfrak{q}_{j} \mathrm{y},
-\end{array}
-$$
-
-Así se tiene $\mathfrak q^* \in \Sigma$ y aplicando el lema de Zorn, existe un elemento maximal para el orden dado, equivalemente, minimal en sentido de la inclusión.
+entonces $b \in \mathfrak{q}_{j} \forall j \in I$ si $\mathfrak{q}_{i_{0}} \subseteq \mathfrak{q}_{j}$, como $b \in \mathfrak{q}_{i_{0}}$, se tiene que $b \in \mathfrak{q}_{j} \mathrm{y}$. Así se tiene $\mathfrak q^* \in \Sigma$
+y aplicando el lema de Zorn, existe un elemento maximal para el orden dado, equivalemente, minimal en sentido de la inclusión.
 \end{proof}
 
 \begin{corollary}

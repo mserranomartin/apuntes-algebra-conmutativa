@@ -228,45 +228,33 @@ Para cada $\omega \in \bigoplus_{i\in I} M_i$, existen unos únicos $i_1,...,i_r
 \begin{proposition} $M$ es un $A$-módulo libre si y solo si existe $B:={\{m_i\}}_{i\in I}\subseteq M$ tal que para cada $x\in M$ existe $F\subseteq I$ cumpliendo que $x$ se puede expresar de forma única como$$x=\underset{\lambda_j\in A}{\sum_{j\in F}}\lambda_j m_j$$. Si dos subconjuntos $B$ y $B'$ cumplen lo anterior, entonces tienen el mismo cardinal.
 \end{proposition}
 \begin{proof}
-$(2\Rightarrow 1)$ Supongamos que existe $\phi: A^{(I)}\rightarrow M$ un isomorfismo de $A$-módulos, para cierto conjunto de índices $I$. Sea, para cada $i\in I$, $m_i:=\phi(e_i)$, donde $e_i\in A^{(I)}$ viene dado por
-$$\begin{array}{rccl}
-    e_i= \left\{ \begin{array}{ll}
-         e_{ij}=0 & \mbox{si $i\neq j$};\\
-         e_{ii}=1_A & \mbox{}\end{array} \right.
-\end{array}$$
-Veamos que ${m_i:i\in I}$ verifica 1). Para cada $m\in M$, por ser $\phi$ sobreyectiva, existe un $\underline{x}\in A^{(I)}$ tal que $\phi(\underline{x})=m$. A su vez, existen $i_1,...,i_r\in I$ tales que $\underline{x}=q_{i_1}(x_{i_1})+...+q_{i_r}(x_{i_r})=x_{i_1}q_{i_1}(1_A)+...+x_{i_r}q_{i_r}(1_A)$. Por tanto, $\phi(\underline{x})=x_{i_1}\phi(e_{i_1})+...+x_{i_r}\phi(e_{i_r})=x_{i_1}m_{i_1}+...+x_{i_1}m_{i_r}=m$. Hemos escrito $m$ como una combinación lineal de elementos ${m_i:i\in I}$
+$(2\Rightarrow 1)$ Supongamos que existe $\phi: A^{(I)}\rightarrow M$ un isomorfismo de $A$-módulos, para cierto conjunto de índices $I$. Sea, para cada $i\in I$, $m_i:=\phi(e_i)$, donde $e_i = (\delta_{ij})_j\in A^{(I)}$. El conjunto $\set{m_i,i\in I}$ es el que buscamos.
 
-Supongamos ahora que para ciertos ${\{i_j\}}_{j\in\{1,\dots,r\}}\subset I$$$\lambda_{i_1}m_{i_1}+\cdots+\lambda_{i_r}m_{i_r}=0_M,\hspace{15pt}\lambda_{i_j}\in A.$$
-Por ser así, tenemos
-$$\Phi(\lambda_{i_1}e_{i_1}+\cdots+\lambda_{i_r}e_{i_r})=0_M\Longleftrightarrow\lambda_{i_1}e_{i_1}+\cdots+\lambda_{i_r}e_{i_r}=0_{A^{(I)}}\Longleftrightarrow\lambda_{i_j}=0_A\hspace{15pt}\forall\ j\in\{1,\dots,r\}.$$
+Para cada $m\in M$, por ser $\phi$ sobreyectiva, existe un $\underline{x}\in A^{(I)}$ tal que $\phi(\underline{x})=m$. A su vez, existen $i_1,...,i_r\in I$ tales que $\underline{x}=q_{i_1}(x_{i_1})+...+q_{i_r}(x_{i_r})=x_{i_1}q_{i_1}(1_A)+...+x_{i_r}q_{i_r}(1_A)$. Por tanto, $\phi(\underline{x})=x_{i_1}\phi(e_{i_1})+...+x_{i_r}\phi(e_{i_r})=x_{i_1}m_{i_1}+...+x_{i_1}m_{i_r}=m$. Hemos escrito $m$ como una combinación lineal de elementos ${m_i:i\in I}$
+
+La unicidad es clara porque estamos usando un isomorfismo, pero podemos detallarlo. Si un elemento tiene dos representaciones en los $m_i$, al restarlas obtengo una combinación lineal nula de un conjunto de los $m_i$, basta entonces comprobar que, si una combinación lineal de cualquier subconjunto de los $m_i$ es nula, sus coeficientes son nulos también:
+\begin{multline}
+  0_M = \lambda_{i_1}m_{i_1}+\cdots+\lambda_{i_r}m_{i_r} = \Phi(\lambda_{i_1}e_{i_1}+\cdots+\lambda_{i_r}e_{i_r}) \\
+  \Longleftrightarrow \lambda_{i_1}e_{i_1}+\cdots+\lambda_{i_r}e_{i_r}=0_{A^{(I)}}\Longleftrightarrow\lambda_{i_j}=0_A
+\end{multline}
+$\forall\ j\in\{1,\dots,r\}$, lo que concluye la prueba.
 
 $(1\Rightarrow 2)$ En primer lugar, para cada $i\in I$ definimos las aplicaciones
 $$\begin{array}{rccl}
     \varphi_i:&A&\longrightarrow&M\\
     &1_A&\longmapsto&m_i.
 \end{array}$$
-por definición, para cada $i\in I$ y cada $\lambda\in A$ se verifica $\varphi_i(\lambda)=\lambda m_i$.
+Para cada $i\in I$ y cada $\lambda\in A$ se verifica $\varphi_i(\lambda)=\lambda m_i$.
 De esta forma, $\varphi_i$ es un homomorfismo de $A$-módulos entre $A$ y $M$ para cada $i\in I$ y, por el lema previo, $\varphi:=\bigoplus_{i\in I}\varphi_i: A^{(I)}\longrightarrow M$ es a su vez un homomorfismo de $A$-módulos.
 
-Por otro lado, dado que por hipótesis todo $x\in M$ admite una representación única como combinación lineal finita de elementos de $B$, definimos para cada $i\in I$ las aplicaciones
-$$\begin{array}{rccl}
-    \psi_i:&M&\longrightarrow&A\\
-    &x&\longmapsto&\lambda_i,
-\end{array}$$
-donde $\lambda_i$ es el correspondiente escalar asociado al elemento $m_i$ en la representación de $x$. De nuevo, para cada $i\in I$, $\psi_i$ es un homomorfismo de $A$-módulos y, de forma análoga, la aplicación
-$$\begin{array}{rccl}
-    \psi:&M&\longrightarrow&A^I
-\end{array}$$
-verificando $p_i\circ\psi=\psi_i$ es un homomorfismo de $A$-módulos y es único. Más aún, para cada $x\in M$ existe $F\subseteq I$ finito de forma que, $\psi_i(x)=0_A$ si $i\in I\setminus F$; es decir, $\psi(M)\subseteq A^{(I)}$.
+Todo $x\in M$ admite una representación única como combinación lineal finita de elementos de $B$. Sean las aplicaciones $\psi_i:M\to A$ dadas por $x=\sum_{j\in F} \lambda_j m_j \mapsto \lambda_i$, donde $F\subset I$ finito. Para cada $i\in I$, $\psi_i$ es un homomorfismo de $A$-módulos y, de forma análoga, la aplicación $\psi:M\longrightarrow A^I$ que verifica $p_i\circ\psi=\psi_i$, es un homomorfismo de $A$-módulos y es único.
+Más aún, para cada $x\in M$ existe $F\subseteq I$ finito de forma que, $\psi_i(x)=0_A$ si $i\in I\setminus F$; es decir, $\psi(M)\subseteq A^{(I)}$.
 
 Por último, es claro por definición de los homomorfismos que $\varphi\circ\psi=Id_{M}$ y $\psi\circ\varphi=Id_{A^{(I)}}$.
 
-Falta ver que todas las bases tienen un mismo cardinal. Para ello, usaremos las observaciones previas a la proposición.
+Veamos que todas las bases tienen un mismo cardinal. Si $M\cong A^{(I)}$, sean $\mathfrak{m}$ un ideal maximal de $A$ y $\set{m_i, i\in I}$ una base de $M$.  $\mathfrak{m}M$ es un submódulo de $M$ y, como $\mathfrak{m}\subset\Ann_A\left(\faktor{M}{\mathfrak{m}M}\right)$, $\faktor{M}{\mathfrak{m}M}$ tiene estructura de $\faktor{A}{\mathfrak{m}}$-espacio vectorial.
 
-Supongamos $M\approx A^{(I)}$. Sean $\mathfrak{m}$ un ideal maximal de $A$ (sabemos que existe) y ${\{m_i\}}_{i\in I}$ una base de $M$.
-Tenemos que $\mathfrak{m}M$ es un submódulo de $M$ y, como $\mathfrak{m}\subset\Ann_A\left(\faktor{M}{\mathfrak{m}M}\right)$, $\faktor{M}{\mathfrak{m}M}$ tiene estructura de $\faktor{A}{\mathfrak{m}}$-espacio vectorial.
-
-Tomemos $M=A^{(I)}$ y veamos que $\faktor{A^{(I)}}{\mathfrak{m}A^{(I)}}\approx\left(\faktor{A}{\mathfrak{m}}\right)^{(I)}$, que es un $\faktor{A}{\mathfrak{m}}$-espacio vectorial de dimensión $\#(I)$.
+Tomemos $M=A^{(I)}$ y veamos que $\faktor{A^{(I)}}{\mathfrak{m}A^{(I)}}\cong\left(\faktor{A}{\mathfrak{m}}\right)^{(I)}$, que es un $\faktor{A}{\mathfrak{m}}$-espacio vectorial de dimensión $\#(I)$.
 
 En primer lugar, definamos para cada $i\in I$ las siguientes aplicaciones
 $$\begin{array}{rrcl}
@@ -278,9 +266,9 @@ a_j+\mathfrak{m}=1+\mathfrak{m}&\text{si }i=j
 \end{array}.$$
 Se comprueba que, para cada $i\in I$, $\tau_i$ es homomorfismo de $A$-módulos y, por lo tanto, $\bigoplus_{i\in I}\tau_i:A^{(I)}\longrightarrow\left(\faktor{A}{\mathfrak{m}}\right)^{(I)}$ es también un homomorfismo de $A$-módulos.
 
-Además, $\bigoplus_{i\in I}\tau_i$ es sobreyectivo y $\ker{\bigoplus_{i\in I}\tau_i}=\mathfrak{m}A^{(I)}$. Así, por el Primer Teorema de Isomorfía, $\bigoplus_{i\in I}\tau_i$ induce un isomorfismo de $\faktor{A}{\mathfrak{m}}$-módulos, $\widehat{\bigoplus_{i\in I}\tau_i}:\faktor{A^{(I)}}{\mathfrak{m}A^{(I)}}\longrightarrow\left(\faktor{A}{\mathfrak{m}}\right)^{(I)}$
+Además, $\bigoplus_{i\in I}\tau_i$ es sobreyectivo y $\ker{\bigoplus_{i\in I}\tau_i}=\mathfrak{m}A^{(I)}$. Así, por el primer teorema de isomorfía, $\bigoplus_{i\in I}\tau_i$ induce un isomorfismo de $\faktor{A}{\mathfrak{m}}$-módulos, $\widehat{\bigoplus_{i\in I}\tau_i}:\faktor{A^{(I)}}{\mathfrak{m}A^{(I)}}\longrightarrow\left(\faktor{A}{\mathfrak{m}}\right)^{(I)}$
 
-Ahora, dados dos conjuntos de índices no vacíos $I$ y $J$, supongamos que existe un isomorfismo de $A$-módulos $\Phi:A^{(I)}\longrightarrow A^{(J)}$. Por ser así, en concreto se tiene que $\Phi(\mathfrak{m}A^{(I)})=\mathfrak{m}A^{(J)}$ y $\Phi$ induce otro isomorfismo de $\faktor{A}{\mathfrak{m}}$-módulos, $\widehat{\Phi}:\faktor{A^{(I)}}{\mathfrak{m}A^{(I)}}\longrightarrow\faktor{A^{(J)}}{\mathfrak{m}A^{(J)}}$. De esta forma, resulta que $(\faktor{A}{\mathfrak{m}})^(I)\approx(\faktor{A}{\mathfrak{m}})^(J)$ y $\#(I)=\#(J)$.
+Ahora, dados dos conjuntos de índices no vacíos $I$ y $J$, supongamos que existe un isomorfismo de $A$-módulos $\Phi:A^{(I)}\longrightarrow A^{(J)}$. Por ser así, en concreto se tiene que $\Phi(\mathfrak{m}A^{(I)})=\mathfrak{m}A^{(J)}$ y $\Phi$ induce otro isomorfismo de $\faktor{A}{\mathfrak{m}}$-módulos, $\widehat{\Phi}:\faktor{A^{(I)}}{\mathfrak{m}A^{(I)}}\longrightarrow\faktor{A^{(J)}}{\mathfrak{m}A^{(J)}}$. De esta forma, resulta que $(\faktor{A}{\mathfrak{m}})^(I)\cong(\faktor{A}{\mathfrak{m}})^(J)$ y $\#(I)=\#(J)$.
 \end{proof}
 
 \begin{definition}
@@ -579,8 +567,6 @@ Con $\lambda\in A$ y $m_j\in M_j$ para cada $j\in\{1,\dots,r\}$
 \begin{proposition} Dados dos $A$-módulos $M$ y $N$, existe un $A$-módulo $M\otimes_AN$ y una aplicación $A$-bilineal $\delta:M\times N\rightarrow M\otimes_AN$ tal que para cada $A$-módulo $P$ y para cada $F:M\times N\rightarrow P$ $A$-bilineal, existe una única aplicación $A$-lineal $f:M\otimes_AN:\rightarrow P$ tal que $f\circ\delta =F$.
 
 Además, el par $(\delta,M\otimes_AN)$ es único, en el sentido que de existir otro par $(\delta',T)$ que verifique las condiciones del enunciado, se tiene que $T\cong M\otimes_AN$.
-
-Al $A$-módulo $M\otimes_AN$ se le llama producto tensorial de $M$ y $N$.
 \end{proposition}
 \begin{proof}
 Para ver la unicidad, supongamos que $(\delta,T)$ y $(\delta',T')$  cumplen las condiciones de la proposición. Poniendo a $T'$ como $P$ y a $\delta'$ como $F$, el resultado garantiza la existencia de $j:T\rightarrow T'$ tal que $\delta'=j\circ\delta$. Intercambiando los roles de $T$ y $T'$, se tiene $j':T'\rightarrow T$ tal que $\delta=j'\circ\delta'$. Entonces, cada una de las composiciones $j\circ j'$ y $j'\circ j$ son la identidad, lo cual garantiza que $j$ sea un isomorfismo.
@@ -610,15 +596,26 @@ $$\begin{array}{rrcl}
 que está bien definida y cumple las condiciones del teorema.
 \end{proof}
 \begin{remark}
-\texit{1)} A las clases $[e_{(m,n)}]$ se les denota $m\otimes_An$ o simplemente $m\otimes n$.
+\begin{enumerate}
+  \item A las clases $[e_{(m,n)}]$ se les denota $m\otimes_An$ o simplemente $m\otimes n$.
 
-Todo elemento de $M\otimes_AN$ es suma $\sum_{i=1}^rm_j\otimes n_j$, para ciertos $m_j\in M$, $n_j\in N$ y $r\in\mathbb{N}$, ya que $[\lambda e_{(m,n)}]=[e_{(\lambda m,n)}]=[e_{(m,\lambda n)}]$ por la definición inicial de $S$.
+  Todo elemento de $M\otimes_AN$ es suma $\sum_{i=1}^rm_j\otimes n_j$, para ciertos $m_j\in M$, $n_j\in N$ y $r\in\mathbb{N}$, ya que $[\lambda e_{(m,n)}]=[e_{(\lambda m,n)}]=[e_{(m,\lambda n)}]$ por la definición inicial de $S$.
 
-\textit{2)} Las aplicaciones bilineales de $M\times N$ en $P$, $Bil_A(M\times N,P)$ están en correspondencia biyectiva con $Hom_A(M\otimes_AN,P)$.
+  \item Las aplicaciones bilineales de $M\times N$ en $P$, $Bil_A(M\times N,P)$ están en correspondencia biyectiva con $Hom_A(M\otimes_AN,P)$.
 
+  En particular, si tomamos $A$ como $K$ cuerpo y $M$ y $N$ $K$-espacios vectoriales,$$Hom_A(M\otimes_KN,K)=(M\otimes_KN)^{\ast}=Bil_K(M\times N,K)$$
+\end{enumerate}
+
+\begin{definition}
+  Al $A$-módulo $M\otimes_AN$ se le llama \emph{producto tensorial} de $M$ y $N$.
+\end{definition}
+
+<<<<<<< Updated upstream
 En particular, si tomamos $A$ como $K$ cuerpo y $M$ y $N$ $K$-espacios vectoriales,$$Hom_A(M\otimes_KN,K)=(M\otimes_KN)^{\ast}=Bil_K(M\times N,K)$$
 
 \textit{3)} La construcción del producto tensorial de módulos se puede generalizar. Dados $M_1,\dots,M_r$ $A$-módulos, existe un $A$-módulo $M_1\otimes_A\dots\otimes_AM_r$ y$$\delta:M_1\times\dots\times,M_r\longrightarrow M_1\otimes_A\dots\otimes_AM_r$$ multilineal tal que para cualquier $$\Phi:M_1\times\dots\times,M_r\longrightarrow P$$ $A$-multilineal, existe una única $$f:M_1\otimes_A\dots\otimes_AM_r\longrightarrow P$$ $A$-lineal tal que $f\circ\delta=F$
+=======
+>>>>>>> Stashed changes
 \end{remark}
 \begin{lemma} Sean $Z$ y $Z'$ dos $A$-módulos. Sea $\{z_i\}_{i\in I}$ un sistema de generadores de $Z$ y sea $\{z_j'\}_{j\in J}$ un sistema de generadores de $Z'$. Entonces, $\{z_i\otimes z_j:(i,j)\in I\times J\}$ es un sistema de generadores de $Z\otimes_AZ'$.
 \end{lemma}
@@ -653,8 +650,21 @@ $$\begin{array}{rrcl}
 	\end{array}$$
 Vuelve a ser rutinario ver que $G$ es $A$-bilineal. Entonces, existe una única $g:(M\otimes_AN)\otimes_AP\rightarrow M\otimes_AN\otimes_AP$ $A$-lineal tal que $g((m\otimes n)\otimes p)=G((m\otimes n),p)=\varphi_p(m\otimes n)=m\otimes n\otimes p$.
 
+<<<<<<< Updated upstream
 Por un lado, $(g\circ f)(m\otimes n\otimes p)=g((m\otimes n)\otimes p)=m\otimes n\otimes p$. Por tanto, $g\circ f=Id_{M\otimes N\otimes P}$
 
 Por otro, $\{m\otimes n:(m,n)\in M\times N\}$ es sistema de generadores de $M\otimes_AN$. Por el lema anterior, $\{(m\otimes n)\otimes p: (m,n,p)\in M\times N\times P\}$ es sistema de generadores de $(M\otimes_AN)\otimes_AP$. Evaluando, $(f\circ g)((m\otimes n)\otimes p)=(m\otimes n)\otimes p)$ y concluimos $f\circ g)=Id_{(M\otimes_AN)\otimes_AP}$
 \end{proof}
+=======
+En estas construcciones se tienen las siguientes propiedades.
+\begin{itemize}
+    \item [1)] Dados $M_1,M_2$ y $M_3$ $A$-módulos, $M_1\otimes_A M_2\otimes M_3\overset{isom}{\cong}(M_1\otimes_AM_2)\otimes_AM_3\overset{isom}{\cong}M_1\otimes_A(M_2\otimes_AM_3)$
+    \item [2)] $M\otimes_AN=N\otimes_AM$
+    \item [3)] Dados $f:M_1'\to M_1$ y $g:M_2'\to M_2$ $A$-lineales, existe $f\otimes g:M_1'\otimes_A M_2'\rightarrow M_1\otimes M_2$ $A$-lineal tal que el diagrama es conmutativo.
+
+    En particular, si $M\in Obj(Mod_A)$, $M\otimes\_$ es un funtor covariante de $Mod_A$ en $Mod_A$ (Véase Apéndice A)
+\end{itemize}
+
+
+>>>>>>> Stashed changes
 \end{document}

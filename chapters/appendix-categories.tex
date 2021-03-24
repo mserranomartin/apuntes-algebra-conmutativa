@@ -2,7 +2,7 @@
 \begin{document}
 Una categoría $\zeta$ viene dada por:\begin{itemize}
     \item La \textit{clase} de sus objetos $Obj(\zeta)$.
-    \item Para cada par de objetos $A$, $B\in Obj(\zeta)$ un conjunto llamado $Hom_{\zeta}(A,B)$, las "flechas" de $A$ en $B$.
+    \item Para cada par de objetos $A$, $B\in Obj(\zeta)$ un conjunto llamado $Hom_{\zeta}(A,B)$, las ``flechas" de $A$ en $B$.
     \item Para cada $A$, $B$, $C\in Obj(\zeta)$ una aplicación
     $$\begin{array}{rcl}
     Hom_{\zeta}(A,B)\times Hom_{\zeta}(B,C)&\longrightarrow&Hom_{\zeta}(A,C)\\
@@ -28,10 +28,12 @@ tal que se verifica \begin{itemize}
 Nótese que hemos empleado la misma notación, $F$, para definir dos funciones en principio distintas, pero se permite este abuso de notación ya que se puede distinguir muy fácilmente sobre qué conjunto está actuando la $F$ en cada momento.
 \begin{example}
 \textit{1)} Sea $\zeta_{TOP}$ la categoría de los espacios topológicos y $\zeta_{SET}$ la categoría de los conjuntos. Definimos en funtor \textit{olvido} como
-$$\begin{array}{rcl}
-    F: Obj(\zeta_{TOP})&\longrightarrow&Obj(\zeta_{SET})\\
+$$
+\begin{array}{rcl}
+    F: \Obj(\zeta_{TOP})&\longrightarrow&\Obj(\zeta_{SET})\\
     X&\longmapsto&X
-    \end{array}$$
+\end{array}
+$$
 \textit{2)} Sea $G_T$ la categoría de grupos, podemos definir un funtor$$F:Obj(\zeta_{SET})\longrightarrow Obj(G_T)$$ asociando a cada conjunto $X$ el grupo libre generado por $X$, es decir, el conjunto de palabras generado por $X$.
 
 \textit{3)} Sea $Ann$ la categoría de anillos conmutativos unitarios. Dado $A\in Obj(Ann)$, consideramos $Mod_A$ la categoría de $A$-módulos. Dado $M\in Obj(Mod_A)$, definimos el funtor covariante
@@ -87,16 +89,16 @@ $$\begin{array}{rcl}
 
 \textit{2)} \{x\} es un objeto final
 
-\texit{3)} Dado $A\in Obj(Ann)$, $Mod_A$ tiene a $\{0\}$ como objeto inicial y final
+\textit{3)} Dado $A\in \Obj(\Ann)$, $\Mod_A$ tiene a $\{0\}$ como objeto inicial y final
 \end{example}
-\begin{definition} Dadas una categoría $\zeta$, $A, A', B, B'\in Obj(\zeta)$ y $u\in Hom_{\zeta}(A,B)$, \begin{itemize}
-    \item [1)] Decimos que $u$ es un monomorfismo si $u\circ f=i\circ g$ implica que $f=g$, donde $f$ y $g$ pertenecen a $Hom_{\zeta}(A',A)$
-    \item[2)] Decimos que $u$ es un epimorfismo si $f\circ u=g\circ u$ implica que $f=g$, donde $f$ y $g$ pertenecen a $Hom_{\zeta}(B,B')$
+\begin{definition} Dadas una categoría $\zeta$, $A, A', B, B'\in Obj(\zeta)$ y $u\in \Hom_{\zeta}(A,B)$, \begin{itemize}
+    \item [1)] Decimos que $u$ es un monomorfismo si $u\circ f=i\circ g$ implica que $f=g$, donde $f$ y $g$ pertenecen a $\Hom_{\zeta}(A',A)$
+    \item[2)] Decimos que $u$ es un epimorfismo si $f\circ u=g\circ u$ implica que $f=g$, donde $f$ y $g$ pertenecen a $\Hom_{\zeta}(B,B')$
 \end{itemize}
 \end{definition}
 \begin{remark}
 \textit{1)} Si tomamos las categorías de anillos y módulos, los conceptos de monomorfismo e inyectividad son equivalentes.
 
-\texitt{2)} En la categoría de módulos, el concepto de epimorfismo es equivalente al de homomorfismo suprayectivo. En la categoría de anillos, homomorfismo suprayectivo sí implica epimorfismo, pero no se tiene la otra implicación. En efecto, $$\mathbb{Z}\hookrightarrow \mathbb{Q}\overset{f,g}{\longrightarrow}C$$con $C$ anillo verifica las condiciones de epimorfismo $f\restriction_{\mathbb{Z}}= g\restriction_{\mathbb{Z}}$ implica $f=g$, pero la inclusión de $\mathbb{Z}$ sobre $\mathbb{Q}$ no es sobreyectiva
+\textit{2)} En la categoría de módulos, el concepto de epimorfismo es equivalente al de homomorfismo suprayectivo. En la categoría de anillos, homomorfismo suprayectivo sí implica epimorfismo, pero no se tiene la otra implicación. En efecto, $$\mathbb{Z}\hookrightarrow \mathbb{Q}\overset{f,g}{\longrightarrow}C$$con $C$ anillo verifica las condiciones de epimorfismo $f\restriction_{\mathbb{Z}}= g\restriction_{\mathbb{Z}}$ implica $f=g$, pero la inclusión de $\mathbb{Z}$ sobre $\mathbb{Q}$ no es sobreyectiva
 \end{remark}
 \end{document}
