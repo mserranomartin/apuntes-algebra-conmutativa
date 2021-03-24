@@ -164,6 +164,18 @@ Por tanto, $e_1 = [\mu m]$ y $e_2 = [\nu n]$ son los elementos que buscamos. La 
 $$\faktor{\faktor{\R[x,y]}{\langle x^2+y^2-1\rangle}}{\faktor{\langle x-1,y\rangle}{\langle x^2+y^2-1\rangle}}\simeq\faktor{\R[x,y]}{\langle x-1,y\rangle}\simeq\R;$$
 es decir, $\af$ es maximal en $A$.
 
+Por otra parte, sea $p\in\R[x,y]$ de grado positivo y supongamos que $\{x,y\}\subset\langle p\rangle$. Se sigue de esto que existen $h,g\in\R[x,y]$ tales que
+\begin{align*}
+ph=&x\hspace{15pt} \text{y}\\
+pg=&y.
+\end{align*}
+De ser así, los grado de $p$ respecto de $x$ y de $y$ deben ser ambos menores o iguales que $1$, es decir, $p=ax+by+c$ para ciertos $a,b,c\in\R$. Si $a=0$ y $b\neq 0$, necesariamente el grado de $g$ respecto de $y$ debe ser $0$, lo que supone
+$$pg=(by+c)\left(\sum_{i\in F}\lambda_ix^{r_i}\right)=\sum_{i\in F}b\lambda_ix^{r_i}y+\sum_{i\in F}c\lambda_i x^{r_i}=y,$$
+pero esto es absurdo. Si $c\neq0$, entonces $g=0$. Por otro lado, si $c=0$, entonces podemos considerar $p=y$ y el grado de $ph$ respecto de $y$ es mayor que 0.
+El caso $a\neq0$ y $b=0$ es análogo.
+
+Ahora, si $\af$ fuera principal, se podría expresar como $\langle[p]\rangle$ para cierto $[p]\in A$. Sin embargo, por el mismo argumento dado al principio del apartado, se tendría que $\langle p\rangle$ es maximal en $\R[x,y]$, pero por lo que acabamos de ver $x\notin\langle p\rangle$ o $y\notin\langle p\rangle$. Suponiendo $x\notin \langle p\rangle$, $\langle p\rangle\subset\langle x\rangle +\langle p\rangle\subsetneq\R[x,y]$
+
 (b) Comprobemos ahora que $\langle[x-(1+iy)]\rangle=\bfr$. En primer lugar, teniendo en cuenta
 \begin{align*}
 \left(\left[\frac{-1}{2i}\right][x+(1+iy)]\right)[x-(1+iy)]&=\left[\frac{-1}{2i}\right][x^2-(1+iy)^2]=\\
