@@ -165,7 +165,24 @@ Por tanto, $e_1 = [\mu m]$ y $e_2 = [\nu n]$ son los elementos que buscamos. La 
 
 (iii) Literalmente lo mismo que el (ii) pero ahora genérico. Se cumple exactamente lo mismo.
 
+\paragraph{Ejercicio 8}
+(a) Dado que $\langle x-1,y\rangle\supset\langle x^2+y^2-1\rangle$ los Teoremas de Isomorfía nos dan
+$$\faktor{\faktor{\R[x,y]}{\langle x^2+y^2-1\rangle}}{\faktor{\langle x-1,y\rangle}{\langle x^2+y^2-1\rangle}}\simeq\faktor{\R[x,y]}{\langle x-1,y\rangle}\simeq\R;$$
+es decir, $\af$ es maximal en $A$.
 
+(b) Comprobemos ahora que $\langle[x-(1+iy)]\rangle=\bfr$. En primer lugar, teniendo en cuenta 
+\begin{align*}
+\left(\left[\frac{-1}{2i}\right][x+(1+iy)]\right)[x-(1+iy)]&=\left[\frac{-1}{2i}\right][x^2-(1+iy)^2]=\\
+&=\left[\frac{-1}{2i}\right][x^2-1-2iy+y^2]=\\
+&=\left[\frac{-1}{2i}\right][-2iy]=[y]\in\langle [x-(1+iy)]\rangle,
+\end{align*}
+tenemos que
+\begin{align*}
+[-x-iy][x-1-iy]=[x-x^2-y^2+iy]=[x-1]\in\langle [x-(1+iy)]\rangle.
+\end{align*}
+Por otra parte, como 
+$$[x-1-iy]=[x-1]-i[y]$$
+podemos concluir $\langle[x-(1+iy)]\rangle=\bfr$.
 
 \paragraph{Ejercicio 9} \textit{Sea $A$ un anillo y $\mathfrak a \subset A$ un ideal. Denotamos
 \[\mathfrak a [X] = \{ f \in A[X] \vert \; f \text{ tiene sus coeficientes en } \mathfrak a\}\]
