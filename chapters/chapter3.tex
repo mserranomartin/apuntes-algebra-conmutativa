@@ -617,14 +617,44 @@ Todo elemento de $M\otimes_AN$ es suma $\sum_{i=1}^rm_j\otimes n_j$, para cierto
 \textit{2)} Las aplicaciones bilineales de $M\times N$ en $P$, $Bil_A(M\times N,P)$ están en correspondencia biyectiva con $Hom_A(M\otimes_AN,P)$.
 
 En particular, si tomamos $A$ como $K$ cuerpo y $M$ y $N$ $K$-espacios vectoriales,$$Hom_A(M\otimes_KN,K)=(M\otimes_KN)^{\ast}=Bil_K(M\times N,K)$$
+
+\textit{3)} La construcción del producto tensorial de módulos se puede generalizar. Dados $M_1,\dots,M_r$ $A$-módulos, existe un $A$-módulo $M_1\otimes_A\dots\otimes_AM_r$ y$$\delta:M_1\times\dots\times,M_r\longrightarrow M_1\otimes_A\dots\otimes_AM_r$$ multilineal tal que para cualquier $$\Phi:M_1\times\dots\times,M_r\longrightarrow P$$ $A$-multilineal, existe una única $$f:M_1\otimes_A\dots\otimes_AM_r\longrightarrow P$$ $A$-lineal tal que $f\circ\delta=F$
 \end{remark}
-La construcción del producto tensorial de módulos se puede generalizar. Dados $M_1,\dots,M_r$ $A$-módulos, existe un $A$-módulo $M_1\otimes_A\dots\otimes_AM_r$ y$$\delta:M_1\times\dots\times,M_r\longrightarrow M_1\otimes_A\dots\otimes_AM_r$$ multilineal tal que para cualquier $$\Phi:M_1\times\dots\times,M_r\longrightarrow P$$ $A$-multilineal, existe una única $$f:M_1\otimes_A\dots\otimes_AM_r\longrightarrow P$$ $A$-lineal tal que $f\circ\delta=F$
+\begin{lemma} Sean $Z$ y $Z'$ dos $A$-módulos. Sea $\{z_i\}_{i\in I}$ un sistema de generadores de $Z$ y sea $\{z_j'\}_{j\in J}$ un sistema de generadores de $Z'$. Entonces, $\{z_i\otimes z_j:(i,j)\in I\times J\}$ es un sistema de generadores de $Z\otimes_AZ'$.
+\end{lemma}
+\begin{proposition} Sea $A$ un anillo conmutativo unitario. Se cumple:\begin{enumerate}
+    \item Dados $M,N$ y $P$ $A$-módulos, $$M\otimes_AN\otimes P\overset{isom}{\cong}(M\otimes_AN)\otimes_AP$$
+    \item $M\otimes_AN=N\otimes_AM$
+    \item Dados $f:M_1\rightarrow M_2$ y $g:N_1\rightarrow N_2$ $A$-lineales, existe $f\otimes g:M_1\otimes_AN_1\rightarrow M_2\otimes N_2$ $A$-lineal tal que si tenemos $f':M_2\rightarrow M_3$ y $g':N_2\rightarrow N_3$ homomorfismos de $A$-módulos, $$M_1\otimes_AN_1\overset{f\otimes_Ag}{\longrightarrow} M_2\otimes_AN_2\overset{f'\otimes_Ag'}{\longrightarrow} M_3\otimes_AN_3$$ se cumple $$(f'\otimes_Ag')\circ(f\otimes_Ag)=(f'\circ f)\otimes_A(g'\circ g)$$
+    \item Si $B$ es un $A$-álgebra, $B\otimes_AM$ es un $B$-módulo
+    \item Si $B$ y $C$ son $A$-álgebras, $B\otimes_AC$ es un $A$-álgebra, un $B$-módulo y un $C$-módulo
+    \end{enumerate}
+\end{proposition}
+\begin{proof}
+\textit{1.} Definimos
+$$ \begin{array}{rrcl}
+     F:&M\times N\times P&\longrightarrow&(M\otimes_AN)\otimes_AP\\
+     &(m,n,p)&\longmapsto&(m\otimes n)\otimes p
+\end{array}
+$$
+Es una comprobación rutinaria ver que $F$ es una aplicación trilineal. Por tanto, existe una única $f:M\otimes_AN\otimes_AP\rightarrow (M\otimes_AN)\otimes_AP$ tal que $f(m\otimes n\otimes p)=f(\delta(m,n,p))=F(m,n,p)=(m\otimes n)\otimes p$, donde $\delta:M\otimes N\otimes P\rightarrow M\otimes_AN\otimes_AP$ es la aplicación que se obtiene en la proposición anterior.
 
-En estas construcciones se tienen las siguientes propiedades.\begin{itemize}
-    \item [1)] Dados $M_1,M_2$ y $M_3$ $A$-módulos, $M_1\otimes_AM_2\otimes M_3\overset{isom}{\cong}(M_1\otimes_AM_2)\otimes_AM_3\overset{isom}{\cong}M_1\otimes_A(M_2\otimes_AM_3)$
-    \item [2)] $M\otimes_AN=N\otimes_AM$
-    \item [3)] Dados $f:M_1'\rightarrow M_1$ y $g:M_2'\rightarrowM_2$ $A$-lineales, existe $f\otimes g:M_1'\otimes_AM_2'\rightarrow M_1\otimes M_2$ $A$-lineal tal que el diagrama es conmutativo.
+Veamos como definir la flecha en sentido contrario. Para cada $p\in P$, definimos
+$$\begin{array}{rrcl}
+	\Phi_p:&M\times N&\longrightarrow&M\otimes_AN\otimes_AP  \\
+	&(m,n)&\longmapsto&m\otimes n\otimes p
+	\end{array}$$
+Es una comprobación rutinaria ver que es una apliación $A$-bilineal. Por tanto, existe una única $\varphi_p:M\otimes_AN\rightarrow M\otimes_AN\otimes_AP$ tal que $\varphi_p(m\otimes n)=\Phi_p(m,n)=m\otimes n\otimes p$.
 
-    En particular, si $M\in Obj(Mod_A)$, $M\otimes\_$ es un funtor covariante de $Mod_A$ en $Mod_A$ (Véase Apéndice A)
-    \end{itemize}
+Se comprueba también que para cada $p,p'\in P, \lambda\in A$, $\varphi_p\circ\varphi_{p'}=\varphi_{p+p'}$ y $\varphi_{\lambda p}=\lambda\varphi_p$. Entonces, definimos
+$$\begin{array}{rrcl}
+	G:&(M\otimes_AN)\times P&\longrightarrow&M\otimes_AN\otimes_AP  \\
+	&(z,p)&\longmapsto&\varphi_p(z)
+	\end{array}$$
+Vuelve a ser rutinario ver que $G$ es $A$-bilineal. Entonces, existe una única $g:(M\otimes_AN)\otimes_AP\rightarrow M\otimes_AN\otimes_AP$ $A$-lineal tal que $g((m\otimes n)\otimes p)=G((m\otimes n),p)=\varphi_p(m\otimes n)=m\otimes n\otimes p$.
+
+Por un lado, $(g\circ f)(m\otimes n\otimes p)=g((m\otimes n)\otimes p)=m\otimes n\otimes p$. Por tanto, $g\circ f=Id_{M\otimes N\otimes P}$
+
+Por otro, $\{m\otimes n:(m,n)\in M\times N\}$ es sistema de generadores de $M\otimes_AN$. Por el lema anterior, $\{(m\otimes n)\otimes p: (m,n,p)\in M\times N\times P\}$ es sistema de generadores de $(M\otimes_AN)\otimes_AP$. Evaluando, $(f\circ g)((m\otimes n)\otimes p)=(m\otimes n)\otimes p)$ y concluimos $f\circ g)=Id_{(M\otimes_AN)\otimes_AP}$
+\end{proof}
 \end{document}
