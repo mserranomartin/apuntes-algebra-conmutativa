@@ -271,4 +271,23 @@ y por tanto $\set{X_{f_j}}_{j\in J}$ es un subrecubrimiento finito.
 
 $\Leftarrow)$ Si $A=\bigcup_{i=1}^n X_{f_i}$, entonces es abierto por ser unión de abiertos. Sea $(X_{g_j})_{j\in J}$ un recubrimiento de $A$, en particular recubren cada $X_{f_i}$. Para cada $i=1,\dots, n$ por ser compacto existe $F_i \subset J$ finito tal que $X_{f_i}\subset \bigcup_{j \in F_i} X_{g_j}$. Por tanto $A \subset \bigcup{i=1}^n \bigcup_{j \in F_i} X_{g_j}$.
 
+\paragraph{Ejercicio 20} \textit{Sea $A$ un anillo y $\mathfrak a_i$ con $i=1,\dots, n$ ideales tales que si $i\neq j$, entonces $\mathfrak a_i + \mathfrak a_j = A$.}
+\begin{enumerate}[label=(\roman*)]
+  \item \textit{Sea $\mathfrak b_i = \bigcap_{j\neq i} \mathfrak a_j$, probar que $\mathfrak b_i + \mathfrak a_i = A$.}
+  \item \textit{Demostrar que la aplicación $A\to \prod_{i=1}^n A/\mathfrak{a}_i$ es supreyectiva y su núcleo es $\bigcap_{j=1}^n \mathfrak a_j$.}
+  \item \textit{Encontrar el conjunto de idempotentes ortogonales que describe la descomposición anterior.}
+\end{enumerate}
+
+\textit{(i)} Por inducción sobre $n$. Si $n=2$, es trivial. Supongamos cierto para $1, \dots, n$ y consideremos $n+1$ ideales cumpliendo las hipótesis del enunciado. Cualquier subconjunto suyo cumple las hipótesis también.
+
+Fijamos $i,j$ y construirmos $\mathfrak b_{ij} = \bigcap_{k\neq i,j} \mathfrak a_k$. Si pensamos en $\{\mathfrak a_k\}_{k \neq i}$, este es un conjunto de $n$ ideales y $\mathfrak b_{ij}$ es intersección de todos menos 1, entonces por hipótesis de inducción tenemos que $\mathfrak b_{ij} + \mathfrak a_i = A$.
+Análogamente para $\{\mathfrak a_k\}_{k \neq j}$ y por eso $\mathfrak b_{ij} + \mathfrak a_j = A$. Además, por la hipótesis original, $\mathfrak a_i + \mathfrak a_j = A$.
+
+Entonces tenemos tres ideales $\mathfrak b_{ij}, \mathfrak a_i, \mathfrak a_j$ que cumplen las hipótesis del enunciado.
+Por tanto, por hipótesis de inducción, $\mathfrak b_i =\mathfrak b_{ij} \cap  \mathfrak a_j  = (\bigcap_{k\neq i,j} \mathfrak a_k) \cap  \mathfrak a_j = \bigcap_{k\neq i} \mathfrak a_k$ cumple $\mathfrak b_i + \mathfrak a_i = A$.
+
+\textit{(ii)} Para cada $i$, la proyección canónica $\pi_i: A\to A/\mathfrak{a}_i$ es un homomorfismo sobreyectivo. Realmente, $\prod_{i=1}^n A/\mathfrak{a}_i = \bigoplus_{i=1}^n A/\mathfrak{a}_i$. Sabemos que en tal caso, $\pi = \bigoplus_{i=1}^n \pi_i$ es también homomorfismo, y como tiene todas sus compontentes sobreyectivas, es sobreyectivo. Finalmente, si $0 = \pi(a)$, entonces $0 = \pi_i(a) = a + \mathfrak a_i$ o equivalente $a \in \mathfrak a_i$ para todo $i=1,\dots, n$, y por tanto $a \in \bigcap_{i=1}^n \mathfrak a_i$.
+
+\textit{(iii)}
+
 \end{document}
