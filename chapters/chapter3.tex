@@ -852,8 +852,71 @@ N&\longmapsto&M\oplus_A N
 y estudiemos su comportamiento respecto de sucesiones exactas. Antes de comenzar, cabe destacar que estudiar este funtor es equivalente a estudiar el funtor $\_\oplus_A M$ debido al isomorfismo existente $M\oplus_A N\cong N\oplus_A M$.
 
 \begin{proposition}
-	Sea $M$ un $A$-módulo y sea $$N'\overset{f}{\longrightarrow}N\overset{g}{\longrightarrow}N''\longrightarrow 0$$ una sucesión exacta. Se cumple que $$M\otimes_A N'\overset{1_M\otimes f}{\longrightarrow}M\otimes_A N\overset{1_M\otimes g}{\longrightarrow}M\otimes_A N''\longrightarrow 0$$ es también una sucesión exacta.
+	Sea $M$ un $A$-módulo y sea \begin{equation}\label{equation: ext1}
+	N'\overset{f}{\longrightarrow}N\overset{g}{\longrightarrow}N''\longrightarrow 0
+	\end{equation}una sucesión exacta. Se cumple que \begin{equation}\label{equation: ext2}
+	M\otimes_A N'\overset{1_M\otimes f}{\longrightarrow}M\otimes_A N\overset{1_M\otimes g}{\longrightarrow}M\otimes_A N''\longrightarrow 0
+	\end{equation} es también una sucesión exacta.
 \end{proposition}
+
+\begin{proof}
+	Sabemos que ($\ref{equation: ext1}$) es exacta si, y sólo si, para todo $P$ $A$-módulo se tiene que la sucesión
+	\begin{equation}\label{equation: ext3}
+	0\longrightarrow\Hom_A(M\oplus_A N'',P)\overset{(1_M\oplus g)^*}{\longrightarrow}\Hom_A(M\oplus_A N,P)\overset{(1_M\oplus f)^*}{\longrightarrow}\Hom_A(M\oplus_A N',P)
+	\end{equation}
+	es exacta.
+	
+	La sucesión
+	\begin{equation}\label{equation: ext4}
+	0\longrightarrow\Hom_A(M,\Hom_A(N,P))\overset{(g^{*_P})_{*_M}}{\longrightarrow}&\Hom_A(M,\Hom_A(N,P))\overset{(f^{*_P})_{*_M}}{\longrightarrow}\\
+	\overset{(f^{*_P})_{*_M}}{\longrightarrow}&\Hom_A(M,\Hom_A(N,P)),
+	\end{equation}
+	donde $(f^{*_P})_{*_M}:=\Hom_A(M,\Hom_A(f,P))$ y $(g^{*_P})_{*_M}:=:=\Hom_A(M,\Hom_A(g,P))$, surge de aplicar en primer lugar el funtor $\Hom_A(\_,P)$ a la sucesión $\ref{equation: ext1}$ y, después, aplicar el funtor $\Hom_A(M,\_)$ al resultado anterior. Así, $\ref{pry}$ nos dice que es exacta.
+	
+	Observemos ahora que, para cada $X\in\set{N,N',N''}$ se tiene la cadena de isomorfismos de $A$-módulos
+	$$\Hom_A(M\otimes_A X,P)\cong\Bil_A(M\times X,P)\cong\Hom_A(M,\Hom_A(X,P)).$$
+	Comprobemos el segundo de los isomorfismos. En primer lugar, definamos
+	$$\begin{array}{rcl}
+	\Bil_A(M\times X,P)&\longrightarrow&\Hom_A(M,\Hom_A(X,P))\\
+	F(m,n)&\longmapsto&(\varphi_F(m))(n):=F(m,n)
+	\end{array}.$$
+	Dados $F,G\in\Bil_A(M\times X,P)$ y $\lambda\in A$ tenemos
+	\begin{itemize}
+		\item $(F+G)(n,m)=F(m,n)+G(m,n)$ y
+		\item $(\lambda F)(m,n)=\lambda F(m,n).$
+	\end{itemize}
+	
+	Por otro lado, definamos
+	$$\begin{array}{rcl}
+	\Hom_A(M,\Hom_A(X,P))&\longrightarrow&\Bil_A(M\times X,P)\\
+	\varphi(m)(n)&\longmapsto&F_\varphi(m,n):=\varphi(m)(n)
+	\end{array}.$$
+	
+	Veamos que la aplicación es bilienal. Sean $\varphi\in\Hom_A(M,\Hom_A(X,P))$, $\set{m,m_1,m_2}\subset M$, $\set{n,n_1,n_2}\subset X$ y $\lambda\in A$. Tenemos
+	\begin{itemize}
+		\item $\varphi(m_1+m_2)(n)=(\varphi(m_1)+\varphi(m_2))(n)=\varphi(m_1)(n)+\varphi(m_2)(n)$,
+		\item $\varphi(m)(n_1+n_2)=\varphi(m)(n_1)+\varphi(m)(n_2)$ y
+		\item $\varphi(\lambda m)(n)=(\lambda\varphi)(m)(n)=\lambda \varphi(m)(n)=\varphi(m)(\lambda n)$.
+	\end{itemize}
+	Vemos así que ambas aplicaciones son $A$-lineales. Por último, sean $F\in\Bil_A(M\times X,P)$ y $\varphi\in\Hom_A(M,\Hom_A(X,P))$ y veamos que la una es la inversa de la otra. Se tiene
+	\begin{itemize}
+		\item $\varphi_{F_\varphi}(m)(n)=F_\varphi(m,n)=\varphi(m)(n)$ y
+		\item $F_{\varphi_F}(m,n)=\varphi_F(m)(n)=F(m,n).$
+	\end{itemize}
+	
+	Denotemos $\Phi_X:\Hom_A(M\otimes_A X,P)\longrightarrow\Hom_A(M,\Hom_A(X,P))$, para cada $X\in\{N,N',N''\}$, a cada uno de los isomorfismos definidos.
+	Estos isomorfismos implican que por ser ($\ref{equation: ext4}$) exacta ($\ref{equation: ext3}$) es también exacta. Para probar esto es suficiente ver que se tienen las igualdades
+	$$(1_M\otimes g)^*={\Phi_N}^{-1}\circ(g^*)_*\circ\Phi_{N''}$$
+	y
+	$$(1_M\otimes f)^*={\Phi_N'}^{-1}\circ(f^*)_*\circ\Phi_{N}.$$
+	Probemos la primera de las igualdades. Dado $F\in\Hom_A(M\oplus N'',P)$, $\Phi_{N''}(F):=\varphi_F\in\Hom_A(M,\Hom_A(N'',P))$ y $$(g^*)_*(\varphi_F(m)(n))=g^*(\varphi_F(m))(n)=\varphi_F(m)(g(n))$$
+	para cada $m\oplus n\in M\oplus_A N$. Por último,
+	$${\Phi_N}^{-1}(\varphi_F(m)(g(n)))=F(m\oplus g(n))$$
+	y
+	$$F(m\oplus g(n))=F((1_M\oplus g)(m\oplus n)).$$
+	Dado que $m\oplus n\in M\oplus_A N''$ era arbitrario, tenemos la igualdad que buscábamos.
+	El caso de la $f$ es análogo.
+\end{proof}
 
 \begin{theorem}Sea $M$ un $A$-módulo. Las siguientes afirmaciones son equivalentes.
 	\begin{itemize}
@@ -876,5 +939,4 @@ y estudiemos su comportamiento respecto de sucesiones exactas. Antes de comenzar
 	
 	\textit{2.} Si $B$ es plano y $\af\subset A$ un ideal, entonces la cuarta afirmación del teorema anterior nos da el isomorfismo de $A$-módulos $$\af^e\cong \af\otimes_A B.$$
 \end{remark}
-
 \end{document}
