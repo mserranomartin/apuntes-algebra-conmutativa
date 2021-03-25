@@ -572,6 +572,14 @@ De ahora en adelante omitiremos el subíndice de $\otimes_A$, escribiendo $M \ot
     \item Dados $f:M_1\rightarrow M_2$ y $g:N_1\rightarrow N_2$ $A$-lineales, existe $f\otimes g:M_1\otimes N_1\rightarrow M_2\otimes N_2$ $A$-lineal tal que si tenemos $f':M_2\rightarrow M_3$ y $g':N_2\rightarrow N_3$ homomorfismos de $A$-módulos, $$M_1\otimes N_1\overset{f\otimes g}{\longrightarrow} M_2\otimes N_2\overset{f'\otimes g'}{\longrightarrow} M_3\otimes N_3$$ se cumple $$(f'\otimes g')\circ(f\otimes g)=(f'\circ f)\otimes (g'\circ g)$$
     \item Si $B$ es un $A$-álgebra, $B\otimes M$ es un $B$-módulo
     \item Si $B$ y $C$ son $A$-álgebras, $B\otimes C$ es un $A$-álgebra, un $B$-módulo y un $C$-módulo
+    \item Para todo $P$ $A$-módulo, se verifica $P\otimes_A A\cong P$ mediante el siguiente isomorfismo de $A$-módulos
+    $$\begin{array}{rcl}
+    P&\longrightarrow&P\otimes_A A  \\
+    p&\longmapsto&p\otimes_A 1_A 
+    \end{array}$$
+    \item Sean ${\set {N_i}}_{i\in I}$ y $M$ $A$-módulos. Se cumple que $$M\otimes_A\left(\bigoplus_{i\in I}N_i\right)\cong\bigoplus_{i\in I}(M\otimes_A N_i).$$
+    En particular,
+    $$M\otimes_A A^{(I)}\cong\bigoplus_{i\in I}(M\otimes_A A)\cong M^{(I)}.$$
     \end{enumerate}
 \end{proposition}
 \begin{proof}
@@ -790,6 +798,40 @@ Se cumple que $\varphi_{b_1+b_2} = \varphi_{b_1}+\varphi_{b_2}$ y que $\varphi_{
 \end{align}
 que está bien definida y con la cual $B\otimes M$ cumple los axiomas de $A$-módulo.
 
+\textit{7.} Denotemos por $n_i\in \oplus_{i\in I}N_i$ al elemento tal que tiene a $n\in N_i$ por $i$-ésima coordenada y $0$ en el resto. Definamos la aplicación
+$$\begin{array}{rrcl}
+F:&M\times(\oplus_{i\in I})&\longrightarrow&\oplus_{i\in I}(M\otimes_A N_i)\\
+&(m,n_i)&\longmapsto& (m\otimes n)_i 
+\end{array}.$$
+Esta aplicación es bilineal por serlo para el sistema de generadores
+\begin{align*}
+F(\lambda m,n_i)=(\lambda m\otimes n)_i=&(m\otimes \lambda n)_i=F(m,\lambda n)\\
+=&\lambda(m\otimes n)_i=\lambda F(m,n_i),\\
+F(m_1+m_2,n_i)=&((m_1+m_2)\otimes n)_i=\\=&(m_1\otimes n)_i+(m_2\otimes n)_i=F(m_1,n_i)+F(m_2,n_i)\hspace{10pt}\text{y}\\
+F(m,(n_1+n_2)_i)=&(m\otimes(n_1+n_2))_i=\\=&(m\otimes n_1)_i+(m\otimes n_2)_i=F(m,{n_1}_i)+F(m,{n_2}_i).
+\end{align*}
+Es por esto que existe
+$$\begin{array}{rrcl}
+f:&M\otimes_A(\oplus_{i\in I}N_i)&\longrightarrow&\oplus_{i\in I}(M\otimes_A N_i)
+\end{array}$$
+aplicación $A$-lineal. En el otro sentido comenzamos definiendo para cada $i\in I$ las aplicaciones
+$$\begin{array}{rrcl}
+G_i:&M\times N_i&\longmapsto&M\otimes(\oplus_{i\in I}N_i)\\
+&(m,n)&\longmapsto&m\otimes n_i 
+\end{array},$$
+que son $A$-bilineales de nuevo por la propia definición. Así, surgen las apliciones $A$-lineales
+$$\begin{array}{rrcl}
+g_i&M\otimes N_i&\longrightarrow&M\otimes(\oplus_{i\in I}N_i)
+\end{array},$$
+que nos permiten definir a su vez la siguiente aplicación $A$-lineal
+$$\begin{array}{rrcl}
+g:=\oplus_{i\in I}g_i:&\oplus(M\otimes_A N_i)&\longrightarrow&M\otimes_A(\oplus_{i\in I}N_i)  \\
+& 
+\end{array}.$$
+Se comprueba que $g\circ f=1_{M\otimes_A(\oplus N_i)}$ y $f\circ g=1_{\oplus(M\otimes_A N_i)}$ y se tiene el resultado. 
+
+Para ver el caso particular, basta aplicar lo que acabamos de probar y la propiedad $6$ del producto tensorial.
+
 \end{proof}
 
 
@@ -802,5 +844,37 @@ En estas construcciones se tienen las siguientes propiedades.
     En particular, si $M\in Obj(Mod_A)$, $M\otimes\_$ es un funtor covariante de $Mod_A$ en $Mod_A$ (Véase Apéndice A)
 \end{itemize}
 
+Ahora, dado un $A$-módulo $M$, consideremos el funtor
+$$\begin{array}{rcl}
+Mod_A&\overset{M\oplus_A\_}{\longrightarrow}&Mod_A\\
+N&\longmapsto&M\oplus_A N
+\end{array}$$
+y estudiemos su comportamiento respecto de sucesiones exactas. Antes de comenzar, cabe destacar que estudiar este funtor es equivalente a estudiar el funtor $\_\oplus_A M$ debido al isomorfismo existente $M\oplus_A N\cong N\oplus_A M$.
+
+\begin{proposition}
+	Sea $M$ un $A$-módulo y sea $$N'\overset{f}{\longrightarrow}N\overset{g}{\longrightarrow}N''\longrightarrow 0$$ una sucesión exacta. Se cumple que $$M\otimes_A N'\overset{1_M\otimes f}{\longrightarrow}M\otimes_A N\overset{1_M\otimes g}{\longrightarrow}M\otimes_A N''\longrightarrow 0$$ es también una sucesión exacta.
+\end{proposition}
+
+\begin{theorem}Sea $M$ un $A$-módulo. Las siguientes afirmaciones son equivalentes.
+	\begin{itemize}
+		\item[1.] $M$ es un $A$-módulo plano.
+		\item[2.] Para cualesquiera $N'$ y $N$ $A$-módulos y $f:N'\longrightarrow N$ inyectiva, $$1_M\otimes f:M\otimes N'\longrightarrow M\otimes N$$ es inyectiva.
+		\item[2'.] Para cualesquiera $N'$ y $N$ $A$-módulos finitamente generados y $f:N'\longrightarrow N$ inyectiva, $$1_M\otimes f:M\otimes N'\longrightarrow M\otimes N$$ es inyectiva.
+		\item[3.] Si $$\sum_{i=1}^na_im_i=0_A$$ para ciertos $a_i\in A$ y $m_i\in N$, entonces existen ${m_j}'\in M$ de forma que para cada $i$ se tiene $$m_i=\sum_{j=1}^s\lambda_{ij}{m_j}',\hspace{15pt}\lambda_{ij}\in A$$ y para cada $j$ se verifica $$\sum_{i=1}^n\lambda_{ij}a_i=0.$$
+		\item[4.] Si $\af\in A$ es un ideal, entonces la aplicación
+		$$\begin{array}{rcl}
+		\af\otimes_A M&\longrightarrow&M\hspace{15pt}\text{entendido como}\ A\otimes_A M\\
+		\sum_{i\in F}a_i\otimes_A m_i&\longmapsto&\sum_{i\in F}a_im_i 
+		\end{array}$$
+		es inyectiva.
+	\end{itemize}
+\end{theorem}
+
+\begin{remark}\textit{1.} Sean $A$ un anillo conmutativo y unitario, $I$ un conjunto de índices, $N$ y $N'$ $A$-módulos y $f:N'\longrightarrow N$ una aplicación $A$-lineal inyectiva. Se verifica que la aplicación $$1_{A^{(I)}}\otimes_A f:A^{(I)}\otimes N\longrightarrow A^{(I)}\otimes_A N$$ es también inyectiva.
+	
+	Dado que $A^{(I)}\otimes_A N\cong\oplus_{i\in I}N$ y $A^{(I)}\otimes_A N'\cong\oplus_{i\in I}N'$, basta comprobar que la aplicación $$\oplus_{i\in I}f:\oplus_{i\in I}N'\longrightarrow \oplus_{i\in I}N$$ es inyectiva.
+	
+	\textit{2.} Si $B$ es plano y $\af\subset A$ un ideal, entonces la cuarta afirmación del teorema anterior nos da el isomorfismo de $A$-módulos $$\af^e\cong \af\otimes_A B.$$
+\end{remark}
 
 \end{document}
