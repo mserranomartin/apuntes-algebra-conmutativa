@@ -938,6 +938,11 @@ sin embargo, de la pertenencia $m\otimes_A n'\in M\otimes_A N'$ no se sigue nece
 \begin{proof}
 	En primer lugar, ($1\Leftrightarrow 2$) es la propia definición de $A$-módulo plano. También son claras las implicaciones ($2\Rightarrow3$) y ($3\Rightarrow4$). Probemos ($3\Rightarrow2$) y ($4\Rightarrow3$).
 	
+	($3\Rightarrow2$). Sean $M,N$ y $N'$ $A$-módulos y consideremos una sucesión exacta arbitraria $$0\longrightarrow N'\overset{f}{\longrightarrow}N\overset{g}{\longrightarrow}N''\longrightarrow 0.$$
+	En primer lugar, aplicando ($\ref{sucesiones+otimes1}$) tenemos que $\text{im}(1\otimes f)=\ker{(1\otimes g)}$ y que $1\otimes g$ es sobreyectiva. Por otro lado, del hecho de que la sucesión que hemos tomado sea exacta se desprende que, en concreto,$$0\longrightarrow N'\overset{f}{\longrightarrow}N$$es también exacta; así, por hipótesis tenemos que $1\otimes f$ es inyectiva.
+	
+	Con todo, resulta que la sucesión $$0\longrightarrow M\otimes_AN'\overset{1\otimes f}{\longrightarrow}M\otimes_AN\overset{1\otimes g}{\longrightarrow}M\otimes_AN''\longrightarrow 0$$ es también exacta.
+	
 	($4\Rightarrow3$). Sean $N,N'$ $A$-módulos y $f:N'\longrightarrow N$ una aplicación $A$-lineal e inyectiva. Tomemos $z:=\sum_{i=1}^r m_i\otimes_A n_i\in M\otimes_A N'$ tal que $f(z)=0_{M\otimes_A N}$, esto ocurre si, y sólo si, $\sum_{i=1}^r m_i\otimes_Af(n_i)=0_{M\otimes_A N}$ o, lo que es lo mismo $$e_{(m_1,f(n_1))}+\cdots+e_{(m_r,f(n_r))}\in\Sigma.$$
 	Definamos ahora los menores submódulos de $N$ y de $N'$ que contengan a los conjuntos $\set{\text{rel}_1,\dots,\text{rel}_s,f(n_1),\dots,f(n_r)}$ y $\set{n_1,\dots,n_r}$ respectivamente. Denotemos al primero por $N_{\text{red}}$ y al segundo, ${N_{\text{red}}}'$.
 	
