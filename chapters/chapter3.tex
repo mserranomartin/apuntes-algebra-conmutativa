@@ -977,4 +977,56 @@ sin embargo, de la pertenencia $m\otimes_A n'\in M\otimes_A N'$ no se sigue nece
 	
 	\textit{2.} Si $B$ es plano y $\af\subset A$ un ideal, entonces la cuarta afirmación del teorema anterior nos da el isomorfismo de $A$-módulos $$\af^e\cong \af\otimes_A B.$$
 \end{remark}
+
+\begin{lemma}
+	Sean $M$ y $N$ $A$-módulos, donde $N:=\langle n_1,\dots,n_r\rangle_A$. Si se tiene una relación en $M\otimes_A N$ de forma que $$\sum_{i=1}^rm_i\otimes n_i=0_{M\otimes_A N},$$ entonces existen elementos ${m_j}'\in M$ y $\mu_{ij}\in A$, para $j\in\{1,\dots,s\}$ y $s\in\N$, de forma que
+	\begin{equation}
+	m_i=\sum_{j=1}^s\mu_{ij}{m_j}'\hspace{15pt}\forall\ i\in\set{1,\dots,r}
+	\end{equation}
+	y
+	\begin{equation}
+	\sum_{i\in F}\mu_{ij}n_i=0_N\hspace{15pt}\forall\ j\in\set{1,\dots,s}.
+	\end{equation}
+\end{lemma}
+\begin{proof}
+	Probemos primero un caso base: consideremos $N$ como $A$-módulo libre generado por el conjunto $\set{n_1,\dots,n_r}$; es decir, existe un isomorfismo de $A$-módulos 
+	$$\begin{array}{rrcl}
+	\sigma:&N&\longrightarrow&A^{(r)}\\
+	&n_i&\longmapsto&e_i
+	\end{array}.$$
+	Así, tenemos la cadena de isomorfismos de $A$-módulos
+	$$\begin{array}{ccccc}
+	M\otimes N&\overset{1\otimes \sigma}{\longrightarrow}&M\otimes A^{(r)}&\longrightarrow&M^{(r)}\\
+	(m\otimes n_i)&\longmapsto&(m\otimes e_i)&\longmapsto&(m)_i
+	\end{array}$$
+	y se desprende que
+	$$\sum_{i=1}^rm_in_i=0_{M\otimes N}\Leftrightarrow (m_1,\dots,m_r)=0_{M^{(r)}}\Leftrightarrow m_i=0_M\hspace{15pt}\forall\ i\in\{1,\dots,r\}.$$
+	Tras esto, basta tomar $s=r$ y definir ${m_j}':=m_j$, $\mu_{ij}:=0_A$ para $i,j\in\set{1,\dots,r}$.
+	
+	Ahora, de forma más general, sea
+	$$0\longrightarrow K:=\ker(f)\hookrightarrow A^{(r)}\overset{F}{\longrightarrow}N\longrightarrow 0$$
+	una sucesión exacta, donde $F$ verifica $F(e_i)=n_i$ para cada $i\in\set{1,\dots,r}$.
+	Sabemos que la sucesión
+	$$M\otimes_A K\overset{h:=1_m\otimes i}{\longrightarrow}M\otimes_A A^{(r)}\overset{f:=1_M\otimes F}{\longrightarrow}M\otimes N\longrightarrow0$$
+	es exacta.
+	
+	De esta forma, si un elemento $z:=\sum m_i\otimes e_i$ verifica $f(z)=0_{M\otimes_A N}$, entonces existe $w:=\sum_{j=1}^s{m_j}'\otimes k_j\in M\otimes_A K$ de forma que $h(w)=z$; esto supone
+	$$\sum_{j=1}^s {m_j}'\otimes k_j-\sum_{i=1}^r m_i\otimes e_i=0_{M\otimes_A A^{(r)}}.$$
+	Además, para cada $j\in\set{1,\dots,s}$ existen $\mu_{ij}\in A$ tales que $$k_j=\sum \mu_{ij}e_i.$$
+	Resulta así lo siguiente. Por un lado se tiene
+	\begin{align*}
+	\sum_{j=1}^s {m_j}'\otimes k_j-\sum_{i=1}^r m_i\otimes e_i&=\sum_{j=1}^s {m_j}'\otimes \sum_{i=1}^r \mu_{ij}e_i-\sum_{i=1}^r m_i\otimes e_i=\\
+	&=\sum_{i=1}^r(\sum_{j=1}^s\mu_{ij}{m_j}')\otimes e_i-\sum_{i=1}^r m_i\otimes e_i=\\
+	&=\sum_{i=1}^r(\sum_{j=1}^s\mu_{ij}{m_j}'-m_i)\otimes e_i=0_{M\otimes_A A^{(r)}},
+	\end{align*}
+	de donde se desprenden las igualdades
+	\begin{equation}
+	m_i=\sum_{j=1}^s\mu_{ij}{m_j}'\hspace{15pt}\forall\ i\in\set{1,\dots,r}.
+	\end{equation}
+	Por otro lado, como para cada $j\in\set{1,\dots,s}$ se tiene $k_j\in K$, resulta
+	\begin{equation}
+	0_N=f(k_j)=\sum_{i=1}^r\mu_{ij}f(e_i)=\sum_{i=1}^r\mu_{ij}n_i\hspace{15pt}\forall\ j\in\set{1,\dots,s}.
+	\end{equation}
+\end{proof}
+
 \end{document}
