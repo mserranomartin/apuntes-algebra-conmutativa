@@ -918,6 +918,39 @@ y estudiemos su comportamiento respecto de sucesiones exactas. Antes de comenzar
 	El caso de la $f$ es análogo.
 \end{proof}
 
+\begin{definition}
+	Se dice que un $A$-módulo $M$ es plano si, y sólo si, el funtor $M\otimes_A \_$ es exacto, i.e, conserva sucesiones exactas.
+\end{definition}
+
+Antes de continuar con la siguiente proposición, observemos lo siguiente: dados $M,N$ $A$-módulos y $N'\subset N$ submódulo, un elemento $m\otimes_A n'\in M\otimes_A N'$ puede considerarse como un elemento en $M\otimes_A N'$ y como un elemento en $M\otimes_A N$ haciendo uso de la inclusión $$M\otimes_A N'\overset{i}{\hookrightarrow}M\otimes_A N;$$
+sin embargo, de la pertenencia $m\otimes_A n'\in M\otimes_A N'$ no se sigue necesariamente la igualdad $i(m\otimes_A n')=m\otimes_A n$.
+
+\begin{proposition}
+	Sea $M$ un $A$-módulo. Las siguientes afirmaciones son equivalentes.
+	\begin{itemize}
+		\item[1.] $M$ es un $A$-módulo plano.
+		\item[2.] Para toda sucesión corta exacta $$0\longrightarrow N'\overset{f}{\longrightarrow}N\overset{g}{\longrightarrow}N''\longrightarrow 0,$$
+		la sucesión $$0\longrightarrow M\otimes_A N'\overset{1\otimes f}{\longrightarrow}M\otimes_A N\overset{1\otimes g}{\longrightarrow}M\otimes_A N''\longrightarrow 0$$ es exacta.
+		\item[3.] Para cualesquiera dos $A$-módulos $N$ y $N'$ y cualquier sucesión exacta corta $$0\longrightarrow N'\overset{f}{\longrightarrow},N$$ la sucesión $$0\longrightarrow M\otimes_A N'\overset{1\otimes f}{\longrightarrow}M\otimes_A N$$ es exacta.
+		\item[4.] Para cualesquiera dos $A$-módulos $N$ y $N'$ finitamente generados y cualquier sucesión exacta corta $$0\longrightarrow N'\overset{f}{\longrightarrow},N$$ la sucesión $$0\longrightarrow M\otimes_A N'\overset{1\otimes f}{\longrightarrow}M\otimes_A N$$ es exacta.
+	\end{itemize}
+\end{proposition}
+\begin{proof}
+	En primer lugar, ($1\Leftrightarrow 2$) es la propia definición de $A$-módulo plano. También son claras las implicaciones ($2\Rightarrow3$) y ($3\Rightarrow4$). Probemos ($3\Rightarrow2$) y ($4\Rightarrow3$).
+	
+	($4\Rightarrow3$). Sean $N,N'$ $A$-módulos y $f:N'\longrightarrow N$ una aplicación $A$-lineal e inyectiva. Tomemos $z:=\sum_{i=1}^r m_i\otimes_A n_i\in M\otimes_A N'$ tal que $f(z)=0_{M\otimes_A N}$, esto ocurre si, y sólo si, $\sum_{i=1}^r m_i\otimes_Af(n_i)=0_{M\otimes_A N}$ o, lo que es lo mismo $$e_{(m_1,f(n_1))}+\cdots+e_{(m_r,f(n_r))}\in\Sigma.$$
+	Definamos ahora los menores submódulos de $N$ y de $N'$ que contengan a los conjuntos $\set{\text{rel}_1,\dots,\text{rel}_s,f(n_1),\dots,f(n_r)}$ y $\set{n_1,\dots,n_r}$ respectivamente. Denotemos al primero por $N_{\text{red}}$ y al segundo, ${N_{\text{red}}}'$.
+	
+	Es claro que $f_{|{N_{\text{red}}}'}:{N_{\text{red}}}'\longrightarrow N_{\text{red}}$ está bien definida y es inyectiva. Así, por la hipótesis, se tiene que la sucesión $$0\longrightarrow M\otimes_A {N_{\text{red}}}'\overset{1\otimes f_{|{N_{\text{red}}}'}}{\longrightarrow M}M\otimes {N_{\text{red}}}$$ es exacta. 
+	Así, denotando por $z_\text{red}$ al elemento $z$ visto en $M\otimes_A {N_{\text{red}}}'$, se tiene que $f(z_\text{red})=0_{M\otimes_A {N_{\text{red}}}}$, es decir, $z_\text{red}=0_{M\otimes_A {N_{\text{red}}}'}$.
+	Si ahora consideramos el homomorfismo inclusión $$M\otimes_A {N_{\text{red}}}'\overset{i}{\hookrightarrow} M\otimes_A {N'},$$
+	en este caso, por ser homomorfismo sí se puede concluir que $i(z_\text{red})=z=0_{M\otimes_A {N}'}.$
+\end{proof}
+
+\begin{remark}
+	\textit{1)} Sean $M$ y $N$ dos $A$-módulos. El mismo argumento empleado en la implicación ($4\Rightarrow 3$) de la prueba anterior prueba que, tras la adaptación necesaria, si $\sum_{i=1}^r m_i\otimes_A n_1=0_{M\otimes_A N}$, existen $M'\subset M$ y $N'\subset N$ submódulos finitamente generados que contienen a los conjutos $\set{m_i}$ y $\set{n_i}$ respectivamente, tales que $\sum_{i=1}^r m_i\otimes_A n_i=0_{M'\otimes N'}$. De nuevo, hay que destacar que no necesariamente se tiene $M'\otimes_A N'\subset M\otimes_A N$.
+\end{remark}
+
 \begin{theorem}Sea $M$ un $A$-módulo. Las siguientes afirmaciones son equivalentes.
 	\begin{itemize}
 		\item[1.] $M$ es un $A$-módulo plano.
