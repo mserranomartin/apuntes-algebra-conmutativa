@@ -285,7 +285,7 @@ Ahora, dados dos conjuntos de índices no vacíos $I$ y $J$, supongamos que exis
 \end{definition}
 \begin{definition} Decimos que una sucesión de homomorfismos de $A$-módulos es corta si es de la forma$$0\longrightarrow M_1\overset{f}{\longrightarrow} M_2\overset{g}{\longrightarrow} M_3\longrightarrow 0$$
 \end{definition}
-\begin{remark} Una sucesión corta es exacta si y sólo si $f:M_1\rightarrow M_2$ es inyectiva, $g:M_2\rightarrow M_3$ es suprayectiva y $im(f)=ker(g)$
+\begin{remark} Una sucesión corta es exacta si y sólo si $f:M_1\rightarrow M_2$ es inyectiva, $g:M_2\rightarrow M_3$ es suprayectiva y $\text{im}(f)=\ker(g)$
 \end{remark}
 \begin{example}
   \begin{enumerate}
@@ -924,6 +924,14 @@ y estudiemos su comportamiento respecto de sucesiones exactas. Antes de comenzar
 
 Antes de continuar con la siguiente proposición, observemos lo siguiente: dados $M,N$ $A$-módulos y $N'\subset N$ submódulo, un elemento $m\otimes_A n'\in M\otimes_A N'$ puede considerarse como un elemento en $M\otimes_A N'$ y como un elemento en $M\otimes_A N$ haciendo uso de la inclusión $$M\otimes_A N'\overset{i}{\hookrightarrow}M\otimes_A N;$$
 sin embargo, de la pertenencia $m\otimes_A n'\in M\otimes_A N'$ no se sigue necesariamente la igualdad $i(m\otimes_A n')=m\otimes_A n$.
+
+\begin{example}
+	Consideremos los $\Z$-módulos $M:=\Z$, $N=N':=\Z/2\Z$ y $M':=2\Z$ (submódulo de $\Z$). Tomemos $x\in N\setminus\{0\}$:
+	\begin{itemize}
+		\item por un lado, $2\otimes_\Z x=1\otimes_\Z 2x=0_{M\otimes N}$,
+		\item sin embargo, por otro lado el elemento $2\otimes_\Z x$ no es $0_{M'\otimes N'}$. 
+	\end{itemize}
+\end{example}
 
 \begin{proposition}
 	Sea $M$ un $A$-módulo. Las siguientes afirmaciones son equivalentes.
