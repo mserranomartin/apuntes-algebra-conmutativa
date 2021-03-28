@@ -964,6 +964,15 @@ sin embargo, de la pertenencia $m\otimes_A n'\in M\otimes_A N'$ no se sigue nece
 	\textit{1)} Sean $M$ y $N$ dos $A$-módulos. El mismo argumento empleado en la implicación ($4\Rightarrow 3$) de la prueba anterior prueba que, tras la adaptación necesaria, si $\sum_{i=1}^r m_i\otimes_A n_1=0_{M\otimes_A N}$, existen $M'\subset M$ y $N'\subset N$ submódulos finitamente generados que contienen a los conjutos $\set{m_i}$ y $\set{n_i}$ respectivamente, tales que $\sum_{i=1}^r m_i\otimes_A n_i=0_{M'\otimes N'}$. De nuevo, hay que destacar que no necesariamente se tiene $M'\otimes_A N'\subset M\otimes_A N$.
 \end{remark}
 
+\begin{example}
+	Denotemos respectivamente por $M_0$ y $N_0$ a los submódulos $M'$ y $N'$ de la observación anterior y mantengamos la notación de $\ref{exsub}$. 
+	
+	Es claro que $M_0\supset M'$ y $N_0\supset N'$ pues si $z=0_{M_0\otimes N_0}$ y $M_0\subset M'$ y $N_0\subset N'$ también debe ser $0_{M'\otimes N'}$. En primer lugar, si $x\neq0_{N}$, el menor submódulo generado por $x$ es el propio $N$. Así, $N_0=N=N'$.
+	Supongamos ahora $M_0$ generado por los elementos $\set{m_1,\dots,m_r}$. La inclusión antes mencionada implica $m_i|2$ para toda $i\in\set{1,\dots,r}$, es decir, $m_i=1$ o $m_i=2$. Por esto, existe $i\in\set{1,\dots,r}$ tal que $m_i=1$ y $\Z=\langle 1\rangle\subset M_0$.
+	
+	Así, los únicos submódulos $M_0$ y $N_0$ que verifican las condiciones del consecuente de la observación anterior son $\Z$ y $\Z/2\Z$.
+\end{example}
+
 \begin{theorem}Sea $M$ un $A$-módulo. Las siguientes afirmaciones son equivalentes.
 	\begin{itemize}
 		\item[1.] $M$ es un $A$-módulo plano.
