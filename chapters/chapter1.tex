@@ -25,7 +25,7 @@ Dado un ideal $\mathfrak{a}$ se puede definir una relación de equivalencia $x\s
 \begin{definition} Un anillo $A$ es un dominio de integridad (DI) si para cualesquiera $a,b\in A$ tales que $ab = 0$ se tiene $a = 0$ o bien $b=0$.
 \end{definition}
 
-\begin{definition} Sean $A,B$ anillos, un \emph{homomorfismo de anillos} entre $A$ y $B$ es una aplicación $\varphi:A\to B$ que tal que para todo $x,y\in A$ respeta la suma $\varphi(x+_Ay) = \varphi{x} +_B  \varphi{y}$, respeta el producto $\varphi(x\cdot_Ay) =  \varphi(x)\cdot_B\varphi(y)$, y además $\varphi(1_A) = 1_B$.
+\begin{definition} Sean $A,B$ anillos, un \emph{homomorfismo de anillos} entre $A$ y $B$ es una aplicación $\varphi:A\to B$ que tal que para todo $x,y\in A$ respeta la suma $\varphi(x+_Ay) = \varphi(x) +_B  \varphi(y)$, respeta el producto $\varphi(x\cdot_Ay) =  \varphi(x)\cdot_B\varphi(y)$, y además $\varphi(1_A) = 1_B$.
 \end{definition}
 
 Dado un homomorfismo de anillos $\varphi:A\to B$ el núcleo $\ker \varphi$ es un ideal de $A$ y la imagen $\im \varphi$ es un subanillo de $B$. Además, para todo $\mathfrak b$ ideal de $B$, la preimagen $\varphi^{-1}(\mathfrak b)$ es un ideal de $A$.
@@ -65,7 +65,7 @@ y resulta ser el menor ideal que contiene a ambos. La \emph{intersección} de lo
 
 \[ \mathfrak a_1 \cdot \mathfrak a_2 = \left \{ \sum_{i=1}^m x_iy_i \big \vert \; x_i \in \mathfrak a_1, y_i \in \mathfrak a_2, m\in \mathbb N \right \} \]
 
-y también es un ideal.
+también es un ideal.
 
 \begin{remark}
 Se cumple $\mathfrak a_1 \cdot \mathfrak a_2 \subset \mathfrak a_1 \cap \mathfrak a_2$ (trivial), y se tiene la igualdad si $\mathfrak a_1 + \mathfrak a_2 = A$. Efectivamente, en tal caso, $1 = a_1 + a_2$ para ciertos $a_i \in \mathfrak a_i$, y entonces para todo $t\in \mathfrak a_1 \cap \mathfrak a_2$, $t = ta_1 + ta_2 \in \mathfrak a_1 \cdot \mathfrak a_2$.
