@@ -99,6 +99,21 @@ $$\begin{array}{rcl}
 \begin{remark}
 \textit{1)} Si tomamos las categorías de anillos y módulos, los conceptos de monomorfismo e inyectividad son equivalentes.
 
-\textit{2)} En la categoría de módulos, el concepto de epimorfismo es equivalente al de homomorfismo suprayectivo. En la categoría de anillos, homomorfismo suprayectivo sí implica epimorfismo, pero no se tiene la otra implicación. En efecto, $$\mathbb{Z}\hookrightarrow \mathbb{Q}\overset{f,g}{\longrightarrow}C$$con $C$ anillo verifica las condiciones de epimorfismo $f\restriction_{\mathbb{Z}}= g\restriction_{\mathbb{Z}}$ implica $f=g$, pero la inclusión de $\mathbb{Z}$ sobre $\mathbb{Q}$ no es sobreyectiva
+\textit{2)} En la categoría de módulos, el concepto de epimorfismo es equivalente al de homomorfismo suprayectivo. Sean $A$ un anillo y $M,N\in\Mod_A$. Tomemos $u\in\Hom_A(M,N)$ un epimorfismo. Se verifica que $u$ es suprayectivo si, y sólo si $$\faktor{N}{\text{im}(u)}=\set{0}.$$
+En vista de esto, tomemos $N':=N/\text{im}(u)$ y los homomorfismos $f$ y $g$ definidos como
+$$\begin{array}{rrcl}
+f&N&\longrightarrow&N'\\
+&n&\longmapsto&[n]_{N'} 
+\end{array}$$
+y
+$$\begin{array}{rrcl}
+g&N&\longrightarrow&N'\\
+&n&\longmapsto&[0]_{N'} 
+\end{array}.$$
+Se corresponden con la proyección canónica y el homomorfismo idénticamente nulo respectivamente. Ahora, tomando $x\in M$ arbitrario se tiene
+$$(f\circ u)(x)=f(u(x))=[0]_{N'}=g(u(x)).$$
+Así, por hipótesis $f(x)=g(x)$ para cada $x\in M$; es decir, $f\equiv[0]_{N'}$ y $N/\text{im}(u)=\{0\}$.
+
+Sin embargo, en la categoría de anillos homomorfismo suprayectivo sí implica epimorfismo, pero no se tiene la otra implicación. En efecto, $$\mathbb{Z}\hookrightarrow \mathbb{Q}\overset{f,g}{\longrightarrow}C$$con $C$ anillo verifica las condiciones de epimorfismo $f\restriction_{\mathbb{Z}}= g\restriction_{\mathbb{Z}}$ implica $f=g$, pero la inclusión de $\mathbb{Z}$ sobre $\mathbb{Q}$ no es sobreyectiva.
 \end{remark}
 \end{document}
