@@ -226,7 +226,7 @@ Para cada $\omega \in \bigoplus_{i\in I} M_i$, existen unos únicos $i_1,...,i_r
 \begin{proposition} $M$ es un $A$-módulo libre si y solo si existe $B:={\{m_i\}}_{i\in I}\subseteq M$ tal que para cada $x\in M$ existe $F\subseteq I$ cumpliendo que $x$ se puede expresar de forma única como$$x=\underset{\lambda_j\in A}{\sum_{j\in F}}\lambda_j m_j$$ Si dos subconjuntos $B$ y $B'$ cumplen lo anterior, entonces tienen el mismo cardinal.
 \end{proposition}
 \begin{proof}
-$(2\Rightarrow 1)$ Supongamos que existe $\phi: A^{(I)}\rightarrow M$ un isomorfismo de $A$-módulos, para cierto conjunto de índices $I$. Sea, para cada $i\in I$, $m_i:=\phi(e_i)$, donde $e_i = (\delta_{ij})_j\in A^{(I)}$. El conjunto $\set{m_i,i\in I}$ es el que buscamos.
+Supongamos que existe $\phi: A^{(I)}\rightarrow M$ un isomorfismo de $A$-módulos, para cierto conjunto de índices $I$. Sea, para cada $i\in I$, $m_i:=\phi(e_i)$, donde $e_i = (\delta_{ij})_j\in A^{(I)}$. El conjunto $\set{m_i,i\in I}$ es el que buscamos.
 
 Para cada $m\in M$, por ser $\phi$ sobreyectiva, existe un $\underline{x}\in A^{(I)}$ tal que $\phi(\underline{x})=m$. A su vez, existen $i_1,...,i_r\in I$ tales que $\underline{x}=q_{i_1}(x_{i_1})+...+q_{i_r}(x_{i_r})=x_{i_1}q_{i_1}(1_A)+...+x_{i_r}q_{i_r}(1_A)$. Por tanto, $\phi(\underline{x})=x_{i_1}\phi(e_{i_1})+...+x_{i_r}\phi(e_{i_r})=x_{i_1}m_{i_1}+...+x_{i_1}m_{i_r}=m$. Hemos escrito $m$ como una combinación lineal de elementos ${m_i:i\in I}$
 
@@ -237,7 +237,7 @@ La unicidad es clara porque estamos usando un isomorfismo, pero podemos detallar
 \end{multline}
 $\forall\ j\in\{1,\dots,r\}$, lo que concluye la prueba.
 
-$(1\Rightarrow 2)$ En primer lugar, para cada $i\in I$ definimos las aplicaciones
+Recíprocamente, para cada $i\in I$ definimos las aplicaciones
 $$\begin{array}{rccl}
     \varphi_i:&A&\longrightarrow&M\\
     &1_A&\longmapsto&m_i.
