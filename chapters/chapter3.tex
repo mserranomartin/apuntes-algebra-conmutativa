@@ -17,7 +17,7 @@ Sea $A$ un anillo, se llama $A$-módulo a cualquier grupo abeliano $(M,+)$ sobre
 
   \begin{align*}
     {\mathbb K[x]\times V} & \to     V                                 \\
-    {(p(x),v)}             & \mapsto p(f) = a_nf^{(n)}+\dots+a_1 f+a_0
+    {(p(x),v)}             & \mapsto p(f(v)) = a_nf^{(n)}(v)+\dots+a_1 f(v)+a_0
   \end{align*}
   siendo $p(x) = a_nx^n+\dots+a_1x + a_0$ y $f^(k) = f\circ \overset{k)}{\dots} \circ f$.
   \item Toda $A$-álgebra $B$ de un anillo $A$ es un $A$-módulo. $B$ es un anillo luego $(B,+)$ es un grupo abeliano. Por ser $A$-álgebra, existe un homomorfismo $\varphi:A\to B$, y entonces podemos definir la operación externa de la definición \ref{modulo} como $A\times B \to B$ que hace corresponder $(a,b) \mapsto\varphi(a)b$.
@@ -31,7 +31,7 @@ Atendiendo al último ejemplo resulta que dados dos anillos $A, B$, dar a $B$ es
 \begin{definition}. Dado un anillo $A$ y un $A$-módulo $M$, diremos que $S\subset M$ es un \textit{submódulo de $M$} si es un subgrupo de $M$ cerrado para la multiplicación por elementos de $A$.
 \end{definition}
 
-\begin{remark} Si $A$ es un anillo, $\af\subseteq A$ un ideal, y $M$ un $A$-módulo entonces el conjunto$$\af M:=\left\{\sum_{i=1}^ra_im_i\ |\ r\in\N,\ a_i\in\af,\ m_i\in\N\right\}$$es un submódulo de $M$.
+\begin{remark} Si $A$ es un anillo, $\af\subseteq A$ un ideal, y $M$ un $A$-módulo entonces el conjunto$$\af M:=\left\{\sum_{i=1}^ra_im_i\ |\ r\in\N,\ a_i\in\af,\ m_i\in M\right\}$$es un submódulo de $M$.
 \end{remark}
 
 \begin{definition}. Sean $(A,+,\cdot)$ anillo, $M$ y $N$ $A$-módulos. Una aplicación $f:M\longrightarrow N$ se dice que es un homomorfismo de $A$-módulos o, simplemente, que es una aplicación $A$-lineal si verifica
@@ -81,7 +81,7 @@ es un homomorfismo de $A$-módulos.
 \begin{definition} Dados $A$ un anillo y $M$ un $A$-módulo, definimos el anulador de $A$ en $M$ como$$Anul_A M = \{\lambda\in A\ |\  \lambda\cdot m=0, \forall m\in M\}$$
 \end{definition}
 
-\begin{remark} \textit{i)}
+\begin{remark}
 
 \begin{enumerate}
   \item $Anul_A M$ es un ideal de $A$.
