@@ -17,7 +17,7 @@ Sea $A$ un anillo, se llama $A$-módulo a cualquier grupo abeliano $(M,+)$ sobre
 
   \begin{align*}
     {\mathbb K[x]\times V} & \to     V                                 \\
-    {(p(x),v)}             & \mapsto p(f) = a_nf^{(n)}+\dots+a_1 f+a_0
+    {(p(x),v)}             & \mapsto p(f(v)) = a_nf^{(n)}(v)+\dots+a_1 f(v)+a_0
   \end{align*}
   siendo $p(x) = a_nx^n+\dots+a_1x + a_0$ y $f^(k) = f\circ \overset{k)}{\dots} \circ f$.
   \item Toda $A$-álgebra $B$ de un anillo $A$ es un $A$-módulo. $B$ es un anillo luego $(B,+)$ es un grupo abeliano. Por ser $A$-álgebra, existe un homomorfismo $\varphi:A\to B$, y entonces podemos definir la operación externa de la definición \ref{modulo} como $A\times B \to B$ que hace corresponder $(a,b) \mapsto\varphi(a)b$.
@@ -575,7 +575,7 @@ De ahora en adelante omitiremos el subíndice de $\otimes_A$, escribiendo $M \ot
     \item Para todo $P$ $A$-módulo, se verifica $P\otimes_A A\cong P$ mediante el siguiente isomorfismo de $A$-módulos
     $$\begin{array}{rcl}
     P&\longrightarrow&P\otimes_A A  \\
-    p&\longmapsto&p\otimes_A 1_A 
+    p&\longmapsto&p\otimes_A 1_A
     \end{array}$$
     \item Sean ${\set {N_i}}_{i\in I}$ y $M$ $A$-módulos. Se cumple que $$M\otimes_A\left(\bigoplus_{i\in I}N_i\right)\cong\bigoplus_{i\in I}(M\otimes_A N_i).$$
     En particular,
@@ -801,7 +801,7 @@ que está bien definida y con la cual $B\otimes M$ cumple los axiomas de $A$-mó
 \textit{7.} Denotemos por $n_i\in \oplus_{i\in I}N_i$ al elemento tal que tiene a $n\in N_i$ por $i$-ésima coordenada y $0$ en el resto. Definamos la aplicación
 $$\begin{array}{rrcl}
 F:&M\times(\oplus_{i\in I})&\longrightarrow&\oplus_{i\in I}(M\otimes_A N_i)\\
-&(m,n_i)&\longmapsto& (m\otimes n)_i 
+&(m,n_i)&\longmapsto& (m\otimes n)_i
 \end{array}.$$
 Esta aplicación es bilineal por serlo para el sistema de generadores
 \begin{align*}
@@ -817,7 +817,7 @@ f:&M\otimes_A(\oplus_{i\in I}N_i)&\longrightarrow&\oplus_{i\in I}(M\otimes_A N_i
 aplicación $A$-lineal. En el otro sentido comenzamos definiendo para cada $i\in I$ las aplicaciones
 $$\begin{array}{rrcl}
 G_i:&M\times N_i&\longmapsto&M\otimes(\oplus_{i\in I}N_i)\\
-&(m,n)&\longmapsto&m\otimes n_i 
+&(m,n)&\longmapsto&m\otimes n_i
 \end{array},$$
 que son $A$-bilineales de nuevo por la propia definición. Así, surgen las apliciones $A$-lineales
 $$\begin{array}{rrcl}
@@ -826,9 +826,9 @@ g_i&M\otimes N_i&\longrightarrow&M\otimes(\oplus_{i\in I}N_i)
 que nos permiten definir a su vez la siguiente aplicación $A$-lineal
 $$\begin{array}{rrcl}
 g:=\oplus_{i\in I}g_i:&\oplus(M\otimes_A N_i)&\longrightarrow&M\otimes_A(\oplus_{i\in I}N_i)  \\
-& 
+&
 \end{array}.$$
-Se comprueba que $g\circ f=1_{M\otimes_A(\oplus N_i)}$ y $f\circ g=1_{\oplus(M\otimes_A N_i)}$ y se tiene el resultado. 
+Se comprueba que $g\circ f=1_{M\otimes_A(\oplus N_i)}$ y $f\circ g=1_{\oplus(M\otimes_A N_i)}$ y se tiene el resultado.
 
 Para ver el caso particular, basta aplicar lo que acabamos de probar y la propiedad $6$ del producto tensorial.
 
@@ -865,14 +865,14 @@ y estudiemos su comportamiento respecto de sucesiones exactas. Antes de comenzar
 	0\longrightarrow\Hom_A(M\oplus_A N'',P)\overset{(1_M\oplus g)^*}{\longrightarrow}\Hom_A(M\oplus_A N,P)\overset{(1_M\oplus f)^*}{\longrightarrow}\Hom_A(M\oplus_A N',P)
 	\end{equation}
 	es exacta.
-	
+
 	La sucesión
 	\begin{align*}\label{equation: ext4}
 	0\longrightarrow\Hom_A(M,\Hom_A(N,P))\overset{(g^{*_P})_{*_M}}{\longrightarrow}&\Hom_A(M,\Hom_A(N,P))\overset{(f^{*_P})_{*_M}}{\longrightarrow}\\
 	\overset{(f^{*_P})_{*_M}}{\longrightarrow}&\Hom_A(M,\Hom_A(N,P)),
 	\end{align*}
 	donde $(f^{*_P})_{*_M}:=\Hom_A(M,\Hom_A(f,P))$ y $(g^{*_P})_{*_M}:=\Hom_A(M,\Hom_A(g,P))$, surge de aplicar en primer lugar el funtor $\Hom_A(\_,P)$ a la sucesión $\ref{equation: ext1}$ y, después, aplicar el funtor $\Hom_A(M,\_)$ al resultado anterior. Así, $\ref{pry}$ nos dice que es exacta.
-	
+
 	Observemos ahora que, para cada $X\in\set{N,N',N''}$ se tiene la cadena de isomorfismos de $A$-módulos
 	$$\Hom_A(M\otimes_A X,P)\cong\Bil_A(M\times X,P)\cong\Hom_A(M,\Hom_A(X,P)).$$
 	El primero de los isomorfismos es inmediato atendiendo a la propia definición del producto tensorial: Dada $F\in\Bil_A(M\times X,P)$, existe una única $\Bar{F}\in\Hom_A(M\otimes X,P)$ de forma que para cada par $(m,x)\in M\times X$ se verifica $\Bar{F}(m\otimes_A x)=F(m,x)$. Comprobemos el segundo de los isomorfismos. En primer lugar, definamos
@@ -885,13 +885,13 @@ y estudiemos su comportamiento respecto de sucesiones exactas. Antes de comenzar
 		\item $(F+G)(n,m)=F(m,n)+G(m,n)$ y
 		\item $(\lambda F)(m,n)=\lambda F(m,n).$
 	\end{itemize}
-	
+
 	Por otro lado, definamos
 	$$\begin{array}{rcl}
 	\Hom_A(M,\Hom_A(X,P))&\longrightarrow&\Bil_A(M\times X,P)\\
 	\varphi(m)(n)&\longmapsto&F_\varphi(m,n):=\varphi(m)(n)
 	\end{array}.$$
-	
+
 	Veamos que la aplicación es bilienal. Sean $\varphi\in\Hom_A(M,\Hom_A(X,P))$, $\set{m,m_1,m_2}\subset M$, $\set{n,n_1,n_2}\subset X$ y $\lambda\in A$. Tenemos
 	\begin{itemize}
 		\item $\varphi(m_1+m_2)(n)=(\varphi(m_1)+\varphi(m_2))(n)=\varphi(m_1)(n)+\varphi(m_2)(n)$,
@@ -903,7 +903,7 @@ y estudiemos su comportamiento respecto de sucesiones exactas. Antes de comenzar
 		\item $\varphi_{F_\varphi}(m)(n)=F_\varphi(m,n)=\varphi(m)(n)$ y
 		\item $F_{\varphi_F}(m,n)=\varphi_F(m)(n)=F(m,n).$
 	\end{itemize}
-	
+
 	Denotemos $\Phi_X:\Hom_A(M\otimes_A X,P)\longrightarrow\Hom_A(M,\Hom_A(X,P))$, para cada $X\in\{N,N',N''\}$, a cada uno de los isomorfismos definidos.
 	Estos isomorfismos implican que por ser ($\ref{equation: ext4}$) exacta ($\ref{equation: ext3}$) es también exacta. Para probar esto es suficiente ver que se tienen las igualdades
 	$$(1_M\otimes g)^*={\Phi_N}^{-1}\circ(g^*)_*\circ\Phi_{N''}$$
@@ -929,7 +929,7 @@ sin embargo, de la pertenencia $m\otimes_A n'\in M\otimes_A N'$ no se sigue nece
 	Consideremos los $\Z$-módulos $M:=\Z$, $N=N':=\Z/2\Z$ y $M':=2\Z$ (submódulo de $\Z$). Tomemos $x\in N\setminus\{0\}$:
 	\begin{itemize}
 		\item por un lado, $2\otimes_\Z x=1\otimes_\Z 2x=0_{M\otimes N}$,
-		\item sin embargo, por otro lado el elemento $2\otimes_\Z x$ no es $0_{M'\otimes N'}$. 
+		\item sin embargo, por otro lado el elemento $2\otimes_\Z x$ no es $0_{M'\otimes N'}$.
 	\end{itemize}
 \end{example}
 
@@ -945,18 +945,18 @@ sin embargo, de la pertenencia $m\otimes_A n'\in M\otimes_A N'$ no se sigue nece
 \end{proposition}
 \begin{proof}
 	En primer lugar, ($1\Leftrightarrow 2$) basta con aplicar la definición de módulo plano para ($1\Rightarrow2$) y tener en cuenta que toda sucesión exacta larga se puede escindir en sucesiones exactas cortas para ($2\Rightarrow1$). También son claras las implicaciones ($2\Rightarrow3$) y ($3\Rightarrow4$). Probemos ($3\Rightarrow2$) y ($4\Rightarrow3$).
-	
+
 	($3\Rightarrow2$). Sean $M,N$ y $N'$ $A$-módulos y consideremos una sucesión exacta arbitraria $$0\longrightarrow N'\overset{f}{\longrightarrow}N\overset{g}{\longrightarrow}N''\longrightarrow 0.$$
 	En primer lugar, aplicando ($\ref{sucesiones+otimes1}$) tenemos que $\text{im}(1\otimes f)=\ker{(1\otimes g)}$ y que $1\otimes g$ es sobreyectiva. Por otro lado, del hecho de que la sucesión que hemos tomado sea exacta se desprende que, en concreto,$$0\longrightarrow N'\overset{f}{\longrightarrow}N$$es también exacta; así, por hipótesis tenemos que $1\otimes f$ es inyectiva.
-	
+
 	Con todo, resulta que la sucesión $$0\longrightarrow M\otimes_AN'\overset{1\otimes f}{\longrightarrow}M\otimes_AN\overset{1\otimes g}{\longrightarrow}M\otimes_AN''\longrightarrow 0$$ es también exacta.
-	
+
 	($4\Rightarrow3$). Sean $N,N'$ $A$-módulos y $f:N'\longrightarrow N$ una aplicación $A$-lineal e inyectiva. Tomemos $z:=\sum_{i=1}^r m_i\otimes_A n_i\in M\otimes_A N'$ tal que $f(z)=0_{M\otimes_A N}$, esto ocurre si, y sólo si, $\sum_{i=1}^r m_i\otimes_Af(n_i)=0_{M\otimes_A N}$ o, lo que es lo mismo $$e_{(m_1,f(n_1))}+\cdots+e_{(m_r,f(n_r))}\in\Sigma.$$
 	Esta pertenencia nos garantiza la existencia de ciertos $\set{\text{rel}_1,\dots,\text{rel}_s}\subset\Sigma$ tales que
 	$$e_{(m_1,f(n_1))}+\cdots+e_{(m_r,f(n_r))}=\sum_{i=1}^s\lambda_i\text{rel}_i\hspace{15pt}\lambda_i\in A\ \forall\ i\in\{1,\dots,s\}$$
 	Definamos ahora los menores submódulos de $N$ y de $N'$ que contengan a los conjuntos $\set{\text{rel}_1,\dots,\text{rel}_s,f(n_1),\dots,f(n_r)}$ y $\set{n_1,\dots,n_r}$ respectivamente. Denotemos al primero por $N_{\text{red}}$ y al segundo, ${N_{\text{red}}}'$.
-	
-	Es claro que $f_{|{N_{\text{red}}}'}:{N_{\text{red}}}'\longrightarrow N_{\text{red}}$ está bien definida y es inyectiva. Así, por la hipótesis, se tiene que la sucesión $$0\longrightarrow M\otimes_A {N_{\text{red}}}'\overset{1\otimes f_{|{N_{\text{red}}}'}}{\longrightarrow M}M\otimes {N_{\text{red}}}$$ es exacta. 
+
+	Es claro que $f_{|{N_{\text{red}}}'}:{N_{\text{red}}}'\longrightarrow N_{\text{red}}$ está bien definida y es inyectiva. Así, por la hipótesis, se tiene que la sucesión $$0\longrightarrow M\otimes_A {N_{\text{red}}}'\overset{1\otimes f_{|{N_{\text{red}}}'}}{\longrightarrow M}M\otimes {N_{\text{red}}}$$ es exacta.
 	Así, denotando por $z_\text{red}$ al elemento $z$ visto en $M\otimes_A {N_{\text{red}}}'$, se tiene que $f(z_\text{red})=0_{M\otimes_A {N_{\text{red}}}}$, es decir, $z_\text{red}=0_{M\otimes_A {N_{\text{red}}}'}$.
 	Si ahora consideramos el homomorfismo inclusión $$M\otimes_A {N_{\text{red}}}'\overset{i}{\hookrightarrow} M\otimes_A {N'},$$
 	en este caso, por ser homomorfismo sí se puede concluir que $i(z_\text{red})=z=0_{M\otimes_A {N}'}.$
@@ -967,11 +967,11 @@ sin embargo, de la pertenencia $m\otimes_A n'\in M\otimes_A N'$ no se sigue nece
 \end{remark}
 
 \begin{example}
-	Denotemos respectivamente por $M_0$ y $N_0$ a los submódulos $M'$ y $N'$ de la observación anterior y mantengamos la notación de $\ref{exsub}$. 
-	
+	Denotemos respectivamente por $M_0$ y $N_0$ a los submódulos $M'$ y $N'$ de la observación anterior y mantengamos la notación de $\ref{exsub}$.
+
 	Es claro que $M_0\supset M'$ y $N_0\supset N'$ pues si $z=0_{M_0\otimes N_0}$ y $M_0\subset M'$ y $N_0\subset N'$ también debe ser $0_{M'\otimes N'}$. En primer lugar, si $x\neq0_{N}$, el menor submódulo generado por $x$ es el propio $N$. Así, $N_0=N=N'$.
 	Supongamos ahora $M_0$ generado por los elementos $\set{m_1,\dots,m_r}$. La inclusión antes mencionada implica $m_i|2$ para toda $i\in\set{1,\dots,r}$, es decir, $m_i=1$ o $m_i=2$. Por esto, existe $i\in\set{1,\dots,r}$ tal que $m_i=1$ y $\Z=\langle 1\rangle\subset M_0$.
-	
+
 	Así, los únicos submódulos $M_0$ y $N_0$ que verifican las condiciones del consecuente de la observación anterior son $\Z$ y $\Z/2\Z$.
 \end{example}
 
@@ -984,16 +984,16 @@ sin embargo, de la pertenencia $m\otimes_A n'\in M\otimes_A N'$ no se sigue nece
 		\item[4.] Si $\af\in A$ es un ideal, entonces la aplicación
 		$$\begin{array}{rcl}
 		\af\otimes_A M&\longrightarrow&M\hspace{15pt}\text{entendido como}\ A\otimes_A M\\
-		\sum_{i\in F}a_i\otimes_A m_i&\longmapsto&\sum_{i\in F}a_im_i 
+		\sum_{i\in F}a_i\otimes_A m_i&\longmapsto&\sum_{i\in F}a_im_i
 		\end{array}$$
 		es inyectiva.
 	\end{itemize}
 \end{theorem}
 
 \begin{remark}\textit{1.} Sean $A$ un anillo conmutativo y unitario, $I$ un conjunto de índices, $N$ y $N'$ $A$-módulos y $f:N'\longrightarrow N$ una aplicación $A$-lineal inyectiva. Se verifica que la aplicación $$1_{A^{(I)}}\otimes_A f:A^{(I)}\otimes N\longrightarrow A^{(I)}\otimes_A N$$ es también inyectiva.
-	
+
 	Dado que $A^{(I)}\otimes_A N\cong\oplus_{i\in I}N$ y $A^{(I)}\otimes_A N'\cong\oplus_{i\in I}N'$, basta comprobar que la aplicación $$\oplus_{i\in I}f:\oplus_{i\in I}N'\longrightarrow \oplus_{i\in I}N$$ es inyectiva.
-	
+
 	\textit{2.} Si $B$ es plano y $\af\subset A$ un ideal, entonces la cuarta afirmación del teorema anterior nos da el isomorfismo de $A$-módulos $$\af^e\cong \af\otimes_A B.$$
 \end{remark}
 
@@ -1008,7 +1008,7 @@ sin embargo, de la pertenencia $m\otimes_A n'\in M\otimes_A N'$ no se sigue nece
 	\end{equation}
 \end{lemma}
 \begin{proof}
-	Probemos primero un caso base: consideremos $N$ como $A$-módulo libre generado por el conjunto $\set{n_1,\dots,n_r}$; es decir, existe un isomorfismo de $A$-módulos 
+	Probemos primero un caso base: consideremos $N$ como $A$-módulo libre generado por el conjunto $\set{n_1,\dots,n_r}$; es decir, existe un isomorfismo de $A$-módulos
 	$$\begin{array}{rrcl}
 	\sigma:&N&\longrightarrow&A^{(r)}\\
 	&n_i&\longmapsto&e_i
@@ -1021,14 +1021,14 @@ sin embargo, de la pertenencia $m\otimes_A n'\in M\otimes_A N'$ no se sigue nece
 	y se desprende que
 	$$\sum_{i=1}^rm_in_i=0_{M\otimes N}\Leftrightarrow (m_1,\dots,m_r)=0_{M^{(r)}}\Leftrightarrow m_i=0_M\hspace{15pt}\forall\ i\in\{1,\dots,r\}.$$
 	Tras esto, basta tomar $s=r$ y definir ${m_j}':=m_j$, $\mu_{ij}:=0_A$ para $i,j\in\set{1,\dots,r}$.
-	
+
 	Ahora, de forma más general, sea
 	$$0\longrightarrow K:=\ker(f)\hookrightarrow A^{(r)}\overset{F}{\longrightarrow}N\longrightarrow 0$$
 	una sucesión exacta, donde $F$ verifica $F(e_i)=n_i$ para cada $i\in\set{1,\dots,r}$.
 	Sabemos que la sucesión
 	$$M\otimes_A K\overset{h:=1_m\otimes i}{\longrightarrow}M\otimes_A A^{(r)}\overset{f:=1_M\otimes F}{\longrightarrow}M\otimes N\longrightarrow0$$
 	es exacta.
-	
+
 	De esta forma, si un elemento $z:=\sum m_i\otimes e_i$ verifica $f(z)=0_{M\otimes_A N}$, entonces existe $w:=\sum_{j=1}^s{m_j}'\otimes k_j\in M\otimes_A K$ de forma que $h(w)=z$; esto supone
 	$$\sum_{j=1}^s {m_j}'\otimes k_j-\sum_{i=1}^r m_i\otimes e_i=0_{M\otimes_A A^{(r)}}.$$
 	Además, para cada $j\in\set{1,\dots,s}$ existen $\mu_{ij}\in A$ tales que $$k_j=\sum \mu_{ij}e_i.$$
