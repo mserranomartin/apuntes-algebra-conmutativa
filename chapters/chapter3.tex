@@ -100,7 +100,7 @@ es un homomorfismo de $A$-módulos.
 
 \subsection{Aplicaciones A-lineales}
 \begin{definition}. Dados $M$ y $N$ dos $A$-módulos, definimos \textit{el conjunto de aplicaciones $A$-lineales entre $M$ y $N$}
-$$\Hom_A(M,N):=\{f:M\longrightarrow N\ |\ f\text{ es aplicación }A\text{-lineal}\}
+$$\Hom_A(M,N):=\{f:M\longrightarrow N |\, f\text{ es aplicación }A\text{-lineal}\}
 $$
 \end{definition}
 
@@ -494,6 +494,9 @@ Surge la siguiente definición.
 \end{definition}
 
 \section{Producto tensorial de módulos}
+
+La motivación de la construcción que vamos a desarrollar en esta sección es poder estudiar formas bilineales (multilineales) a través de formas lineales, cuyas propiedades conocemos mejor. Para ello, vamos a construir una estructura relacionada con el producto cartesiano de módulos llamada \emph{producto tensorial}. Antes de proseguir, recordamos definiciones.
+
 \begin{definition} Sean $M$, $N$ y $P$ $A$-módulos. Una aplicación$\Phi:M\times N\longrightarrow P$ se dice $A$-bilineal si se verfican las siguientes condiciones.
 \begin{itemize}
     \item [1)] Para cada $m_1,m_2\in M$, $n\in N$, $\Phi(m_1+m_2,n)=\Phi(m_1,n)+\Phi(m_2,n)$
@@ -507,7 +510,65 @@ Surge la siguiente definición.
 \end{itemize}
 Con $\lambda\in A$ y $m_j\in M_j$ para cada $j\in\{1,\dots,r\}$
 \end{remark}
-\include{remark_ker.tex}
+\begin{remark}
+  Si $M, M'$ son $A$-módulos, $g:M\to M'$ es suprayectiva, y $N\subset \ker g$, entonces el siguiente diagrama conmuta
+  \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt
+  \centering
+  \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+  %uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+  %Curve Lines [id:da06639929221173313]
+  \draw    (291.8,208.9) .. controls (262.25,195.11) and (335.54,182.29) .. (307.17,208.67) ;
+  \draw [shift={(305.8,209.9)}, rotate = 318.81] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+  %Curve Lines [id:da2113069658179978]
+  \draw    (281.8,154.9) .. controls (252.1,141.04) and (350.79,127.18) .. (300.37,156.01) ;
+  \draw [shift={(298.8,156.9)}, rotate = 330.95] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+  % Text Node
+  \draw (241,82.4) node [anchor=north west][inner sep=0.75pt]    {$M$};
+  % Text Node
+  \draw (391,162.4) node [anchor=north west][inner sep=0.75pt]    {$M'$};
+  % Text Node
+  \draw (346,92.4) node [anchor=north west][inner sep=0.75pt]    {$g$};
+  % Text Node
+  \draw (217,163.4) node [anchor=north west][inner sep=0.75pt]    {$M/\ker g$};
+  % Text Node
+  \draw (229,252.4) node [anchor=north west][inner sep=0.75pt]    {$M/N$};
+  % Text Node
+  \draw (145,255.4) node [anchor=north west][inner sep=0.75pt]    {$m+N$};
+  % Text Node
+  \draw (134,163.4) node [anchor=north west][inner sep=0.75pt]    {$m+\ker g$};
+  % Text Node
+  \draw (161,81.4) node [anchor=north west][inner sep=0.75pt]    {$m$};
+  % Text Node
+  \draw (440,162.4) node [anchor=north west][inner sep=0.75pt]    {$g( m)$};
+  % Connection
+  \draw    (262,96.3) -- (386.23,161.46) ;
+  \draw [shift={(388,162.39)}, rotate = 207.68] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+  % Connection
+  \draw    (250,102) -- (250,159) ;
+  \draw [shift={(250,159)}, rotate = 270] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (17.64,-3.29) .. controls (13.66,-1.4) and (10.02,-0.3) .. (6.71,0) .. controls (10.02,0.3) and (13.66,1.4) .. (17.64,3.29)(10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+  % Connection
+  \draw    (250.43,248) -- (250.07,183) ;
+  \draw [shift={(250.07,183)}, rotate = 449.68] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (17.64,-3.29) .. controls (13.66,-1.4) and (10.02,-0.3) .. (6.71,0) .. controls (10.02,0.3) and (13.66,1.4) .. (17.64,3.29)(10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+  % Connection
+  \draw    (270.77,248) -- (386.28,179.6) ;
+  \draw [shift={(388,178.59)}, rotate = 509.37] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+  % Connection
+  \draw    (286,170.76) -- (386,170.11) ;
+  \draw [shift={(388,170.1)}, rotate = 539.62] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+  % Connection
+  \draw    (168.15,249) -- (168.85,185) ;
+  \draw [shift={(168.87,183)}, rotate = 450.62] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+  \draw [shift={(168.15,249)}, rotate = 450.62] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (0,5.59) -- (0,-5.59)   ;
+  % Connection
+  \draw    (168.59,103) -- (168.91,157) ;
+  \draw [shift={(168.93,159)}, rotate = 269.65] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+  \draw [shift={(168.59,103)}, rotate = 269.65] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (0,5.59) -- (0,-5.59)   ;
+
+  \end{tikzpicture}
+\end{remark}
+
 \begin{proposition} Dados dos $A$-módulos $M$ y $N$, existe un $A$-módulo $M\otimes_AN$ y una aplicación $A$-bilineal $\delta:M\times N\rightarrow M\otimes_AN$ tal que para cada $A$-módulo $P$ y para cada $F:M\times N\rightarrow P$ $A$-bilineal, existe una única aplicación $A$-lineal $f:M\otimes_AN:\rightarrow P$ tal que $f\circ\delta =F$.
 
 Además, el par $(\delta,M\otimes_AN)$ es único, en el sentido que de existir otro par $(\delta',T)$ que verifique las condiciones del enunciado, se tiene que $T\cong M\otimes_AN$.
@@ -523,25 +584,22 @@ con $m,m'\in M$, $n,n'\in N$ y $\lambda\in A$.
 
 Ahora tomamos $\Sigma$ el submódulo generado por $S$. Se cumple $\Sigma\subset A^{(M\times N)}$, luego podemos definir el cociente $A^{(M\times N)}/\Sigma$, que es un $A$-módulo:
 $$\begin{array}{rcl}
-    M\times N&\overset{\delta}{\longrightarrow}&\faktor{A^{(M\times N)}}{\Sigma}\\
+    M\times N&\overset{\delta}{\longrightarrow}&M\otimes_A N:=\faktor{A^{(M\times N)}}{\Sigma}\\
     (m,n)&\longmapsto&[e_{(m,n)}]
     \end{array}$$
-La aplicación $\delta$ es bilineal. Por ejemplo, dados $m,m'\in M$, $n\in N$, $\delta(m+m',n)=[e_{(m+m',n)}]=[e_{(m,n)}+e_{(m',n)}]=[e_{(m,n)}]+[e_{(m',n)}]=\delta(m,n)+\delta(m',n)$.
+La aplicación $\delta$ es bilineal por construcción. Además, $\{[e_{(m,n)}]: (m,n)\in M\times N\}$ es un sistema de generadores de $M\otimes_A N$.
 
-Ponemos $M\otimes_A N=A^{(M\times N)}/\Sigma$. Definimos
+Cada aplicación $f:M\times N \to P$ se extiende por linealidad a un homomorfismo de $A$-módulos $f:A^{(M\times N)} \to P$, tomando $f(e_{(m,n)}) = f(m,n)$, $f(e_{(m,n)}+e_{(m,n)}) = f(m,n)+f(m',n')$, y $f(\lambda e_{(m,n)}) = \lambda f(m,n)$. En particular, dada $F:M\times N \to P$ es bilineal, definimos el homomorfismo de $A$-módulos
 $$\begin{array}{rrcl}
 	f_0:&A^{M\times N}&\longrightarrow&P  \\
 	&e_{(m,n)}&\longmapsto&F(m,n)
 	\end{array}$$
-Entonces $\{[e_{(m,n)}]: (m,n)\in M\times N\}$ es un sistema de generadores de $M\otimes_A N$, y por ser $F$ homomorfismo, $f_0$ es homomorfismo de $A$-módulos.
 
-Veamos que $\Sigma\subset ker(f_0)$. Como $\Sigma$ está generado por $S$, basta ver $S\subset ker(f_0)$. Pero esto es directo por ser $F$ bilineal y la definición de $S$. Por ejemplo, $$f_0(e_{(m+m',n)}-e_{(m,n)}-e_{(m',n)})=F(e_{(m+m',n)}-e_{(m,n)}-e_{(m',n)}=0$$
-Por tanto, siguiendo la observación anterior a la proposición, sea
+Para poder pasar al cociente solo hemos de comprobar que $\Sigma\subset ker(f_0)$. Como $\Sigma$ está generado por $S$, basta ver $S\subset ker(f_0)$. Pero esto es directo por ser $F$ bilineal y la definición de $S$. Por ejemplo, $$f_0(e_{(m+m',n)}-e_{(m,n)}-e_{(m',n)})=F(e_{(m+m',n)}-e_{(m,n)}-e_{(m',n)})=0$$. Así, la siguiente aplicación está bien definida y cumple las condiciones del teorema
 $$\begin{array}{rrcl}
 	\tilde{f_0}:&\faktor{A^{M\times N}}{\Sigma}&\longrightarrow&P  \\
 	&[e_{(m,n)}]&\longmapsto&F(m,n)
 	\end{array}$$
-que está bien definida y cumple las condiciones del teorema.
 \end{proof}
 
 \begin{definition}
@@ -549,15 +607,19 @@ que está bien definida y cumple las condiciones del teorema.
 \end{definition}
 
 \begin{remark}
+  Observamos que la construcción es de lo más natural. Otra forma de escribir la construcción es pensar que hemos tomado todos los elementos del producto cartesiano de la forma $(m+m',n)-(m,n)-(m',n), (m,n+n') - (m,n)-(m,n'),  (m,\lambda n) -\lambda (m,n), \lambda (m,n) -\lambda (m,n)$, es decir, hemos seleccionado unas relaciones que queremos que se cumplan (de bilinealidad). Al cocientar por el módulo que generan, estamos imponiendo que cada uno de esos elementos sea 0, que $[(m+m',n)]= [(m,n)]+[(m',n)]$, etc.
+\end{remark}
+
+\begin{remark}
 De ahora en adelante omitiremos el subíndice de $\otimes_A$, escribiendo $M \otimes N$ siempre que no de lugar a confusión. Entonces
 \begin{enumerate}
-  \item A las clases $[e_{(m,n)}]$ se les denota $m\otimes n$ o simplemente $m\otimes n$.
+  \item A las clases $[e_{(m,n)}]$ se les denota $m\otimes n$.
 
   Todo elemento de $M\otimes N$ es suma $\sum_{i=1}^rm_j\otimes n_j$, para ciertos $m_j\in M$, $n_j\in N$ y $r\in\mathbb{N}$, ya que $[\lambda e_{(m,n)}]=[e_{(\lambda m,n)}]=[e_{(m,\lambda n)}]$ por la definición inicial de $S$.
 
-  \item Las aplicaciones bilineales de $M\times N$ en $P$, $Bil_A(M\times N,P)$ están en correspondencia biyectiva con $Hom_A(M\otimes N,P)$.
+  \item Las aplicaciones bilineales de $M\times N$ en $P$, $\Bil_A(M\times N,P)$ están en correspondencia biyectiva con $\Hom_A(M\otimes N,P)$.
 
-  En particular, si tomamos $A$ como $K$ cuerpo y $M$ y $N$ $K$-espacios vectoriales,$$Hom_A(M\otimes_KN,K)=(M\otimes_KN)^{\ast}=Bil_K(M\times N,K)$$
+  En particular, si tomamos $A$ como $K$ cuerpo y $M$ y $N$ $K$-espacios vectoriales,$$\Hom_A(M\otimes_KN,K)=(M\otimes_KN)^{\ast}=\Bil_K(M\times N,K)$$
 
   \item La construcción del producto tensorial de módulos se puede generalizar. Dados unos $A$-módulos $M_1,\dots,M_r$, existe un $A$-módulo $M_1\otimes \dots\otimes M_r$ y $\delta:M_1\times\dots\times,M_r\longrightarrow M_1\otimes \dots\otimes M_r$ multilineal tal que para cualquier aplicación $A$-multilineal $\Phi:M_1\times\dots\times,M_r\longrightarrow P$, existe una única $f:M_1\otimes \dots\otimes M_r\longrightarrow P$ $A$-lineal tal que $f\circ\delta=F$
 
@@ -575,7 +637,7 @@ De ahora en adelante omitiremos el subíndice de $\otimes_A$, escribiendo $M \ot
     \item Para todo $P$ $A$-módulo, se verifica $P\otimes_A A\cong P$ mediante el siguiente isomorfismo de $A$-módulos
     $$\begin{array}{rcl}
     P&\longrightarrow&P\otimes_A A  \\
-    p&\longmapsto&p\otimes_A 1_A 
+    p&\longmapsto&p\otimes_A 1_A
     \end{array}$$
     \item Sean ${\set {N_i}}_{i\in I}$ y $M$ $A$-módulos. Se cumple que $$M\otimes_A\left(\bigoplus_{i\in I}N_i\right)\cong\bigoplus_{i\in I}(M\otimes_A N_i).$$
     En particular,
@@ -713,7 +775,9 @@ Veamos entonces que la composición de ambas es la identidad. Para ello solo hac
 
 Por tanto, $g\circ f=Id_{M\otimes N\otimes P}$
 
-Por otro, $\{m\otimes n:(m,n)\in M\times N\}$ es sistema de generadores de $M\otimes N$. Por el lema \ref{generadores}, $\{(m\otimes n)\otimes p: (m,n,p)\in M\times N\times P\}$ es sistema de generadores de $(M\otimes N)\otimes P$. Evaluando, $(f\circ g)((m\otimes n)\otimes p)=(m\otimes n)\otimes p)$ y concluimos $f\circ g)=Id_{(M\otimes N)\otimes P}$
+Por otro, $\{m\otimes n:(m,n)\in M\times N\}$ es sistema de generadores de $M\otimes N$. Por el lema \ref{generadores}, $\{(m\otimes n)\otimes p: (m,n,p)\in M\times N\times P\}$ es sistema de generadores de $(M\otimes N)\otimes P$. Evaluando, $(f\circ g)((m\otimes n)\otimes p)=(m\otimes n)\otimes p)$ y concluimos $f\circ g)=Id_{(M\otimes N)\otimes P}$.
+
+\textit{2.} Siguiendo el esquema de \textit{1}, solo hay que definir las aplicaciones naturales $M\times N \to N\otimes M$ que llevan $(m,n)\mapsto n\otimes m$ y la análoga en la otra dirección, que pasan al producto tensorial, y cuya composición resulta en la identidad. Para comprobar esto último solo hay que verlo para los generadores que es trivial.
 
 \textit{3.} Definimos la aplicación $A$-bilineal $M_1\times N_1 \to M_2\times N_2$ dada por $(m_1,n_1) \mapsto f(m_1)\otimes g(n_1)$. Entonces existe una única $M_1\otimes N_1 \to M_2 \otimes N_2$ lineal que completa el diagrama conmutativo habitual.
 
@@ -801,7 +865,7 @@ que está bien definida y con la cual $B\otimes M$ cumple los axiomas de $A$-mó
 \textit{7.} Denotemos por $n_i\in \oplus_{i\in I}N_i$ al elemento tal que tiene a $n\in N_i$ por $i$-ésima coordenada y $0$ en el resto. Definamos la aplicación
 $$\begin{array}{rrcl}
 F:&M\times(\oplus_{i\in I})&\longrightarrow&\oplus_{i\in I}(M\otimes_A N_i)\\
-&(m,n_i)&\longmapsto& (m\otimes n)_i 
+&(m,n_i)&\longmapsto& (m\otimes n)_i
 \end{array}.$$
 Esta aplicación es bilineal por serlo para el sistema de generadores
 \begin{align*}
@@ -817,7 +881,7 @@ f:&M\otimes_A(\oplus_{i\in I}N_i)&\longrightarrow&\oplus_{i\in I}(M\otimes_A N_i
 aplicación $A$-lineal. En el otro sentido comenzamos definiendo para cada $i\in I$ las aplicaciones
 $$\begin{array}{rrcl}
 G_i:&M\times N_i&\longmapsto&M\otimes(\oplus_{i\in I}N_i)\\
-&(m,n)&\longmapsto&m\otimes n_i 
+&(m,n)&\longmapsto&m\otimes n_i
 \end{array},$$
 que son $A$-bilineales de nuevo por la propia definición. Así, surgen las apliciones $A$-lineales
 $$\begin{array}{rrcl}
@@ -826,9 +890,9 @@ g_i&M\otimes N_i&\longrightarrow&M\otimes(\oplus_{i\in I}N_i)
 que nos permiten definir a su vez la siguiente aplicación $A$-lineal
 $$\begin{array}{rrcl}
 g:=\oplus_{i\in I}g_i:&\oplus(M\otimes_A N_i)&\longrightarrow&M\otimes_A(\oplus_{i\in I}N_i)  \\
-& 
+&
 \end{array}.$$
-Se comprueba que $g\circ f=1_{M\otimes_A(\oplus N_i)}$ y $f\circ g=1_{\oplus(M\otimes_A N_i)}$ y se tiene el resultado. 
+Se comprueba que $g\circ f=1_{M\otimes_A(\oplus N_i)}$ y $f\circ g=1_{\oplus(M\otimes_A N_i)}$ y se tiene el resultado.
 
 Para ver el caso particular, basta aplicar lo que acabamos de probar y la propiedad $6$ del producto tensorial.
 
@@ -865,14 +929,14 @@ y estudiemos su comportamiento respecto de sucesiones exactas. Antes de comenzar
 	0\longrightarrow\Hom_A(M\oplus_A N'',P)\overset{(1_M\oplus g)^*}{\longrightarrow}\Hom_A(M\oplus_A N,P)\overset{(1_M\oplus f)^*}{\longrightarrow}\Hom_A(M\oplus_A N',P)
 	\end{equation}
 	es exacta.
-	
+
 	La sucesión
 	\begin{align*}\label{equation: ext4}
 	0\longrightarrow\Hom_A(M,\Hom_A(N,P))\overset{(g^{*_P})_{*_M}}{\longrightarrow}&\Hom_A(M,\Hom_A(N,P))\overset{(f^{*_P})_{*_M}}{\longrightarrow}\\
 	\overset{(f^{*_P})_{*_M}}{\longrightarrow}&\Hom_A(M,\Hom_A(N,P)),
 	\end{align*}
 	donde $(f^{*_P})_{*_M}:=\Hom_A(M,\Hom_A(f,P))$ y $(g^{*_P})_{*_M}:=\Hom_A(M,\Hom_A(g,P))$, surge de aplicar en primer lugar el funtor $\Hom_A(\_,P)$ a la sucesión $\ref{equation: ext1}$ y, después, aplicar el funtor $\Hom_A(M,\_)$ al resultado anterior. Así, $\ref{pry}$ nos dice que es exacta.
-	
+
 	Observemos ahora que, para cada $X\in\set{N,N',N''}$ se tiene la cadena de isomorfismos de $A$-módulos
 	$$\Hom_A(M\otimes_A X,P)\cong\Bil_A(M\times X,P)\cong\Hom_A(M,\Hom_A(X,P)).$$
 	El primero de los isomorfismos es inmediato atendiendo a la propia definición del producto tensorial: Dada $F\in\Bil_A(M\times X,P)$, existe una única $\Bar{F}\in\Hom_A(M\otimes X,P)$ de forma que para cada par $(m,x)\in M\times X$ se verifica $\Bar{F}(m\otimes_A x)=F(m,x)$. Comprobemos el segundo de los isomorfismos. En primer lugar, definamos
@@ -885,13 +949,13 @@ y estudiemos su comportamiento respecto de sucesiones exactas. Antes de comenzar
 		\item $(F+G)(n,m)=F(m,n)+G(m,n)$ y
 		\item $(\lambda F)(m,n)=\lambda F(m,n).$
 	\end{itemize}
-	
+
 	Por otro lado, definamos
 	$$\begin{array}{rcl}
 	\Hom_A(M,\Hom_A(X,P))&\longrightarrow&\Bil_A(M\times X,P)\\
 	\varphi(m)(n)&\longmapsto&F_\varphi(m,n):=\varphi(m)(n)
 	\end{array}.$$
-	
+
 	Veamos que la aplicación es bilienal. Sean $\varphi\in\Hom_A(M,\Hom_A(X,P))$, $\set{m,m_1,m_2}\subset M$, $\set{n,n_1,n_2}\subset X$ y $\lambda\in A$. Tenemos
 	\begin{itemize}
 		\item $\varphi(m_1+m_2)(n)=(\varphi(m_1)+\varphi(m_2))(n)=\varphi(m_1)(n)+\varphi(m_2)(n)$,
@@ -903,7 +967,7 @@ y estudiemos su comportamiento respecto de sucesiones exactas. Antes de comenzar
 		\item $\varphi_{F_\varphi}(m)(n)=F_\varphi(m,n)=\varphi(m)(n)$ y
 		\item $F_{\varphi_F}(m,n)=\varphi_F(m)(n)=F(m,n).$
 	\end{itemize}
-	
+
 	Denotemos $\Phi_X:\Hom_A(M\otimes_A X,P)\longrightarrow\Hom_A(M,\Hom_A(X,P))$, para cada $X\in\{N,N',N''\}$, a cada uno de los isomorfismos definidos.
 	Estos isomorfismos implican que por ser ($\ref{equation: ext4}$) exacta ($\ref{equation: ext3}$) es también exacta. Para probar esto es suficiente ver que se tienen las igualdades
 	$$(1_M\otimes g)^*={\Phi_N}^{-1}\circ(g^*)_*\circ\Phi_{N''}$$
@@ -929,7 +993,7 @@ sin embargo, de la pertenencia $m\otimes_A n'\in M\otimes_A N'$ no se sigue nece
 	Consideremos los $\Z$-módulos $M:=\Z$, $N=N':=\Z/2\Z$ y $M':=2\Z$ (submódulo de $\Z$). Tomemos $x\in N\setminus\{0\}$:
 	\begin{itemize}
 		\item por un lado, $2\otimes_\Z x=1\otimes_\Z 2x=0_{M\otimes N}$,
-		\item sin embargo, por otro lado el elemento $2\otimes_\Z x$ no es $0_{M'\otimes N'}$. 
+		\item sin embargo, por otro lado el elemento $2\otimes_\Z x$ no es $0_{M'\otimes N'}$.
 	\end{itemize}
 \end{example}
 
@@ -945,18 +1009,18 @@ sin embargo, de la pertenencia $m\otimes_A n'\in M\otimes_A N'$ no se sigue nece
 \end{proposition}
 \begin{proof}
 	En primer lugar, ($1\Leftrightarrow 2$) basta con aplicar la definición de módulo plano para ($1\Rightarrow2$) y tener en cuenta que toda sucesión exacta larga se puede escindir en sucesiones exactas cortas para ($2\Rightarrow1$). También son claras las implicaciones ($2\Rightarrow3$) y ($3\Rightarrow4$). Probemos ($3\Rightarrow2$) y ($4\Rightarrow3$).
-	
+
 	($3\Rightarrow2$). Sean $M,N$ y $N'$ $A$-módulos y consideremos una sucesión exacta arbitraria $$0\longrightarrow N'\overset{f}{\longrightarrow}N\overset{g}{\longrightarrow}N''\longrightarrow 0.$$
 	En primer lugar, aplicando ($\ref{sucesiones+otimes1}$) tenemos que $\text{im}(1\otimes f)=\ker{(1\otimes g)}$ y que $1\otimes g$ es sobreyectiva. Por otro lado, del hecho de que la sucesión que hemos tomado sea exacta se desprende que, en concreto,$$0\longrightarrow N'\overset{f}{\longrightarrow}N$$es también exacta; así, por hipótesis tenemos que $1\otimes f$ es inyectiva.
-	
+
 	Con todo, resulta que la sucesión $$0\longrightarrow M\otimes_AN'\overset{1\otimes f}{\longrightarrow}M\otimes_AN\overset{1\otimes g}{\longrightarrow}M\otimes_AN''\longrightarrow 0$$ es también exacta.
-	
+
 	($4\Rightarrow3$). Sean $N,N'$ $A$-módulos y $f:N'\longrightarrow N$ una aplicación $A$-lineal e inyectiva. Tomemos $z:=\sum_{i=1}^r m_i\otimes_A n_i\in M\otimes_A N'$ tal que $f(z)=0_{M\otimes_A N}$, esto ocurre si, y sólo si, $\sum_{i=1}^r m_i\otimes_Af(n_i)=0_{M\otimes_A N}$ o, lo que es lo mismo $$e_{(m_1,f(n_1))}+\cdots+e_{(m_r,f(n_r))}\in\Sigma.$$
 	Esta pertenencia nos garantiza la existencia de ciertos $\set{\text{rel}_1,\dots,\text{rel}_s}\subset\Sigma$ tales que
 	$$e_{(m_1,f(n_1))}+\cdots+e_{(m_r,f(n_r))}=\sum_{i=1}^s\lambda_i\text{rel}_i\hspace{15pt}\lambda_i\in A\ \forall\ i\in\{1,\dots,s\}$$
 	Definamos ahora los menores submódulos de $N$ y de $N'$ que contengan a los conjuntos $\set{\text{rel}_1,\dots,\text{rel}_s,f(n_1),\dots,f(n_r)}$ y $\set{n_1,\dots,n_r}$ respectivamente. Denotemos al primero por $N_{\text{red}}$ y al segundo, ${N_{\text{red}}}'$.
-	
-	Es claro que $f_{|{N_{\text{red}}}'}:{N_{\text{red}}}'\longrightarrow N_{\text{red}}$ está bien definida y es inyectiva. Así, por la hipótesis, se tiene que la sucesión $$0\longrightarrow M\otimes_A {N_{\text{red}}}'\overset{1\otimes f_{|{N_{\text{red}}}'}}{\longrightarrow M}M\otimes {N_{\text{red}}}$$ es exacta. 
+
+	Es claro que $f_{|{N_{\text{red}}}'}:{N_{\text{red}}}'\longrightarrow N_{\text{red}}$ está bien definida y es inyectiva. Así, por la hipótesis, se tiene que la sucesión $$0\longrightarrow M\otimes_A {N_{\text{red}}}'\overset{1\otimes f_{|{N_{\text{red}}}'}}{\longrightarrow M}M\otimes {N_{\text{red}}}$$ es exacta.
 	Así, denotando por $z_\text{red}$ al elemento $z$ visto en $M\otimes_A {N_{\text{red}}}'$, se tiene que $f(z_\text{red})=0_{M\otimes_A {N_{\text{red}}}}$, es decir, $z_\text{red}=0_{M\otimes_A {N_{\text{red}}}'}$.
 	Si ahora consideramos el homomorfismo inclusión $$M\otimes_A {N_{\text{red}}}'\overset{i}{\hookrightarrow} M\otimes_A {N'},$$
 	en este caso, por ser homomorfismo sí se puede concluir que $i(z_\text{red})=z=0_{M\otimes_A {N}'}.$
@@ -967,11 +1031,11 @@ sin embargo, de la pertenencia $m\otimes_A n'\in M\otimes_A N'$ no se sigue nece
 \end{remark}
 
 \begin{example}
-	Denotemos respectivamente por $M_0$ y $N_0$ a los submódulos $M'$ y $N'$ de la observación anterior y mantengamos la notación de $\ref{exsub}$. 
-	
+	Denotemos respectivamente por $M_0$ y $N_0$ a los submódulos $M'$ y $N'$ de la observación anterior y mantengamos la notación de $\ref{exsub}$.
+
 	Es claro que $M_0\supset M'$ y $N_0\supset N'$ pues si $z=0_{M_0\otimes N_0}$ y $M_0\subset M'$ y $N_0\subset N'$ también debe ser $0_{M'\otimes N'}$. En primer lugar, si $x\neq0_{N}$, el menor submódulo generado por $x$ es el propio $N$. Así, $N_0=N=N'$.
 	Supongamos ahora $M_0$ generado por los elementos $\set{m_1,\dots,m_r}$. La inclusión antes mencionada implica $m_i|2$ para toda $i\in\set{1,\dots,r}$, es decir, $m_i=1$ o $m_i=2$. Por esto, existe $i\in\set{1,\dots,r}$ tal que $m_i=1$ y $\Z=\langle 1\rangle\subset M_0$.
-	
+
 	Así, los únicos submódulos $M_0$ y $N_0$ que verifican las condiciones del consecuente de la observación anterior son $\Z$ y $\Z/2\Z$.
 \end{example}
 
@@ -984,16 +1048,16 @@ sin embargo, de la pertenencia $m\otimes_A n'\in M\otimes_A N'$ no se sigue nece
 		\item[4.] Si $\af\in A$ es un ideal, entonces la aplicación
 		$$\begin{array}{rcl}
 		\af\otimes_A M&\longrightarrow&M\hspace{15pt}\text{entendido como}\ A\otimes_A M\\
-		\sum_{i\in F}a_i\otimes_A m_i&\longmapsto&\sum_{i\in F}a_im_i 
+		\sum_{i\in F}a_i\otimes_A m_i&\longmapsto&\sum_{i\in F}a_im_i
 		\end{array}$$
 		es inyectiva.
 	\end{itemize}
 \end{theorem}
 
 \begin{remark}\textit{1.} Sean $A$ un anillo conmutativo y unitario, $I$ un conjunto de índices, $N$ y $N'$ $A$-módulos y $f:N'\longrightarrow N$ una aplicación $A$-lineal inyectiva. Se verifica que la aplicación $$1_{A^{(I)}}\otimes_A f:A^{(I)}\otimes N\longrightarrow A^{(I)}\otimes_A N$$ es también inyectiva.
-	
+
 	Dado que $A^{(I)}\otimes_A N\cong\oplus_{i\in I}N$ y $A^{(I)}\otimes_A N'\cong\oplus_{i\in I}N'$, basta comprobar que la aplicación $$\oplus_{i\in I}f:\oplus_{i\in I}N'\longrightarrow \oplus_{i\in I}N$$ es inyectiva.
-	
+
 	\textit{2.} Si $B$ es plano y $\af\subset A$ un ideal, entonces la cuarta afirmación del teorema anterior nos da el isomorfismo de $A$-módulos $$\af^e\cong \af\otimes_A B.$$
 \end{remark}
 
@@ -1008,7 +1072,7 @@ sin embargo, de la pertenencia $m\otimes_A n'\in M\otimes_A N'$ no se sigue nece
 	\end{equation}
 \end{lemma}
 \begin{proof}
-	Probemos primero un caso base: consideremos $N$ como $A$-módulo libre generado por el conjunto $\set{n_1,\dots,n_r}$; es decir, existe un isomorfismo de $A$-módulos 
+	Probemos primero un caso base: consideremos $N$ como $A$-módulo libre generado por el conjunto $\set{n_1,\dots,n_r}$; es decir, existe un isomorfismo de $A$-módulos
 	$$\begin{array}{rrcl}
 	\sigma:&N&\longrightarrow&A^{(r)}\\
 	&n_i&\longmapsto&e_i
@@ -1021,14 +1085,14 @@ sin embargo, de la pertenencia $m\otimes_A n'\in M\otimes_A N'$ no se sigue nece
 	y se desprende que
 	$$\sum_{i=1}^rm_in_i=0_{M\otimes N}\Leftrightarrow (m_1,\dots,m_r)=0_{M^{(r)}}\Leftrightarrow m_i=0_M\hspace{15pt}\forall\ i\in\{1,\dots,r\}.$$
 	Tras esto, basta tomar $s=r$ y definir ${m_j}':=m_j$, $\mu_{ij}:=0_A$ para $i,j\in\set{1,\dots,r}$.
-	
+
 	Ahora, de forma más general, sea
 	$$0\longrightarrow K:=\ker(f)\hookrightarrow A^{(r)}\overset{F}{\longrightarrow}N\longrightarrow 0$$
 	una sucesión exacta, donde $F$ verifica $F(e_i)=n_i$ para cada $i\in\set{1,\dots,r}$.
 	Sabemos que la sucesión
 	$$M\otimes_A K\overset{h:=1_m\otimes i}{\longrightarrow}M\otimes_A A^{(r)}\overset{f:=1_M\otimes F}{\longrightarrow}M\otimes N\longrightarrow0$$
 	es exacta.
-	
+
 	De esta forma, si un elemento $z:=\sum m_i\otimes e_i$ verifica $f(z)=0_{M\otimes_A N}$, entonces existe $w:=\sum_{j=1}^s{m_j}'\otimes k_j\in M\otimes_A K$ de forma que $h(w)=z$; esto supone
 	$$\sum_{j=1}^s {m_j}'\otimes k_j-\sum_{i=1}^r m_i\otimes e_i=0_{M\otimes_A A^{(r)}}.$$
 	Además, para cada $j\in\set{1,\dots,s}$ existen $\mu_{ij}\in A$ tales que $$k_j=\sum \mu_{ij}e_i.$$
