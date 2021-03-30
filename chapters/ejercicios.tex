@@ -320,4 +320,19 @@ Por tanto, por hipótesis de inducción, $\mathfrak b_i =\mathfrak b_{ij} \cap  
 
 \textit{(iii)}
 
+\section{Hoja 2}
+\paragraph{Ejericio 1} \textit{ Sea $A$ un anillo, $\mathfrak a$ un ideal de $A$, y $M$ un $A$-módulo. Probar que $A/\mathfrak a \otimes M \cong M/\mathfrak a M $.}
+
+Consideramos la cadena exacta $0\longrightarrow \mathfrak a \longrightarrow A \longrightarrow A/\mathfrak a \longrightarrow 0$ y la tensorizamos por $M$ tal que
+
+\[ \mathfrak a \otimes M \longrightarrow A\otimes M \longrightarrow A/\mathfrak a \otimes M \longrightarrow 0 \]
+
+que sabemos que es exacta. Por tanto, $\pi \otimes 1_M: A \otimes M \to A/\mathfrak a \otimes M $ es sobreyectiva, y aplicando el primer teorema de isomorfía $A \otimes M / \ker (\pi \otimes 1_M) \cong A/\mathfrak a \otimes M $. Por ser exacta, el núcleo coincide con la imagen de $i \otimes 1_M$, que es $\mathfrak a \otimes M$. Además, $A\otimes M \cong M$ vía el isomorfismo $a\otimes m \to am$, y la imagen de $\mathfrak a \otimes M \subset A\otimes M$ por esta aplicación es $\mathfrak a M$, lo que concluye la demostración.
+
+\paragraph{Ejercicio 2}
+
+Definimos las aplicaciones: $f_1:M\to \ker \phi$ dada por $f_2:x\mapsto x-\psi \circ \phi (x)$ y $M\to \im \psi$ dada por $x\mapsto \psi \circ \phi (x)$. La segunda es claro que está bien definida, y la primera se comprueba que $\phi(x-\psi\circ \phi(x)) = \phi(x)-\phi\circ \psi \circ \phi(x) = \phi(x)-\phi(x) = 0$.
+
+Tomamos $F=(f_1,f_2)$ y vemos que es nuestro isomorfismo. Es inyectiva porque si $(0,0) = (x-\psi \circ \phi (x), \psi \circ \phi (x))$ entonces $\psi \circ \phi (x) = 0$ y por tanto la primera coordenada dice $x=0$. Por otra parte, dado $(x,y)\in \ker \phi \oplus \im \psi$ definimos $m=x+y \in M$ y observamos que como $y\in \im \psi$ existe $z\in N$ con $y=\psi(z)$, y entonces: $f_2(m) =  \psi \circ \phi (y) = \psi \circ \phi \circ \psi(z) = \psi (z) = y $, y por tanto $f_1(m) = m - f_2(m) = (x+y)-y = x$.
+
 \end{document}
