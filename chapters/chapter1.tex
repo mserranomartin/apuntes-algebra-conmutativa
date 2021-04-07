@@ -128,8 +128,9 @@
 		Sea $A$ un anillo. Son equivalentes
 		\begin{itemize}
 			\item[1)] $A$ es un anillo local,
-			\item[2)] el único ideal maximal de $A$ es $\mathfrak R$ y
-			\item[3)] dado un ideal maximal $\mathfrak m\subset A$, para cualesquiera $x\in\mathfrak m$ e $y\in A$, $1-xy$ es unidad de $A$.
+			\item[2)] el único ideal maximal de $A$ es $\mathfrak R$,
+			\item[3)] dado un ideal maximal $\mathfrak m\subset A$, para cualesquiera $x\in\mathfrak m$ e $y\in A$, $1-xy$ es unidad de $A$ y
+			\item[4)] para todo $x\in A$, $x$ es unidad o $1-xy$ es unidad para cada $y\in A$.
 		\end{itemize}
 	\end{proposition}
 	\begin{proof}
@@ -141,7 +142,12 @@
 		
 		($1\Rightarrow2$), ($2\Rightarrow1$) y ($2\Rightarrow 3$) son obvias.
 		
-		Probemos ($3\Rightarrow2$). Dado un ideal maximal $\mathfrak m\subset A$ verificando las hipótesis, tenemos por la caracterización del ideal $\mathfrak R$ que $\mathfrak m\subset \mathfrak R$. Como la inclusión $\mathfrak R\subset \mathfrak m$ se da siempre, tenemos la igualdad. Además, por ser $\mathfrak m$ arbitrario, tenemos que $\mathfrak R$ es el único ideal maximal de $A$.
+		($3\Rightarrow2$). Dado un ideal maximal $\mathfrak m\subset A$ verificando las hipótesis, tenemos por la caracterización del ideal $\mathfrak R$ que $\mathfrak m\subset \mathfrak R$. Como la inclusión $\mathfrak R\subset \mathfrak m$ se da siempre, tenemos la igualdad. Además, por ser $\mathfrak m$ arbitrario, tenemos que $\mathfrak R$ es el único ideal maximal de $A$.
+		
+		($3\Rightarrow 4$). Sea $x\in A$. Si $x$ no es unidad, entonces pertenece a algún ideal maximal y por la hipótesis tenemos lo que queremos probar.
+		
+		($4\Rightarrow 3$). Análogamente, dado un ideal maximal $\mathfrak m\subset A$ y un elemento $x\in\mathfrak m$, se tiene que $x$ no es unidad y por la hipótesis podemos concluir la prueba.
+		
 	\end{proof}
 	
 	\begin{proposition}
