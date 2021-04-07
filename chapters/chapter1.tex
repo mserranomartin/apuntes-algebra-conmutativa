@@ -105,21 +105,43 @@
 	\end{proof}
 	
 	\begin{definition}
+		Dado un anillo $A$, definimos el \textit{ideal de Jacobson} como $$\mathfrak R:=\bigcap_{\underset{\mathfrak m\ \text{maximal}}{\mathfrak m\subset A}}\mathfrak m$$
+	\end{definition}
+	
+	\begin{proposition}
+		Sea $A$ un anillo. Se tiene que para cada $x\in A$, $x\in\mathfrak R$ si, y sólo si, $1-xy$ es unidad para toda $y\in A$.
+	\end{proposition}
+	\begin{proof}
+		($\Rightarrow$) Sea $x\in\mathfrak{R}$ y supongamos que existe $y\in A$ tal que $1-xy$ no es unidad. Por ser así, existe $\mathfrak m\subset A$ maximal tal que $1-xy\in\mathfrak m$, pero por definición de $\mathfrak R$ se tiene que $1-xy+xy=1\in\mathfrak m$, que es absurdo.
+		
+		($\Leftarrow$) Supongamos ahora que $x\in A$ verifica las hipótesis pero existe $\mathfrak\subset A$ maximal tal que $x\notin\mathfrak m$. Por la maximalidad de $\mathfrak m$, $\langle x\rangle\oplus \mathfrak m=\langle 1\rangle$; es decir, existen $y\in A$ y $m\in\mathfrak m$ tales que
+		$$xy +m=1\Longleftrightarrow m=1-xy,$$
+		pero esto es absurdo.
+	\end{proof}
+	
+	\begin{definition}
 		Diremos que un anillo $A$ es un \textit{anillo local} si posee un único ideal maximal.
 	\end{definition}
 	
-	Una caracterización útil de los anillos locales es la siguiente.
+	En vista de lo anterior, tenemos la siguiente caracterización de los anillos locales.
 	\begin{proposition}
-		Un anillo $A$ es anillo local si, y sólo si, para todo elemento $x\in A$ $x$ es unidad o existe $\lambda\in A$ tal que $1-\lambda x$ es unidad.
+		Sea $A$ un anillo. Son equivalentes
+		\begin{itemize}
+			\item[1)] $A$ es un anillo local,
+			\item[2)] el único ideal maximal de $A$ es $\mathfrak R$ y
+			\item[3)] dado un ideal maximal $\mathfrak m\subset A$, para cualesquiera $x\in\mathfrak m$ e $y\in A$, $1-xy$ es unidad de $A$.
+		\end{itemize}
 	\end{proposition}
 	\begin{proof}
-		($\Rightarrow$) Por ser $A$ local, existe un único ideal maximal $\mathfrak m\subset A$. Así, todo elemento $\lambda\in\A\setminus\mathfrak m$ es una unidad pues, en caso contrario, existiría un ideal maximal conteniendo a cada elemento no unidad, que es absurdo.
+		%($\Rightarrow$) Por ser $A$ local, existe un único ideal maximal $\mathfrak m\subset A$. Así, todo elemento $\lambda\in\A\setminus\mathfrak m$ es una unidad pues, en caso contrario, existiría un ideal maximal conteniendo a cada elemento no unidad, que es absurdo.
 		
-		Por esto, dado $x\in A$: si $x\notin \mathfrak m$, $x$ es unidad y, si $x\in \mathfrak m$, basta tomar $u\in A\setminus\mathfrak m$ y se tiene que $\langle x,u\rangle=\langle 1\rangle$, es decir,
-		$$\lambda x+u=1\Longleftrightarrow 1-\lambda x=u$$
-		para cierto $\lambda\in A$.
+		%Por esto, dado $x\in A$: si $x\notin \mathfrak m$, $x$ es unidad y, si $x\in \mathfrak m$, basta tomar $u\in A\setminus\mathfrak m$ y se tiene que $\langle x,u\rangle=\langle 1\rangle$, es decir,
+		%$$\lambda x+u=1\Longleftrightarrow 1-\lambda x=u$$
+		%para cierto $\lambda\in A$.
 		
-		($\Leftarrow$) 
+		($1\Rightarrow2$), ($2\Rightarrow1$) y ($2\Rightarrow 3$) son obvias.
+		
+		Probemos ($3\Rightarrow2$). Dado un ideal maximal $\mathfrak m\subset A$ verificando las hipótesis, tenemos por la caracterización del ideal $\mathfrak R$ que $\mathfrak m\subset \mathfrak R$. Como la inclusión $\mathfrak R\subset \mathfrak m$ se da siempre, tenemos la igualdad. Además, por ser $\mathfrak m$ arbitrario, tenemos que $\mathfrak R$ es el único ideal maximal de $A$.
 	\end{proof}
 	
 	\begin{proposition}
