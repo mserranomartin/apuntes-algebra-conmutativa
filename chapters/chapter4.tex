@@ -1,0 +1,119 @@
+\documentclass[../main.tex]{subfiles}
+\begin{document}
+En el siguiente capitulo generalizaremos la construcción del cuerpo de los números racionales desde el anillo de los enteros a cualquier dominio de integridad. Para ello, necesitaremos el siguiente concepto.
+\begin{definition}
+Sea $A$ un anillo conmutativo unitario, donde $0_A\neq 1_A$. $S\subset A$ se dice \textit{multiplicativamente cerrado} si se verifica \begin{enumerate}
+    \item $0_A\notin S$
+    \item $1_A\in S$
+    \item $s_1\cdot s_2\in S, \forall s_1,s_2\in S$
+\end{enumerate}
+\end{definition}
+\begin{example}
+\begin{enumerate}
+    \item $S=\{1_A\}$ es multiplicativamente cerrado
+    \item Denotemos como $\operatorname{Div_0}(A)$ al conjunto de los divisores de $0$ de $A$. $S=A\setminus \operatorname{Div_0}(A)$ es multiplicativamente cerrado. En efecto, \begin{itemize}
+        \item $0_A\in \operatorname{Div_0}(A)$, pues cualquier $a\in A$ verifica que $a\cdot 0_A=0_A$. Por tanto, $0_A\notin S$
+        \item Para cada $a\in A\setminus\{0\}$, $1_A\cdot a=a\neq 0$, luego $a\notin \operatorname{Div_0}(A)$, es decir, $1_A\in S$
+        \item Dados $s_1,s_2\in S$ y $x\in A\setminus\{0\}$, $(s_1\cdot s_2)\cdot x=s_1\cdot(s_2\cdot x)$. Como $s_1\notin \operatorname{Div_0}(A)$, $s_2\cdot x=0$, pero como $s_2\notin \operatorname{Div_0}(A)$, necesariamente $x=0$, lo que implica $s_1\cdot s_2\in S$.
+    \end{itemize}
+    \item Dado $\mathfrak{p}$ un ideal primo de $A$, $A\setminus\mathfrak{p}$ es un conjunto multiplicativamente cerrado. En efecto, \begin{itemize}
+        \item Por ser ideal, $0\in\mathfrak{p}$
+        \item Por ser primo, $1\notin\p$
+        \item Por ser primo, si $s_1\cdot s_2\in\p$, necesariamente alguno tiene que estar en $\p$.
+    \end{itemize}
+\end{enumerate}
+\end{example}
+\section{Construcción del anillo de fracciones}
+Sea $A$ un anillo conmutativo y unitario. Sea $S\subset A$ un conjunto multiplicativamente cerrado. Definimos en $A\times S$ la siguiente relación$$(a,s_1)\sim (b,s_2)\iff \exists s'\in S : s'(as_2-bs_1)=0$$
+\begin{proposition}
+La relación `$\sim$' es de equivalencia
+\end{proposition}
+\begin{proof}
+Las propiedades reflexiva y simétrica son inmediatas. Para ver la transitiva, supongamos\begin{equation}
+    (a,s_1)\sim (b,s_2)\iff \exists s'\in S : s'(as_2-bs_1)=0
+\end{equation} y \begin{equation}
+    (b,s_2)\sim (c,s_3)\iff \exists s''\in S : s''(bs_3-cs_2)=0
+\end{equation}
+Multiplicamos la primera ecuación por $s''s_3$ y la segunda por $s's_1$. Sumando ambas expresiones queda $$0_A=s_2s's''(as_3-cs_1)$$ lo que es equivalente a $(a,s_1)\sim (c,s_3)$
+\end{proof}
+\begin{remark}
+Es necesario incluir la existencia del $s'\in S$ para que se cumpla la transitividad, no basta con pedir únicamente que se anule la resta entre los paréntesis.
+\end{remark}
+Al conjunto $A\times S/\sim$ se le suele denotar como $S^{-1}A$. A los elementos $[(a,s)]$ se les denota a su vez como $\frac{a}{s}$. Definimos en este conjunto las siguientes operaciones: \begin{itemize}
+    \item $[(a,s)]+[(b,t)]:=[(at+bs,st)]$
+    \item $[(a,s)]\cdot[(b,t)]:=[(ab,dt)]$
+\end{itemize}
+Nótese que no son más que las operaciones para fracciones normales.
+\begin{proposition}
+Las operaciones $+$ y $\cdot$ están bien definidas y $(S^{-1}A, +, \cdot)$ es un anillo conmutativo unitario tal que 
+$$
+    \begin{array}{rrcl}
+	\delta_S:&A&\longrightarrow&S^{-1}A\\
+	&a&\longmapsto&[(a,1)]
+	\end{array}.$$ es un homomorfismo de anillos.
+\end{proposition}
+\begin{proof}
+Veamos que $+$ está bien definida. Supongamos\begin{equation}\label{unoo}
+    (a_1,s_1)\sim (a_1',s_1')\iff \exists s_1^{\ast}\in S : s_1^{\ast}(a_1s_1'-a_1's_1)=0
+\end{equation} y \begin{equation}\label{doss}
+    (a_2,s_2)\sim (a_2',s_2')\iff \exists s_2^{\ast}\in S : s_2^{\ast}(a_2s_2'-a_2's_2)=0
+\end{equation}
+Multilpicamos $(\ref{unoo})$ por $s_2s_2's_2^{\ast}$ y $(\ref{doss})$ por $s_1s_1's_1^{\ast}$ y sumando ambas expresiones queda $$s_1^{\ast}s_2^{\ast}((s_1's_2')(a_1s_2+a_2s_1)-(s_1s_2)(a_1's_2'+a_2's_1'))=0$$ Esto se traduce en que $$\frac{a_1}{s_1} + \frac{a_2}{s_2}=\frac{a_1'}{s_1'} + \frac{a_2'}{s_2'}.$$
+$+$ verifica la propiedad asociativa:
+\begin{align*}
+    &\left(\frac{a_1}{s_1}+\frac{a_2}{s_2}\right)+\frac{a_3}{s_3}=\frac{a_1s_2+a_2s_1}{s_1s_2}+\frac{a_3}{s_3}=\frac{a_1s_2s_3+a_2s_1s_3+a_3s_1s_2}{s_1s_2s_3}=\\&\frac{a_1}{s_1}+\frac{a_2s_3+a_3s_2}{s_2s_3}=\frac{a_1}{s_2}+\left(\frac{a_2}{s_2}+\frac{a_3}{s_3}\right).
+\end{align*}
+La propiedad conmutativa se comprueba fácilmente.
+
+Comprobemos ahora que $·$ está bien definida. Tomemos dos pares $(a_1,s_1)\sim(a_1',s_1')$ y $(a_2,s_2)\sim(a_2',s_2')$. Existen $s_1^*,\ s_2^*\in S$ tales que
+\begin{equation}\label{m1}
+    s_1^{\ast}(a_1s_1'-a_1's_1)=0
+\end{equation} y \begin{equation}\label{m2}
+    s_2^{\ast}(a_2s_2'-a_2's_2)=0.
+\end{equation}
+Basta multiplicar ($\ref{m1}$) y ($\ref{m2}$) por $a_2s_2's_2^*$ y $a_1's_1s_1^*$ respectivamente y sumarlas para obtener $(a_1a_2,s_1s_2)\sim(a_1'a_2',s_1's_2')$, es decir,
+$$\frac{a_1}{s_1}·\frac{a_2}{s_2}=\frac{a_1'}{s_1'}·\frac{a_2'}{s_2'}.$$
+Es sencillo comprobar que $\cdot$ verifica las propiedades asociativa y conmutativa.
+
+Veamos que se cumple la propiedad distributiva:$$\frac{a_1}{s_1}\left(\frac{a_2}{s_2}+\frac{a_3}{s_3}\right)=\frac{a_1a_2s_3+a_1a_3s_2}{s_1s_2s_3}=\frac{a_1s_1a_2s_3+a_1a_3s_1s_2}{s_1^2s_2s_3}=\frac{a_1a_2}{s_1s_2}+\frac{a_1a_3}{s_1s_3}.$$
+
+Finalmente, que $\delta_S(a)=[(a,1)]$ es un homomorfismo de anillos se sigue sencillamente de la definición.
+\end{proof}
+\begin{remark}\label{iny} 
+1) El elemento neutro para $+$ en $S^{-1}A$ es $0_{S^{-1}A}=[(0,1)]$. Además, para cada $s\in S$, se tiene que $[(0,1)]=[(0,s)]$. En efecto, dado $\frac{a}{s}\in S^{-1}A$, $$0_{S^{-1}A}+\frac{a}{s}=\frac{0_A}{1}+\frac{0\cdot s+a}{s}=\frac{a}{s}$$
+y para cada $s\in S$ se tiene trivialmente $1_A(0_As-0_A1_A)=0_A$, es decir, $[(0,1)]=[(0,s)]$.
+
+2) Análogamente, el elemento neutro para $·$ en $S^{-1}A$ es $1_{S^{-1}A}=[(1,1)]$ y, para cada $s\in S$, se tiene que $[(1,1)]=[(s,s)]$.
+
+3) El núcleo de $\delta_S$ es el conjunto $\{a\in A:[(a,1)]=[(0,s)], s\in S\}$, esto es, existe un $s^{\ast}$ tal que $s^{\ast}(a-0)=s^{\ast}a=0$. Una condición suficiente para que $\delta_S$ sea inyectiva es que $A$ sea dominio de integridad. Concretamente, $\delta_S$ es inyectiva si, y sólo si, $S\cap\operatorname{Div_0}(A)=\varnothing$.
+\end{remark}
+
+\subsection{Propiedad universal del anillo de fracciones}
+\begin{theorem}\textbf{(Propiedad universal del anillo de fracciones)} Sean $A$ y $B$ anillos, $S\subset A$ un subconjunto multiplicativamente cerrado de $A$ y $\varphi:A\longrightarrow B$ de forma que $\varphi(s)$ es unidad en $B$ para toda $s\in S$. Bajo estas hipótesis, existe un único homomorfismo $\Phi:S^{-1}A\longrightarrow B$ que cumple
+$$\varphi=\Phi\circ\delta_S$$.
+\end{theorem}
+
+\begin{proof}
+Supongamos en primer lugar la existencia de tal homomorfismo y probemos su unicidad. Para todo $a\in A$ se tiene que $\Phi(\frac{a}{1})=\Phi\circ\delta_S(a)=\varphi(a)$. Por otra parte, dado $s\in S$, se tiene
+$$1_B=\Phi\left(\frac{1_A}{1_A}\right)=\Phi\left(\frac{s}{s}\right)=\Phi\left(\frac{s}{1_A}\frac{1_A}{s}\right)=\Phi\left(\frac{s}{1_A}\right)\Phi\left(\frac{1_A}{s}\right)=\varphi(s)\Phi\left(\frac{1_A}{s}\right),$$
+es decir, $\Phi(\frac{1_A}{s})={\varphi(s)}^{-1}$. Con todo, para todo $\frac{a}{s}\in S^{-1}A$ se tiene $\Phi(\frac{a}{s})=\varphi(a){\varphi(s)}^{-1}$; es decir, $\Phi$ está unívocamente determinado por $\varphi$.
+
+Teniendo en cuenta lo anterior, vamos a definir para cada $\frac{a}{s}\in S^{-1}A$ 
+$$\Phi\left(\frac{a}{s}\right):=\varphi(a){\varphi(s)}^{-1}.$$
+Veamos que está bien definido. Dados dos elementos $\frac{a}{s}$ y $\frac{a'}{s'}$ en la misma clase de equivalencia, existe $s^*\in S$ tal que $s^*(as'-a's)=0_A$. Aplicando $\varphi$ a ambos miembros de la igualdad resulta $\varphi(s^*)(\varphi(a)\varphi(s')-\varphi(a')\varphi(s))=0_B$ y, dado que $\varphi(s^*)$ es unidad por hipótesis, tenemos que $\varphi(a)\varphi(s')-\varphi(a')\varphi(s)=0_B$. De esto se desprende
+$$\varphi\left(\frac{a}{s}\right)=\varphi(a){\varphi(s)}^{-1}=\varphi(a'){\varphi(s')}^{-1}=\Phi\left(\frac{a'}{s'}\right).$$
+Esta última igualdad también se apoya en el hecho de que $\varphi(s)$ y $\varphi(s')$ son unidades.
+\end{proof}
+
+\begin{remark}
+1) El enunciado del teorema se puede reescribir pidiendo que $B$ sea una $A$-álgebra mediante un homomorfismo $\varphi$.
+
+2) De la Propiedad universal del anillo de fracciones se deduce que, en el caso de que $A$ sea un DI y $S=\operatorname{Div_0}(A)$, $S^{-1}A$ es el menor cuerpo que contiene a $A$.
+
+Supongamos $K$ cuerpo tal que $A\subset K$. Como ya hemos comentado en ($\ref{iny}$), $\delta_S$ es un homomorfismo inyectivo, luego también se tiene $A\subset S^{-1}A$. Además, por ser $S^{-1}A$ un cuerpo, $\Phi$ (definido como en el teorema) es de igual forma inyectivo, por lo que $S^{-1}A\subset K$.
+
+3) Si $S_1$ y $S_2$ son conjuntos multiplicativamente cerrados de $A$ tales que $S_1\subset S_2$, todo $s\in S_1$ verifica que $\delta_{S_2}(s)$ es unidad en ${S_2}^{-1}A$. Así, podemos aplicar el Principio universal del anillo de fracciones y tener que $\delta_{S_2}=\Phi\circ\delta_{S_1}$, de forma que todo elemento $\frac{a}{s}$ de ${S_1}^{-1}A$ se puede ver como uno de ${S_2}^{-1}A$.
+
+Hay que destacar igualmente que $\Phi$ no es necesariamente inyectiva, puede existir cierto elemento $\frac{a}{s}\in{S_1}^{-1}A$ tal que $\frac{a}{s}\neq0_{{S_1}^{-1}A}$ y cumpla $\frac{a}{s}=0_{{S_2}^{-1}A}$ visto como elemento de ${S_2}^{-1}A$. Una condición suficiente para la inyectividad de $\Phi$ es que se tenga $S_2\cap\operatorname{Div_0}(A)=\varnothing$.
+\end{remark}
+\end{document}
