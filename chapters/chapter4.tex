@@ -115,5 +115,76 @@ Supongamos $K$ cuerpo tal que $A\subset K$. Como ya hemos comentado en ($\ref{in
 3) Si $S_1$ y $S_2$ son conjuntos multiplicativamente cerrados de $A$ tales que $S_1\subset S_2$, todo $s\in S_1$ verifica que $\delta_{S_2}(s)$ es unidad en ${S_2}^{-1}A$. Así, podemos aplicar el Principio universal del anillo de fracciones y tener que $\delta_{S_2}=\Phi\circ\delta_{S_1}$, de forma que todo elemento $\frac{a}{s}$ de ${S_1}^{-1}A$ se puede ver como uno de ${S_2}^{-1}A$.
 
 Hay que destacar igualmente que $\Phi$ no es necesariamente inyectiva, puede existir cierto elemento $\frac{a}{s}\in{S_1}^{-1}A$ tal que $\frac{a}{s}\neq0_{{S_1}^{-1}A}$ y cumpla $\frac{a}{s}=0_{{S_2}^{-1}A}$ visto como elemento de ${S_2}^{-1}A$. Una condición suficiente para la inyectividad de $\Phi$ es que se tenga $S_2\cap\operatorname{Div_0}(A)=\varnothing$.
+
+\section{Módulo de fracciones}
+De forma similar a como hemos procedido, consideremos $A$ un anillo, $S\subset A$ un conjunto multiplicativamente cerrado y $M$ un $A$-módulo. Consideremos el conjunto $M\times S$ y definamos en él la siguiente relación `$\sim$': dados $(m_1,s_1),(m_2,s_2)\in M\times S$ se tiene
+$$(m_1,s_1)\sim(m_2,s_2)\Longleftrightarrow\ \exists s\in S\ s(s_2m_1-s_1m_2)=0_M.$$
+
+\begin{remark}
+	En este caso, el producto que estamos considerando es el exterior de $M$ como $A$-módulo.
+\end{remark}
+
+\begin{proposition}
+	La relación `$\sim$' es de equivalencia.
+\end{proposition}
+
+\begin{proof}
+	La prueba es análoga a la hecha para anillos.
+\end{proof}
+
+Denotemos $S^{-1}M:=M\times S/\sim$ y veamos que lo podemos dotar de una estructura tanto de $A$-módulo como de $S^{-1}A$-módulo. Definamos las siguientes operaciones:
+$$\begin{array}{rrcl}
++:&S^{-1}M\times S^{-1}M&\longrightarrow&S^{-1}M  \\
+&([(m_1,s_1)],[(m_2,s_2)])&\longmapsto&[(s_2m_1+s_1m_2,s_1s_2)]
+\end{array},$$
+$$\begin{array}{rrcl}
+·:&A\times S^{-1}M&\longrightarrow&S^{-1}M  \\
+&(a,[(m,s)])&\longmapsto&[(am,s)]
+\end{array}$$
+y
+$$\begin{array}{rrcl}
+*:&S^{-1}A\times S^{-1}M&\longrightarrow&S^{-1}M  \\
+&([(a,s_1)],[(m,s_2)])&\longmapsto&[(am,s_1s_2)]
+\end{array}.$$
+
+\begin{proposition}
+	Las aplicaciones $+$, $·$ y $*$ están bien definidas. 
+\end{proposition}
+
+\begin{proof}
+	La prueba para $+$ es análoga al caso de los anillos de fracciones. Veamos las otras dos.
+	
+	Sean $(m,s),(m',s')\in M\times S$ tales que $(m,s)\sim(m',s')$. Existe $s^*\in S$ tal que $s^*(s'm-sm')=0_M$. Así, dado $a\in A$, tenemos que
+	$$0_M=a(s^*(s'm-sm')=s^*(s'(am)-s(am')),$$
+	es decir, $(am,s)\sim (am',s')$ y $·$ está bien definida.
+	
+	Sean ahora $(a,s_1),(a',s_1')\in S^{-1}A$ y $(m,s_2),(m',s_2')\in M\times S$ tales que $(a,s_1)\sim(a,s_1')$ y $(m,s)\sim(m',s')$. Existen $s_3,s_3'\in S$ tales que
+	\begin{equation}\label{ext1}
+	s_3(as_1'-a's_1)=0_A
+	\end{equation} y \begin{equation}\label{ext2}
+	s_3'(s_2'm-s_2m')=0_M.
+	\end{equation}
+	A partir de estas igualdades obtenemos las siguientes
+	\begin{equation}\label{ext3}
+	s_3(as_1'-a's_1)(s_2's_3m)=0_A(s_2's_3m)=0_M
+	\end{equation} y \begin{equation}\label{ext4}
+	(a's_1s_3)s_3'(s_2'm-s_2m')=0_M
+	\end{equation}
+	y sumándolas resulta
+	$$s_3s_3'(s_1's_2'am-s_1s_2a'm')=0_M,$$
+	es decir, $(am,s_1s_2)\sim(a'm',s_1's_2')$ y $*$ está bien definida.
+\end{proof}
+
+\begin{remark}
+	En la prueba de $*$ hay que tener la precaución en este caso (y en comparación con las pruebas anteriores) de que el producto que se considera es el exterior de $M$. Más aún, los elementos de ($\ref{ext1}$) son elementos de $A$ y los de ($\ref{ext2}$) lo son de $M$. El paso a ($\ref{ext3}$) y ($\ref{ext4})$ permite sumarlas.
+\end{remark}
+
+\begin{proposition}
+	$(S^{-1}M,+)$ dotado con el producto exterior $·$ es un $A$-módulo.
+\end{proposition}
+
+\begin{proposition}
+	$(S^{-1}M,+)$ dotado con el producto exterior $*$ es un $S^{-1}A$-módulo.
+\end{proposition}
 \end{remark}
 \end{document}
