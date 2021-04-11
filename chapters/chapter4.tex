@@ -183,8 +183,31 @@ $$\begin{array}{rrcl}
 	$(S^{-1}M,+)$ dotado con el producto exterior $·$ es un $A$-módulo.
 \end{proposition}
 
+\begin{proof}
+	Por definición de $·$ (que involucra únicamente al `numerador'), su comportamiento como producto exterior es el mismo que el del producto exterior definido en $M$. Vemos así que precisamente por ser $M$ un $A$-módulo también $S^{-1}M$ lo es.
+\end{proof}
+
 \begin{proposition}
 	$(S^{-1}M,+)$ dotado con el producto exterior $*$ es un $S^{-1}A$-módulo.
 \end{proposition}
+
+\begin{proof}
+	A lo largo de la prueba (y en adelante siempre que no haya posibilidad de confusión) se omitirá el símbolo $\ast$. Comprobemos que se verifican los cuatro axiomas de la definición de $S^{-1}A$-módulo.
+	\begin{itemize}
+		\item[i)] En primer lugar, claramente se tiene $$1_{S^{-1}A}\frac{m}{s}=\frac{1_A}{1_A}\frac{m}{s}=\frac{1_Am}{1_As}=\frac{m}{s},\hspace{15pt}\text{para todo}\ \frac{m}{s}\in S^{-1}M.$$
+		\item[ii)] Sean $\frac{a}{s}\in S^{-1}M$ y $\frac{m_1}{s_1},\frac{m_2}{s_2}\in S^{-1}M$. Tenemos
+		\begin{align*}
+		\frac{a}{s}\left(\frac{m_1}{s_1}+\frac{m_2}{s_2}\right)&=\frac{a}{s}\frac{s_2m_1+s_1m_2}{s_1s_2}=\frac{as_2m_1+as_1m_2}{ss_1s_2}\\
+		&\overset{i)}{=}\frac{s}{s}\frac{s_2m_1+s_1m_2}{ss_1s_2}=\frac{as_2sm_1+as_1sm_2}{ss_1ss_2}=\frac{am_1}{ss_1}+\frac{am_2}{ss_2}.
+		\end{align*}
+		\item[iii)] Ahora, dados $\frac{a_1}{s_1},\frac{a_2}{s_2}\in S^{-1}A$ y $\frac{m}{s}\in S^{-1}M$ se tiene
+		\begin{align*}
+		\left(\frac{a_1}{s_1}+\frac{a_2}{s_2}\right)\frac{m}{s}&=\frac{a_1s_2+a_2s_1}{s_1s_2}\frac{m}{s}=\frac{a_1s_2m+a_2s_1m}{s_1s_2s}\\
+		&\overset{i)}{=}\frac{s}{s}\frac{a_1s_2m+a_2s_1m}{s_1s_2s}=\frac{a_1s_2sm_1+a_2s_1sm_2}{s_1ss_2s}=\frac{a_1m}{s_1s}+\frac{a_2m}{s_2s}
+		\end{align*}
+		\item[iv)] Por último, sean $\frac{a_1}{s_1},\frac{a_2}{s_2}\in S^{-1}A$ y $\frac{m}{s}\in S^{-1}M$. Resulta
+		$$\left(\frac{a_1}{s_1}\frac{a_2}{s_2}\right)\frac{m}{s}=\frac{(a_1a_2)m}{(s_1s_2)s}=\frac{a_1(a_2m)}{s_1(s_2s)}=\frac{a_1}{s_1}\left(\frac{a_2}{s_2}\frac{m}{s}\right).$$
+	\end{itemize}
+\end{proof}
 \end{remark}
 \end{document}
