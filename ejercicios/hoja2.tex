@@ -1,0 +1,65 @@
+\documentclass[./ejercicios.tex]{subfiles}
+\begin{document}
+\paragraph{Ejercicio 1} \textit{ Sea $A$ un anillo, $\mathfrak a$ un ideal de $A$, y $M$ un $A$-módulo. Probar que $A/\mathfrak a \otimes M \cong M/\mathfrak a M $.}
+
+Consideramos la cadena exacta $0\longrightarrow \mathfrak a \longrightarrow A \longrightarrow A/\mathfrak a \longrightarrow 0$ y la tensorizamos por $M$ tal que
+
+\[ \mathfrak a \otimes M \longrightarrow A\otimes M \longrightarrow A/\mathfrak a \otimes M \longrightarrow 0 \]
+
+que sabemos que es exacta. Por tanto, $\pi \otimes 1_M: A \otimes M \to A/\mathfrak a \otimes M $ es sobreyectiva, y aplicando el primer teorema de isomorfía $A \otimes M / \ker (\pi \otimes 1_M) \cong A/\mathfrak a \otimes M $. Por ser exacta, el núcleo coincide con la imagen de $i \otimes 1_M$, que es $\mathfrak a \otimes M$. Además, $A\otimes M \cong M$ vía el isomorfismo $a\otimes m \to am$, y la imagen de $\mathfrak a \otimes M \subset A\otimes M$ por esta aplicación es $\mathfrak a M$, lo que concluye la demostración.
+
+\paragraph{Ejercicio 2} \textit{Sean $M, N \in \Mod_A$ y $\phi:M\to N$ y $\psi:N\to M$ homomorfismos tales que $\phi = \phi \circ \psi \circ \psi$ y $\psi = \psi \circ \phi \circ \psi$. Demostrar que:}
+
+\begin{enumerate}
+  \item $\im(\phi) = \im (\phi \circ \psi)$ y $\ker (\phi) = \ker(\psi \circ \phi)$.
+  \item $M= \ker(\phi)\oplus \im(\psi)$.
+\end{enumerate}
+
+Definimos las aplicaciones: $f_1:M\to \ker \phi$ dada por $f_2:x\mapsto x-\psi \circ \phi (x)$ y $M\to \im \psi$ dada por $x\mapsto \psi \circ \phi (x)$. La segunda es claro que está bien definida, y la primera se comprueba que $\phi(x-\psi\circ \phi(x)) = \phi(x)-\phi\circ \psi \circ \phi(x) = \phi(x)-\phi(x) = 0$.
+
+Tomamos $F=(f_1,f_2)$ y vemos que es nuestro isomorfismo. Es inyectiva porque si $(0,0) = (x-\psi \circ \phi (x), \psi \circ \phi (x))$ entonces $\psi \circ \phi (x) = 0$ y por tanto la primera coordenada dice $x=0$. Por otra parte, dado $(x,y)\in \ker \phi \oplus \im \psi$ definimos $m=x+y \in M$ y observamos que como $y\in \im \psi$ existe $z\in N$ con $y=\psi(z)$, y entonces: $f_2(m) =  \psi \circ \phi (y) = \psi \circ \phi \circ \psi(z) = \psi (z) = y $, y por tanto $f_1(m) = m - f_2(m) = (x+y)-y = x$.
+
+\paragraph{Ejercicio 3}\textit{Sea $M\in \Mod_A$, $M^* = \Hom_A(M, A)$. Demostrar que la aplicación $\Phi:M\to M^{**}$ dada por $m \to \operatorname{eval}_m$ es un homomorfismo de $A$-módulos. Poner un ejemplo en que no es isomorfismo. Demostrar que, si $M$ es finitamente generado y proyectivo, entonces sí es isomorfismo.}
+
+Se cumple que para cualesquiera $m, n \in M$, $a, b \in A$, $f\in M*$
+
+\begin{equation}
+  \Phi(a m+ bn) (f) = f(am+bn) = af(m)+bf(n) = a\Phi(m)(f)+b\Phi (n)(f)
+\end{equation}
+usando la $A$-linealidad de $f$.
+
+Observamos que si $M$ es finitamente generado, entonces $M^*$ es finitamente generado y, por recurrencia, $M^{**}$ también es finitamente generado. Efectivamente, si $\set{m_j}_{j=1}^n$ es el conjunto de generadores de $M$, entonces las funciones $\varphi_i:M\to A$ dadas por $\varphi_i(m_j)= 1_A \delta_{ij}$ son generadores de $M^*$, ya que para toda $f:M \to A$ y para todo $x=\sum_{j=1}^n\lambda_jm_j\in M$ tenemos que, si $\mu_j = f(m_j)$, entonces
+\[f(x) = \sum_{j=1}^n \lambda_j f(m_j) = \sum_{j=1}^n \varphi_j(x) \mu_j  \]
+es decir, $f = \sum_{j=1}^n \mu_j \varphi_j$.
+
+\paragraph{Ejercicio 7} \textit{Sea $m,n \in Z^+$. Demostrar que $\Z / \langle n \rangle \otimes \Z / \langle m \rangle \cong \Z/ \langle d \rangle$ donde $d = \gcd(m,n)$.}
+
+Se puede hacer escribiendo una aplicación bilineal del producto cartesiano en $\Z/\langle d \rangle$, tensorizando, y después encontrando la inversa.
+
+Usamos el ejercicio 1 con $A= \mathbb{Z}, \mathfrak{a} = \langle n \rangle, M = \mathbb{Z} / \langle m \rangle$. Entonces
+
+\begin{equation}
+  \mathbb{Z}/\langle n\rangle \otimes \mathbb{Z} / \langle m \rangle \cong \frac{\mathbb{Z} / \langle m \rangle }{\langle n \rangle  \mathbb{Z} / \langle m \rangle}
+\end{equation}
+
+Demostramos la igualdad de $\Z$-módulos
+
+\begin{equation}
+  \langle n \rangle  (\mathbb{Z}/ \langle m \rangle) = \langle \bar n \rangle = (n+\langle m  \rangle) ( \mathbb Z / \langle m\rangle )
+\end{equation}
+
+Un elemento de $\langle n \rangle  (\mathbb{Z}/ \langle m \rangle) $ es de la forma suma finita
+
+\begin{equation}
+\sum_i (a_i n ) (x_i + \langle m \rangle  = n(  \sum_i a_i x_i) + \langle m \rangle  = (n+ \langle m \rangle)  ( \sum_i a_i x_i + \langle m \rangle) \in \langle \overline n \rangle
+\end{equation}
+
+y el otro contenido es automático.
+
+Queremos aplicar el teorema de la correspondencia. Buscamos escribir el ideal $\langle \overline{n} \rangle $ del anillo ${ \mathbb Z}/ \langle m \rangle$ con un numerador que sea un ideal de ${ \mathbb Z}$ que contiene al ideal del denominador. Este es $\langle n,m \rangle / \langle m \rangle$ y sabemos que $\langle n,m \rangle = \langle d \rangle$ donde $d= \gcd(n,m)$. Por tanto
+
+\begin{equation}
+  \mathbb{Z}/\langle n\rangle \otimes \mathbb{Z} / \langle m \rangle \cong \frac{\mathbb{Z} / \langle m \rangle }{ \langle d \rangle / \langle m\rangle } \cong \Z / \langle d \rangle
+\end{equation}
+
+\end{document}
