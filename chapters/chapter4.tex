@@ -245,5 +245,74 @@
 		$$0_{S^{-1} M''}\equiv S^{-1}(g\circ f)=S^{-1} g\circ S^{-1} f,$$
 		es decir, $\operatorname{im} (S^{-1}f)\subseteq \ker(S^{-1}g)$. Por otra parte, dado $\frac{m}{s}\in\ker(S^{-1}g)$, tenemos que existe $t\in S$ tal que $tg(m)=0_{M''}$ y por ser $g$ homomorfismo esto implica que $tm\in\ker(g)$, es decir, existe a su vez $m'\in M'$ tal que $f(m')=tm$. Es por esto que basta considerar el elemento $\frac{m'}{ts}$ de forma que $f(\frac{m'}{ts})=\frac{tm}{ts}=\frac{m}{s}$ y $\ker(g)\subseteq\operatorname{im}(f)$.
 	\end{proof}
+
+	Demostremos este mismo hecho (que el funtor $S^{-1}$ es exacto) de una forma alternativa. Para ello, probemos antes algunos resultados.
+	
+	\begin{proposition}
+		Dado un anillo $A$ y un subconjunto multiplicativamente cerrado $S\subset A$ se tiene que $S^{-1}A$ es un $A$-módulo plano.
+	\end{proposition}
+	
+	\begin{proof}
+		Para probarlo vamos a usar la caracterización por ecuaciones. Sean $a_i\in A$ y $\frac{\alpha_i}{s_i}\in\ S^{-1}A$, $i\in\{1,\dots,n\}$ tales que
+		$$\sum_{i=1}^na_i\frac{\alpha_i}{s_i}=0_{S^{-1}A}.$$
+		Denotando $s^*:=\prod_{j=1}^ns_j$ y $s_i^*:=\prod_{j\neq i}s_j$ resulta
+		$$0_{S^{-1}A}=\sum_{i=1}^na_i\frac{\alpha_i}{s_i}=\sum_{i=1}^na_i\frac{s_i^*\alpha_i}{s^*}=\frac{\sum_{i=1}^na_is_i^*\alpha_i}{s^*},$$
+		es decir, existe $t\in S$ tal que
+		$$t(\sum_{i=1}^na_is_i^*\alpha_i)=0_A.$$
+		De esta forma, basta considerar $m_i':=\frac{1}{ts^*}\in S^{-1}A$ y $\lambda_{i,i}:=ts_i^*\alpha_i\in A$ para tener
+		$$m_i=\lambda_{i,i}m_i'$$
+		y
+		$$\sum_{i=1}^na_i\lambda_{i,i}=0_A.$$
+	\end{proof}
+	
+	\begin{proposition}Dado un anillo $A$, un subconjunto multiplicativamente cerrado $S\subset A$ y un $A$-módulo $M$ se tiene
+		$$S^{-1}A\otimes_AM\cong S^{-1}M.$$
+	\end{proposition}
+	\begin{proof}
+		Comencemos definiendo una aplicación
+		$$\begin{array}{rrcl}
+		F:&S^{-1}A\times M&\longrightarrow&S^{-1}M\\
+		&(\frac{a}{s},m)&\longmapsto&\frac{am}{s}
+		\end{array}.$$
+		En primer lugar, veamos que $F$ está bien definida. Sean $\frac{a_1}{s_1}=\frac{a_2}{s_2}$ de forma que existe $s\in S$ tal que $s(s_2a_1-s_1a_2)=0_A$. Tenemos que
+		$$s(s_2a_1m-s_1a_2m)=0_A\Longleftrightarrow \frac{a_1m}{s_1}=\frac{a_2m}{s_2}\Longleftrightarrow F\left(\frac{a_1}{s_1},m\right)=F\left(\frac{a_2}{s_2},m\right).$$
+		
+		Por otro lado, es claro que $F$ es $A$-bilineal. Así, tenemos que existe un único homomorfismo $A$-lineal $f: S^{-1}A\otimes_AM\longrightarrow S^{-1}M$ tal que $f(\frac{a}{s}\otimes m)=\frac{am}{s}$.
+		
+		[Comprobemos que $f$ es inyectiva. Si $f(\frac{a}{s}\otimes m)=0_M$, entonces $\frac{am}{s}=0_{S^{-1}M}$, es decir, existe $t\in S$ tal que $tam=0_M$. Así,
+		$$\frac{a}{s}\otimes m=\frac{ta}{ts}\otimes m=\frac{1_A}{ts}\otimes tam=0_{S^{-1}A\otimes M}$$
+		La sobreyectividad también es clara. Con todo $f$ es un isomorfismo.]
+		
+		De forma análoga, definimos la aplicación
+		$$\begin{array}{rrcl}
+		h:&S^{-1}M&\longrightarrow&S^{-1}A\otimes M\\
+		&\frac{m}{s}&\longmapsto&\frac{1_A}{s}\otimes m
+		\end{array}.$$
+		De nuevo debemos comprobar que está bien definida. Dados $\frac{m_1}{s_1}=\frac{m_2}{s_2}\in S^{-1}M$ existe $s\in S$ tal que $s(s_2m_1-s_1m_2)=0_M$ o equivalentemente $ss_2m_1=ss_1m_2$. Es por esto que
+		\begin{align*}
+		h\left(\frac{m_1}{s_1}\right)=\frac{1_A}{s_1}\otimes m_1&=\frac{ss_2}{ss_2s_1}\otimes m_1=\frac{1_A}{ss_2s_1}\otimes ss_2m_1\\
+		&=\frac{1_A}{ss_2s_1}\otimes ss_1m_2=\frac{ss_1}{ss_2s_1}\otimes m_2=\frac{1_A}{s_2}\otimes m_2=h\left(\frac{m_2}{s_2}\right).
+		\end{align*}
+		Por último, tenemos tanto que $h\circ f$ restringida a los elementos de la forma $\frac{a}{s}\otimes m\in S^{-1}A\otimes_A M$ como $f\circ h$ a los $\frac{m}{s}\in S^{-1}M$ resultan ser las respectivas identidades $\operatorname{Id}_{S^{-1}A\otimes_A M}$ y $\operatorname{Id}_{S^{-1}M}$; es decir, $f=h^{-1}$ y $$S^{-1}A\otimes_A M\cong S^{-1}M.$$
+	\end{proof}
+	
+	Podemos ya concluir la prueba alternativa de $\ref{S-1exacto}$.
+	\begin{proof}[Proof \ref{S-1exacto}]
+		Dada la sucesión exacta $M'\overset{f}{\longrightarrow}M\overset{g}{\longrightarrow}M''$, tensorizando por el $A$-módulo plano $S^{-1}A$ resulta que
+		$$S^{-1}A\otimes_AM'\overset{\operatorname{Id}_{S^{-1}A}\otimes f}{\longrightarrow}S^{-1}A\otimes_AM\overset{\operatorname{Id}_{S^{-1}A}\otimes g}{\longrightarrow}S^{-1}A\otimes_AM''$$
+		también es exacta.
+		
+		Sean $\varphi:S^{-1}A\otimes_AM'\longrightarrow S^{-1}M$ y $\psi:S^{-1}A\otimes_AM\longrightarrow S^{-1}M$ isomorfismos que sabemos que existen y veamos que $\operatorname{Id}_{S^{-1}A}\otimes f=\psi^{-1}\circ S^{-1}f\circ \varphi.$ Esto es claro puesto que, dado $\frac{a}{s}\otimes m\in S^{-1}A\otimes_A M'$, se tiene
+		\begin{align*}
+		\psi^{-1}\circ S^{-1}f\circ \varphi\left(\frac{a}{s}\otimes m\right)&=\psi^{-1}\circ S^{-1}f\left(\frac{am}{s}\right)\\
+		&=\psi^{-1}\left(\frac{af(m)}{s}\right)\\
+		&=\frac{1_A}{s}\otimes af(m)=\frac{a}{s}\otimes f(m)=\operatorname{Id}_{S^{-1}A}\otimes f\left(\frac{a}{s}\otimes m\right).
+		\end{align*}
+		Esto mismo se prueba para el homomorfismo $\operatorname{Id}_{S^{-1}A}\otimes g$ y los $A$-módulos $M$ y $M''.$
+		
+		De todo lo anterior se sigue que la sucesión
+		$$S^{-1}M'\overset{S^{-1}f}{\longrightarrow}S^{-1}M\overset{S^{-1}g}{\longrightarrow}S^{-1}M''$$
+		es exacta.
+	\end{proof}
 	
 \end{document}
