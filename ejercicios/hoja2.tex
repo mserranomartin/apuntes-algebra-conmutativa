@@ -63,7 +63,31 @@ Queremos aplicar el teorema de la correspondencia. Buscamos escribir el ideal $\
 \end{equation}
 
 \paragraph{Ejercicio 5}
-\subparagraph{i)}
+\subparagraph{i)} Sean $\set{k_i}\subset K$ y $\set{a_i}\subset A$, $i\in\set{1,\dots,r}$ tales que
+$$\sum_{i}a_ik_i=0_K.$$
+De esta igualdad se sigue también $\sum_{i}a_ik_i=0_M$ entendiendo los elementos $k_i$ como elementos de $M$ mediante la inclusión. Dado que $M$ es plano, existen $\set{m_j'\in M}$ y $\lambda_{ij}\in A$, $j\in\set{1,\dots, s}$, tales que $k_i=\sum_j\lambda_{ij}m_j'$ y $\sum_i a_i\lambda_{ij}$ para cada $i$ y $j$. 
+
+De las anteriores igualdades se sigue que $0_N=\sum_j\lambda_{ij}[m_j']$ para cada $i$, es decir, existen $[m(i)_{l}'']\in N$ y $\mu(i)_{jl}\in A$, donde $l\in\set{(i,1),\dots,(i,n(i))}=:J(i)$, tales que $m_j'=\sum_l\mu(i)_{jl}m(i)_l''$ y $\sum_{j}\lambda_{ij}\mu(i)_{jl}=0_A.$ Así, existen $\set{k(i)_j'}\in K$ tales que
+$$m_j'=k(i)_j'+\sum_l\mu(i)_{jl}m(i)_l''\Longleftrightarrow k(i)_j'=m_{j}'-\sum_{l}\mu(i)_{jl}m(i)_l''.$$
+
+Definimos ahora, para cada $t\in\set{1,\dots,rs}$ los elementos
+$$k_t''=k(c(t))'_{r(t)},$$
+donde $t=c(t)s+r(t),$ y
+$$\gamma_{it}:=\left\{\begin{array}{cc}
+\lambda_{i\ r(t)}&\text{si}\ c(t)=i\\
+0&\text{si}\ c(t)\neq i
+\end{array}\right..$$
+
+De esta forma se tiene, fijada $i$,
+\begin{align*}
+\sum_t\gamma_{it}k_t''=\sum_j\lambda_{ij}k(i)_{j}''&=\sum_j\lambda_{ij}m_j'-\sum_j\lambda_{ij}\left(\sum_l\mu(i)_{jl}m_{ij}''\right)\\
+&=\sum_j\lambda_{ij}m_j'-\sum_l\left(\sum_j\lambda_{ij}\mu(i)_{jl}\right)m_{ij}''=k_i
+\end{align*}
+
+y, fijada $t$,
+$$\sum_i a_i\gamma_{it}=\sum_i a_i\lambda_{i\ r(t)}=\sum_i a_i\lambda_{ij}=0_A,$$
+donde $j=r(t)$. De esta forma, $K$ es plano.
+
 \subparagraph{ii)} Sean $\set{m_i}\subset M$ y $\set{a_i}\subset A$, $i\in\set{1,\dots,r}$ tales que
 $$\sum_{i}a_im_i=0_M.$$
 En particular, proyectando al cociente se tiene
