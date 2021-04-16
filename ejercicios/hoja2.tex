@@ -113,4 +113,29 @@ $$\sum_t\gamma_{it}m_t''=\sum_{j}\lambda_{ij}m_j'+\sum_l\mu_{il}k_l'=\sum_{j}\la
 y, fijada $t$ ($t\in\set{1,\dots,j}$ o $t\in\set{j+1,\dots,j+l}$),
 $$\sum_i a_i\gamma_{it}=0_A$$
 
+\paragraph{Ejercicio 8} Sea $M$ un $A$-módulo proyectivo. Sabemos que existen $I$ conjunto de índices y $K$ $A$-módulo tales que
+$$A^{(I)}\overset{\varphi}{\cong} K\oplus M.$$
+Para cada $a\in A^{(I)}$, denotamos a su imagen por $\varphi$ como $(\varphi(a)_K,\varphi(a)_M)$.
+
+Ahora, dada una sucesión exacta
+$$0\longrightarrow N'\overset{f}{\longrightarrow}N$$
+se tiene que la sucesión
+$$0\longrightarrow A^{(I)}\otimes N'\overset{\operatorname{Id}_{A^{(I)}}\otimes f}{\longrightarrow} A^{(I)}\otimes N$$
+también lo es. 
+
+Es claro que $\Phi:=\varphi\otimes \operatorname{Id}_{N'}: A^{(I)}\otimes N'\longrightarrow (K\otimes N')\oplus(M\otimes N')$, $\Psi:=\varphi\otimes \operatorname{Id}_{N}A^{(I)}\otimes N\longrightarrow (K\otimes N)\oplus(M\otimes N)$ son dos isomorfismos. Consideremos la sucesión
+\begin{equation}\label{Hoja2ej8}
+0\longrightarrow (K\otimes N')\oplus(M\otimes N')\overset{(\operatorname{Id}_{K}\otimes f)\oplus (\operatorname{Id}_{M}\otimes f)}{\longrightarrow} (K\otimes N)\oplus(M\otimes N)
+\end{equation}
+y veamos que se da la igualdad
+$$\Psi^{-1}\circ(\operatorname{Id}_{K}\otimes f)\oplus (\operatorname{Id}_{M}\otimes f)\circ\Phi=\operatorname{Id}_{A^{(I)}}\otimes f,$$
+es decir, que los diagramas conmutan: dado $(a,n')\in A^{(I)}\otimes N'$ arbitrario, se tiene
+\begin{align*}
+[\Psi^{-1}\circ&(\operatorname{Id}_{K}\otimes f)\oplus (\operatorname{Id}_{M}\otimes f)\circ\Phi]\ (a\otimes n')=\\
+&=[\Psi^{-1}\circ(\operatorname{Id}_{K}\otimes f)\oplus (\operatorname{Id}_{M}\otimes f)](\varphi(a)_K\otimes n',\varphi(a)_M\otimes n')=\\
+&=\Psi^{-1}(\varphi(a)_K\otimes f(n'),\varphi(a)_M\otimes f(n'))=(a,f(n'))=\operatorname{Id}_{A^{(I)}}\otimes f(a,n').
+\end{align*}
+Por esto que acabamos de ver, la sucesión ($\ref{Hoja2ej8}$) es exacta, es decir, la aplicación $F:=(\operatorname{Id}_{K}\otimes f)\oplus (\operatorname{Id}_{M}\otimes f)$ es inyectiva. 
+Así, para cada $m\otimes n'\in M\otimes n$, si $F(m\otimes n')=\operatorname{Id}_{M}\otimes f(m\otimes n')=0,$ entonces $m\otimes n'=0_{(K\otimes N')\oplus(M\otimes N')}$ y $m\otimes n'=0_{(M\otimes N')}$; es decir, $\operatorname{Id}_{M}\otimes f$ es inyectiva y $M$ plano.
+
 \end{document}
