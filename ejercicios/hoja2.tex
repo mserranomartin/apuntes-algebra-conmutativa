@@ -62,4 +62,31 @@ Queremos aplicar el teorema de la correspondencia. Buscamos escribir el ideal $\
   \mathbb{Z}/\langle n\rangle \otimes \mathbb{Z} / \langle m \rangle \cong \frac{\mathbb{Z} / \langle m \rangle }{ \langle d \rangle / \langle m\rangle } \cong \Z / \langle d \rangle
 \end{equation}
 
+\paragraph{Ejercicio 5}
+\subparagraph{i)}
+\subparagraph{ii)} Sean $\set{m_i}\subset M$ y $\set{a_i}\subset A$, $i\in\set{1,\dots,r}$ tales que
+$$\sum_{i}a_im_i=0_M.$$
+En particular, proyectando al cociente se tiene
+$$\sum_{i}a_i[m_i]=0_N$$
+y por ser plano existen $[m_j']\in N$ y $\lambda_{ij}\in A$, $j\in{1,\dots,s}$, de forma que $[m_i]=\sum_{j}\lambda_{ij}[m_j']=\left[\sum_{j}\lambda_{ij}m_j'\right]$ y $\sum_ia_i\lambda_{ij}=0_N$. De esta forma, existen $\set{k_i}\subset K$ tales que
+$$m_i=k_i+\sum_{j}\lambda_{ij}m_j'.$$
+Considerando de nuevo la suma inicial resulta
+$$\sum_i a_im_i=\sum_i\left(k_i+\sum_{j}\lambda_{ij}m_j'\right)=\sum_i a_ik_i +\sum_j\left(\sum_ia_i\lambda_{ij}\right)m_j'=\sum_i a_ik_i,$$
+es decir, $\sum_i a_ik_i=0_M$. Como $\sum_i a_ik_i\in K$, también $\sum_i a_ik_i\in K=0_K$ y existen $k_l'\in K$ y $\mu_{il}\in A$ tales que $k_i=\sum_l\mu_{il}k_l'$ y $\sum_i a_i\mu_{il}=0_A.$
+
+Para concluir basta definir los siguientes elementos:
+$$m_t'':=\left\{\begin{array}{cc}
+m_{t}'&t\in\set{1,\dots,j}  \\
+k_{t-j}'&t\in\set{j+1,\dots,j+l} 
+\end{array}\right.$$
+y
+$$\gamma_{it}:=\left\{\begin{array}{cc}
+\lambda_{it}&t\in\set{1,\dots,j}  \\
+\mu_{i\ t-j}&t\in\set{j+1,\dots,j+l} 
+\end{array}\right..$$
+Tenemos así, fijada $i$,
+$$\sum_t\gamma_{it}m_t''=\sum_{j}\lambda_{ij}m_j'+\sum_l\mu_{il}k_l'=\sum_{j}\lambda_{ij}m_j'+k_i= m_i$$
+y, fijada $t$ ($t\in\set{1,\dots,j}$ o $t\in\set{j+1,\dots,j+l}$),
+$$\sum_i a_i\gamma_{it}=0_A$$
+
 \end{document}
