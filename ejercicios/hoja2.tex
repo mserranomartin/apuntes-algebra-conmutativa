@@ -138,4 +138,63 @@ es decir, que los diagramas conmutan: dado $(a,n')\in A^{(I)}\otimes N'$ arbitra
 Por esto que acabamos de ver, la sucesión ($\ref{Hoja2ej8}$) es exacta, es decir, la aplicación $F:=(\operatorname{Id}_{K}\otimes f)\oplus (\operatorname{Id}_{M}\otimes f)$ es inyectiva. 
 Así, para cada $m\otimes n'\in M\otimes n$, si $F(m\otimes n')=\operatorname{Id}_{M}\otimes f(m\otimes n')=0,$ entonces $m\otimes n'=0_{(K\otimes N')\oplus(M\otimes N')}$ y $m\otimes n'=0_{(M\otimes N')}$; es decir, $\operatorname{Id}_{M}\otimes f$ es inyectiva y $M$ plano.
 
+\paragraph{Ejercicio 10}
+\subparagraph{i)} Procedamos como indica el enunciado por inducción sobre $n$.
+
+Para $k=1$, por ser $M$ un submódulo de $A$, tenemos que
+\begin{itemize}
+	\item para cualesquiera $m_1,m_2\in M$ se verifica $m_1-m_2\in M$ y,
+	\item dados $m\in M$ y $a\in A$, $am\in M;$
+\end{itemize}
+es decir, $M$ es un ideal de $A$. Por ser $A$ DIP existe $m\in A$ tal que $M=\langle m\rangle$. Más aún, ser DIP implica ser DFU y, por esto, para todo $x\in M$ existe $a\in A$ tal que $x=am$ y esta expresión es única. Así, tenemos que $\{m\}$ es base de $M$ y por la caracterización de los módulos libres, $M$ lo es: concretamente, $M\cong A$.
+
+Supongamos cierto el resultado para toda $k<n$ y veámoslo para $k=n$. En primer lugar, la sucesión
+$$0\longrightarrow A^{(n-1)}\longrightarrow A^{(n)}\longrightarrow A\longrightarrow 0$$
+es escindida en virtud de que $A^{(n)}\cong A^{(n)}\oplus A$ y de la caracterización de las sucesiones escindidas.
+
+Por otra parte, supongamos que no existe $k<n$ tal que $M\subseteq A^{(n-1)}$ y veamos que se tienen los isomorfismos $M':=A^{(n-1)}\cap M\cong A^{(n-1)}$ y $M'':=M/{A^{(n-1)}\cap M}\cong A$. 
+Comencemos por el segundo de ellos. La suposición nos asegura que $M/{A^{(n-1)}}\neq \{0_M\}$ y concretamente $M/{A^{(n-1)}}\subseteq A^{(n)}/{A^{(n-1)}}\cong A$ y $M''\overset{\Phi}{\cong}A$ por el caso base. 
+Sean $\Phi^{-1}=:\overline{m},m\in M$ y consideremos $[m]\in M''$. Existe un único $a_m\in A$ tal que $m=a_m\overline{m}$. Así, podemos definir
+$$\begin{array}{rrcl}
+\sigma:&M''&\longrightarrow&M\\
+&[m]&\longrightarrow&a_m\overline{m}
+\end{array},$$
+de forma que $\sigma\circ g=\operatorname{Id}_M,$ donde
+\begin{equation}\label{equation:Hoja2ej10}
+0\overset{}{\longrightarrow}M'\overset{f}{\longrightarrow}M\overset{g}{\longrightarrow}M''.
+\end{equation}
+De esto resulta que ($\ref{equation:Hoja2ej10}$) es escindida y $M\cong M'\oplus M''$.
+
+Sigamos con el otro isomorfismo. Es claro que $M'$ es submódulo de $A^{(n-1)}$, de esta forma la hipótesis de inducción nos dice que $M'\cong A^{(s)}$ para cierta $s\le n-1$. Ahora bien, necesariamente $s=n-1$ pues en caso contrario, por lo que acabamos de ver, $M\cong A^{s}\oplus A$, que es absurdo.
+
+Con todo,
+$$M\cong M'\oplus M''\cong A^{(n-1)}\oplus A\cong A^{(n)}.$$
+
+\subparagraph{ii)} Estas comprobaciones son rutinarias.
+
+En primer lugar, dados $m_1,m_2\in T(M)$ existen $a_1,a_2\in A$ tales que $a_im_i=0_M$. Así, $a_1a_2(m_1-m_2)=0_M$ y $m_1-m_2\in T(M).$ Por otra parte, para todo $a\in A$ se tiene que $a_1(am_1)=a(a_1m_1)=0_M,$ es decir, $am_1\in T(M)$. Vemos así que $T(M)$ es submódulo de $M$.
+
+Ahora, la igualdad
+$$T(M)=\bigcup_{a\in A\setminus\{0_A\}}\ker(\mu_a)$$ nos dice que $T(M)=\{0_M\}$ si, y sólo si, $\mu_a$ es inyectiva para toda $a\in A\setminus\{0_A\}.$
+
+Por último, dados $[m]\in M/T(M)$ y $a\in A$
+$$a[m]=[0_M]\Longleftrightarrow [am]=[0_M]\Longleftrightarrow [m]=[0_M].$$
+
+\subparagraph{iii)} Veamos que $\{x_1,\dots,x_r\}$ es base de $N$. En primer lugar, por la propia definición de $N$, para cada $n\in N$ existen $\{\lambda_i\}_i$ tales que
+\begin{equation}\label{equation:Hoja2ej102}
+n=\sum_{i=1}^r\lambda_ix_i.
+\end{equation}
+Veamos que son únicos. Supongamos que el conjunto $\{\lambda_i'\}_i$ también verifica ($\ref{equation:Hoja2ej102}$), por ser así
+$$\sum_{i=1}^r(\lambda_i-\lambda_i')x_i.$$
+Dado que $N$ es un $A$-módulo sin torsión $(\lambda_i-\lambda_i')x_i\neq 0_N$ para toda $i$, además, como $\{x_1,\dots,x_r\}$ es un sistema de generadores linealmente independiente tenemos $\lambda_i=\lambda_i'$ para toda $i$.
+De esta forma, $N$ es un $A$-módulo libre de rango $r$.
+
+Ahora, por la condición de maximalidad del sistema de generadores de $N$, tenemos que para cada $i\in\{r+1,\dots,s\}$ existen $\lambda_i\neq 0_A$ y $\{\alpha_j\}_{j=1}^r\subset A$ tales que
+$$\lambda_ix_i=\sum_{j=1}^r\alpha_jx_j.$$
+Definamos los elementos $\gamma:=\prod_{j=r+1}^s\lambda_j$ y $\gamma_i:=\prod_{j\in\set{r+1,\dots,s}\setminus\{i\}}\lambda_j$ y sea $x\in M$. Como $M=\langle x_1,\dots, x_s\rangle$, existen $\{\mu_i\}_{i=1}^s\subset A$ tales que $x=\sum_i\mu_ix_i$ y resulta
+$$\gamma x=\sum_{i=1}^s\gamma\mu_ix_i=\sum_{i=1}^r\gamma\mu_ix_i+\sum_{i=r+1}^s\lambda\mu_ix_i=\sum_{i=1}^r\gamma\mu_ix_i+\sum_{i=r+1}^s(\gamma_i\mu_i)(\lambda_ix_i),$$
+es decir, $\gamma x\in N$. Así, $\gamma M\subset N$.
+
+\subparagraph{iv)} Para concluir el ejercicio, hagamos uso de los apartados anteriores. Sea $M$ un $A$-módulo sin torsión finitamente generado, digamos por los elementos $\{x_1,\dots,x_s\}$. Sabemos que existen un submódulo de $M$, $N$, finitamente generado y $A$-módulo libre y un elemento $a\in A$ tal que $aM\subset N$. Así, podemos considerar $aM$ un submódulo de $A^{(r)}$, donde $r$ es el rango de $N$; es decir, $aM$ es $A$-módulo libre. Por último, dado que $M$ está libre de torsión, la aplicación $\mu_a$ (definida en ii)) es un isomorfismo sobre $\operatorname{im}(\mu_a)\subset aM$ y podemos considerar de nuevo $M$ como submódulo de $A^{(s)}$ para cierta $s\in\N$. Con esto concluimos que $M$ es $A$-módulo libre.
+
 \end{document}
