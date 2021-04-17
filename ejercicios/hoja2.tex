@@ -197,4 +197,60 @@ es decir, $\gamma x\in N$. Así, $\gamma M\subset N$.
 
 \subparagraph{iv)} Para concluir el ejercicio, hagamos uso de los apartados anteriores. Sea $M$ un $A$-módulo sin torsión finitamente generado, digamos por los elementos $\{x_1,\dots,x_s\}$. Sabemos que existen un submódulo de $M$, $N$, finitamente generado y $A$-módulo libre y un elemento $a\in A$ tal que $aM\subset N$. Así, podemos considerar $aM$ un submódulo de $A^{(r)}$, donde $r$ es el rango de $N$; es decir, $aM$ es $A$-módulo libre. Por último, dado que $M$ está libre de torsión, la aplicación $\mu_a$ (definida en ii)) es un isomorfismo sobre $\operatorname{im}(\mu_a)\subset aM$ y podemos considerar de nuevo $M$ como submódulo de $A^{(s)}$ para cierta $s\in\N$. Con esto concluimos que $M$ es $A$-módulo libre.
 
+\paragraph{Ejercicio 14} Por definición de conjunto multiplicativamente cerrado tenemos tanto que $0_A\neq S$ como que $1_A\in S$. De lo primero se deduce que $s^n\neq 0_A$ para toda $n\in\N$ y, de lo segundo, que $s$ no es divisor de cero. Lo primero es inmediato, veamos lo segundo.
+
+En primer lugar, si existe $k\in\N$ tal que existe $a\in A$ de forma que $s^ka=0_A$, entonces basta tomar $a':=s^{k-1}a$ y se tiene que $sa'=0_A$. Así, $s$ no es divisor de cero si, y sólo si, toda potencia suya verifica no ser divisor de cero. Por otra parte, tenemos que existe $n_0$ (que podemos considerar mínima) de forma que $s^{n_0}=1_A$. Supongamos que $sa=0_A$ para cierto $a\in A$, por ser así, se tiene $0_A=s^{n_0-1}(sa)=s^{n_0}a=a$ y $s$ no es divisor de cero.
+
+Estamos ya en condiciones de demostrar lo que se nos pide. Definamos el siguiente homomorfismo
+$$\begin{array}{rrcl}
+i:&A[T]&\longrightarrow&S^{-1}A[T]\\
+&\operatorname{p}(T):=\sum_{i=1}^ra_iT^i&\longrightarrow&\overline{\operatorname{p}}(T):=\sum_{i=1}^r\delta_S(a_i)T^i
+\end{array}.$$
+Dado que $S\cap\operatorname{Div}_0A=\varnothing$, $\delta_S$ es inyectiva y así lo es también $i$. Ahora, considerando el homomorfismo evaluación en $\frac{1}{s}$,
+$$\begin{array}{rrcl}
+\operatorname{ev}_{\frac{1}{s}}:&S^{-1}A[T]&\longrightarrow&S^{-1}A\\
+&\overline{\operatorname{p}}(T)&\longrightarrow&\overline{\operatorname{p}}\left(\frac{1}{s}\right) 
+\end{array}$$
+tenemos el homomorfismo $\operatorname{ev}_{\frac{1}{s}}\circ\  i:A[T]\longrightarrow S^{-1}A.$
+
+Veamos que $\ker(\operatorname{ev}_{\frac{1}{s}}\circ\  i)=\langle sT-1\rangle.$ La inclusión $\langle sT-1\rangle\subset \ker(\operatorname{ev}_{\frac{1}{s}}\circ\  i)$ es obvia, comprobemos la recíproca.
+
+Sea $i(\operatorname{p})(T):=\sum_{i=0}^{r+1}\delta_S(p_i)T^i\in S^{-1}A[T]$, donde $\operatorname{p}\in A[T]$ y $r\in\N$ y tal que $i(\operatorname{p})(\frac{1}{s})=0_{S^{-1}A}.$ Sea también $\operatorname{h}(T):=\sum_{i=0}^r\frac{a_i}{s^{n_i}}T^i$ verificando
+$$(\delta(s)T-\delta(1))\operatorname{h}(T)=\operatorname{p}(T).$$
+Veamos que para cada $\set{1,\dots, r}$ se tiene $\frac{a_i}{s^{n_i}}=\frac{a^*_i}{1_A}$ para ciertas $a^*_i\in A$. Para ello, realizamos la multiplicación e igualamos coeficientes.
+\begin{equation}
+\begin{split}
+(\delta(s)T-\delta(1))\operatorname{h}(T)&=\sum_{i=0}^{r}\frac{a_i}{s^{n_i-1}}T^{i+1}-\sum_{i=0}^r\frac{a_i}{s^{n_i}}T^i=\sum_{i=1}^{r+1}\frac{a_{i-1}}{s^{n_{i-1}-1}}T^{i}-\sum_{i=0}^r\frac{a_i}{s^{n_i}}T^i\\
+&=\frac{a_r}{s^{n_r-1}}T^{r+1}+\sum_{i=1}^r\frac{s^{n_i}a_{i-1}-s^{n_{i-1}-1}a_{i}}{s^{n_{i-1}-1}s^{n_i}}T^{i}+\frac{a_0}{s^{n_0}}.
+\end{split}
+\end{equation}
+Así, surgen las ecuaciones
+\begin{equation}\label{equation:Hoja10ej14}
+\begin{split}
+a_r&=s^{n_r-1}p_{r+1}\\
+s^{n_i}a_{i-1}-s^{n_{i-1}-1}a_{i}&=s^{n_{i-1}-1}s^{n_i}p_i\\
+a_0&=s_0p_0
+\end{split}
+\end{equation}
+y se desprende de la del medio que
+$$s^{n_{i-1}-1}a_i=s^{n_i}a_{i-1}-s^{n_{i-1}-1}s^{n_i}p_i.$$
+Probemos por inducción sobre $i$ que
+$$a_i=s^{n_i}(s^ip_0-\sum_{k=1}^is^{i-k}p_k).$$
+El caso base es obvio atendiendo a ($\ref{equation:Hoja10ej14}$). Si ahora lo suponemos para $t=i-1$, vemos que se cumple para $t=i$:
+\begin{equation}
+\begin{split}
+s^{n_{i-1}-1}a_i&=s^{n_i}a_{i-1}-s^{n_{i-1}-1}s^{n_i}p_i\\
+s^{n_{i-1}-1}a_i&=s^{n_i}s^{n_{i-1}}(s^{i-1}p_0-\sum_{k=1}^{i-1}s^{i-1-k}p_k)-s^{n_{i-1}-1}s^{n_i}p_i\\
+a_i&=s^{n_i}s(s^{i-1}p_0-\sum_{k=1}^{i-1}s^{i-1-k}p_k)-s^{n_i}p_i\\
+a_i&=s^{n_i}(s^ip_0-\sum_{k=1}^is^{i-k}p_k).
+\end{split}
+\end{equation}
+De esta forma, tenemos que para toda $i\in\set{1,\dots, r}$ se cumple
+$$\frac{a_i}{s^{n_i}}=\frac{s^ip_0-\sum_{k=1}^is^{i-k}p_k}{1_A}$$
+y, además, se desprende que $s|p_{r+1}.$
+
+Con todo, definiendo $\widetilde{\operatorname{h}}(T):=\sum_{i=1}^r\left[s^ip_0-\sum_{k=1}^is^{i-k}p_k\right]T^i$ tenemos que $(sT-1)\widetilde{\operatorname{h}}(T)=\operatorname{p}(T)$ y $\operatorname{p}\in\langle sT-1\rangle,$ es decir, si $\operatorname{p}\in A[T]$ verifica $\operatorname{ev}_{\frac{1}{s}}\circ\ i(\operatorname{p})=0_{S^{-1}A},$ entonces $\operatorname{p}\in \langle sT-1\rangle$ y $\ker(\operatorname{ev}_{\frac{1}{s}}\circ\ i)\subset\langle sT-1\rangle.$
+
+Podemos concluir así por el Primer Teorema de Isomorfía que $S^{-1}A\cong A[T]/\langle sT-1\rangle.$
+
 \end{document}
