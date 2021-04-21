@@ -90,7 +90,7 @@
 
 	\subsection{Propiedad universal del anillo de fracciones}
 	\begin{theorem}\textbf{(Propiedad universal del anillo de fracciones)} Sean $A$ y $B$ anillos, $S\subset A$ un subconjunto multiplicativamente cerrado de $A$ y $\varphi:A\longrightarrow B$ de forma que $\varphi(s)$ es unidad en $B$ para toda $s\in S$. Bajo estas hipótesis, existe un único homomorfismo $\Phi:S^{-1}A\longrightarrow B$ que cumple
-		$$\varphi=\Phi\circ\delta_S$$.
+		$$\varphi=\Phi\circ\delta_S$$
 	\end{theorem}
 
 	\begin{proof}
@@ -118,20 +118,10 @@
 	\end{remark}
 
 	\section{Módulo de fracciones}
-	De forma similar a como hemos procedido, consideremos $A$ un anillo, $S\subset A$ un conjunto multiplicativamente cerrado y $M$ un $A$-módulo. Consideremos el conjunto $M\times S$ y definamos en él la siguiente relación `$\sim$': dados $(m_1,s_1),(m_2,s_2)\in M\times S$ se tiene
+	De forma similar a como hemos procedido, consideremos $A$ un anillo, $S\subset A$ un conjunto multiplicativamente cerrado y $M$ un $A$-módulo. Consideremos el conjunto $M\times S$ y definamos en él la siguiente relación de equivalencia $\sim$: dados $(m_1,s_1),(m_2,s_2)\in M\times S$ se tiene
 	$$(m_1,s_1)\sim(m_2,s_2)\Longleftrightarrow\ \exists s\in S\ s(s_2m_1-s_1m_2)=0_M.$$
 
-	\begin{remark}
-		En este caso, el producto que estamos considerando es el exterior de $M$ como $A$-módulo.
-	\end{remark}
-
-	\begin{proposition}
-		La relación `$\sim$' es de equivalencia.
-	\end{proposition}
-
-	\begin{proof}
-		La prueba es análoga a la hecha para anillos.
-	\end{proof}
+	donde el producto que estamos considerando es el exterior de $M$ como $A$-módulo.
 
 	Denotemos $S^{-1}M:=M\times S/\sim$ y veamos que lo podemos dotar de una estructura tanto de $A$-módulo como de $S^{-1}A$-módulo. Definamos las siguientes operaciones:
 	$$\begin{array}{rrcl}
@@ -180,20 +170,18 @@
 		En la prueba de $*$ hay que tener la precaución en este caso (y en comparación con las pruebas anteriores) de que el producto que se considera es el exterior de $M$. Más aún, los elementos de ($\ref{ext1}$) son elementos de $A$ y los de ($\ref{ext2}$) lo son de $M$. El paso a ($\ref{ext3}$) y ($\ref{ext4})$ permite sumarlas.
 	\end{remark}
 
-	\begin{proposition}
+	De aquí en adelante, siempre que no haya posibilidad de confusión se omitirá el símbolo $\ast$.
+
+	\begin{corollary}
 		$(S^{-1}M,+)$ dotado con el producto exterior $·$ es un $A$-módulo.
-	\end{proposition}
+	\end{corollary}
 
-	\begin{proof}
-		Por definición de $·$ (que involucra únicamente al `numerador'), su comportamiento como producto exterior es el mismo que el del producto exterior definido en $M$. Vemos así que precisamente por ser $M$ un $A$-módulo también $S^{-1}M$ lo es.
-	\end{proof}
-
-	\begin{proposition}
+	\begin{corollary}
 		$(S^{-1}M,+)$ dotado con el producto exterior $*$ es un $S^{-1}A$-módulo.
-	\end{proposition}
+	\end{corollary}
 
 	\begin{proof}
-		A lo largo de la prueba (y en adelante siempre que no haya posibilidad de confusión) se omitirá el símbolo $\ast$. Comprobemos que se verifican los cuatro axiomas de la definición de $S^{-1}A$-módulo.
+		Comprobemos que se verifican los cuatro axiomas de la definición de $S^{-1}A$-módulo.
 		\begin{itemize}
 			\item[i)] En primer lugar, claramente se tiene $$1_{S^{-1}A}\frac{m}{s}=\frac{1_A}{1_A}\frac{m}{s}=\frac{1_Am}{1_As}=\frac{m}{s},\hspace{15pt}\text{para todo}\ \frac{m}{s}\in S^{-1}M.$$
 			\item[ii)] Sean $\frac{a}{s}\in S^{-1}M$ y $\frac{m_1}{s_1},\frac{m_2}{s_2}\in S^{-1}M$. Tenemos
@@ -246,7 +234,7 @@
 		es decir, $\operatorname{im} (S^{-1}f)\subseteq \ker(S^{-1}g)$. Por otra parte, dado $\frac{m}{s}\in\ker(S^{-1}g)$, tenemos que existe $t\in S$ tal que $tg(m)=0_{M''}$ y por ser $g$ homomorfismo esto implica que $tm\in\ker(g)$, es decir, existe a su vez $m'\in M'$ tal que $f(m')=tm$. Es por esto que basta considerar el elemento $\frac{m'}{ts}$ de forma que $f(\frac{m'}{ts})=\frac{tm}{ts}=\frac{m}{s}$ y $\ker(g)\subseteq\operatorname{im}(f)$.
 	\end{proof}
 
-	Demostremos este mismo hecho (que el funtor $S^{-1}$ es exacto) de una forma alternativa. Para ello, probemos antes algunos resultados.
+	Podemos demostrar que el funtor $S^{-1}$ es exacto de una forma alternativa. Para ello, probemos antes algunos resultados.
 
 	\begin{proposition}
 		Dado un anillo $A$ y un subconjunto multiplicativamente cerrado $S\subset A$ se tiene que $S^{-1}A$ es un $A$-módulo plano.
@@ -265,11 +253,11 @@
 		$$\sum_{i=1}^na_i\lambda_{i,i}=0_A.$$
 	\end{proof}
 
-	\begin{proposition}Dado un anillo $A$, un subconjunto multiplicativamente cerrado $S\subset A$ y un $A$-módulo $M$ se tiene
+	\begin{proposition} Dado un anillo $A$, un subconjunto multiplicativamente cerrado $S\subset A$ y un $A$-módulo $M$ se tiene
 		$$S^{-1}A\otimes_AM\cong S^{-1}M.$$
 	\end{proposition}
 	\begin{proof}
-		Comencemos definiendo una aplicación
+		Definimos la aplicación
 		$$\begin{array}{rrcl}
 		F:&S^{-1}A\times M&\longrightarrow&S^{-1}M\\
 		&(\frac{a}{s},m)&\longmapsto&\frac{am}{s}
@@ -279,9 +267,9 @@
 
 		Por otro lado, es claro que $F$ es $A$-bilineal. Así, tenemos que existe un único homomorfismo $A$-lineal $f: S^{-1}A\otimes_AM\longrightarrow S^{-1}M$ tal que $f(\frac{a}{s}\otimes m)=\frac{am}{s}$.
 
-		[Comprobemos que $f$ es inyectiva. Si $f(\frac{a}{s}\otimes m)=0_M$, entonces $\frac{am}{s}=0_{S^{-1}M}$, es decir, existe $t\in S$ tal que $tam=0_M$. Así,
+		Comprobamos que $f$ es inyectiva. Si $f(\frac{a}{s}\otimes m)=0_M$, entonces $\frac{am}{s}=0_{S^{-1}M}$, es decir, existe $t\in S$ tal que $tam=0_M$. Así,
 		$$\frac{a}{s}\otimes m=\frac{ta}{ts}\otimes m=\frac{1_A}{ts}\otimes tam=0_{S^{-1}A\otimes M}$$
-		La sobreyectividad también es clara. Con todo $f$ es un isomorfismo.]
+		La sobreyectividad es clara. Con todo $f$ es un isomorfismo.]
 
 		De forma análoga, definimos la aplicación
 		$$\begin{array}{rrcl}
@@ -296,13 +284,15 @@
 		Por último, tenemos tanto que $h\circ f$ restringida a los elementos de la forma $\frac{a}{s}\otimes m\in S^{-1}A\otimes_A M$ como $f\circ h$ a los $\frac{m}{s}\in S^{-1}M$ resultan ser las respectivas identidades $\operatorname{Id}_{S^{-1}A\otimes_A M}$ y $\operatorname{Id}_{S^{-1}M}$; es decir, $f=h^{-1}$ y $$S^{-1}A\otimes_A M\cong S^{-1}M.$$
 	\end{proof}
 
-	Podemos ya concluir la prueba alternativa de $\ref{S-1exacto}$.
-	\begin{proof}[Proof \ref{S-1exacto}]
+	\begin{corollary}
+		El functor $S^{-1}:\Mod_A \to \Mod_{S^{-1}A}$ es exacto.
+	\end{corollary}
+	\begin{proof}
 		Dada la sucesión exacta $M'\overset{f}{\longrightarrow}M\overset{g}{\longrightarrow}M''$, tensorizando por el $A$-módulo plano $S^{-1}A$ resulta que
 		$$S^{-1}A\otimes_AM'\overset{\operatorname{Id}_{S^{-1}A}\otimes f}{\longrightarrow}S^{-1}A\otimes_AM\overset{\operatorname{Id}_{S^{-1}A}\otimes g}{\longrightarrow}S^{-1}A\otimes_AM''$$
 		también es exacta.
 
-		Sean $\varphi:S^{-1}A\otimes_AM'\longrightarrow S^{-1}M$ y $\psi:S^{-1}A\otimes_AM\longrightarrow S^{-1}M$ isomorfismos que sabemos que existen y veamos que $\operatorname{Id}_{S^{-1}A}\otimes f=\psi^{-1}\circ S^{-1}f\circ \varphi.$ Esto es claro puesto que, dado $\frac{a}{s}\otimes m\in S^{-1}A\otimes_A M'$, se tiene
+		Sean $\varphi:S^{-1}A\otimes_AM'\longrightarrow S^{-1}M$ y $\psi:S^{-1}A\otimes_AM\longrightarrow S^{-1}M$ los isomorfismos que da la proposición anterior. Veamos que $\operatorname{Id}_{S^{-1}A}\otimes f=\psi^{-1}\circ S^{-1}f\circ \varphi.$ Dado $\frac{a}{s}\otimes m\in S^{-1}A\otimes_A M'$, se tiene
 		\begin{align*}
 		\psi^{-1}\circ S^{-1}f\circ \varphi\left(\frac{a}{s}\otimes m\right)&=\psi^{-1}\circ S^{-1}f\left(\frac{am}{s}\right)\\
 		&=\psi^{-1}\left(\frac{af(m)}{s}\right)\\
@@ -316,15 +306,19 @@
 	\end{proof}
 	\begin{example}
 Sea $A$ un anillo y $\p_0\in \operatorname{Spec}(A)$. Sea $S=A\setminus\p_0$. $S$ es multiplicativamente cerrado y definimos $A_{\p_0}=S^{-1}A$. Existe una biyección, dada por la extensión-contracción, entre $$\operatorname{Spec}(A_{\p_0})\longleftrightarrow \operatorname{Spec}(A)\setminus\{\p\in \operatorname{Spec}(A):\p\cap(A\setminus\p_0)=\varnothing\}=\{\p\in \operatorname{Spec}(A):\p\subset\p_0\}$$
+Esta relación es análoga a la que da el teorema de la correspondencia entre los ideales del cociente y los ideales del anillo que contienen al ideal por el que cocientamos.
+
 Geométricamente, tomando $A\overset{\delta}{\longrightarrow}A_{\p_0}$, se considera $\delta^{\ast}:\operatorname{Spec}(A_{\p_0})\longrightarrow \operatorname{Spec}(A)$, siendo $\operatorname{im}(\delta^{\ast})=\{\p:\p\subset \p_0\}$. De esta forma, todo ideal primo de $A_{\p_0}$ es el extendido de un ideal primo de $A$ que está contenido en $\p_0$. Es decir, todo ideal primo de $A_{\p_0}$ está contenido en $\p_0^e$.
 
 $A_{\p_0}$ es un anillo local. Su único ideal maximal es $\p_0^e=\{\frac{x}{s}:x\in A, s\notin\p_0\}$.
 \end{example}
+
 \begin{definition}
-Sea $\p$ un ideal primo de un anillo $A$. Un ideal $\q$ se dice $\p_0$-\textit{primario} si $\q$ es primario y $\sqrt{\q}=\p$.
+Sea $\p$ un ideal primo de un anillo $A$. Un ideal $\q$ se dice $\p$-\textit{primario} si $\q$ es primario y $\sqrt{\q}=\p$.
 \end{definition}
+
 \begin{proposition}
-Sea $A$ un anillo y sea $\p_0\in \operatorname{Spec(A)}$ y tomemos $A_{\p_0}$ como en el ejemplo anterior. Hay una biyección entre los ideales primos de $A$ contenidos en $\p_0$ y los ideales primos de $A_{\p_0}$. Esta biyección conserva el ser $\p_0$-primario.
+Sea $A$ un anillo, $\p_0\in \operatorname{Spec(A)}$, y $A_{\p_0}$. Hay una biyección entre los ideales primos de $A$ contenidos en $\p_0$ y los ideales primos de $A_{\p_0}$. Esta biyección conserva el ser $\p_0$-primario.
 \end{proposition}
 \begin{proof}
 Consideremos $\delta:A\longrightarrow A_{\p_0}$. Supongamos $\q$ $\p_0$-primario. Veamos que $\q^e$ es $A_{\p_0}$-primario. Sean $\frac{x_1}{s_1},\frac{x_2}{s_2}\in A_{\p_0}$ tal que $\frac{x_1}{s_1}\frac{x_2}{s_2}\in\q^e$. Supongamos que $\frac{x_1}{s_1}\notin\q^e$. Se tiene $\frac{x_1}{s_1}\frac{x_2}{s_2}=\frac{q}{s}$, con $q\in\q, s\notin\p_0$. Esto es, existe $s'\notin\p_0$ tal que $s'(sx_1x_2-qs_1s_2)=0_A$, luego $s'sx_1x_2\in\q$.
