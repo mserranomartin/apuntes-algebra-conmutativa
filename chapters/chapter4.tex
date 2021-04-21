@@ -355,36 +355,66 @@ donde cada $f^{(i)}=f\circ\overset{(i)}{\dots}\circ f$
 \begin{proof}
 
 \end{proof}
-\begin{lemma}[\textbf{de Nakayama}]Se expresa en tres formulaciones equivalentes.\begin{enumerate}
-    \item Sea $A$ un anillo local, $\mathfrak{m}$ su único ideal maximal y $M$ un $A$-módulo finitamente generado. Si $\mathfrak{m} M=M$, entonces $M=0$.
-    \item Sea $A$ un anillo local, $\mathfrak{m}$ su único ideal maximal y $M$ un $A$-módulo finitamente generado. Si $N\subset M$ y $N+\mathfrak{m}M=M$, entonces $M=N$.
-    \item Sea $A$ un anillo local, $\mathfrak{m}$ su único ideal maximal y $M$ un $A$-módulo finitamente generado. Sean $m_1,\dots,m_r\in M$ tales que $\overline{m_1},\dots,\overline{m_r}\in M/\mathfrak{m}M$ son sistema de generadores de $M/\mathfrak{m}$ como $A/\mathfrak{m}$-espacio vectorial. Entonces, $m_1,\dots,m_r$ son sistema de generadores de $M$ como $A$-módulo.
-\end{enumerate}
+\begin{lemma}[\textbf{de Nakayama}] \label{Nak} Se expresa en tres formulaciones equivalentes.\begin{enumerate}
+		\item Sea $A$ un anillo local, $\mathfrak{m}$ su único ideal maximal y $M$ un $A$-módulo finitamente generado. Si $\mathfrak{m} M=M$, entonces $M=0$.
+		\item Sea $A$ un anillo local, $\mathfrak{m}$ su único ideal maximal y $M$ un $A$-módulo finitamente generado. Si $N\subset M$ es un submódulo y $N+\mathfrak{m}M=M$, entonces $M=N$.
+		\item Sea $A$ un anillo local, $\mathfrak{m}$ su único ideal maximal y $M$ un $A$-módulo finitamente generado. Sean $m_1,\dots,m_r\in M$ tales que $\overline{m_1},\dots,\overline{m_r}\in M/\mathfrak{m}M$ son sistema de generadores de $M/\mathfrak{m}$ como $A/\mathfrak{m}$-espacio vectorial. Entonces, $m_1,\dots,m_r$ son sistema de generadores de $M$ como $A$-módulo.
+	\end{enumerate}
 \end{lemma}
 \begin{proof}
-Probemos primero \textit{1.}, que es una consecuencia del Teorema de Cayley.
-
-Tomemos $M\overset{id}{\longrightarrow}M$ y supongamos $id(M)=M=\mathfrak{m}$. Entonces existen $a_i\in\mathfrak{m},n\in\N$ tales que $$f^{(n)}+a_1f^{(n-1)}+\dots+a_{(n-1)}f=0_{End_A(M)}$$ Dado un sistema de generadores $m_1,\dots,\m_r$ de $M$, $$(1+a_1+\dots+a_n)m_i=0, \forall i=1,\dots,r$$ Como $a_1+\dots+a_r\in\mathfrak{m}$, $1+a_1+\dots+a_r\notin\mathfrak{m}$, es decir, es una unidad y tiene inverso. Esto significa que cada $m_i=0$.
-
-\textit{2.} Esta afirmación es una consecuencia de \textit{1}. Basta observar la siguiente cadena de isomorfismos
-$$\mathfrak m\left(\faktor{M}{N}\right)\cong\faktor{\mathfrak m M}{N}\cong 0+\faktor{\mathfrak m M}{N}\cong \faktor{(N+\mathfrak m M)}{N}\cong \faktor{M}{N}.$$
-Así, aplicando \textit{1} tenemos que $M/N\cong \set{0}$ y, como tenemos $N\subset M$, esto implica que $N=M.$
-
-\textit{3.} Veamos que las hipótesis tienen sentido. Tenemos $M$ un $A$-módulo, $\mathfrak{m}M\subset M$ un submódulo suyo luego $A/\mathfrak{m}M$ $A$-módulo cociente está bien definido. Como $\mathfrak{m}\subset Anul_A(M/\mathfrak{m}M)$, se tiene que $M/\mathfrak{m}M$ es un $A/\mathfrak{m}$-módulo. que además es finitamente generado por serlo $M$. Como $A/\mathfrak{m}$ es también un cuerpo, podemos ver a $M/\mathfrak{m}M$ como un $A/\mathfrak{m}$-espacio vectorial.
-
-Sea $N=\langle m_1,\dots,m_r\rangle_A$ el submódulo de $M$ generado por las $m_i$. Veamos que se cumplen las hipótesis de \textit{2}, es decir, $N+\mathfrak{m}M=M$.
-
-`$\supset$' es directo. Para ver `$\subset$', tomamos $x\in M$. Su clase $\overline{x}$ pertenece a $M/\mathfrak{m}M$. Por hipótesis, existen $a_i\in A$ tales que $\overline{x}=\sum_{i=1}^{r}\overline{a_i}\overline{m_i}$. Restando, se obtiene que $x-\sum_{i=1}^{r}\overline{a_i}\overline{m_i}\in\mathfrak{m}M$, pues esto es el $0$ del cociente. Entonces, hemos expresado $x$ como combinación lineal de los $m_i$, que pertenece a $N$ y un elemento de $\mathfrak{m}M$. Luego $M=N+\mathfrak{m}M$. Por \textit{2}, $M=N=\langle m_1,\dots,m_r\rangle_A$, es decir, los $m_i$ son generadores de $M$, tal y como queríamos probar.
+	Probemos primero \textit{1}, que es una consecuencia del Teorema de Cayley.
+	
+	Tomemos $M\overset{id}{\longrightarrow}M$ y supongamos $id(M)=M=\mathfrak{m}$. Entonces existen $a_i\in\mathfrak{m},n\in\N$ tales que $$f^{(n)}+a_1f^{(n-1)}+\dots+a_{(n-1)}f=0_{End_A(M)}$$ Dado un sistema de generadores $m_1,\dots, m_r$ de $M$, $$(1+a_1+\dots+a_n)m_i=0, \forall i=1,\dots,r$$ Como $a_1+\dots+a_r\in\mathfrak{m}$, $1+a_1+\dots+a_r\notin\mathfrak{m}$, es decir, es una unidad y tiene inverso. Esto significa que cada $m_i=0$.
+	
+	\textit{2.} Esta afirmación es una consecuencia de \textit{1}. Basta observar la siguiente cadena de isomorfismos
+	$$\mathfrak m\left(\faktor{M}{N}\right)\cong\faktor{\mathfrak m M}{N}\cong 0+\faktor{\mathfrak m M}{N}\cong \faktor{(N+\mathfrak m M)}{N}\cong \faktor{M}{N}.$$
+	Así, aplicando \textit{1} tenemos que $M/N\cong \set{0}$ y, como tenemos $N\subset M$, esto implica que $N=M.$
+	
+	\textit{3.} Veamos que las hipótesis tienen sentido. Tenemos $M$ un $A$-módulo, $\mathfrak{m}M\subset M$ un submódulo suyo luego $A/\mathfrak{m}M$ $A$-módulo cociente está bien definido. Como $\mathfrak{m}\subset \operatorname{Anul}_A(M/\mathfrak{m}M)$, se tiene que $M/\mathfrak{m}M$ es un $A/\mathfrak{m}$-módulo, que además es finitamente generado por serlo $M$. Como $A/\mathfrak{m}$ es también un cuerpo, podemos ver a $M/\mathfrak{m}M$ como un $A/\mathfrak{m}$-espacio vectorial.
+	
+	Sea $N=\langle m_1,\dots,m_r\rangle_A$ el submódulo de $M$ generado por las $m_i$. Veamos que se cumplen las hipótesis de \textit{2}, es decir, $N+\mathfrak{m}M=M$.
+	
+	`$\supset$' es directo. Para ver `$\subset$', tomamos $x\in M$. Su clase $\overline{x}$ pertenece a $M/\mathfrak{m}M$. Por hipótesis, existen $a_i\in A$ tales que $\overline{x}=\sum_{i=1}^{r}\overline{a_i}\overline{m_i}$. Restando, se obtiene que $x-\sum_{i=1}^{r}\overline{a_i}\overline{m_i}\in\mathfrak{m}M$, pues esto es el $0$ del cociente. Entonces, hemos expresado $x$ como combinación lineal de los $m_i$, que pertenece a $N$ y un elemento de $\mathfrak{m}M$. Luego $M=N+\mathfrak{m}M$. Por \textit{2}, $M=N=\langle m_1,\dots,m_r\rangle_A$, es decir, los $m_i$ son generadores de $M$, tal y como queríamos probar.
 \end{proof}
 \begin{definition}
-Un sistema de generadores $S=\langle m_1,\dots,m_r\rangle$ de un $A$-módulo $M$ se dice \textit{minimal} si no existe ningún sistema de generadores de $M$ formado por elementos de $S$ que no sean el total.
+	Un sistema de generadores $S=\langle m_1,\dots,m_r\rangle$ de un $A$-módulo $M$ se dice \textit{minimal} si no existe ningún sistema de generadores de $M$ formado por elementos de $S$ que no sean el total.
 \end{definition}
 \begin{corollary}
-Sea $A$ un anillo local y sea $\mathfrak{m}$ su único ideal maximal. Sea $M$ un $A$-módulo finitamente generado. Entonces, todos los sistemas minimales de generadores de $M$ tienen el mismo cardinal.
+	Sea $A$ un anillo local y sea $\mathfrak{m}$ su único ideal maximal. Sea $M$ un $A$-módulo finitamente generado. Entonces, todos los sistemas minimales de generadores de $M$ tienen el mismo cardinal.
 \end{corollary}
 \begin{proof}
-Sea $\langle m_1,\dots,m_r\rangle$ un sistema de generadores de $M$ como $A$-módulo. Definimos, para cada $i=1,\dots,r$ $\overline{m_i}=m_i+\mathfrak{m}M$. Se cumple que $$\{\overline{m_i}:1\neq i\neq r\}$$ es un sistema de generadores de $M/\mathfrak{m}M$ como $A/\mathfrak{m}$-espacio vectorial.
-
-Supongamos que $r>dim_{A/\mathfrak{m}}(M/\mathfrak{m}M)=s$. Sea entonces $\{\overline{x_{i_1}},\dots,\overline{x_{i_s}}$\} una base (también sistema de generadores) de $M/\mathfrak{m}M$ como $A/\mathfrak{m}$-espacio vectorial. Por la versión \textit{3} del Lema de Nakayama los $\{x_{i_1},\dots,x_{i_s}\}$ son sistema de generadores de $M$ como $A$-módulo, lo cual contradice la hipótesis de minimalidad de las $m_1,\dots,m_r$.
+	Sea $\langle m_1,\dots,m_r\rangle$ un sistema de generadores de $M$ como $A$-módulo. Definimos, para cada $i=1,\dots,r$ $\overline{m_i}=m_i+\mathfrak{m}M$. Se cumple que $$\{\overline{m_i}:1\le i\le r\}$$ es un sistema de generadores de $M/\mathfrak{m}M$ como $A/\mathfrak{m}$-espacio vectorial. 
+	
+	Supongamos que $r>\dim_{A/\mathfrak{m}}(M/\mathfrak{m}M)=:s$. Sea entonces $\{\overline{x_{i_1}},\dots,\overline{x_{i_s}}$\} una base (también sistema de generadores) de $M/\mathfrak{m}M$ como $A/\mathfrak{m}$-espacio vectorial. Por la versión \textit{3} de $\ref{Nak}$ los $\{x_{i_1},\dots,x_{i_s}\}$ son sistema de generadores de $M$ como $A$-módulo, lo cual contradice la hipótesis de minimalidad de las $m_1,\dots,m_r$.
 \end{proof}
+
+\begin{example} 1. Sean $A:=\R[x,y]/\langle x^2+y^2-1\rangle$ y $\mathfrak m_0:=\langle \overline{x},\overline{y-1}\rangle$ (se comprueba que no es ideal principal de $A$).
+	Tenemos que
+	$$A_{\mathfrak m_0}:=\left\{\frac{\overline{f}(x,y)}{\overline{g}(x,y)}\ \big|\ \overline{g}\notin\mathfrak m_0\right\}=\left\{\frac{\overline{f}(x,y)}{\overline{g}(x,y)}\ \big|\ g(0,1)\neq 0\right\}$$
+	Observemos que $\overline{x}^2=(\overline{y-1})(\overline{y+1})$ en $A.$ Como $\overline{y+1}\notin \mathfrak m_0$, $\frac{\overline{y-1}}{\overline{1}}$ es unidad en $A_{\mathfrak m_0}$ y $\overline{y-1}\in\langle\overline{x}\rangle A_{\mathfrak m_0}$, es decir, $\mathfrak m_0 A_{\mathfrak m_0}=\langle \overline{x}\rangle A_{\mathfrak m_0}$ y $A_{\mathfrak m_0}$ es principal.
+	
+	2. De forma más general, sean $K$ un cuerpo y $f\in K[x,y]$ tal que $f(a,b)=0_K$ y $\frac{\partial f}{\partial y}(a,b)\neq 0$ para ciertos $a,b\in K.$ Denotemos $A:=K[x,y]/\langle f(x,y)\rangle$ y $\mathfrak m_0:=\langle \overline{x-a},\overline{y-b}\rangle.$ Se verifica que $\mathfrak m_0 A_{\mathfrak m_0}$ es ideal principal.
+	
+	En $K[x,y]$ tenemos el desarrollo de Taylor de $f$ en $(a,b)$
+	\begin{equation}\label{Tay1}
+	f(x,y)=f(a,b)+\frac{\partial f}{\partial x}(a,b)(x-a)+\frac{\partial f}{\partial y}(a,b)(y-b)+T,
+	\end{equation}
+	donde $T$ es el resto de términos de grado $\ge 2.$ Esta expresión, tomando clases de equivalencia se convierte en
+	\begin{equation}\label{Tay2}
+	0_A=\frac{\partial f}{\partial x}(a,b)(\overline{x-a})+\frac{\partial f}{\partial y}(a,b)(\overline{y-b})+\overline{T}.
+	\end{equation}
+	Definiendo ahora $M:=\mathfrak m_0 A_{\mathfrak m_0}$ se tiene que
+	$$\faktor{M}{\mathfrak m_0 M}=\faktor{\mathfrak m_0 A_{\mathfrak m_0}}{{{\mathfrak m_0}^2} A_{\mathfrak m_0}}$$
+	es $\faktor{ A_{\mathfrak m_0}}{{{\mathfrak m_0}} A_{\mathfrak m_0}}$-espacio vectorial. Así, por ser $\frac{\partial f}{\partial y}(a,b)\neq 0$, $\frac{\partial f}{\partial y}(a,b)$ es unidad y $\frac{\overline{1}}{\overline{1}}+{{\mathfrak m_0}^2} A_{\mathfrak m_0}$ genera $\faktor{M}{\mathfrak m_0 M}.$ Por la versión 3 de $\ref{Nak}$ $M$ está generado por un único elemento, concretamente $\frac{\overline{x-1}}{\overline 1}.$
+\end{example}
+
+\begin{theorem}
+	Si $A$ es un anillo local y $M$ un $A$-módulo finitamente generado, entonces son equivalentes
+	\begin{itemize}
+		\item[i)] $M$ es libre,
+		\item[ii)] $M$ es proyectivo y
+		\item[iii)] $M$ es plano.
+	\end{itemize}
+\end{theorem}
+
 \end{document}
