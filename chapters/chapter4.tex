@@ -366,13 +366,15 @@ Probemos primero \textit{1.}, que es una consecuencia del Teorema de Cayley.
 
 Tomemos $M\overset{id}{\longrightarrow}M$ y supongamos $id(M)=M=\mathfrak{m}$. Entonces existen $a_i\in\mathfrak{m},n\in\N$ tales que $$f^{(n)}+a_1f^{(n-1)}+\dots+a_{(n-1)}f=0_{End_A(M)}$$ Dado un sistema de generadores $m_1,\dots,\m_r$ de $M$, $$(1+a_1+\dots+a_n)m_i=0, \forall i=1,\dots,r$$ Como $a_1+\dots+a_r\in\mathfrak{m}$, $1+a_1+\dots+a_r\notin\mathfrak{m}$, es decir, es una unidad y tiene inverso. Esto significa que cada $m_i=0$.
 
-\textit{2.} es una consecuencia de \textit{1.}
+\textit{2.} Esta afirmación es una consecuencia de \textit{1}. Basta observar la siguiente cadena de isomorfismos
+$$\mathfrak m\left(\faktor{M}{N}\right)\cong\faktor{\mathfrak m M}{N}\cong 0+\faktor{\mathfrak m M}{N}\cong \faktor{(N+\mathfrak m M)}{N}\cong \faktor{M}{N}.$$
+Así, aplicando \textit{1} tenemos que $M/N\cong \set{0}$ y, como tenemos $N\cong M$, esto implica que $N=M.$
 
 \textit{3.} Veamos que las hipótesis tienen sentido. Tenemos $M$ un $A$-módulo, $\mathfrak{m}M\subset M$ un submódulo suyo luego $A/\mathfrak{m}M$ $A$-módulo cociente está bien definido. Como $\mathfrak{m}\subset Anul_A(M/\mathfrak{m}M)$, se tiene que $M/\mathfrak{m}M$ es un $A/\mathfrak{m}$-módulo. que además es finitamente generado por serlo $M$. Como $A/\mathfrak{m}$ es también un cuerpo, podemos ver a $M/\mathfrak{m}M$ como un $A/\mathfrak{m}$-espacio vectorial.
 
 Sea $N=\langle m_1,\dots,m_r\rangle_A$ el submódulo de $M$ generado por las $m_i$. Veamos que se cumplen las hipótesis de \textit{2}, es decir, $N+\mathfrak{m}M=M$.
 
-$'\supset´$ es directo. Para ver $'\subset´$, tomamos $x\in M$. Su clase $\overline{x}$ pertenece a $M/\mathfrak{m}M$. Por hipótesis, existen $a_i\in A$ tales que $\overline{x}=\sum_{i=1}^{r}\overline{a_i}\overline{m_i}$. Restando, se obtiene que $x-\sum_{i=1}^{r}\overline{a_i}\overline{m_i}\in\mathfrak{m}M$, pues esto es el $0$ del cociente. Entonces, hemos expresado $x$ como combinación lineal de los $m_i$, que pertenece a $N$ y un elemento de $\mathfrak{m}M$. Luego $M=N+\mathfrak{m}M$. Por \textit{2}, $M=N=\langle m_1,\dots,m_r\rangle_A$, es decir, los $m_i$ son generadores de $M$, tal y como queríamos probar.
+`$\supset$' es directo. Para ver `$\subset$', tomamos $x\in M$. Su clase $\overline{x}$ pertenece a $M/\mathfrak{m}M$. Por hipótesis, existen $a_i\in A$ tales que $\overline{x}=\sum_{i=1}^{r}\overline{a_i}\overline{m_i}$. Restando, se obtiene que $x-\sum_{i=1}^{r}\overline{a_i}\overline{m_i}\in\mathfrak{m}M$, pues esto es el $0$ del cociente. Entonces, hemos expresado $x$ como combinación lineal de los $m_i$, que pertenece a $N$ y un elemento de $\mathfrak{m}M$. Luego $M=N+\mathfrak{m}M$. Por \textit{2}, $M=N=\langle m_1,\dots,m_r\rangle_A$, es decir, los $m_i$ son generadores de $M$, tal y como queríamos probar.
 \end{proof}
 \begin{definition}
 Un sistema de generadores $S=\langle m_1,\dots,m_r\rangle$ de un $A$-módulo $M$ se dice \textit{minimal} si no existe ningún sistema de generadores de $M$ formado por elementos de $S$ que no sean el total.
