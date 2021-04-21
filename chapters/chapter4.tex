@@ -314,6 +314,14 @@
 		$$S^{-1}M'\overset{S^{-1}f}{\longrightarrow}S^{-1}M\overset{S^{-1}g}{\longrightarrow}S^{-1}M''$$
 		es exacta.
 	\end{proof}
+	\begin{proposition}
+\begin{enumerate}
+    \item Dado $\af$ un ideal de $A$, $\af^{ec}=\{x\in A:\exists S, sx\in\af\}$
+    \item Todo ideal (propio) de $\af'$ de $S^{-1}A$ es extendido de uno de $A$ (que no corta a $S$).
+    \item Un ideal $\af$ de $A$ es contraido\iff $\af=\af^{ec}$\iff $\forall a\in A, s\in S, as\in\af\Rightarrow a\in\af$
+    \item La extensión-contracción da una biyección entre los ideales primos de $A$ cuya intersección con $S$ es vacío y los ideales primos de $S^{-1}A$.
+\end{enumerate}
+\end{proposition}
 	\begin{example}
 Sea $A$ un anillo y $\p_0\in \operatorname{Spec}(A)$. Sea $S=A\setminus\p_0$. $S$ es multiplicativamente cerrado y definimos $A_{\p_0}=S^{-1}A$. Existe una biyección, dada por la extensión-contracción, entre $$\operatorname{Spec}(A_{\p_0})\longleftrightarrow \operatorname{Spec}(A)\setminus\{\p\in \operatorname{Spec}(A):\p\cap(A\setminus\p_0)=\varnothing\}=\{\p\in \operatorname{Spec}(A):\p\subset\p_0\}$$
 Geométricamente, tomando $A\overset{\delta}{\longrightarrow}A_{\p_0}$, se considera $\delta^{\ast}:\operatorname{Spec}(A_{\p_0})\longrightarrow \operatorname{Spec}(A)$, siendo $\operatorname{im}(\delta^{\ast})=\{\p:\p\subset \p_0\}$. De esta forma, todo ideal primo de $A_{\p_0}$ es el extendido de un ideal primo de $A$ que está contenido en $\p_0$. Es decir, todo ideal primo de $A_{\p_0}$ está contenido en $\p_0^e$.
@@ -347,11 +355,34 @@ donde cada $f^{(i)}=f\circ\overset{(i)}{\dots}\circ f$
 \begin{proof}
 
 \end{proof}
-\begin{lemma}[\textbf{de Nakayama}] Se expresa en tres formulaciones equivalentes.\begin{enumerate}
+\begin{lemma}[\textbf{de Nakayama}]Se expresa en tres formulaciones equivalentes.\begin{enumerate}
     \item Sea $A$ un anillo local, $\mathfrak{m}$ su único ideal maximal y $M$ un $A$-módulo finitamente generado. Si $\mathfrak{m} M=M$, entonces $M=0$.
     \item Sea $A$ un anillo local, $\mathfrak{m}$ su único ideal maximal y $M$ un $A$-módulo finitamente generado. Si $N\subset M$ y $N+\mathfrak{m}M=M$, entonces $M=N$.
-    \item Sea $A$ un anillo local maximal y sea $M$ un $A$-módulo finitamente generado. Entonces, el menor número de generadores de $M$ como $A$-módulo es la dimensión de $M/\mathfrak{m}M$ como $A/\mathfrak{m}$-espacio vectorial.
+    \item Sea $A$ un anillo local, $\mathfrak{m}$ su único ideal maximal y $M$ un $A$-módulo finitamente generado. Sean $m_1,\dots,m_r\in M$ tales que $\overline{m_1},\dots,\overline{m_r}\in M/\mathfrak{m}M$ son sistema de generadores de $M/\mathfrak{m}$ como $A/\mathfrak{m}$-espacio vectorial. Entonces, $m_1,\dots,m_r$ son sistema de generadores de $M$ como $A$-módulo.
 \end{enumerate}
-
 \end{lemma}
+\begin{proof}
+Probemos primero \textit{1.}, que es una consecuencia del Teorema de Cayley.
+
+Tomemos $M\overset{id}{\longrightarrow}M$ y supongamos $id(M)=M=\mathfrak{m}$. Entonces existen $a_i\in\mathfrak{m},n\in\N$ tales que $$f^{(n)}+a_1f^{(n-1)}+\dots+a_{(n-1)}f=0_{End_A(M)}$$ Dado un sistema de generadores $m_1,\dots,\m_r$ de $M$, $$(1+a_1+\dots+a_n)m_i=0, \forall i=1,\dots,r$$ Como $a_1+\dots+a_r\in\mathfrak{m}$, $1+a_1+\dots+a_r\notin\mathfrak{m}$, es decir, es una unidad y tiene inverso. Esto significa que cada $m_i=0$.
+
+\textit{2.} es una consecuencia de \textit{1.}
+
+\textit{3.} Veamos que las hipótesis tienen sentido. Tenemos $M$ un $A$-módulo, $\mathfrak{m}M\subset M$ un submódulo suyo luego $A/\mathfrak{m}M$ $A$-módulo cociente está bien definido. Como $\mathfrak{m}\subset Anul_A(M/\mathfrak{m}M)$, se tiene que $M/\mathfrak{m}M$ es un $A/\mathfrak{m}$-módulo. que además es finitamente generado por serlo $M$. Como $A/\mathfrak{m}$ es también un cuerpo, podemos ver a $M/\mathfrak{m}M$ como un $A/\mathfrak{m}$-espacio vectorial.
+
+Sea $N=\langle m_1,\dots,m_r\rangle_A$ el submódulo de $M$ generado por las $m_i$. Veamos que se cumplen las hipótesis de \textit{2}, es decir, $N+\mathfrak{m}M=M$.
+
+$'\supset´$ es directo. Para ver $'\subset´$, tomamos $x\in M$. Su clase $\overline{x}$ pertenece a $M/\mathfrak{m}M$. Por hipótesis, existen $a_i\in A$ tales que $\overline{x}=\sum_{i=1}^{r}\overline{a_i}\overline{m_i}$. Restando, se obtiene que $x-\sum_{i=1}^{r}\overline{a_i}\overline{m_i}\in\mathfrak{m}M$, pues esto es el $0$ del cociente. Entonces, hemos expresado $x$ como combinación lineal de los $m_i$, que pertenece a $N$ y un elemento de $\mathfrak{m}M$. Luego $M=N+\mathfrak{m}M$. Por \textit{2}, $M=N=\langle m_1,\dots,m_r\rangle_A$, es decir, los $m_i$ son generadores de $M$, tal y como queríamos probar.
+\end{proof}
+\begin{definition}
+Un sistema de generadores $S=\langle m_1,\dots,m_r\rangle$ de un $A$-módulo $M$ se dice \textit{minimal} si no existe ningún sistema de generadores de $M$ formado por elementos de $S$ que no sean el total.
+\end{definition}
+\begin{corollary}
+Sea $A$ un anillo local y sea $\mathfrak{m}$ su único ideal maximal. Sea $M$ un $A$-módulo finitamente generado. Entonces, todos los sistemas minimales de generadores de $M$ tienen el mismo cardinal.
+\end{corollary}
+\begin{proof}
+Sea $\langle m_1,\dots,m_r\rangle$ un sistema de generadores de $M$ como $A$-módulo. Definimos, para cada $i=1,\dots,r$ $\overline{m_i}=m_i+\mathfrak{m}M$. Se cumple que $$\{\overline{m_i}:1\neq i\neq r\}$$ es un sistema de generadores de $M/\mathfrak{m}M$ como $A/\mathfrak{m}$-espacio vectorial.
+
+Supongamos que $r>dim_{A/\mathfrak{m}}(M/\mathfrak{m}M)=s$. Sea entonces $\{\overline{x_{i_1}},\dots,\overline{x_{i_s}}$\} una base (también sistema de generadores) de $M/\mathfrak{m}M$ como $A/\mathfrak{m}$-espacio vectorial. Por la versión \textit{3} del Lema de Nakayama los $\{x_{i_1},\dots,x_{i_s}\}$ son sistema de generadores de $M$ como $A$-módulo, lo cual contradice la hipótesis de minimalidad de las $m_1,\dots,m_r$.
+\end{proof}
 \end{document}
