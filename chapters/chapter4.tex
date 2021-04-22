@@ -308,10 +308,67 @@
 \begin{enumerate}
     \item Dado $\af$ un ideal de $A$, $\af^{ec}=\{x\in A:\exists S, sx\in\af\}$
     \item Todo ideal (propio) de $\af'$ de $S^{-1}A$ es extendido de uno de $A$ (que no corta a $S$).
-    \item Un ideal $\af$ de $A$ es contraido\iff $\af=\af^{ec}$\iff $\forall a\in A, s\in S, as\in\af\Rightarrow a\in\af$
+    \item Un ideal $\af$ de $A$ es contraido si y solo si $\af=\af^{ec}$
     \item La extensión-contracción da una biyección entre los ideales primos de $A$ cuya intersección con $S$ es vacío y los ideales primos de $S^{-1}A$.
 \end{enumerate}
 \end{proposition}
+
+Algunas observaciones antes de comenzar la prueba que son de caracter más general.
+
+\begin{lemma}
+	Sea $A$ un anillo, $S \subset A$ multiplicativamente cerrado, y  $\af \subset A$ un ideal. Entonces la extensión de $\af$ es
+	\begin{equation}
+		\af^e = \left \{ \frac{a}{s} \vert \; a\in \af, s \in S \right\}
+	\end{equation}
+
+\end{lemma}
+\begin{proof}
+	Trabajamos sobre un elemento genérico de $\af^e$. Sea $r\in\N$ y sean $a_i \in \af, x_i \in A, s_i \in S$ para $i=1,\dots, r$, entonces
+
+	$$
+		\sum_{i=1}^r \delta(a_i) \frac{x_i}{s_i} = \sum_{i=1}^r \frac{a_i}{1}\frac{x_i}{s_i} = \sum_{i=1}^r \frac{a_i}{1}\frac{x_i s_i^*}{s^*}
+	$$
+
+	donde $ s_i^* = \prod_{j\neq i}s_j, s^* = \prod_{i=1}^r s_i$. Esto está justificado porque
+	$$
+		1_A(s^* x_i - s_i x_is_i^*) =	1_A(s^* x_i - s^*x_i) = 0_A
+	$$
+	entonces, aplicando las propiedades de las operaciones en el anillo de fracciones y que $\af$ es un ideal
+
+	$$
+	 \sum_{i=1}^r \frac{a_i}{1}\frac{x_i s_i^*}{s^*} = \frac{\sum_{i=1}^r a_i x_i s_i^* }{s^*} = \frac{a}{s^*}
+	$$
+
+	con $a \in \af$. El contenido contrario es automático porque si $a\in \af, s\in  S$ entonces $\frac{a}{s} = \delta(a)\frac{1}{s} \in \af^e$.
+\end{proof}
+
+
+\begin{proof}
+	\textit{1.} Si $x\in A, s\in S$ son tales que $sx = a \in \af$ entonces
+	\[ \delta(x) = \frac{x}{1} = \frac{a}{s} = \frac{a}{1}\frac{1}{s} = \delta(a) \frac{1}{s} \in \af ^e \]
+
+	por tanto $x\in \af^{ec}$. Recíprocamente, si tomamos $x \in \af^{ec}$, entonces existe $y\in \af$ tal que $x \in \delta^{-1}(\frac{y}{1})$, o equivalentemente, $\delta(x) = \frac{x}{1} = \frac{y}{1}$. Esto quiere decir que existe $s \in S$ tal que $0 = s(x-y) = sx-sy$, por lo que $sx = sy \in \af$.
+
+	\textit{2.} Sea $\af ' \subsetneq S^{-1}A$ un ideal. Sabemos que en general $\af'^{ec} \subset \af '$ así que solo hay que demostrar el otro contenido. Sea $z = \frac{x}{s} \in \af'$, con $x\in A$ y $s\in S$. Resulta que $x\in \af'^{c}$ ya que
+
+	\[ \delta(x) = \frac{x}{1} = \frac{s}{1} \frac{x}{s} \af' \]
+
+	y entonces $x$ es preimagen de un elemento del ideal. Entonces $\frac{x}{1} \in \af'^{ce}$ y por tanto $\frac{x}{s} = \frac{1}{s}\frac{x}{1} \in \af'^{ce}$. Es decir, $\af' \subset \af'^{ce}$. Esto prueba que $\af' = (\af'^c)^e$ y así es el extendido de un ideal de $A$.
+
+	Además, sí $\bfr= \af^e$ es propio, entonces $\af \cap S \neq \varnothing$, pues si $s_0 \in \af \cap S$, como los elementos de $\af^e$ son de la forma $\frac{a}{s}$ con $a\in \af, s\in S$, entonces $\frac{s_0}{s_0} = 1_{S^{-1}A} \in \bfr$ y por tanto $\bfr = S^{-1}A$.
+
+	\textit{3.} Esta propiedad se cumple siempre como se prueba en el lema \ref{ext-cont}.
+
+	\textit{4.} La contracción de un ideal propio $\bfr$ es siempre ideal propio por ser preimagen y porque $1\not \in \bfr$ y los homomorfismos llevan la unidad en la unidad. Según se indica en la observación \ref{prop_ext_con}, la contracción conserva la primalidad. Además, por  \textit{2} el contraído no corta a $S$, porque por ser primo es propio.
+
+	Por otra parte, sea $\mathfrak{p}$ ideal primo de $A$ que no corta a $S$. Sean $\frac{x_1}{s_1}, \frac{x_2}{s_2} \in S^{-1}A$ tales que $\frac{x_1}{s_1}\cdot \frac{x_2}{s_2} = \frac{p}{s} \in \mathfrak{p}^e $ \footnote{sabemos que los elementos de $\mathfrak{p}^e$ son de esa forma por el lema anterior.}.
+	Existe $s'\in S$ tal que $s'(sx_1x_2 - s_1s_2 p) = 0_A$, y asi $s'sx_1x_2 \in \mathfrak{p}$. Como $s's \not \in \mathfrak{p}$ porque $\mathfrak{p}\cap S = \varnothing$, entonces $x_1x_2 \in \mathfrak{p}$, y a su vez $x_1\in \mathfrak{p}$ o $x_2 \in \mathfrak{p}$, lo que implica que $\frac{x_1}{s_1} \in \mathfrak{p}^e$ o $\frac{x_2}{s_2} \in \mathfrak{p}^e$, y así $\mathfrak{p}^e$ es primo.
+
+	Finalmente, veamos que hay una biyección via la extensión-contracción. Sea $\mathfrak{p}$ primo en $A$ tal que no corta a $S$, por \textit{1} sabemos que $\mathfrak{p}^{ec} = \{x\in A \vert \, \exists S, sx\in\mathfrak{p} \}$. Si $sx \in \mathfrak{p}$, como $s \not \in \mathfrak{p}$, entonces $x \in \mathfrak{p}$, es decir,  $\mathfrak{p}^{ec} = \{x\in A \vert \, x \in\mathfrak{p} \} = \mathfrak{p}$.
+	Por otro lado, dado $\mathfrak{p}'$ ideal primo de $S^{-1}A$, por \textit{2} existe un $\af \subset A$ tal que $\mathfrak{p}' = \af^e$, y entonces $\mathfrak{p}'^{ce} = \af^{ece} = \af^e = \mathfrak{p}'$, usando el lema \ref{ext-cont-ext}.
+
+\end{proof}
+
 	\begin{example}
 Sea $A$ un anillo y $\p_0\in \operatorname{Spec}(A)$. Sea $S=A\setminus\p_0$. $S$ es multiplicativamente cerrado y definimos $A_{\p_0}=S^{-1}A$. Existe una biyección, dada por la extensión-contracción, entre $$\operatorname{Spec}(A_{\p_0})\longleftrightarrow \operatorname{Spec}(A)\setminus\{\p\in \operatorname{Spec}(A):\p\cap(A\setminus\p_0)=\varnothing\}=\{\p\in \operatorname{Spec}(A):\p\subset\p_0\}$$
 Esta relación es análoga a la que da el teorema de la correspondencia entre los ideales del cociente y los ideales del anillo que contienen al ideal por el que cocientamos.
@@ -357,17 +414,17 @@ donde cada $f^{(i)}=f\circ\overset{(i)}{\dots}\circ f$
 \end{lemma}
 \begin{proof}
 	Probemos primero \textit{1}, que es una consecuencia del Teorema de Cayley.
-	
+
 	Tomemos $M\overset{id}{\longrightarrow}M$ y supongamos $id(M)=M=\mathfrak{m}$. Entonces existen $a_i\in\mathfrak{m},n\in\N$ tales que $$f^{(n)}+a_1f^{(n-1)}+\dots+a_{(n-1)}f=0_{End_A(M)}$$ Dado un sistema de generadores $m_1,\dots, m_r$ de $M$, $$(1+a_1+\dots+a_n)m_i=0, \forall i=1,\dots,r$$ Como $a_1+\dots+a_r\in\mathfrak{m}$, $1+a_1+\dots+a_r\notin\mathfrak{m}$, es decir, es una unidad y tiene inverso. Esto significa que cada $m_i=0$.
-	
+
 	\textit{2.} Esta afirmación es una consecuencia de \textit{1}. Basta observar la siguiente cadena de isomorfismos
 	$$\mathfrak m\left(\faktor{M}{N}\right)\cong\faktor{\mathfrak m M}{N}\cong 0+\faktor{\mathfrak m M}{N}\cong \faktor{(N+\mathfrak m M)}{N}\cong \faktor{M}{N}.$$
 	Así, aplicando \textit{1} tenemos que $M/N\cong \set{0}$ y, como tenemos $N\subset M$, esto implica que $N=M.$
-	
+
 	\textit{3.} Veamos que las hipótesis tienen sentido. Tenemos $M$ un $A$-módulo, $\mathfrak{m}M\subset M$ un submódulo suyo luego $A/\mathfrak{m}M$ $A$-módulo cociente está bien definido. Como $\mathfrak{m}\subset \operatorname{Anul}_A(M/\mathfrak{m}M)$, se tiene que $M/\mathfrak{m}M$ es un $A/\mathfrak{m}$-módulo, que además es finitamente generado por serlo $M$. Como $A/\mathfrak{m}$ es también un cuerpo, podemos ver a $M/\mathfrak{m}M$ como un $A/\mathfrak{m}$-espacio vectorial.
-	
+
 	Sea $N=\langle m_1,\dots,m_r\rangle_A$ el submódulo de $M$ generado por las $m_i$. Veamos que se cumplen las hipótesis de \textit{2}, es decir, $N+\mathfrak{m}M=M$.
-	
+
 	`$\supset$' es directo. Para ver `$\subset$', tomamos $x\in M$. Su clase $\overline{x}$ pertenece a $M/\mathfrak{m}M$. Por hipótesis, existen $a_i\in A$ tales que $\overline{x}=\sum_{i=1}^{r}\overline{a_i}\overline{m_i}$. Restando, se obtiene que $x-\sum_{i=1}^{r}\overline{a_i}\overline{m_i}\in\mathfrak{m}M$, pues esto es el $0$ del cociente. Entonces, hemos expresado $x$ como combinación lineal de los $m_i$, que pertenece a $N$ y un elemento de $\mathfrak{m}M$. Luego $M=N+\mathfrak{m}M$. Por \textit{2}, $M=N=\langle m_1,\dots,m_r\rangle_A$, es decir, los $m_i$ son generadores de $M$, tal y como queríamos probar.
 \end{proof}
 \begin{definition}
@@ -377,8 +434,8 @@ donde cada $f^{(i)}=f\circ\overset{(i)}{\dots}\circ f$
 	Sea $A$ un anillo local y sea $\mathfrak{m}$ su único ideal maximal. Sea $M$ un $A$-módulo finitamente generado. Entonces, todos los sistemas minimales de generadores de $M$ tienen el mismo cardinal.
 \end{corollary}
 \begin{proof}
-	Sea $\langle m_1,\dots,m_r\rangle$ un sistema de generadores de $M$ como $A$-módulo. Definimos, para cada $i=1,\dots,r$ $\overline{m_i}=m_i+\mathfrak{m}M$. Se cumple que $$\{\overline{m_i}:1\le i\le r\}$$ es un sistema de generadores de $M/\mathfrak{m}M$ como $A/\mathfrak{m}$-espacio vectorial. 
-	
+	Sea $\langle m_1,\dots,m_r\rangle$ un sistema de generadores de $M$ como $A$-módulo. Definimos, para cada $i=1,\dots,r$ $\overline{m_i}=m_i+\mathfrak{m}M$. Se cumple que $$\{\overline{m_i}:1\le i\le r\}$$ es un sistema de generadores de $M/\mathfrak{m}M$ como $A/\mathfrak{m}$-espacio vectorial.
+
 	Supongamos que $r>\dim_{A/\mathfrak{m}}(M/\mathfrak{m}M)=:s$. Sea entonces $\{\overline{x_{i_1}},\dots,\overline{x_{i_s}}$\} una base (también sistema de generadores) de $M/\mathfrak{m}M$ como $A/\mathfrak{m}$-espacio vectorial. Por la versión \textit{3} de $\ref{Nak}$ los $\{x_{i_1},\dots,x_{i_s}\}$ son sistema de generadores de $M$ como $A$-módulo, lo cual contradice la hipótesis de minimalidad de las $m_1,\dots,m_r$.
 \end{proof}
 
@@ -386,9 +443,9 @@ donde cada $f^{(i)}=f\circ\overset{(i)}{\dots}\circ f$
 	Tenemos que
 	$$A_{\mathfrak m_0}:=\left\{\frac{\overline{f}(x,y)}{\overline{g}(x,y)}\ \big|\ \overline{g}\notin\mathfrak m_0\right\}=\left\{\frac{\overline{f}(x,y)}{\overline{g}(x,y)}\ \big|\ g(0,1)\neq 0\right\}$$
 	Observemos que $\overline{x}^2=(\overline{y-1})(\overline{y+1})$ en $A.$ Como $\overline{y+1}\notin \mathfrak m_0$, $\frac{\overline{y-1}}{\overline{1}}$ es unidad en $A_{\mathfrak m_0}$ y $\overline{y-1}\in\langle\overline{x}\rangle A_{\mathfrak m_0}$, es decir, $\mathfrak m_0 A_{\mathfrak m_0}=\langle \overline{x}\rangle A_{\mathfrak m_0}$ y $A_{\mathfrak m_0}$ es principal.
-	
+
 	2. De forma más general, sean $K$ un cuerpo y $f\in K[x,y]$ tal que $f(a,b)=0_K$ y $\frac{\partial f}{\partial y}(a,b)\neq 0$ para ciertos $a,b\in K.$ Denotemos $A:=K[x,y]/\langle f(x,y)\rangle$ y $\mathfrak m_0:=\langle \overline{x-a},\overline{y-b}\rangle.$ Se verifica que $\mathfrak m_0 A_{\mathfrak m_0}$ es ideal principal.
-	
+
 	En $K[x,y]$ tenemos el desarrollo de Taylor de $f$ en $(a,b)$
 	\begin{equation}\label{Tay1}
 	f(x,y)=f(a,b)+\frac{\partial f}{\partial x}(a,b)(x-a)+\frac{\partial f}{\partial y}(a,b)(y-b)+T,
