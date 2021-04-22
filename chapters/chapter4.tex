@@ -400,11 +400,56 @@ Tomando $A\overset{\delta}{\longrightarrow}A_{\p_0}$, $\p_0^e$ es maximal. En es
 A esto se le llama \textit{potencias simbólicas} y se denota $\p_0^n$.
 \end{remark}
 Tenemos ya maquinaria suficiente para construir anillos locales.
+
 \begin{theorem}[\textbf{de Cayley}] Sean $A$ un anillo, $\af$ un ideal de $A$, $M$ un $A$-módulo finitamente generado y $f:M\longrightarrow M$ una aplicación $A$-lineal tal que $f(M)\subset \af M$. Entonces, existen $a_i\in\af, n\in\N$ tal que $$f^{(n)}+a_1s^{(n-1)}+\dots+a_iI_M=0_{Hom_A(M,M)}$$
 donde cada $f^{(i)}=f\circ\overset{(i)}{\dots}\circ f$
 \end{theorem}
 \begin{proof}
+	Se sabe que $M$ tiene estructura de $A[X]$-módulo via $f$ con la operación externa dada por
 
+	\begin{align}
+		\ast: A[X] \times M & \to M \\
+		(P, m) &\mapsto P(f)(m)
+	\end{align}
+	donde $P(X) = \sum_{i=1}^n a_i X^i$ y $P(f) = \sum_{i=1}^n a_i f^{(i)}$ siendo $f^{(0)}=1_M$.
+
+	Sean $m_1, \dots, m_r \in M$ generadores de $M$ como $A$-módulo. Para cada $i,j=1, \dots, r$ existen $\lambda_{ij}\in \mathfrak a$ tales que $f(m_i) = \sum_{j=1}^r lambda_{ij}m_j$. Esto da lugar a un sistema de ecuaciones tal que
+
+	\begin{equation}
+		\begin{cases}
+			(X_1 - \lambda_{11})\ast m_1 - \lambda_{12}\ast m_2 \dots - \lambda_{1r}\ast m_r = 0_M \\
+			-\lambda_{21}\ast m_1 + (X_2 - \lambda_{22})\ast m_2 \dots - \lambda_{2r}\ast m_r = 0_M \\
+			\vdots \\
+			-\lambda_{r1}\ast m_1 - \lambda{r2}\ast m_2 \dots + (X_r - \lambda_{rr})\ast m_r = 0_M \\
+		\end{cases}
+	\end{equation}
+
+	que podemos escribir de forma matricial como
+
+	\begin{equation}
+		\begin{pmatrix}
+			(X_1 - \lambda_{11}) & -\lambda_{12} & \dots & -\lambda_{1r} \\
+			-\lambda_{21}  &(X_2 - \lambda_{22})& \dots &- \lambda_{2r} \\
+			\vdots \\
+			-\lambda_{r1}  & - \lambda_{r2} & \dots &- \lambda_{rr}
+		\end{pmatrix}
+		\begin{pmatrix}
+			m_1 \\ m_2 \\\vdots \\ m_r
+		\end{pmatrix}
+		= \begin{pmatrix}
+			0 \\0 \\ \vdots \\0
+		\end{pmatrix}
+	\end{equation}
+	Sea $\Omega$ la matriz, y consideremos la matriz adjunta traspuesta $\operatorname{Adj} \Omega^{T}$. Por la formula de la matriz inversa, sabemos que $(\operatorname{Adj} \Omega^{T})\Omega = \operatorname{diag}(\det \Omega)$ es una matriz diagonal con toda la diagonal igual al determinante de la matriz. Además
+	$$
+		\det\Omega = X^r+a_{r-1}X^{r-1} + \dots + a_r
+	$$
+
+	con $a_i \in \mathfrak a$, porque los términos de grado $<r$ se obtienen multiplicando entradas de la matriz alguna de las cuales está fuera de la diagonal. Entonces multiplicando por $\operatorname{Adj} \Omega^{T}$ en el sistema matricial obtenemos que
+	$$
+		\det \Omega \ast m_i = \det \Omega (f) (m_i) = 0
+	$$
+	para cada $i=1, \dots, r$. Como se anula sobre cada uno de los generadores, se anula sobre todo $M$.
 \end{proof}
 \begin{lemma}[\textbf{de Nakayama}] \label{Nak} Se expresa en tres formulaciones equivalentes.\begin{enumerate}
 		\item Sea $A$ un anillo local, $\mathfrak{m}$ su único ideal maximal y $M$ un $A$-módulo finitamente generado. Si $\mathfrak{m} M=M$, entonces $M=0$.
