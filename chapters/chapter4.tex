@@ -470,7 +470,7 @@ donde cada $f^{(i)}=f\circ\overset{(i)}{\dots}\circ f$
 
 	Sea $N=\langle m_1,\dots,m_r\rangle_A$ el submódulo de $M$ generado por las $m_i$. Veamos que se cumplen las hipótesis de \textit{2}, es decir, $N+\mathfrak{m}M=M$.
 
-	`$\supset$' es directo. Para ver `$\subset$', tomamos $x\in M$. Su clase $\overline{x}$ pertenece a $M/\mathfrak{m}M$. Por hipótesis, existen $a_i\in A$ tales que $\overline{x}=\sum_{i=1}^{r}\overline{a_i}\overline{m_i}$. Restando, se obtiene que $x-\sum_{i=1}^{r}\overline{a_i}\overline{m_i}\in\mathfrak{m}M$, pues esto es el $0$ del cociente. Entonces, hemos expresado $x$ como combinación lineal de los $m_i$, que pertenece a $N$ y un elemento de $\mathfrak{m}M$. Luego $M=N+\mathfrak{m}M$. Por \textit{2}, $M=N=\langle m_1,\dots,m_r\rangle_A$, es decir, los $m_i$ son generadores de $M$, tal y como queríamos probar.
+	`$\subset$' es directo. Para ver `$\supset$', tomamos $x\in M$. Su clase $\overline{x}$ pertenece a $M/\mathfrak{m}M$. Por hipótesis, existen $\overline{a_i}\in A$ tales que $\overline{x}=\sum_{i=1}^{r}\overline{a_i}\ \overline{m_i}$. Deshaciendo las clases de equivalencia y restando, se obtiene que $x-\sum_{i=1}^{r}\lambda_i m_i\in\mathfrak{m}M$, para ciertos $\lambda_i\in A$. Entonces, hemos expresado $x$ como combinación lineal de los $m_i$, que pertenece a $N$ y un elemento de $\mathfrak{m}M$. Luego $M=N+\mathfrak{m}M$. Por \textit{2}, $M=N=\langle m_1,\dots,m_r\rangle_A$, es decir, los $m_i$ son generadores de $M$, tal y como queríamos probar.
 \end{proof}
 \begin{definition}
 	Un sistema de generadores $S=\langle m_1,\dots,m_r\rangle$ de un $A$-módulo $M$ se dice \textit{minimal} si no existe ningún sistema de generadores de $M$ formado por elementos de $S$ que no sean el total.
