@@ -512,5 +512,44 @@ donde cada $f^{(i)}=f\circ\overset{(i)}{\dots}\circ f$
 		\item[iii)] $M$ es plano.
 	\end{itemize}
 \end{theorem}
+\begin{proof}
 
+Basta ver que plano implica libre. Sabemos que todos los sistemas minimales de generadores tienen mismo cardinal $\dim_{A/\af}(M/\mathfrak{m}M) = r$ donde $\mathfrak{m}$ es el único ideal maximal de $A$. Veamos que todo conjunto de $r$ elementos de $M$ que sean $A/\mathfrak{m}$-linealmente independientes, también son $A$-linealmente independientes. Lo probamos por inducción sobre $r$.
+
+En el caso de $r=1$, sea $x_1 \in M$ con $\{\bar x_1\}$ base de $M/\mathfrak{m}M$ como espacio vectorial. Sea $a\in A$ tal que $ax_1 = 0_M$, veamos que $a = 0_A$. Necesariamente $a \in \mathfrak{m}$ pues, si no es una unidad y podríamos despejar $x_1 = 0_M$, dando un absurdo con que $\bar x_1$ sea base.
+Por ser $M$ plano y $ax_1 = 0_M$ existen unos $\lambda_{1j} \in A$ y $y_j \in M$ para $j=1,\dots, s$ tales que
+$$
+\begin{cases}
+	x_1 = \sum_{j=1}^s\lambda_j y_j \\
+	0_A = \lambda_j a & \forall j=1,\dots, s
+\end{cases}
+$$
+No puede ser que $\lambda_j \in \mathfrak{m}$ para todo $j=1,\dots, s$, porque si no $\bar x_1 = \bar 0$. Por tanto existe un $j_0$ tal que $\lambda_{j_0}\not \in \mathfrak{m}$ luego es una unidad y despejando queda $a = 0_A$.
+
+Supongamos que es cierto para $r-1$ y lo demostramos para $r$. Sea $\{x_1, \dots, x_r\}$ base de $M/\mathfrak{m}M$ como $A/\mathfrak{m}$ espacio vectorial. Sean $a_1, \dots, a_r$  tales que
+
+\begin{equation}\label{igualdad_a_cero}
+	 \sum_{i=1}^r a_i x_i = 0_M
+\end{equation}
+
+Como $M$ es plano, existen $y_j \in M$ y $\lambda_{ij}\in A$ para $i = 1, \dots, r$ y $j=1, \dots, s$ tales que
+$$
+\begin{cases}
+	x_i = \sum_{j=1}^s\lambda_{ij} y_j & \forall i= 1, \dots, r\\
+	0_A = \sum_{i=1}^r \lambda_{ij} a_i & \forall j=1,\dots, s
+\end{cases}
+$$
+Por ser un elemento de la base, $\bar x_1 \neq \bar 0$, por eso y sin pérdida de generalidad podemos suponer que $\lambda_{1s}\not \in \mathfrak{m}$, así es una  unidad y podemos despejar
+\begin{equation}\label{despejado}
+	a_1 = -\lambda_{1s}^{-1}\sum_{i=2}^r \lambda_{is} a_i = \sum_{i=2}^r v_ia_i
+\end{equation}
+con $v_i = -\lambda_{1s}^{-1}\lambda_{is}$ para cada $i=2,\dots, r$. Sustituyendo en (\ref{igualdad_a_cero}) lo anterior tenemos
+
+$$
+0_M = \sum_{i=2}^r a_i(v_ix_1+x_i)
+$$
+
+Por la hipótesis de inducción, dado que $\bar x_2, \dots, \bar x_r$ es un conjunto de $r-1$ vectores $A/\mathfrak{m}$-linealmente independientes, $ x_2, \dots, x_r$ son $A$-linealmente independientes. Deducimos entonces que $a_i=0_A$ para todo $i=2,\dots,r$, y por (\ref{despejado}) también $a_1 = 0_A$.
+
+\end{proof}
 \end{document}
