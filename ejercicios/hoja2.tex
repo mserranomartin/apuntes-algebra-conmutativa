@@ -65,7 +65,7 @@ Queremos aplicar el teorema de la correspondencia. Buscamos escribir el ideal $\
 \paragraph{Ejercicio 5}
 \subparagraph{i)} Sean $\set{k_i}\subset K$ y $\set{a_i}\subset A$, $i\in\set{1,\dots,r}$ tales que
 $$\sum_{i}a_ik_i=0_K.$$
-De esta igualdad se sigue también $\sum_{i}a_ik_i=0_M$ entendiendo los elementos $k_i$ como elementos de $M$ mediante la inclusión. Dado que $M$ es plano, existen $\set{m_j'\in M}$ y $\lambda_{ij}\in A$, $j\in\set{1,\dots, s}$, tales que $k_i=\sum_j\lambda_{ij}m_j'$ y $\sum_i a_i\lambda_{ij}$ para cada $i$ y $j$. 
+De esta igualdad se sigue también $\sum_{i}a_ik_i=0_M$ entendiendo los elementos $k_i$ como elementos de $M$ mediante la inclusión. Dado que $M$ es plano, existen $\set{m_j'\in M}$ y $\lambda_{ij}\in A$, $j\in\set{1,\dots, s}$, tales que $k_i=\sum_j\lambda_{ij}m_j'$ y $\sum_i a_i\lambda_{ij}$ para cada $i$ y $j$.
 
 De las anteriores igualdades se sigue que $0_N=\sum_j\lambda_{ij}[m_j']$ para cada $i$, es decir, existen $[m(i)_{l}'']\in N$ y $\mu(i)_{jl}\in A$, donde $l\in\set{(i,1),\dots,(i,n(i))}=:J(i)$, tales que $m_j'=\sum_l\mu(i)_{jl}m(i)_l''$ y $\sum_{j}\lambda_{ij}\mu(i)_{jl}=0_A.$ Así, existen $\set{k(i)_j'}\in K$ tales que
 $$m_j'=k(i)_j'+\sum_l\mu(i)_{jl}m(i)_l''\Longleftrightarrow k(i)_j'=m_{j}'-\sum_{l}\mu(i)_{jl}m(i)_l''.$$
@@ -101,12 +101,12 @@ es decir, $\sum_i a_ik_i=0_M$. Como $\sum_i a_ik_i\in K$, también $\sum_i a_ik_
 Para concluir basta definir los siguientes elementos:
 $$m_t'':=\left\{\begin{array}{cc}
 m_{t}'&t\in\set{1,\dots,j}  \\
-k_{t-j}'&t\in\set{j+1,\dots,j+l} 
+k_{t-j}'&t\in\set{j+1,\dots,j+l}
 \end{array}\right.$$
 y
 $$\gamma_{it}:=\left\{\begin{array}{cc}
 \lambda_{it}&t\in\set{1,\dots,j}  \\
-\mu_{i\ t-j}&t\in\set{j+1,\dots,j+l} 
+\mu_{i\ t-j}&t\in\set{j+1,\dots,j+l}
 \end{array}\right..$$
 Tenemos así, fijada $i$,
 $$\sum_t\gamma_{it}m_t''=\sum_{j}\lambda_{ij}m_j'+\sum_l\mu_{il}k_l'=\sum_{j}\lambda_{ij}m_j'+k_i= m_i$$
@@ -121,7 +121,7 @@ Ahora, dada una sucesión exacta
 $$0\longrightarrow N'\overset{f}{\longrightarrow}N$$
 se tiene que la sucesión
 $$0\longrightarrow A^{(I)}\otimes N'\overset{\operatorname{Id}_{A^{(I)}}\otimes f}{\longrightarrow} A^{(I)}\otimes N$$
-también lo es. 
+también lo es.
 
 Es claro que $\Phi:=\varphi\otimes \operatorname{Id}_{N'}: A^{(I)}\otimes N'\longrightarrow (K\otimes N')\oplus(M\otimes N')$, $\Psi:=\varphi\otimes \operatorname{Id}_{N}A^{(I)}\otimes N\longrightarrow (K\otimes N)\oplus(M\otimes N)$ son dos isomorfismos. Consideremos la sucesión
 \begin{equation}\label{Hoja2ej8}
@@ -135,7 +135,7 @@ es decir, que los diagramas conmutan: dado $(a,n')\in A^{(I)}\otimes N'$ arbitra
 &=[\Psi^{-1}\circ(\operatorname{Id}_{K}\otimes f)\oplus (\operatorname{Id}_{M}\otimes f)](\varphi(a)_K\otimes n',\varphi(a)_M\otimes n')=\\
 &=\Psi^{-1}(\varphi(a)_K\otimes f(n'),\varphi(a)_M\otimes f(n'))=(a,f(n'))=\operatorname{Id}_{A^{(I)}}\otimes f(a,n').
 \end{align*}
-Por esto que acabamos de ver, la sucesión ($\ref{Hoja2ej8}$) es exacta, es decir, la aplicación $F:=(\operatorname{Id}_{K}\otimes f)\oplus (\operatorname{Id}_{M}\otimes f)$ es inyectiva. 
+Por esto que acabamos de ver, la sucesión ($\ref{Hoja2ej8}$) es exacta, es decir, la aplicación $F:=(\operatorname{Id}_{K}\otimes f)\oplus (\operatorname{Id}_{M}\otimes f)$ es inyectiva.
 Así, para cada $m\otimes n'\in M\otimes n$, si $F(m\otimes n')=\operatorname{Id}_{M}\otimes f(m\otimes n')=0,$ entonces $m\otimes n'=0_{(K\otimes N')\oplus(M\otimes N')}$ y $m\otimes n'=0_{(M\otimes N')}$; es decir, $\operatorname{Id}_{M}\otimes f$ es inyectiva y $M$ plano.
 
 \paragraph{Ejercicio 10}
@@ -152,8 +152,8 @@ Supongamos cierto el resultado para toda $k<n$ y veámoslo para $k=n$. En primer
 $$0\longrightarrow A^{(n-1)}\longrightarrow A^{(n)}\longrightarrow A\longrightarrow 0$$
 es escindida en virtud de que $A^{(n)}\cong A^{(n)}\oplus A$ y de la caracterización de las sucesiones escindidas.
 
-Por otra parte, supongamos que no existe $k<n$ tal que $M\subseteq A^{(n-1)}$ y veamos que se tienen los isomorfismos $M':=A^{(n-1)}\cap M\cong A^{(n-1)}$ y $M'':=M/{A^{(n-1)}\cap M}\cong A$. 
-Comencemos por el segundo de ellos. La suposición nos asegura que $M/{A^{(n-1)}}\neq \{0_M\}$ y concretamente $M/{A^{(n-1)}}\subseteq A^{(n)}/{A^{(n-1)}}\cong A$ y $M''\overset{\Phi}{\cong}A$ por el caso base. 
+Por otra parte, supongamos que no existe $k<n$ tal que $M\subseteq A^{(n-1)}$ y veamos que se tienen los isomorfismos $M':=A^{(n-1)}\cap M\cong A^{(n-1)}$ y $M'':=M/{A^{(n-1)}\cap M}\cong A$.
+Comencemos por el segundo de ellos. La suposición nos asegura que $M/{A^{(n-1)}}\neq \{0_M\}$ y concretamente $M/{A^{(n-1)}}\subseteq A^{(n)}/{A^{(n-1)}}\cong A$ y $M''\overset{\Phi}{\cong}A$ por el caso base.
 Sean $\Phi^{-1}=:\overline{m},m\in M$ y consideremos $[m]\in M''$. Existe un único $a_m\in A$ tal que $m=a_m\overline{m}$. Así, podemos definir
 $$\begin{array}{rrcl}
 \sigma:&M''&\longrightarrow&M\\
@@ -209,7 +209,7 @@ i:&A[T]&\longrightarrow&S^{-1}A[T]\\
 Dado que $S\cap\operatorname{Div}_0A=\varnothing$, $\delta_S$ es inyectiva y así lo es también $i$. Ahora, considerando el homomorfismo evaluación en $\frac{1}{s}$,
 $$\begin{array}{rrcl}
 \operatorname{ev}_{\frac{1}{s}}:&S^{-1}A[T]&\longrightarrow&S^{-1}A\\
-&\overline{\operatorname{p}}(T)&\longrightarrow&\overline{\operatorname{p}}\left(\frac{1}{s}\right) 
+&\overline{\operatorname{p}}(T)&\longrightarrow&\overline{\operatorname{p}}\left(\frac{1}{s}\right)
 \end{array}$$
 tenemos el homomorfismo $\operatorname{ev}_{\frac{1}{s}}\circ\  i:A[T]\longrightarrow S^{-1}A.$
 
@@ -252,5 +252,10 @@ y, además, se desprende que $s|p_{r+1}.$
 Con todo, definiendo $\widetilde{\operatorname{h}}(T):=\sum_{i=1}^r\left[s^ip_0-\sum_{k=1}^is^{i-k}p_k\right]T^i$ tenemos que $(sT-1)\widetilde{\operatorname{h}}(T)=\operatorname{p}(T)$ y $\operatorname{p}\in\langle sT-1\rangle,$ es decir, si $\operatorname{p}\in A[T]$ verifica $\operatorname{ev}_{\frac{1}{s}}\circ\ i(\operatorname{p})=0_{S^{-1}A},$ entonces $\operatorname{p}\in \langle sT-1\rangle$ y $\ker(\operatorname{ev}_{\frac{1}{s}}\circ\ i)\subset\langle sT-1\rangle.$
 
 Podemos concluir así por el Primer Teorema de Isomorfía que $S^{-1}A\cong A[T]/\langle sT-1\rangle.$
+
+\paragraph{Ejercicio 18}
+\textit{(i)} Para todo $x,y \in S_0$ se tiene $xy\in S_0$. Si no, existe $x \in A$ tal que $0 = xyz = x(yz)$ con lo que $x\in \Div_0$, absurdo. Por otro lado, $0\not \in S_0$ obviamente, y $1 \in S_0$ porque apra todo $a\neq 0$ se tiene $1\cdot a = a \neq 0$.
+
+\textit{(ii)} La aplicación $A \to S_0^{-1}A$ es inyectiva. Sea $x,y \in A$ tales que $\frac{x}{1} = \frac{y}{1}$ , entonces existe $s\in S_0$
 
 \end{document}
