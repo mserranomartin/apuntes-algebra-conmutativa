@@ -1,59 +1,175 @@
 \documentclass[../main.tex]{subfiles}
 \begin{document}
-\section{Anillos y módulos noetherianos}
-\begin{proposition}
-Sea $A$ un anillo y $M$ un $A$-módulo. Las siguientes afirmaciones son equivalentes.\begin{enumerate}
-    \item Todo conjunto no vacío de submódulos de $M$ tiene un elemento maximal respecto del contenido.
-    \item Toda sucesión ascendente de submódulos de $M$ $M_1\subset M_2\subset\dots\subset M_n\subset\dots$ es estacionaria, es decir, existe un $k\in\N$ tal que $M_k=M_{k+l}$ para todo $l\in\N$.
-    \item Todo submódulo de $M$ es finitamente generado
-\end{enumerate}
-Si $M$ verifica cualquiera de estas condiciones equivalentes se dice que es un $A$-módulo \textit{noetheriano}. Un anillo $A$ se dice que es un \textit{anillo noetheriano} si, visto como un $A$-módulo, es noetheriano.
-\end{proposition}
-\begin{proof} Vamos probando cada una de las implicaciones.
-
-($1\Rightarrow 2$) Sea $M_k$ el elemento maximal del conjunto $\{M_n:n\in\N\}$ formado por cada uno de los submódulos de la cadena. Necesariamente, para cada $l\in\N$, $M_k=M_{k+l}$, por ser la cadena ascendente y para no contradecir la maximalidad de $M_k$.
-
-($2\Rightarrow 3$) Sea $N\subset M$ un submódulo arbitrario. Supongamos que $N$ no es finitamente generado. Entonces, $N\neq\{0\}$. Sea $f_1\in N\setminus\{0\}$. Como $N$ no es finitamente generado, $\langle f_1\rangle\varsubsetneq N$. Sea $f_2\in N\setminus\langle f_1\rangle$. Como $N$ no es finitamente generado, $\langle f_1,f_2\rangle\varsubsetneq M$. Inductivamente, generamos una sucesión $\langle f_1\rangle\varsubsetneq\langle f_1,f_2\rangle\varsubsetneq\dots\varsubsetneq\langle f_1,\dots,f_n\rangle\varsubsetneq\dots$ de $A$-módulos no estacionaria, contradiciendo la hipótesis.
-
-($3\Rightarrow 2$) Sea $\Sigma$ un conjunto no vacío de submódulos de $M$, ordenados por la inclusión. Tomemos $\{N_i:i\in I\}$ una cadena de $\Sigma$. Definiendo $N^{\ast}=\bigcup_{i\in I}N_i\subset M$. Por hipótesis, $N^{\ast}$ es finitamente generado. Sean $y_1,\dots,y_l$ sus generadores. Supongamos que cada $y_j\in N_{i_j}$. Sea $N_k=\operatorname{max}\{N_{i_1},\dots,N_{i_l}\}$. Como $\{N_i\}$ es una cadena, necesariamente se tiene $N^{\ast}=N_k$. 
-
-Hemos visto que toda cadena de $\Sigma$ tiene máximo. Por el Lema de Zorn, $\Sigma$ tiene elemento maximal.
-\end{proof}
-\begin{proposition}
-Dada una sucesión corta y exacta de homomorfismos de $A$-módulos $$0\longrightarrow M'\overset{f}{\longrightarrow}M\overset{g}{\longrightarrow}M''\longrightarrow 0$$ $M$ es noetheriano si y solo si $M'$ y $M''$ son noetherianos.
-\end{proposition}
-\begin{proof} Utilizamos las diferentes caracterizaciones de los $A$-módulos noetherianos descritas en la proposición anterior.
-
-($\Longrightarrow$) Una cadena ascendente de submódulos de $M'$ lo es también de $M$ por ser $f$ inyectiva. Usando $(2)$, dicha cadena es estacionaria y por tanto $M'$ es noetheriano.
-
-Como $g$ es sobreyectiva, $M''\cong\faktor{M}{\operatorname{ker} g}$. Por el Teorema de la correspondencia, los submódulos de $\faktor{M}{\operatorname{ker} g}$ son de la forma $\faktor{T}{\operatorname{ker} g}$ con $T\supset \operatorname{ker} g$ un submódulo de M. Como M es noetheriano, por $3$, $T$ es finitamente generado y por tanto, $\faktor{T}{\operatorname{ker} g}$ también y $M''$ es noetheriano.
-
-($\Longleftarrow$) Sea $N\subset M$ un submódulo. $f^{-1}(N)$ es un submódulo de $M'$, luego es finitamente generado. Sean $x_1,\dots,x_r$ sus generadores. Usando que $M''\cong\faktor{M}{\operatorname{ker} g}$, $\faktor{(N+\operatorname{ker} g)}{\operatorname{ker} g}$ es un submódulo de $M''$ y entonces es finitamente generado. Sean $\overline{y_1},\dots,\overline{y_k}$ sus generadores. Veamos que $\langle f(x_1),\dots,f(x_r),y_1,\dots,y_k\rangle$ generan $N$.
-
-Dado $z\in N$, existen $\lambda_i\in A$, $i=1,\dots,k$ tal que $$\overline{z}=\sum_{i=1}^k\lambda_i\overline{y_i}$$ Se tiene que $w=z-\sum_{i=1}^k\lambda_iy_i\in\operatorname{ker} g=\operatorname{Im} f$, luego existe $u\in M'$ tal que $f(u)=w$. Existen $\mu_j\in A$, $j=1,\dots,r$ tal que $u=\sum_{j=1}^r\mu_jx_j$. Aplicando $f$, se cumple $$w=\sum_{j=1}^r\mu_jf(x_j)$$ Con todo se tiene que $$z=\sum_{j=1}^r\mu_jf(x_j)+\sum_{i=1}^k\lambda_iy_i$$
-\end{proof}
-\begin{remark}
-De este resultado se siguen las siguientes consecuencias.\begin{enumerate}
-    \item Los cocientes y submodulos de los $A$-módulos noetherianos son noetherianos.
-    \item Si $M_1,\dots,M_r$ son $A$-módulos noetherianos, $\bigoplus_{i=1}^rM_i$ es noetheriano.
-    \item Sea $M$ un $A$-módulo finitamente generado, donde $A$ es un anillo noetheriano. Entonces $M$ es un $A$-módulo noetheriano. En efecto, si $r$ es un número de generadores de $M$, por ser $A$ noetheriano, $A^{(r)}$ es noetheriano tambíen y se genera la sucesión exacta $A^{(r)}\rightarrow M\rightarrow 0$.
-\end{enumerate}
-\end{remark}
-El Teorema de la base de Hilbert del primer capítulo nos garantiza que si $A$ es un anillo noetheriano, $A[X]$ es también noetheriano. Inductiavente se ve que $A[X_1,\dots,X_n]$ es también noetheriano. 
-
-A su vez, si recordamos la definición de $A$-álgebra finitamente generada del primer capítulo, se tiene que existe un homomorfismo suprayectivo de $A[X_1,\dots,X_n]$ en $B$, donde $B$ es la $A$-álgebra y $n$ es el número de generadores de $B$ como $A$-álgebra. Entonces, si $A$ es un anillo noetheriano, cualquier $A$-álgebra finitamente generada es un anillo noetheriano.
-
-\section{Asociados primos y descomposición primaria}
-Sea $A$ un anillo noetheriano y $\af$ un ideal. El objetivo de esta sección es descomponer $\af$ como intersección finita $\af=\bigcap \q_i$, con cada $\q_i$ primario asociado a un ideal primo $\p_i$.
-
-Buscamos que tal descomposición sea \textit{irredundante}. Esto es que para cada $i$ se verifique $\q_i\nsupseteq \bigcap_{j\neq i}\q_j$.
-
-En $\faktor{A}{\af}$, esto es equivalente a hacer la descomposición sobre el $0$ de $\faktor{A}{\af}$.
-
-\begin{remark}
-\begin{enumerate}
-    \item Tal descomposición no tiene por qué ser única. Si tomamos por ejemplo en el anillo $A=K[X,Y]$ el ideal $\af=\langle x^2,xy\rangle$, se cumple $\af=\langle x\rangle\cap\langle x^2,y=\langle x\rangle\cap\langle x^2,xy,y^2\rangle$.
-    \item  Veremos más adelante que los asociados primos sí son únicos. En el caso anterior serían $\langle x\rangle, \langle x,y\rangle$.
-\end{enumerate}
-\end{remark}
+	\section{Anillos y módulos noetherianos}
+	\begin{proposition}
+		Sea $A$ un anillo y $M$ un $A$-módulo. Las siguientes afirmaciones son equivalentes.\begin{enumerate}
+			\item Todo conjunto no vacío de submódulos de $M$ tiene un elemento maximal respecto del contenido.
+			\item Toda sucesión ascendente de submódulos de $M$ $M_1\subset M_2\subset\dots\subset M_n\subset\dots$ es estacionaria, es decir, existe un $k\in\N$ tal que $M_k=M_{k+l}$ para todo $l\in\N$.
+			\item Todo submódulo de $M$ es finitamente generado
+		\end{enumerate}
+		Si $M$ verifica cualquiera de estas condiciones equivalentes se dice que es un $A$-módulo \textit{noetheriano}. Un anillo $A$ se dice que es un \textit{anillo noetheriano} si, visto como un $A$-módulo, es noetheriano.
+	\end{proposition}
+	\begin{proof} Vamos probando cada una de las implicaciones.
+		
+		($1\Rightarrow 2$) Sea $M_k$ el elemento maximal del conjunto $\{M_n:n\in\N\}$ formado por cada uno de los submódulos de la cadena. Necesariamente, para cada $l\in\N$, $M_k=M_{k+l}$, por ser la cadena ascendente y para no contradecir la maximalidad de $M_k$.
+		
+		($2\Rightarrow 3$) Sea $N\subset M$ un submódulo arbitrario. Supongamos que $N$ no es finitamente generado. Entonces, $N\neq\{0\}$. Sea $f_1\in N\setminus\{0\}$. Como $N$ no es finitamente generado, $\langle f_1\rangle\varsubsetneq N$. Sea $f_2\in N\setminus\langle f_1\rangle$. Como $N$ no es finitamente generado, $\langle f_1,f_2\rangle\varsubsetneq M$. Inductivamente, generamos una sucesión $\langle f_1\rangle\varsubsetneq\langle f_1,f_2\rangle\varsubsetneq\dots\varsubsetneq\langle f_1,\dots,f_n\rangle\varsubsetneq\dots$ de $A$-módulos no estacionaria, contradiciendo la hipótesis.
+		
+		($3\Rightarrow 2$) Sea $\Sigma$ un conjunto no vacío de submódulos de $M$, ordenados por la inclusión. Tomemos $\{N_i:i\in I\}$ una cadena de $\Sigma$. Definiendo $N^{\ast}=\bigcup_{i\in I}N_i\subset M$. Por hipótesis, $N^{\ast}$ es finitamente generado. Sean $y_1,\dots,y_l$ sus generadores. Supongamos que cada $y_j\in N_{i_j}$. Sea $N_k=\operatorname{max}\{N_{i_1},\dots,N_{i_l}\}$. Como $\{N_i\}$ es una cadena, necesariamente se tiene $N^{\ast}=N_k$. 
+		
+		Hemos visto que toda cadena de $\Sigma$ tiene máximo. Por el Lema de Zorn, $\Sigma$ tiene elemento maximal.
+	\end{proof}
+	\begin{proposition}
+		Dada una sucesión corta y exacta de homomorfismos de $A$-módulos $$0\longrightarrow M'\overset{f}{\longrightarrow}M\overset{g}{\longrightarrow}M''\longrightarrow 0$$ $M$ es noetheriano si y solo si $M'$ y $M''$ son noetherianos.
+	\end{proposition}
+	\begin{proof} Utilizamos las diferentes caracterizaciones de los $A$-módulos noetherianos descritas en la proposición anterior.
+		
+		($\Longrightarrow$) Una cadena ascendente de submódulos de $M'$ lo es también de $M$ por ser $f$ inyectiva. Usando $(2)$, dicha cadena es estacionaria y por tanto $M'$ es noetheriano.
+		
+		Como $g$ es sobreyectiva, $M''\cong\faktor{M}{\operatorname{ker} g}$. Por el Teorema de la correspondencia, los submódulos de $\faktor{M}{\operatorname{ker} g}$ son de la forma $\faktor{T}{\operatorname{ker} g}$ con $T\supset \operatorname{ker} g$ un submódulo de M. Como M es noetheriano, por $3$, $T$ es finitamente generado y por tanto, $\faktor{T}{\operatorname{ker} g}$ también y $M''$ es noetheriano.
+		
+		($\Longleftarrow$) Sea $N\subset M$ un submódulo. $f^{-1}(N)$ es un submódulo de $M'$, luego es finitamente generado. Sean $x_1,\dots,x_r$ sus generadores. Usando que $M''\cong\faktor{M}{\operatorname{ker} g}$, $\faktor{(N+\operatorname{ker} g)}{\operatorname{ker} g}$ es un submódulo de $M''$ y entonces es finitamente generado. Sean $\overline{y_1},\dots,\overline{y_k}$ sus generadores. Veamos que $\langle f(x_1),\dots,f(x_r),y_1,\dots,y_k\rangle$ generan $N$.
+		
+		Dado $z\in N$, existen $\lambda_i\in A$, $i=1,\dots,k$ tal que $$\overline{z}=\sum_{i=1}^k\lambda_i\overline{y_i}$$ Se tiene que $w=z-\sum_{i=1}^k\lambda_iy_i\in\operatorname{ker} g=\operatorname{Im} f$, luego existe $u\in M'$ tal que $f(u)=w$. Existen $\mu_j\in A$, $j=1,\dots,r$ tal que $u=\sum_{j=1}^r\mu_jx_j$. Aplicando $f$, se cumple $$w=\sum_{j=1}^r\mu_jf(x_j)$$ Con todo se tiene que $$z=\sum_{j=1}^r\mu_jf(x_j)+\sum_{i=1}^k\lambda_iy_i$$
+	\end{proof}
+	\begin{remark}
+		De este resultado se siguen las siguientes consecuencias.\begin{enumerate}
+			\item Los cocientes y submodulos de los $A$-módulos noetherianos son noetherianos.
+			\item Si $M_1,\dots,M_r$ son $A$-módulos noetherianos, $\bigoplus_{i=1}^rM_i$ es noetheriano.
+			\item Sea $M$ un $A$-módulo finitamente generado, donde $A$ es un anillo noetheriano. Entonces $M$ es un $A$-módulo noetheriano. En efecto, si $r$ es un número de generadores de $M$, por ser $A$ noetheriano, $A^{(r)}$ es noetheriano tambíen y se genera la sucesión exacta $A^{(r)}\rightarrow M\rightarrow 0$.
+		\end{enumerate}
+	\end{remark}
+	El Teorema de la base de Hilbert del primer capítulo nos garantiza que si $A$ es un anillo noetheriano, $A[X]$ es también noetheriano. Inductiavente se ve que $A[X_1,\dots,X_n]$ es también noetheriano. 
+	
+	A su vez, si recordamos la definición de $A$-álgebra finitamente generada del primer capítulo, se tiene que existe un homomorfismo suprayectivo de $A[X_1,\dots,X_n]$ en $B$, donde $B$ es la $A$-álgebra y $n$ es el número de generadores de $B$ como $A$-álgebra. Entonces, si $A$ es un anillo noetheriano, cualquier $A$-álgebra finitamente generada es un anillo noetheriano.
+	
+	\section{Asociados primos y descomposición primaria}
+	Sea $A$ un anillo noetheriano y $\af$ un ideal. El objetivo de esta sección es descomponer $\af$ como intersección finita $\af=\bigcap \q_i$, con cada $\q_i$ primario asociado a un ideal primo $\p_i$.
+	
+	Buscamos que tal descomposición sea \textit{irredundante}. Esto es que para cada $i$ se verifique $\q_i\nsupseteq \bigcap_{j\neq i}\q_j$.
+	
+	En $\faktor{A}{\af}$, esto es equivalente a hacer la descomposición sobre el $0$ de $\faktor{A}{\af}$.
+	
+	\begin{remark}
+		\begin{enumerate}
+			\item Tal descomposición no tiene por qué ser única. Si tomamos por ejemplo en el anillo $A=K[X,Y]$ el ideal $\af=\langle x^2,xy\rangle$, se cumple $\af=\langle x\rangle\cap\langle x^2,y=\langle x\rangle\cap\langle x^2,xy,y^2\rangle$.
+			\item  Veremos más adelante que los asociados primos sí son únicos. En el caso anterior serían $\langle x\rangle, \langle x,y\rangle$.
+		\end{enumerate}
+	\end{remark}
+	Siguiendo con lo anterior, supongamos que tenemos una descomposición irredundante del ideal $0$ en ideales primarios. Esto es, $\langle 0\rangle=\bigcap_{i=1}^r\q_i$, donde $\q_i$ es un ideal que verifica que $\sqrt{\q_i}=\p_i$, siendo $\p_i$ un ideal primo para cada $i=1,\dots,r$. Dado $x_i\in\cap_{j\neq i}\q_j\setminus\q_i$, que existe por ser la descomposición irredundante, supongamos que existe $\lambda\in A$ tal que $\lambda x_i=0$. Entonces, como $x_i\notin\q_i$, que es primario, necesariamente $\lambda\in\sqrt{\q_i}=\p_i$. Es decir, $\operatorname{anul}_A(x_i=\subset\p_i$. Además, para cada $\mu\in A$, $\operatorname{anul}_A(x_i)\subset\operatorname{anul}_A(\mu x_i)\subset\p_i$. 
+	
+	Tomando $\Sigma=\{\operatorname{anul}_A(x):x\in A\setminus\{0\}\}$, este conjunto tiene elementos maximales. Sea $\operatorname{anul}_A(z)$ uno de ellos. Si suponemos que existen $\lambda,\mu\in A$ tales que $\lambda\mu\in\operatorname{anul}_A(z)$, es decir, $\lambda\mu z=0$ y además $\mu\notin\operatorname{anul}_A(z)$, entonces $\mu z\neq=0$. Esto significa que $\operatorname{anul}_A(z)\subset\operatorname{anul}_A(\mu z)\in\Sigma$. Por maximalidad, como $\lambda\in\operatorname{anul}_A(\mu z)$, se tiene que cumplir que $\lambda\in\operatorname{anul}_A(z)$. Acabamos de ver que $\operatorname{anul}_A(z)$ es primo. Esto motiva la siguiente definición.
+	\begin{definition}
+		Sea $M$ un $A$-módulo. Se denominan \textit{primos asociados} de $M$ a los ideales primos de la forma $\operatorname{anul}_A(x)$ para algún $x\in M$. El conjunto de estos se denota $Ass_AM$.
+	\end{definition}
+	\begin{remark}
+		\begin{enumerate}
+			\item Si $M\neq\{0\}$, procediendo como antes se sigue que $\Ass_AM\neq\varnothing$.
+			\item Si $M\cong M'$, entonces $\Ass_AM=\Ass_AM'$.
+			\item $\Ass_AM\subset\operatorname{sop}M$.
+		\end{enumerate}
+	\end{remark}
+	\begin{proposition}
+		Sea $A$ un anillo noetheriano. Entonces,\begin{enumerate}
+			\item $\bigcup_{\p\in\Ass_AM}\p=\operatorname{Div}_0M$.
+			\item Si $S\subset A$ es un conjunto multiplicativamente cerrado, entonces $\Ass_{S^{-1}A}(S^{-1}M)=\Ass_A(M)\cap\{\p\in\operatorname{Spec(A):\p\cap S=\varnothing}\}$.
+			\item Si la sucesión $$0\longrightarrow M'\longrightarrow M\longrightarrow M''\longrightarrow 0$$ es exacta, entonces se cumple $$\Ass_A(M')\subset\Ass_A(M)\subset\Ass_A(M'')\cup\Ass_A(M')$$ dándose la igualdad si la sucesión es escindida.
+		\end{enumerate}
+	\end{proposition}
+	
+	\begin{proof}
+		Comencemos con $i)$. El contenido $\subset$ se tiene por la propia definición de $\operatorname{Ass}_A(M)$. Para $\subset$, sea $\lambda\in A$ ral que $\lambda x=0$ para $x\in M\setminus\{0_M\}.$ Sea
+		$$\Sigma:=\{\operatorname{anul}_A(\mu x)\ :\ \mu\in A,\ \mu x\neq 0_M\},$$
+		que es un conjunto no vacío de ideales de $A$ y todos ellos contienen a $\operatorname{anul}_A(x).$
+		
+		Como $A$ es noetheriano, $\Sigma$ contiene ideales maximales: consideremos uno de ellos, $\af:=\operatorname{anul}_A(\alpha x).$ Si $\beta\gamma\in\af$ y $\beta\notin\af$, entonces $\beta\alpha x\neq 0_M$ y $\gamma\in\operatorname{anul}_A(\beta\alpha x)\supset\operatorname{anul}_A(\alpha x)=\af.$ Por la maximalidad de $\af$, ambos son iguales y $\gamma\in\af.$ Así, $\af\in\Ass_A(M)$ y $\anul_A(x)\subset\af.$
+		
+		Probemos ahora $ii).$ Sabemos que existe una biyección
+		$$\{\p\in\Spec A\ :\ \p\cap S=\varnothing\}\leftrightarrow\Spec{S^{-1}A}.$$
+		Como los elementos $s\in S$ son unidades en $S^{-1}A$ vistos como $\frac{s}{1}$, es suficiente probar que para todo $\p\in\Spec A$ tal que $\p\cap S=\varnothing$ y para toda $x\in M\setminus\{0_M\}$ se tiene
+		$$\p=\anul_A(x)\Leftrightarrow \p^e=\anul_{S^{-1}A}\left(\frac{x}{1}\right).$$ Esto es así porque, dado un elemento $\frac{x}{s}\in S^{-1}M$, $\anul_{S^{-1}A}(\frac{x}{s})=\anul_{S^{-1}A}(\frac{x}{1})$ por ser $\frac{1}{s}$ unidad en $S^{-1}A.$
+		
+		$(\Rightarrow)$ Veamos el contenido $\supset$. Si $\frac{\gamma x}{s 1}=0_{S^{-1}M}$, existe $s'\in S$ tal que $s'\gamma x=0_M$. De esta forma, $\lambda:=s'\gamma\in\p$ y $\frac{\gamma}{s}=\frac{\lambda}{ss'}\in\p^e.$ Para $\subset$, un elemento de $\p^e$ es de la forma $\frac{\alpha}{t}$, donde $\alpha\in\p$ y $t\in A\setminus S.$ Como $\alpha x=0_M$, $\frac{\alpha}{t}\frac{x}{1}=0_{S^{-1}M}.$
+		
+		$(\Leftarrow)$ Si $\lambda\in A$ verifica $\lambda x=0_M$, $\frac{\lambda}{1}\in\anul_{S^{-1}A}(\frac{x}{1})$ y $\lambda\in\p^{ec}=\p;$ es decir, $\anul_A(x)\subset\p.$ Por otro lado, si $\lambda\in\p$, $\frac{\lambda}{1}\in\p^e,$ por tanto $\frac{\lambda x}{1}=0_{S^{-1}M}$ y existe $s'\in S$ tal que $s'\lambda x=0_M.$ Así, $s'\lambda\in\anul_A(x)\subset\p$ y como $s'\notin\p$, $\lambda\in\p.$
+		
+		Por último probemos $iii).$ El primero de los contenidos es claro. Para el segundo, observemos primero que, si $z\in\ker(g)$, entonces $z=f(z')$ para cierto $z'\in M'$ y se tiene que $\anul_A(z)=\anul_A(z')$ por la inyectividad de $f.$ Sea ahora $\p\in\anul_A(M)\setminus\anul_A(M').$ Por la observación anterior, $x'':=g(x)\neq 0_{M''}.$ Veamos $\anul_A(x)=\anul_A(x'').$
+		
+		El contenido $\supset$ es claro. Tomemos entonces $\mu\in\anul_A(x'')\setminus\anul_A(x).$ Tenemos que $\mu x''=g(\mu x)=0_{M''}$ y existe $x'\in M'\setminus\{0_{M'}\}$ tal que $f(x')=\mu x.$ Sabemos que $\anul_A(x')=\anul_A(\mu x)\supset\anul_A(x)=\p$ y $\p\notin\Ass_A(M')$; es decir, el contenido $\anul_A(x')\supset\p$ es estricto existe $\alpha\in A$ tal que $\alpha x\neq 0_M$ y $\alpha\mu x=0_M.$ de esto se desprende que $\alpha\mu\in\p$, pero $\alpha,\mu\notin\p$, que es imposible.
+	\end{proof}
+	
+	\begin{proposition}
+		Sea $A$ un anillo noetheriano y $M$ un $A$-módulo no vacío finitamente generado. Entonces, existe una sucesión ascendente de submódulos $$\{0_M\}=:M_0\subset M_1\subset\dots\subset M_{n-1}\subset M_n:=M$$ con $\Ass_A(M_i/M_{i-1})=\p_i$ para cada $i=1,\dots,n$.
+		
+		En particular, $\Ass_AM\subset\{\p_1,\dots,\p_n\}$ es finito.
+	\end{proposition}
+	
+	\begin{proof}
+		Como $M\neq\{0\}$, existe $\p_1\in\Ass_A(M)\neq\varnothing$ y $\p_1=\anul_A(x_1)$ para cierto $x_1\in M.$ De esta forma $M_1:=\langle x_1\rangle\subset M$ es submódulo de $M$ y $M_1\cong A/{\p_1}$ considerando un homomorfismo que lleve $1_A$ a $x_1$ que tendrá por núcleo a $\p_1.$ Como $A/{\p_1}$ es dominio de integridad, $\anul_A(\overline{x})=\{\overline{0}\}$ y $\Ass_A(M_1)=\{p_1\}.$ También, por la proposición anterior $\Ass_A(M)\subset\Ass_A(M_1)\cup\Ass_A{(M/M_1)}.$
+		
+		Ahora, si $M/M_1\neq 0$ (en caso contrario habríamos acabado), existe $\p_2\in\Ass_A(M/M_1)$ de la forma $\p_2=\anul_A(x_2+ M_1)$ para cierto $x_2+ M_1\in M/M_1\setminus\{0_{M/M_1}\}.$ Así, existe por el teorema de la correspondencia $M_2\subset M$ submódulo tal que $M_1\subset M_2\subset M$ y $A/{\p_2}\cong M_2/M_1$, de forma que $\Ass_A(M_2/M_1)=\{p_2\}$ y 
+		\begin{equation*}
+		\Ass_A(M)\subset\{p_1\}\cup\Ass_A(M_2/M_1)\cup\Ass_A((M/M_1)/(M_2/M_1))\\
+		=\{p_1\}\cup\{p_2\}\cup\Ass_A(M/M_2).
+		\end{equation*}
+		
+		Reiterando el proceso obtenemos una sucesión, $\{0\}\subset M_1\subset M_2\cdots$, que se estabiliza por ser $M$ noetheriano, es decir, existe $n\in\N$ tal que $M_n=M.$
+	\end{proof}
+	
+	\begin{definition} Sea $M$ un $A$-módulo. \begin{enumerate}
+			\item Un submódulo $N\varsubsetneq M$ se dice \textit{submódulo primario asociado} al ideal primo $\p$ si $\Ass_A(M/N)=\{\p\}$.
+			\item Un submódulo $N\subset M$ distinto del $0$ se dice \textit{irreducible} si $N=N_1\cap N_2$ implica que $N=N_1$ ó $N=N_2$.
+		\end{enumerate}
+	\end{definition}
+	\begin{lemma}
+		Sea $A$ un anillo noetheriano y $M$ un $A$-módulo. Entonces,\begin{enumerate}
+			\item Si $N_1$ y $N_2$ son dos submódulos primarios asociados a un mismo ideal primo, entonces $N_1\cap N_2$ cumple esta propiedad también.
+			\item Todo submódulo irreducible es primario.
+		\end{enumerate}
+	\end{lemma}
+	
+	\begin{proof}
+		$(i)$ Tenemos por hipótesis $\Ass_A(M/N_i)=\{\p\}$ para $i\in\set{1,2}$ y 
+		$$\begin{array}{rcl}
+		M&\longrightarrow& M/N_1\oplus M/N_2\\
+		x&\longmapsto&(x\mod N_1,x\mod N_2) 
+		\end{array}$$
+		induce una sucesión
+		$$0\longrightarrow M/(N_1\cap N_2)\longrightarrow M/N_1\oplus M/N_2$$
+		exacta. Así, $\varnothing\neq \Ass_A(M/(N_1\cap N_2))\subset \{p\}$ y $N_1\cap N_2$ es $\p$-primario.
+		
+		$(ii)$ Sea $\{0\}\neq N\subsetneq M$ un submódulo y supongamos que $N$ no es primario para comprobar que tampoco es irreducible. Existe $\p_1\in\Ass_A(M/N)$, (i.e., existe un submódulo de $M/N$) verificando $N\subset N_1$, $N_1/N\cong A/{\p_1}$ y $\Ass_A(N_1/N)=\{\p_1\}.$
+		
+		Como $N$ no es primario, existe $\p_2\in\Ass_A(M/N)$ distinto de $\p_1.$ Como antes, existe $N_2\supset N$ con $N_2/N\cong\Ass_A(N_2/N)$ y $\Ass_A(N_2/N)=\{\p_2\}.$ Así
+		$$\Ass_A((N_1\cap N_2)/N)\subset\Ass_A(N_1/N)=\{\p_1\}$$
+		y
+		$$\Ass_A((N_1\cap N_2)/N)\subset\Ass_A(N_2/N)=\{\p_2\}.$$
+		Esto implica $\Ass_A((N_1\cap N_2)/N)=\varnothing$ y $N_1\cap N_2=N$, pero $N_i\supsetneq N$, es decir, $N$ no es irreducible.
+	\end{proof}
+	
+	\begin{theorem} (\textbf{de Lasker-Noether}).
+		Sean $A$ un anillo noetheriano y $M$ un $A$-módulo finitamente generado. Sea $N\varsubsetneq M$ un submódulo de $M$. Entonces, existen $N_1,\dots,N_r$ submódulos primarios de $M$ asociados a ideales primos $\p_1,\dots,\p_r$, respectivamente, tales que $N=\cap_{j=1}^rN_j$, cada $N_i\varsupsetneq\cap_{j\neq i}N_j$ y $\Ass_A(M/N)=\{\p_1,\dots,\p_r\}$.
+	\end{theorem}
+	
+	\begin{proof}
+		Sea $\Sigma$ el conjunto formado por submódulos propios $Q\subset M$ que no son intersección de submódulos irreducibles. Si $\Sigma=\varnothing$, todos los irreducibles son primarios. Supongamos entonces que $\Sigma\neq\varnothing.$
+		
+		Como $M$ es noetheriano, $\Sigma$ contiene submódulos maximales. Sea $\Q_0\in\Sigma$ uno de ellos. Por definición de $\Sigma$, existen $N_1$ y $N_2$ submódulos de $M$ tales que $Q_0\subsetneq N_i$ y $N_1\cap N_2=Q_0.$ Si suponemos $N_1=M$, entonces $N_2=N_1\cap N_2=Q_0$, que es absurdo. Así, $N_1$ y $N_2$ son submódulos propios y, por la maximalidad de $Q_0$, ambos son intersección finita de submódulos irreducibles; sin embargo, esto es absurdo puesto que en tal caso $Q_0$ también lo sería.
+		
+		Ahora, haciendo uso del lema anterior, agrupamos las intersecciones de los primarios con el mismo primo asociado y descartamos \textit{los sobrantes} hasta tener una intersección irredundante. 
+		
+		Veamos ya que, si $N=\bigcap_{i=1}^rN_i$ irredundante, donde cada $N_i$ es $\p_i$-primario, entonces $\Ass_A(M/N)=\set{\p_1,\cdots,\p_r}.$
+		
+		El contenido $\subset$ es claro atendiendo al homomorfismo
+		$$\faktor{M}{N}\hookrightarrow\oplus_{i=1}^r\faktor{M}{N_i}.$$
+		Para ver esto hay que comprobar que el homomorfismo está bien definido y que $\Ass_A(\oplus_{i=1}^rM/{N_i})=\bigcup_{i=1}^r\Ass_A(M/{N_i}).$
+		
+		Definamos ahora el homomorfismo
+		$$\begin{array}{rcl}
+		N_2\cap\cdots\cap N_r&\overset{f}{\longrightarrow}&M/N_1\\
+		x&\longmapsto&x+N_1 
+		\end{array}.$$
+		Es claro que $\ker(f)=\bigcap_{i=1}^r N_i$, luego $(N_2\cap\cdots\cap N_r)/N\hookrightarrow M/{N_1}$ nos da la igualdad $\Ass_A((N_2\cap\cdots\cap N_r)/N)=\set{\p_1}.$ Esto es así porque tenemos el contenido $\subset$ y además $\Ass_A((N_2\cap\cdots\cap N_r)/N)\neq\varnothing$ por ser la intersección irredundante. Más aún, como $(N_2\cap\cdots\cap N_r)/N$ es un submódulo de $M/N$, $\set{\p_1}\subset\Ass_A(M/N).$ Repitiendo este argumento para cada $i\in\set{1,\dots,r}$ podemos concluir $\set{\p_1,\dots,\p_r}\subset\Ass_A(M/N).$
+	\end{proof}
+	
 \end{document}
