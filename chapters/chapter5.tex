@@ -15,7 +15,7 @@ Si $M$ verifica cualquiera de estas condiciones equivalentes se dice que es un $
 
 ($2\Rightarrow 3$) Sea $N\subset M$ un submódulo arbitrario. Supongamos que $N$ no es finitamente generado. Entonces, $N\neq\{0\}$. Sea $f_1\in N\setminus\{0\}$. Como $N$ no es finitamente generado, $\langle f_1\rangle\varsubsetneq N$. Sea $f_2\in N\setminus\langle f_1\rangle$. Como $N$ no es finitamente generado, $\langle f_1,f_2\rangle\varsubsetneq M$. Inductivamente, generamos una sucesión $\langle f_1\rangle\varsubsetneq\langle f_1,f_2\rangle\varsubsetneq\dots\varsubsetneq\langle f_1,\dots,f_n\rangle\varsubsetneq\dots$ de $A$-módulos no estacionaria, contradiciendo la hipótesis.
 
-($3\Rightarrow 2$) Sea $\Sigma$ un conjunto no vacío de submódulos de $M$, ordenados por la inclusión. Tomemos $\{N_i:i\in I\}$ una cadena de $\Sigma$. Definiendo $N^{\ast}=\bigcup_{i\in I}N_i\subset M$. Por hipótesis, $N^{\ast}$ es finitamente generado. Sean $y_1,\dots,y_l$ sus generadores. Supongamos que cada $y_j\in N_{i_j}$. Sea $N_k=\operatorname{max}\{N_{i_1},\dots,N_{i_l}\}$. Como $\{N_i\}$ es una cadena, necesariamente se tiene $N^{\ast}=N_k$. 
+($3\Rightarrow 1$) Sea $\Sigma$ un conjunto no vacío de submódulos de $M$, ordenados por la inclusión. Tomemos $\{N_i:i\in I\}$ una cadena de $\Sigma$. Definiendo $N^{\ast}=\bigcup_{i\in I}N_i\subset M$. Por hipótesis, $N^{\ast}$ es finitamente generado. Sean $y_1,\dots,y_l$ sus generadores. Supongamos que cada $y_j\in N_{i_j}$. Sea $N_k=\operatorname{max}\{N_{i_1},\dots,N_{i_l}\}$. Como $\{N_i\}$ es una cadena, necesariamente se tiene $N^{\ast}=N_k$. 
 
 Hemos visto que toda cadena de $\Sigma$ tiene máximo. Por el Lema de Zorn, $\Sigma$ tiene elemento maximal.
 \end{proof}
@@ -39,7 +39,7 @@ De este resultado se siguen las siguientes consecuencias.\begin{enumerate}
     \item Sea $M$ un $A$-módulo finitamente generado, donde $A$ es un anillo noetheriano. Entonces $M$ es un $A$-módulo noetheriano. En efecto, si $r$ es un número de generadores de $M$, por ser $A$ noetheriano, $A^{(r)}$ es noetheriano tambíen y se genera la sucesión exacta $A^{(r)}\rightarrow M\rightarrow 0$.
 \end{enumerate}
 \end{remark}
-El Teorema de la base de Hilbert del primer capítulo nos garantiza que si $A$ es un anillo noetheriano, $A[X]$ es también noetheriano. Inductiavente se ve que $A[X_1,\dots,X_n]$ es también noetheriano. 
+El Teorema de la base de Hilbert del primer capítulo nos garantiza que si $A$ es un anillo noetheriano, $A[X]$ es también noetheriano. Inductiavente se ve que $A[X_1,\dots,X_n]$ es también noetheriano.
 
 A su vez, si recordamos la definición de $A$-álgebra finitamente generada del primer capítulo, se tiene que existe un homomorfismo suprayectivo de $A[X_1,\dots,X_n]$ en $B$, donde $B$ es la $A$-álgebra y $n$ es el número de generadores de $B$ como $A$-álgebra. Entonces, si $A$ es un anillo noetheriano, cualquier $A$-álgebra finitamente generada es un anillo noetheriano.
 
