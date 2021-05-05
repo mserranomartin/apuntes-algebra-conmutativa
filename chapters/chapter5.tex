@@ -174,5 +174,20 @@ $$\begin{array}{rcl}
 \end{array}.$$
 Es claro que $\ker(f)=\bigcap_{i=1}^r N_i$, luego $(N_2\cap\cdots\cap N_r)/N\hookrightarrow M/{N_1}$ nos da la igualdad $\Ass_A((N_2\cap\cdots\cap N_r)/N)=\set{\p_1}.$ Esto es así porque tenemos el contenido $\subset$ y además $\Ass_A((N_2\cap\cdots\cap N_r)/N)\neq\varnothing$ por ser la intersección irredundante. Más aún, como $(N_2\cap\cdots\cap N_r)/N$ es un submódulo de $M/N$, $\set{\p_1}\subset\Ass_A(M/N).$ Repitiendo este argumento para cada $i\in\set{1,\dots,r}$ podemos concluir $\set{\p_1,\dots,\p_r}\subset\Ass_A(M/N).$
 \end{proof}
+\begin{theorem}
+Sea $A$ un anillo noetheriano y sea $M$ un $A$-módulo finitamente generado.\begin{enumerate}
+    \item Dado $N\subset M$ un submódulo de $M$ $\p$-primario, Definimos
+    $$\begin{array}{rrcl}
+	\nu:&M&\longrightarrow&M_{\p}\\
+	&x&\longmapsto&\frac{x}{1}\\ \end{array}$$ Entonces, $N_{\p}\subset M_{\p}$ y $\nu^{-1}(N_{\p})=N$.
+	\item Sea $N\subset M$ y sea $N=\cap_{i=1}^rQ_i$ una descompsición irredundante ideales $\p_i$-primarios para cada $i=1,\dots,r$, cumpliéndose que $\Ass_A(M/N)=\{\p_1,\dots,\p_r\}$. Supongamos que $\p_1$ es un ideal minimal en $\Ass_A(M/N)$ y sea $\nu:M\longrightarrow M_{\p}$ definida como en el apartado anterior. Entonces, $Q_1=\nu^{-1}(N_{\p_1})$.
 
+	Esto significa que los ideales primarios que aparecen en la descomposición irredundante de un submódulo de $M$ y corresponden a ideales primos asociados minimales están unívocamente determinados.
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+\textit{1.)} Teniendo en cuenta que $N\subset M$ implica $N_{\p}\subset N_{\p'}$, se cumple $N\subset N':=\nu^{-1}(N_{\p})=\{m\in M:\exists\lambda\notin\p, \lambda m\in N\}$. Claramente, $N'$ es un submódulo de $M$ y $N_{\p}'=N_{\p}$.
+
+$\faktor{N'}{N}\subset\faktor{M}{N}$, luego $\Ass_A(\faktor{N'}{N})\subset\Ass_A(\faktor{M}{N})=\p\cap\operatorname{sop}(\faktor{N'}{N})$. Como $N_{\p}'=N_{\p}$, $(\faktor{N'}{N})_{\p}=0$. Entonces, $\p\notin\operatorname{sop}(\faktor{N'}{N})$. Se tiene por tanto $\Ass_A(\faktor{N'}{N})=\varnothing$ y $\faktor{N'}{N}=\{0\}$. Es decir, $N=N'$.
+\end{proof}
 \end{document}
