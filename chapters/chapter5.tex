@@ -174,20 +174,59 @@ $$\begin{array}{rcl}
 \end{array}.$$
 Es claro que $\ker(f)=\bigcap_{i=1}^r N_i$, luego $(N_2\cap\cdots\cap N_r)/N\hookrightarrow M/{N_1}$ nos da la igualdad $\Ass_A((N_2\cap\cdots\cap N_r)/N)=\set{\p_1}.$ Esto es así porque tenemos el contenido $\subset$ y además $\Ass_A((N_2\cap\cdots\cap N_r)/N)\neq\varnothing$ por ser la intersección irredundante. Más aún, como $(N_2\cap\cdots\cap N_r)/N$ es un submódulo de $M/N$, $\set{\p_1}\subset\Ass_A(M/N).$ Repitiendo este argumento para cada $i\in\set{1,\dots,r}$ podemos concluir $\set{\p_1,\dots,\p_r}\subset\Ass_A(M/N).$
 \end{proof}
-\begin{theorem}
-Sea $A$ un anillo noetheriano y sea $M$ un $A$-módulo finitamente generado.\begin{enumerate}
-    \item Dado $N\subset M$ un submódulo de $M$ $\p$-primario, Definimos
-    $$\begin{array}{rrcl}
-	\nu:&M&\longrightarrow&M_{\p}\\
-	&x&\longmapsto&\frac{x}{1}\\ \end{array}$$ Entonces, $N_{\p}\subset M_{\p}$ y $\nu^{-1}(N_{\p})=N$.
-	\item Sea $N\subset M$ y sea $N=\cap_{i=1}^rQ_i$ una descompsición irredundante ideales $\p_i$-primarios para cada $i=1,\dots,r$, cumpliéndose que $\Ass_A(M/N)=\{\p_1,\dots,\p_r\}$. Supongamos que $\p_1$ es un ideal minimal en $\Ass_A(M/N)$ y sea $\nu:M\longrightarrow M_{\p}$ definida como en el apartado anterior. Entonces, $Q_1=\nu^{-1}(N_{\p_1})$.
 
-	Esto significa que los ideales primarios que aparecen en la descomposición irredundante de un submódulo de $M$ y corresponden a ideales primos asociados minimales están unívocamente determinados.
-\end{enumerate}
+\begin{definition}
+	De forma análoga a como hemos definido el anulador de un elemento $x\in M$ para cierto $A$-módulo $M$, definimos
+	$$\operatorname{anul}_A(M):=\{\lambda\in A\ :\ \lambda x=0_M,\ \forall\ x\in M\}.$$
+\end{definition}
+
+Se verifica que $\anul_A M$ es un ideal de $A$. Veamos ahora la relación de contenido que existe entre $\supp M$ y $V(\anul_A M).$ Sea $\p\subset A$ un ideal primo y supongamos que existe $\lambda\in\anul_A M\setminus\p$; por ser así, para todo $x\in M$ se tendría $\lambda x=0_M$, es decir, $\frac{x}{1}=0_{M_\p}$ y $\p\notin\supp M.$ Tras esto tenemos que
+$$\supp M\subset V(\anul_A M)=\{\p\subset A\ :\ \p\supset\anul_A M\}.$$
+Más aún, si $M$ es finitamente generado, se tiene la igualdad. Para ver esto, tomemos $\p\notin\supp M$, es decir, $M_\p=\{0\}.$ Sean $x_1,\dots,x_s$ los generadores de $M$, por la igualdad $M_\p=\{0\}$ tenemos que existe $\lambda_i\notin\p$ para cada $i\in\{1,\dots,s\}$ de forma que $\lambda_i x_i=0_M.$ Definiendo $\lambda:=\prod_{i=1}^s\lambda_i,$ $\lambda\in\anul_A M$ pero $\lambda\notin\p$; es decir, $\anul_A M\not\subset\p$ y $\supp M\supset V(\anul_A M)=\{\p\subset A\ :\ \p\supset\anul_A M\}.$
+
+\begin{lemma}
+	Sea $A$ un anillo noetheriano y $\p\in\supp M$ minimal en $\supp M$. Bajo estas hipótesis, $\p\in\Ass_A M.$
+\end{lemma}
+\begin{proof}
+	Tomemos $\p\in\supp M.$ Ya sabemos $A_\p$ es noetheriano por serlo $A.$ En este caso, nuestro conjunto multiplicativamente cerrado es $A\setminus\p$ y por esto, para cada $\p'\in\Spec A$, se tiene
+	$$\p'\cap S=\varnothing\Leftrightarrow \p'\subset\p.$$
+	Así, resulta la biyección
+	$$\Ass_{A_\p}(M_\p)\leftrightarrow\Ass_A(M)\cap\{\p'\in\operatorname{Spec(A):\p'\subset\p}\}.$$
+	Sea ahora $\p$ verificando las hipótesis del lema.  Como $M_\p\neq\{0\}$, $\Ass_{A_\p} M_\p\neq\varnothing$ y existe $\p'\in \Ass_A(M)\cap\{\p'\in\operatorname{Spec(A):\p'\subset\p}\}$ por lo que acabamos de ver. De esta forma, la minimalidad de $\p$ en $\supp M$ nos permite concluir que $\p\subset\p'$ y $\p\in \Ass_A M.$
+\end{proof}
+
+\begin{theorem}
+	Sea $A$ un anillo noetheriano y sea $M$ un $A$-módulo finitamente generado.\begin{enumerate}
+		\item Dado $N\subset M$ un submódulo de $M$ $\p$-primario, Definimos 
+		$$\begin{array}{rrcl}
+		\nu:&M&\longrightarrow&M_{\p}\\
+		&x&\longmapsto&\frac{x}{1}\\ \end{array}$$ Entonces, $N_{\p}\subset M_{\p}$ y $\nu^{-1}(N_{\p})=N$.
+		\item Sea $N\subset M$ y sea $N=\cap_{i=1}^rQ_i$ una descompsición irredundante ideales $\p_i$-primarios para cada $i=1,\dots,r$, cumpliéndose que $\Ass_A(M/N)=\{\p_1,\dots,\p_r\}$. Supongamos que $\p_1$ es un ideal minimal en $\Ass_A(M/N)$ y sea $\nu:M\longrightarrow M_{\p}$ definida como en el apartado anterior. Entonces, $Q_1=\nu^{-1}(N_{\p_1})$.
+		
+		Esto significa que los ideales primarios que aparecen en la descomposición irredundante de un submódulo de $M$ y corresponden a ideales primos asociados minimales están unívocamente determinados.
+	\end{enumerate}
 \end{theorem}
 \begin{proof}
-\textit{1.)} Teniendo en cuenta que $N\subset M$ implica $N_{\p}\subset N_{\p'}$, se cumple $N\subset N':=\nu^{-1}(N_{\p})=\{m\in M:\exists\lambda\notin\p, \lambda m\in N\}$. Claramente, $N'$ es un submódulo de $M$ y $N_{\p}'=N_{\p}$.
+	\textit{1.)} Teniendo en cuenta que $N\subset M$ implica $N_{\p}\subset M_{\p}$, se cumple $N\subset N':=\nu^{-1}(N_{\p})=\{m\in M:\exists\lambda\notin\p, \lambda m\in N\}$. Claramente, $N'$ es un submódulo de $M$ y $N_{\p}'=N_{\p}$: dado un elemento $\frac{m}{t}\in {N_\p}'$, existe $\lambda\notin\p$ tal que $\lambda x\in N$; así se tiene $\frac{m}{t}=\frac{\lambda m}{\lambda t}\in N_\p$ y ${N_\p}'\subset N'.$
+	
+	Por otro lado, tenemos que $N'/N\subset M/N$ es un submódulo y con ello $\Ass_A(N'/N)\subset\Ass_A(M/N)=\{p\}.$ Además, sabemos que $\Ass_A(N'/N)\subset\supp\{(N'/N)\}$, es decir,
+	$$\Ass_A(N'/N)\subset\{p\}\cap\supp(N'/N).$$
+	Ahora bien, como ${N_\p}'=N_\p$, se tiene que $(N'/N)_\p=\{0\}$, o lo que es lo mismo $\p\notin\supp(N'/N).$ Así, $\Ass_A(N'/N)=\varnothing$ y $N'/N=\{0_{M/N}\}$ con lo que $N'=N.$
+	
+	\textit{2.)} Para este segundo apartado, veamos que el homeomorfismo $\nu_1:M\longrightarrow M_{\p_1}$ conserva las intersecciones. Sean $N'$ y $N''$ submódulos de $M$. La inclusión $(N'\cap N'')_{\p_1}\subset {N_{\p_1}}'\cap{N_{\p_1}}''$ es clara. Veamos la inclusión $\supset.$ Dado un elemento $\omega\in {N_{\p_1}}'\cap{N_{\p_1}}''$, existen $n'\in N'$, $n''\in N''$ y $t,s\notin\p_1$ tales que $\omega=\frac{n'}{s}=\frac{n''}{t}.$ Por esto, también existe $\lambda\notin\p_1$ tal que $\lambda tn'=\lambda sn''=:\eta$; es decir, $\eta\in N'\cap N''$ y $\omega=\frac{\eta}{\lambda ts}.$ Es por esto que, si $N=\cap_{i=1}^r Q_i$, entonces $N_{\p_1}=\cap_{i=1}^r(Q_i)_{\p_1}.$ 
+	
+	Comprobemos que además $(Q_i)_{\p_1}=M_{\p_1}$ siempre que $i\neq 1.$ De nuevo, atendamos a la biyección
+	$$\Ass_{A_{\p_1}}((M/Q_i)_{\p_1})\leftrightarrow\Ass_A(M/Q_i)\cap\{\p'\in\operatorname{Spec(A):\p'\subset\p}\}.$$
+	Como $\Ass_A(M/Q_i)=\{\p_i\}$ y $\p_j\not\subset\p_1$, $\Ass_A{A_{\p_1}}((M/Q_i)_{\p_1})=\varnothing$ y $(Q_i)_{\p_1}=M_{\p_1}.$ Por 1), $\nu_1^{-1}(Q_1)=Q_1$ y tenemos $Q_1=\nu_1^{-1}(N_{\p_1}).$
+\end{proof}
 
-$\faktor{N'}{N}\subset\faktor{M}{N}$, luego $\Ass_A(\faktor{N'}{N})\subset\Ass_A(\faktor{M}{N})=\p\cap\operatorname{sop}(\faktor{N'}{N})$. Como $N_{\p}'=N_{\p}$, $(\faktor{N'}{N})_{\p}=0$. Entonces, $\p\notin\operatorname{sop}(\faktor{N'}{N})$. Se tiene por tanto $\Ass_A(\faktor{N'}{N})=\varnothing$ y $\faktor{N'}{N}=\{0\}$. Es decir, $N=N'$.
+
+\begin{proposition}
+	Sea $A$ un anillo noetheriano, $M$ un $A$-módulo y $N\subset M$ un submódulo de $M$ tal que $N=\cap_{i=1}^rN_i$ es una descomposición en submódulos primarios tal que $\Ass_A(M/N_i)=\{\p_i\}$ para cada $i=1,\dots,r$. Sea $S\subset A$ un conjunto multiplicativamente cerrado. Entonces, para cada $i=1,\dots,r$, $S^{-1}N_i$ es un $S^{-1}$-submódulo primario de $S^{-1}M$ si y solo si $S\cap\p_i=\varnothing$. En el caso contrario, $S^{-1}N_i=S^{-1}M$. Concretamente $S^{-1}N=\bigcap_{i=1}^rS^{-1}N_i$ es una descomposición primaria de $S^{-1}N$ como $S^{-1}A$-submódulo de $S^{-1}M.$
+\end{proposition}
+\begin{proof}
+	Como $A$ es noetheriano, $\faktor{S^{-1}M}{S^{-1}N_i}=S^{-1}(\faktor{M}{N_i})$. Supongamos que es distinto de cero. Esto es equivalente a que $\Ass_{S^{-1}A}(S^{-1}(\faktor{M}{N_i})\neq\varnothing.$ Utilizando la biyección que hay entre$$\Ass_{S^{-1}A}(S^{-1}(\faktor{M}{N_i})\longleftrightarrow\Ass_A(\faktor{M}{N_i})\cap\{\p:\p\cap S=\varnothing\}$$tenemos la primera afirmación. Esto es así porque, si $N_i$ es $\p_i$-primario, $\Ass_A(M/N_i)=\{\p_i\}$ y o bien $\p_i\cap S=\varnothing$ o bien $\p_i\cap S\neq\varnothing$; es decir, o bien $S^{-1}N_i$ es $S^{-1}A$-submódulo primario de $S^{-1}M$ o bien $S^{-1}N_i=S^{-1}M.$
+	
+	La segunda se sigue de que el funtor $S^{-1}$ conserva intersecciones de módulos.
 \end{proof}
 \end{document}
