@@ -205,6 +205,17 @@ Más aún, si $M$ es finitamente generado, se tiene la igualdad. Para ver esto, 
 		
 		Esto significa que los ideales primarios que aparecen en la descomposición irredundante de un submódulo de $M$ y corresponden a ideales primos asociados minimales están unívocamente determinados.
 	\end{enumerate}
+
+\begin{theorem}
+	Sea $A$ un anillo noetheriano y sea $M$ un $A$-módulo finitamente generado.\begin{enumerate}
+		\item Dado $N\subset M$ un submódulo de $M$ $\p$-primario, Definimos 
+		$$\begin{array}{rrcl}
+		\nu:&M&\longrightarrow&M_{\p}\\
+		&x&\longmapsto&\frac{x}{1}\\ \end{array}$$ Entonces, $N_{\p}\subset M_{\p}$ y $\nu^{-1}(N_{\p})=N$.
+		\item Sea $N\subset M$ y sea $N=\cap_{i=1}^rQ_i$ una descompsición irredundante ideales $\p_i$-primarios para cada $i=1,\dots,r$, cumpliéndose que $\Ass_A(M/N)=\{\p_1,\dots,\p_r\}$. Supongamos que $\p_1$ es un ideal minimal en $\Ass_A(M/N)$ y sea $\nu:M\longrightarrow M_{\p}$ definida como en el apartado anterior. Entonces, $Q_1=\nu^{-1}(N_{\p_1})$.
+		
+		Esto significa que los ideales primarios que aparecen en la descomposición irredundante de un submódulo de $M$ y corresponden a ideales primos asociados minimales están unívocamente determinados.
+	\end{enumerate}
 \end{theorem}
 \begin{proof}
 	\textit{1.)} Teniendo en cuenta que $N\subset M$ implica $N_{\p}\subset M_{\p}$, se cumple $N\subset N':=\nu^{-1}(N_{\p})=\{m\in M:\exists\lambda\notin\p, \lambda m\in N\}$. Claramente, $N'$ es un submódulo de $M$ y $N_{\p}'=N_{\p}$: dado un elemento $\frac{m}{t}\in {N_\p}'$, existe $\lambda\notin\p$ tal que $\lambda x\in N$; así se tiene $\frac{m}{t}=\frac{\lambda m}{\lambda t}\in N_\p$ y ${N_\p}'\subset N'.$
@@ -228,5 +239,40 @@ Más aún, si $M$ es finitamente generado, se tiene la igualdad. Para ver esto, 
 	Como $A$ es noetheriano, $\faktor{S^{-1}M}{S^{-1}N_i}=S^{-1}(\faktor{M}{N_i})$. Supongamos que es distinto de cero. Esto es equivalente a que $\Ass_{S^{-1}A}(S^{-1}(\faktor{M}{N_i})\neq\varnothing.$ Utilizando la biyección que hay entre$$\Ass_{S^{-1}A}(S^{-1}(\faktor{M}{N_i})\longleftrightarrow\Ass_A(\faktor{M}{N_i})\cap\{\p:\p\cap S=\varnothing\}$$tenemos la primera afirmación. Esto es así porque, si $N_i$ es $\p_i$-primario, $\Ass_A(M/N_i)=\{\p_i\}$ y o bien $\p_i\cap S=\varnothing$ o bien $\p_i\cap S\neq\varnothing$; es decir, o bien $S^{-1}N_i$ es $S^{-1}A$-submódulo primario de $S^{-1}M$ o bien $S^{-1}N_i=S^{-1}M.$
 	
 	La segunda se sigue de que el funtor $S^{-1}$ conserva intersecciones de módulos.
+\end{proof}
+
+Comparemos ahora las dos definiciones de \textit{primario} que tenemos hasta ahora.
+
+\begin{proposition}
+	Sean $A$ un anillo noetheriano y $M$ un $A$-módulo (resp. $A$-módulo finitamente generado).
+	\begin{enumerate}
+		\item Un submódulo $N\subset M$ es $\p$-primario si, y sólo si, se verifica la siguiente propiedad: si $a\in A$ es un divisor de cero en $M/N$, entonces $a$ es \textit{localmente nilpotente}, esto es, para todo $x\in M$ existe $n\in\N$ tal que $a^nx\in N$ (resp. existe $n\in\N$ tal que $a^nM\subset N$).
+		\item Un ideal $\af$ es un submódulo de $A$ $\p$-primario en el sentido definido en este capítulo si, y sólo si, $\af$ es un ideal $\p$-primario en el sentido de la primera definición.
+	\end{enumerate}
+\end{proposition}
+
+\begin{proof} \textit{1)} ($\Rightarrow$)
+	Sea $\Ass_A(M/N)=\{\p_0\}.$ Tenemos que
+	$$\Div(M/N)=\bigcup_{\p\in\Ass_A(M/N)}\p=\p_0,$$
+	por tanto $a\in\p_0.$ Sea $x\in M/N$ y denotemos $N'=\langle\overline{x}\rangle=(\langle x\rangle +N)/N\neq\varnothing.$ Como $\Ass_A(N'/N)=\{\p_0\}$, se da la igualdad.
+	
+	Veamos que $\min(\supp(N'/N))=\min(V(\anul_A(N'/N)))=\min(\Ass_A(N'/N)).$ Para comprobarlo, atendamos en primer lugar a la igualdad
+	$$\anul_A(N'/N)=\bigcap_{\overline{x}\in N'/N}\anul_A(\overline{x}).$$
+	Si $\lambda\in A\setminus\p_0$, entonces $\lambda\notin\anul_A(\overline{x})$ donde $\overline{x}\in N'/N$ es tal que $\p_0=\anul_A(\overline{x}).$ Así, $\lambda\notin\anul_A(N'/N)$ y para todo $\p\in \min(V(\anul_A(N'/N)))$ se tiene $\lambda\notin\p.$ Concluimos con esto que $\p_0\subset\p$ y, por la minimalidad de $\p$, $\p=\p_0.$ 
+	
+	Por otra parte, sea $\p\in\supp (N'/N)$ minimal. Sabemos que $\p\in V(\anul_A (N'/N)).$ De forma general, supongamos que existe $\p'\in V(\anul_A(N'/N))$ tal que $\p'\subsetneq\p$, es decir, $\p\notin\min(V(\anul_A(N'/N))).$ Si esto ocurre, necesariamente se tiene $(N'/N)_{\p'}=\{0\}$ pues, en caso contrario, $\p'\in\supp (N'/N)$ y entonces $\p=\p'.$ Ahora bien, de ser eso así, para todo $t\in A\setminus\p'$ y todo $\overline{x}\in N'/N$ se verificaría $t\overline{x}=0_{(N'/N)}$; es decir, se tendría $A\setminus\p'\subset\anul_A(N'/N)\subset\p'$ y $A\setminus\p'=\varnothing$ o lo que es lo mismo $\p'=A$: un absurdo.
+	
+	Con todo, como $\varnothing\neq\Ass_A(N'/N)\subset\supp(N'/N)$, resulta la cadena de igualdades que buscábamos. Es por esto que $\sqrt{\anul_A (N'/N)}=\p_0$ y existe $n\in\N$ tal que $a^n\in\anul_A(N'/N)$, es decir, $a^n\overline{x}=0_{N'/N}$ para toda $\overline{x}\in N'/N.$
+	
+	Para concluir, si $M$ es finitamente generado, digamos por $\{x_1,\dots,x_s\}$, aplicando lo anterior tenemos que existen $n_i\in\N$ de forma que $a^{n_i}x_i\in N.$ Basta considerar $n:=\max\{n_i\}$: dado $m=\sum_{i=1}^s\lambda_ix_i$, se tiene
+	$$a^nm=\sum_{i=1}^sa^n(\lambda_i x_i)=\sum_{i=1}^s\lambda_i(a^n x_i)\in N.$$
+	
+	($\Leftarrow$) Definamos $\af:=\{a\in A\ :\ \forall\ x\in M\ \exists\ n\in\N, a^nx\in N\}.$ Se comprueba que $\af$ es un ideal de $A.$ Si $\p\in\Ass_A(M/N)$, entonces $\p\subset\Div(M/N)$ y $\Div(M/N)\subset\af$ por hipótesis. Dado $\p\in\Ass_A(M/N)$ es $\p=\anul_A(x+N)$ para algún $x\in M$ y, si $a\in\af$, existe $n\in\N$ tal que $a^nx\in N$, luego $a\in\p.$ Así, $\Ass_A(M/N)=\{\af\}.$
+	
+	\textit{2)} En ambos casos vamos a hacer uso de la caracterización que acabamos de probar.
+	
+	($\Rightarrow$) Veamos que $\af$ es $\p$-primario en el sentido original. En primer lugar, veamos que es primario. Sea $xy\in\af$ y supongamos que $x\notin\af.$ Por hipótesis, $\overline{y}\in\af$ es divisor de cero en $A/\af$ y, por lo tanto, existe $n\in\N$ tal que $\overline{1_A}\overline{y}^n=0_{A/\af}$, es decir, $y^n\in\af.$ Veamos que $\af$ es concretamente $\p$-primario. Tenemos que $\p=\anul_A(\overline{x})$ para cierto $\overline{x}\in A/\af$ y $\Ass_A(A/\af)=\{\p\}$. Dado $a\in\sqrt{\af}$, existe $n\in\N$ tal que $a^n\in\af$; así, $a^n\overline{x}=\overline{a^nx}=0_{A/\af}$ y $a\in\p.$ Para el otro contenido, si $a\in\p$, entonces $a\in\Div(A/\af)$ y existe $n\in\N$ tal que $a^n\in\af.$
+	
+	($\Leftarrow$) Dado $a\in\Div(A/\af)$, existe $\overline{x}\in A/\af$ tal que $a\overline{x}=0_{A/\af}$ y $ax\in\af.$ Ahora, $x\in\af$ o existe $n\in\N$ tal que $a^n\in\af.$ En el primer caso, $a^nx\in\af$ para cada $n\in\N$ y, en el segundo, para todo $y\in A$ se tiene $a^ny\in\af.$ De esta forma, para cada $y\in A$ existe $n\in\N$ tal que $a^ny\in\af.$
 \end{proof}
 \end{document}
