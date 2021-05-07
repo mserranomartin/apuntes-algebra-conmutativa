@@ -252,10 +252,97 @@ y, además, se desprende que $s|p_{r+1}.$
 Con todo, definiendo $\widetilde{\operatorname{h}}(T):=\sum_{i=1}^r\left[s^ip_0-\sum_{k=1}^is^{i-k}p_k\right]T^i$ tenemos que $(sT-1)\widetilde{\operatorname{h}}(T)=\operatorname{p}(T)$ y $\operatorname{p}\in\langle sT-1\rangle,$ es decir, si $\operatorname{p}\in A[T]$ verifica $\operatorname{ev}_{\frac{1}{s}}\circ\ i(\operatorname{p})=0_{S^{-1}A},$ entonces $\operatorname{p}\in \langle sT-1\rangle$ y $\ker(\operatorname{ev}_{\frac{1}{s}}\circ\ i)\subset\langle sT-1\rangle.$
 
 Podemos concluir así por el Primer Teorema de Isomorfía que $S^{-1}A\cong A[T]/\langle sT-1\rangle.$
+%
+% \paragraph{Ejercicio 18}
+% \textit{(i)} Para todo $x,y \in S_0$ se tiene $xy\in S_0$. Si no, existe $x \in A$ tal que $0 = xyz = x(yz)$ con lo que $x\in \Div_0$, absurdo. Por otro lado, $0\not \in S_0$ obviamente, y $1 \in S_0$ porque apra todo $a\neq 0$ se tiene $1\cdot a = a \neq 0$.
+%
+% \textit{(ii)} La aplicación $A \to S_0^{-1}A$ es inyectiva. Sea $x,y \in A$ tales que $\frac{x}{1} = \frac{y}{1}$ , entonces existe $s\in S_0$
+%
+% \paragraph{Ejercicio 19}
+% Supongamos que $S^{-1}A$ no es un DFU. Entonces existe un $\frac{x}{s}$ con $x,s\in A$ que no es una unidad ni es nulo tal que
+% $$
+% \frac{x}{s} = \frac{x_1}{s_1} \dots \frac{x_n}{s_n} = \frac{y_1}{t_1} \dots \frac{y_m}{t_m}
+% $$
+% donde los $\frac{x_i}{s_i}$ y los $\frac{y_j}{t_j}$ son irreducibles en $S^{-1}A$, y $\frac{x_1}{s_1}$ y $\frac{y_1}{t_1}$ no son asociados. En particular, $x \neq 0$ porque como $A$ es DI $\delta_S$ es inyectiva,  y no existe $y \in A$ tal que $xy \in S$.
+%
+% Esto quiere decir que para toda unidad del anillo de fracciones $\frac{z}{w}$
+%
+% De la igualdad $(1)$ y teniendo en cuenta que $A$ es DI y $0 \not \in S$ sacamos que
+% $$
+% \begin{cases}
+% \prod_{i}x_i \prod_jt_j = \prod_j y_j \prod_is_i \\
+% x\prod_is_i = s\prod_i x_i \\
+% x \prod_jt_j = s\prod_j y_j
+% \end{cases}
+% $$
 
-\paragraph{Ejercicio 18}
-\textit{(i)} Para todo $x,y \in S_0$ se tiene $xy\in S_0$. Si no, existe $x \in A$ tal que $0 = xyz = x(yz)$ con lo que $x\in \Div_0$, absurdo. Por otro lado, $0\not \in S_0$ obviamente, y $1 \in S_0$ porque apra todo $a\neq 0$ se tiene $1\cdot a = a \neq 0$.
+\paragraph{Ejercicio 17}
+$(i)\Rightarrow (iii)$. Si $x = 0$ es trivial. Sea $x\neq 0$ tal que $x\in \mathfrak{p}_0$. Supongamos que para todo $y\in  A$, si $xy = 0$ entonces $y \in \mathfrak{p}_0$. Entonces $\operatorname{anul}_A(x) = \{y \in A \vert \, xy = 0_A\} \subsetneq \mathfrak{p}_0$ contra la minimalidad de $\mathfrak{p}_0$.
+El contenido es estricto porque $x \not \in \operatorname{anul}_A(x)$ ya que en tal caso, $x \in \mathfrak{N}_A = \langle 0 \rangle$, pero $x \neq 0$.
+Entonces ha de existir $y \in A$ tal que $xy = 0$ e $y\not \in \mathfrak{p}_0$.
 
-\textit{(ii)} La aplicación $A \to S_0^{-1}A$ es inyectiva. Sea $x,y \in A$ tales que $\frac{x}{1} = \frac{y}{1}$ , entonces existe $s\in S_0$
+$(iii)\Rightarrow (ii)$. Sea cualquier $\frac{x}{s}\in \mathfrak{p}_0^e$, entonces $x \in \mathfrak{p}_0$ y por hipótesis existe un $y \not \in \mathfrak{p}_0$ con $xy = 0$. Entonces
+$$
+\frac{ 0 }{ 1 } = \frac{xy}{s} = \frac{x}{s} \frac{y}{1}
+$$
+pero $\frac{y}{1}$ es una unidad en $A_{\mathfrak{p}_0}$ por tanto $\frac{0}{1} = \frac{ x }{ s }$ y así $\mathfrak{p}_0^e = \langle \frac{0}{1} \rangle$. Y como el único ideal maximal es el nulo, $A_{\mathfrak{p}_0}$  es un cuerpo.
+
+$(ii)\Rightarrow (i)$. $A_{\mathfrak{p}_0}$  es un cuerpo si y solo si los únicos ideales son el nulo y el total. En particular, no hay ideales primos ``salvo el nulo''. Por la biyección existente entre los primos de  $A_{\mathfrak{p}_0}$  y los primos de $A$ contenidos en $\mathfrak{p}_0$, no hay ningún primo no nulo contenido en $\mathfrak{p}_0$ y así este es minimal.
+
+\paragraph{Ejercicio 20}
+
+Consideramos la aplicación
+\begin{align*}
+  \Phi: (A/\af)_{\mathfrak{p}/\af} &\longrightarrow A_\mathfrak{p}/\af^e\\
+  \frac{x+\af}{s+\af} &\longmapsto \frac{x}{s}+\af^e
+\end{align*}
+Veamos que está bien definida.
+$$
+\frac{x}{s}+ \af^e = \frac{y}{t}+\af^e \iff \frac{x}{s}-  \frac{y}{t}\in \af^e  \iff \frac{xt-ys}{st} = \frac{a}{s}
+$$
+con $a\in \af, u \not \in \mathfrak{p}$. Lo anterior se cumple si y solo si existe $w \not \in \mathfrak{p}$ tal que
+$$
+w ( ast - u(xt-ys)) = 0_A \underset{v = wu}{\iff}  v(xt-ys) = (wst)a \in \mathfrak{a} \iff$$
+$$
+\iff v(xt-ys) + \af = 0+\af  \iff  \frac{x+\af}{s+\af}= \frac{y+\af}{t+\af}
+$$
+Esto prueba también la inyectividad de la aplicación. La sobreyectividad es obvia.
+
+Por otra parte, la aplicación entre espectros la vemos como composición de dos biyecciones: la que da la extensión-contracción y la que da el teorema de la correspondencia
+$$
+\Spec((A/\af)_{\mathfrak{p}/\af}) 	\longleftrightarrow \left \{ \frac{\mathfrak{q}}{\af}\in \Spec(A/\af) \vert \frac{\mathfrak{q}}{\af} \subset \frac{\mathfrak{p}}{\af} \right\} \longleftrightarrow \left  \{ \mathfrak{q} \in \Spec(A) \vert \, \af \subset \mathfrak{q} \subset \mathfrak{p} \right\}
+$$
+
+\paragraph{Ejercicio 22}
+Hay un isomorfismo natural $S^{-1}(M'\oplus M) \cong S^{-1}M' \oplus S^{-1}M''$
+\begin{align*}
+S^{-1}(M'\oplus M) &\longrightarrow S^{-1}M' \oplus S^{-1}M''\\
+\frac{(m',m'')}{s} &\longmapsto  \left( \frac{m'}{s}, \frac{m''}{s} \right)
+\end{align*}
+
+cuya inversa es
+
+\begin{align*}
+S^{-1}M' \oplus S^{-1}M'' &\longrightarrow S^{-1}(M'\oplus M)\\
+\left( \frac{m'}{s}, \frac{m''}{t} \right) &\longmapsto \frac{(tm',sm'')}{st}
+\end{align*}
+
+Están ambas bien definidas.
+
+$$
+\frac{(m',m'')}{s} = \frac{(n',n'')}{t} \iff r[t(m',m'')-s(n',n'')] = (0,0) \iff
+$$
+$$
+\begin{cases}
+  r(tm'-sn') = 0\\ r(tm''-sn'') = 0
+\end{cases} \Rightarrow (\frac{m'}{s},\frac{m''}{s}) = (\frac{n'}{t},\frac{n''}{t} )
+$$
+
+Entonces si $\mathfrak{p}\in \operatorname{supp}(M)$
+$$
+M_\mathfrak{p} = 0 \iff (M'\oplus M)_\mathfrak{p} =\left  \{\frac{(0,0)}{1} \right\} \iff M'_\mathfrak{p} \oplus M''_\mathfrak{p} = \left \{\left (\frac{0}{1}, \frac{0}{1} \right) \right\}
+$$
+
+y así $\mathfrak{p}\in \operatorname{supp}(M') \cap \operatorname{supp}(M'')$.
 
 \end{document}
