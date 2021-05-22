@@ -1,0 +1,172 @@
+\documentclass[../main.tex]{subfiles}
+\begin{document}
+\section{Dependencia entera. Clausura entera.}
+\begin{definition}
+Sean $A\subset B$ dos anillos. Diremos que un elemento $x\in B$ es \textit{entero sobre $A$} si es raíz de un polinomio mónico con coeficientes en $A$, es decir, si satisface una ecuación de la forma
+\begin{equation}\label{eq:depent}
+    x^n+a_1x^{n-1}+\cdots+a_n=0
+\end{equation}
+donde $a_i\in A$ para toda $i\in\{1,\dots,n\}.$ Si todo $x\in B$ es entero sobre $A$, entonces decimos que $B$ es una \textit{extensión entera} de $A$
+\end{definition}
+
+\begin{definition}Diremos que un $A$-módulo $M$ es \textit{certificado} (\textit{faithful}) si, dado $a\in A\setminus\{0\}$, existe $x\in M$ ral que $ax\neq 0$, esto es, $\anul_A(M)=\{0\}.$
+\end{definition}
+
+\begin{proposition}\label{prop:entcarac}Las siguientes afirmaciones son equivalentes.
+\begin{itemize}
+    \item[i)] $x\in B$ es entero sobre $A.$
+    \item[ii)] $A[x]$ es un $A$-módulo finitamente generado.
+    \item[iii)] $A[x]$ está contenido en un subanillo $C$ de $B$ finitamente generado como $A$-módulo.
+    \item[iv)] Existe un $A[x]$-módulo certificado $M$ que es finitamente generado como $A$-módulo.
+\end{itemize}
+\end{proposition}
+\begin{proof}
+($i)\Rightarrow ii)$) Por \ref{eq:depent} tenemos
+$$x^{n+r}=-(a_1x^{n+r-1}+\cdots+a_nx^r)$$
+para toda $r\ge 0$, así, procediendo por inducción, tenemos que todas las potencias de $x$ pertenecen al $A$-módulo $\langle 1,x,\dots,x^{n-1}\rangle_A.$ De esta forma $A[x]$ está generado como $A$-módulo por $\{1,x,\dots,x^{n-1}\}.$
+
+($ii)\Rightarrow iii)$) Basta tomar $C=A[x].$
+
+($iii)\Rightarrow iv)$) Análogamente, basta tomar $M=C.$
+
+($iv)\Rightarrow i)$) Para esta implicación haremos uso del lema de Cayley-Hamilton. Sea $\phi:M\rightarrow M$, $m\mapsto xm$ y $\af:= A.$ Así, como $M$ es certificado, $\{0\}\neq xM\subseteq M$ y existen $a_i\in A$ de forma que
+$$\phi^n+a_1\phi^{n-1}+\cdots+a_n\equiv 0,$$
+es decir,
+$$x^n+a_1x^{n-1}+\cdots+a_n= 0.$$
+\end{proof}
+
+\begin{corollary}
+Sean $\{x_i\}_{i=1}^n\subset B$ elementos enteros sobre $A.$ Se tiene que el anillo $A[x_1,\dots,x_n]$ es un $A$-módulo finitamente generado.
+\end{corollary}
+
+\begin{proof}
+Para probar este resultado basta proceder por inducción sobre el número de elementos y aplicar el resultado anterior.
+\end{proof}
+
+\begin{corollary}
+El conjunto de los elementos enteros de $B$ sobre $A$ es un subanillo de $B$ que contiene a $A.$
+\end{corollary}
+
+\begin{proof}
+Denotemos por $C$ al conjunto definido en el corolario y tomemos $x,y\in C.$ Como acabamos de ver $A[x,y]$ es un $A$-módulo finitamente generado y, por lo tanto, $iii)$ de \ref{prop:entcarac} nos da que tanto $x\pm y$ como $xy$ son enteros sobre $A$: $A[x\pm y],A[xy]\subset A[x,y].$ 
+\end{proof}
+
+\begin{definition}
+El anillo $C$ definido en la prueba anterior se llama \textit{clausura entera} del anillo $A$ en $B$ y la denotamos por $\overline{A}^B.$ Si $A=\overline{A}^B$, $A$ se dice \textit{íntegramente cerrado} en $B$. Por otra parte, si $\overline{A}^B$, $B$ se dice \textit{entero sobre $A$}.
+\end{definition}
+
+\begin{corollary}[Transitividad de la dependencia entera] Si $A\subseteq B\subseteq C$ son anillos, $B$ es entero sobre $A$ y $C$ es entero sobre $B$, entonces $C$ es entero sobre $A.$
+\end{corollary}
+
+\begin{corollary}
+Sean $A\subseteq B$ anillos. $\overline{A}^B$ es íntegramente cerrado sobre $B.$
+\end{corollary}
+
+\begin{proposition}Sea $A\subseteq B$ una extensión entera.
+\begin{itemize}
+    \item[i)] Si $B$ es un cuerpo, entonces $A$ es un cuerpo.
+    \item[ii)] Si $A$ es un cuerpo y $B$ un dominio de integridad, entonces $B$ es un cuerpo.
+    \item[iii)] Sean $\q\in\Spec B$ y $\p:=\q\cap A.$ Se verifica que $A/\p\hookrightarrow B/\q$ es una extensión entera.
+    \item[iv)] Sea $S\subset A$ un conjunto mult. cerrado. El $S^{-1}A$-módulo $S^{-1}B$ es un anillo y $S^{-1}A\hookrightarrow S^{-1}B$ es una extensión entera.
+\end{itemize}
+\end{proposition}
+\begin{proof}
+\textit{(i)} Dado $a\in A\setminus\{0\}$, existe $b\in B $ tal que $ab=1.$ Además,
+$$b^n+a_1b^{n-1}+\cdots+a_n=0$$
+para ciertos $a_i\in A.$ Multiplicando la ecuación anterior por $a^n$ resulta:
+$$1+a_1a+\cdots+a_na^n=0\Longleftrightarrow a(-a_1-\cdots-a_na^{n-1})=1.$$
+
+\textit{(ii)} Sea  $b\in B\setminus\{0\}.$ De nuevo, tenemos una ecuación de la forma 
+$$b^n+a_1b^{n-1}+\cdots+a_n=0$$
+para ciertos $a_i\in A.$ Como $B$ es DI, se tiene $a_n\neq0.$ Por hipótesis existe $a\in A$ de forma que $aa_n=1$ y, multiplicando la ecuación por este elemento, obtenemos de forma análoga al caso anterior un inverso para elemento $b.$
+
+\textit{(iv)} Es claro que la aplicación es inyectiva. Sea $s\in S$ y $b\in B$ y una ecuación
+$$b^n+a_1b^{n-1}+\cdots+a_n=0$$
+para ciertos $a_i\in A.$ En $S^{-1}B$ multiplicamos por $\frac{1}{s^n}$ y tenemos la ecuación
+$$\frac{b^n}{s^n}+\frac{a_1}{s}\frac{b^{n-1}}{s^{n-1}}+\cdots+\frac{a_n}{s^n}=0.$$
+\end{proof}
+
+\begin{lemma}
+Sean $A\subset B$ una extensión entera y $\af\subset A$ un ideal. Se verifica la siguiente igualdad:
+$$\sqrt{\af B}=\{b\in B\ :\ \exists\ b^n+a_1 b^{n-1}+\cdots+a_{n-1}b+a_n=0,\ a_i\in\af\}.$$
+Además, $\sqrt{\af B}\cap A=\sqrt{\af}.$
+\end{lemma}
+\begin{proof}
+En primer lugar, si $b\in B$ verifica \ref{eq:depent}, $b^n\in\af B$ y $b\in\sqrt{\af B}.$
+
+Por otra parte, si $b\in\sqrt{\af B}$, para cierto $r\in\N$, $\{b_1,\dots,b_s\}\subset B$ y $\{\alpha_1,\dots,\alpha_s\}\subset\af$ de forma que
+$$b^r=\sum_{i=1}^sb_i\alpha_i.$$
+Los elementos $b_i$ son enteros sobre $A$; así, $C:=A[b_1,\dots,b_s]$ es un $A$-módulo finito que contiene a $b^r.$ Concretamente, $b^r\in\af C.$
+
+Consideremos ahora $\phi: C\rightarrow C$ definida por $c\mapsto b^r c.$ Claramente es un homomorfismo de $A$-módulos y su imagen está contenida en $\af C. $ De esta forma podemos aplicar Cayley-Hamilton resultando que existen $a_i\in\af$ tales que
+$$\phi^n+a_1\phi^{n-1}+\cdots+a_{n-1}\phi+a_n\equiv 0.$$
+Evaluando en $1\in C$ resulta
+$$(b^r)^n+a_1(b^r)^{n-1}+\cdots+a_{n-1}(b^r)+a_n= 0$$
+y tenemos lo que queríamos.
+
+Por último, si $x\in\sqrt{\af}$, existe $n\in\N$ tal que $x^n\in\af$, es decir, $x^n\in\sqrt{\af B}.$
+\end{proof}
+
+Dado un anillo A, si éste es dominio de integridad, su anillo de fracciones es concretamente un cuerpo de fracciones. Denotemos este cuerpo por $K_A.$
+
+\begin{definition}
+En las condiciones del lema anterior, se dice que los elementos $x\in\sqrt{\af B}$ dependen íntegramente del ideal $\af.$
+\end{definition}
+
+\begin{lemma}
+Todo DFU es íntegramente cerrado en su cuerpo de fracciones. Es decir
+$$A=\overline{A}^{K_A}=\{\frac{a_1}{a_2}\in K_A\ :\ \frac{a_1}{a_2}\text{ entero sobre }A\}.$$
+\end{lemma}
+
+\begin{remark}
+Todo anillo de polinomios sobre un cuerpo es cerrado sobre su cuerpo de fracciones.
+\end{remark}
+
+\begin{proposition}
+Sean $A$ y $B$ dominios de integridad, $A$ íntegramente cerrado sobre $B$ y $A\subset B$ extensión entera. Para cada $b\in B$, $b$ es algebraico sobre $K_A$ y su polinomio mínimo sobre $K_A$ tiene coeficientes en $A.$ Si además $b$ es entero sobre un ideal $\af$ de $A$, el polinomio mínimo de $b$ sobre $K_A$ tiene sus coeficientes sobre $\sqrt{\af}.$
+\end{proposition}
+
+\begin{proof}
+Como $b$ es entero sobre $A$, se verifica una cierta ecuación
+$$b^m+a_1b^{n-1}+\cdots+a_{n-1}b+a_n=0$$
+Así, $b$ es algebraico sobre $K_A$ y, si $P(T)\in K_A[T]$ es su polinomio mínimo y $Q(T):=T^n+a_1T^{n-1}+\cdots+a_{n-1}T+a_n$, $P(T)|Q(T)$ en $K_A[T].$
+
+Si $L\supset K_B$ es un cuerpo que contiene a $B$, donde $Q$ descompone en factores lineales, $P$ también tiene en $L$ sus raíces; serán por tanto elementos de $L$ enteros sobre $A.$ Por el teorema de las funciones simétricas elementales, los coeficientes de $P(T)$ son sumas y productos de elementos de $K_A$ enteros sobre $A.$ Como $A$ es íntegramente cerrado, $P(T)\in A[T].$
+
+De forma análoga, supongamos que $a_i\in\af$ y llamemos $C$ a la clausura íntegra de $A$ en $L.$ Todas las raíces de $Q(T)$, y por tanto las de $P(T)$, pertenecen a $\sqrt{\af C}.$ Así, los coeficientes de $P(T)$ son sumas y productos de elementos están en $A\cap\sqrt{\af C}=\sqrt{\af}.$
+\end{proof}
+
+\section{Teorema \textit{going-up}.}
+\begin{proposition}\label{prop:lying} Sea $A\subset B$ una extensión entera.
+\begin{itemize}
+    \item[i)] Dados $\q\in\Spec B$ y $\p:=\q\cap A$, $\q$ será maximal si, y sólo si, $\p$ es maximal.
+    \item[ii)] Dados $\q_1,\q_2\in\Spec B$, si $\q_1\subset\q_2$ y $\q_1\cap A=\q_2\cap A=\p$, entonces $\q_1=\q_2.$
+    \item[iii)] La contracción $\Spec B\rightarrow\Spec A$ es suprayectiva.
+\end{itemize}
+\end{proposition}
+
+\begin{proof}
+\textit{(i)} Si $\q$ es maximal, $B/\q$ es cuerpo y $A/\p$ también, es decir, $\p$ es maximal. Si $\p$ es maximal, como $B/\q$ es DI, $B/\q$ es cuerpo y $\q$ maximal.
+
+\textit{(ii)} Por proposición anterior, $B_\p$ es extensión entera sobre $A_\p.$ Tenemos que $\p^e$ es el único ideal maximal de $A_\p$, como $\q_1^e\subseteq \q_2^e$ y $\q_1^{ec}= \q_2^{ec}=\p$, el apartado anterior nos dice que $\q_1^e$ y $\q_2^e$ son maximales; es decir, $\q_1^e=\q_2^e.$ Así, $\q_1=\q_1^{ec}=\q_2^{ec}=\q_2.$
+
+\textit{(iii)} Como antes, $B_\p$ es entero sobre $A_\p$ y el diagrama INSERTAR DIAGRAMA es conmutativo. Sea $\mathfrak{n}$ un ideal maximal de $B_\p.$ Se tiene así que $\mathfrak{m}:=\mathfrak{n}\cap A_\p$ es maximal y, por lo tanto, $\mathfrak{m}=\p^e.$ Si $\q=\beta^{-1}(\mathfrak{n})$, entonces $\q$ es primo y $\q\cap A=\alpha^{-1}(\mathfrak{m})=\p$ por la conmutatividad del diagrama.
+\end{proof}
+
+\begin{theorem}[Going-up]
+Sea $A\subseteq B$ una extensión entera, $\p_0\subset\p_1$ primos de $A$ y $\q_0\in\Spec B$ tal que $\q_0\cap  A=\p_0.$ Entonces existe $\q_1\in\Spec B$ tal que $\q_0\subset\q_1$ tal que $\q_1\cap A=\p_1.$
+\end{theorem}
+
+\begin{proof}
+Sabemos que $A/\p_0\hookrightarrow B/\q_0$ es una aplicación inyectiva y una extensión entera. Aplicando \ref{prop:lying} existe $\q'\in\Spec {B/\p_0}$ que se contrae a $\p_1/\p_0.$ Así, el teorema de correspondencia nos da la existencia de cierto $\q_1\in\Spec B$ tal que $\q'=\q_1/\q_0$ y, además, $\q_1\cap A=\p_1.$
+\end{proof}
+
+\begin{definition}
+Dado un anillo $A$, $\sup\{r\in\N\ :\ \exists\ \p_0\supsetneq\p_1\supsetneq\cdots\supsetneq\p_r,\ \p_i\in\Spec A\}$ se denomina \textit{dimensión de Krull de $A$} y se denota por $\dimk A.$ Este valor es eventualmente infinito.
+\end{definition}
+
+\begin{corollary}
+Dada una extensión entera $A\subset B$, $\dimk A=\dimk B.$
+\end{corollary}
+
+\end{document}
