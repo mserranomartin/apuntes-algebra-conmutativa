@@ -1,0 +1,110 @@
+\documentclass[../main.tex]{subfiles}
+\begin{document}
+\section{Módulos de longitud finita y anillos artinianos}
+\begin{definition}
+Sea $M$ es un $A$-módulo. Decimos que $M$ es un $A$-módulo \textit{simple} si sus únicos submódulos son $\{0_M\}$ y $M.$
+\end{definition}
+
+\begin{remark}
+Si $M$ es un $A$-módulo simple $\forall m\in M\setminus\{0\}$, $\langle m\rangle=M$, entonces $A\overset{f}{\rightarrow} M$ definida como $1\mapsto m$ factoriza $A/\ker{f}\cong M.$ Como $M$ es simple, $\ker f$ es un ideal maximal.
+\end{remark}
+
+\begin{definition}
+Decimos que un $A$-módulo $M$ tiene \textit{longitud finita} si posee una cadena de submódulos
+$$\{0_M\}=M_0\subsetneq M_1\cdots M_{n-1}\subsetneq M_n=M$$
+tales que los cocientes $M_i/M_{i-1}$ son módulos simples. A dicha cadena la llamamos serie de composición. Si $M$ posee una serie de composición, llamamos \textit{longitud} de $M$, y lo denotamos por $l(M)$, a la menor serie de composición. Si $M$ no posee una serie de composición decimos que tiene longitud infinita $l(M)=\infty.$
+\end{definition}
+
+Esta noción mimetiza para módulos la idea de espacio vectorial de dimensión finita.
+
+\begin{theorem}
+Sea $M$ un $A$-módulo.
+\begin{itemize}
+    \item[i)] Si $N$ es un submódulo de $M$, $l(N)\le l(M)$ y si $l(M)<\infty$ y $N\subsetneq M$, entonces $l(N)<l(M).$
+    \item[ii)] Todas las series de composición de un módulo de longitud finita tienen el mismo cardinal, $l(M).$
+    \item[iii)] Si
+    $$0\rightarrow M'\overset{f}{\rightarrow} M\overset{g}{\rightarrow}M''\rightarrow 0$$
+    es una sucesión exacta de $A$-módulos, $l(M)<\infty$ si, y sólo si, $l(M'),l(M'')<\infty.$ Más aún, si se da cualquiera de esas condiciones se verifica 
+    $$l(M)=l(M')+l(M'').$$
+    \item[iv)] Si $l(M)<\infty$, cada cadena de submódulos de $M$ se puede refinar a una serie de descomposición.
+\end{itemize}
+\end{theorem}
+\begin{proof}
+Comenzamos con \textit{i)}. Supongamos que $l(M)=n<\infty$ y sea $\{0\}=M_0\subsetneq M_1\cdots M_{n-1}\subsetneq M_n=M$ una serie de composición. Intersecando con $N$ y borrando los términos redundantes, i.e., prescindiendo de $M_i\cap N$ sin $M_{i-1}\cap N=M_i\cap N$, obtenemos una serie de composición de $N.$ En efecto, si $M_i\cap N\neq M_{i-1}\cap N$, entonces como $(M_i\cap N)/(M_{i-1}\cap N)\hookrightarrow M_i/M_{i-1}$ y $M_i/M_{i-1}$ es simple, ambos coinciden. Así, si $n'$ es el número de eslabones distintos que han quedado, tendremos $l(N)\le n'$ y, si $n'=n$, entonces $M=N.$
+
+Veamos ahora \textit{ii)}. Lo probaremos por inducción sobre la longitud de alguna cadena de composición. Si $M$ tiene una cadena de composición de un elemento, entonces $M\cong A/\p$ donde $\p$ es maximal y el resultado es claro. Sea
+$$\{0\}=M_0\subsetneq M_1\subsetneq\cdots\subsetneq M_n=M$$
+una serie de composición de longitud $n.$ Por hipótesis de inducción $l(M_{n-1})=n-1.$ Así, $n-1=l(M_{n-1})<l(M_n)\le n$, es decir, $l(M_n)=n.$
+
+Seguimos con \textit{iii)}. Si $n'=l(M)<\infty$ y $n''=l(M'')<\infty$, como $M'\cong \ker g\subset M$ y $M''\cong M/\ker g$, $M$ tiene un submódulo y un cociente que poseen series de composición, $\{M'_i\}_{i=1}^s$ y $\{\overline{M_i}\}_{i=1}^r$ respectivamente. De esta forma,
+$$M_0'\subsetneq M_1'\subsetneq\cdots\subsetneq\ker g\subsetneq M_1\subsetneq\cdots\subsetneq M_{n-1}\subsetneq M$$
+es una serie de composición para $M.$ Este argumento prueba la aditividad.
+\end{proof}
+
+\begin{definition}
+Llamaremos \textit{anillo artiniano} a todo aquel que sea de longitud finita.
+\end{definition}
+
+\begin{corollary}Sea $M$ un $A$-módulo.
+\begin{itemize}
+    \item[i)] Si $M$ es de longitud finita, entonces es noetheriano. En particular, todo anillo artiniano es noetheriano.
+    \item[ii)] Si $M$ es un $A$-módulo finitamente generado y $A$ es un anillo artiniano, entonces $M$ es de longitud finita.
+\end{itemize}
+\end{corollary}
+\begin{proof}
+Como todo submódulo es de longitud finita, es suficiente demostrar que $M$ es finitamente generado. Sea $\{0\}=M_0\subsetneq M_1\subsetneq\cdots\subsetneq M_n=M$ una serie de composición. Cada $M_i/M_{i-1}\cong \langle\overline{m_i}\rangle$ para cierto $m_i\in M_i.$ Probemos que $M=\langle m_i,\dots,m_n\rangle.$ Por recurrencia sobre la longitud supongo $M_{n-1}=\langle m_1,\dots,m_n\rangle.$ Si $x\in M$, visto como clase de $M/M_{n-1}$ resulta $x+M_{n-1}=\lambda m_n+ M_{n-1}$, para cierto $\lambda\in A$, así, existen $\lambda_j\in A$ verificando $x-\lambda m_n=\sum_{j=1}^{n-1}\lambda_j m_j.$ Tenemos así \textit{i)}.
+
+Veamos \textit{ii)}. En primer lugar, la suma directa $A^{(n)}$ es un $A$-módulo de longitud finita. Basta ver que $0\rightarrow A^{(n-1)}\overset{q_{n-1}}{\rightarrow}A^{(n)}\overset{p_1}{\rightarrow}A\rightarrow 0$ es exacta y razonar por recurrencia aplicando la proposición anterior. Si $M$ está generado por ciertos elementos $\{m_1,\dots,m_n\}$ tendremos una sucesión exacta
+$$0\rightarrow\ker g\rightarrow\oplus_{i=1}^n A\overset{g}{\rightarrow}M\rightarrow$$
+mandando la $m_i$-ésima tupla al elemento $m_i.$ Así, los extremos son de longitud finita y podemos concluir aplicando la proposición anterior.
+\end{proof}
+
+\begin{remark}
+Si $M$ es un $A$-módulo, $M$ tiene estructura natural de $A':=A/\anul_A(M)$-módulo y los $A$-submódulos de $M$ coinciden con los $A'$-submódulos de $M.$ Esto mismo ocurre como $A/\af$-módulo si $\af\subset\anul_A(M).$
+\end{remark}
+
+\begin{proposition}
+Sea $A$ un anillo. Las siguientes afirmaciones son equivalentes.
+\begin{itemize}
+    \item[i)] $A$ es artiniano.
+    \item[i))] $A$ es noetheriano y el $\langle 0\rangle$ es producto de ideales maximales.
+    \item[iii)] $A$ es noetheriano y todo ideal primo es maximal.
+\end{itemize}
+En particular, si $A$ es un anillo noetheriano y $\af$ un ideal que es producto de ideales maximales, entonces $A/\af$ es un anillo artiniano.
+\end{proposition}
+
+\begin{proof} ($i)\Rightarrow ii)$) $A$ es noetheriano por el último corolario. Sea $\langle 0_A\rangle\subsetneq \af_1\subsetneq\cdots\subsetneq\af_{n-1}\subsetneq\af_n=A$ una serie de composición: $\af_i/\af_{i-1}\cong A/\mathfrak{m}_i.$ Claramente, cada $\mathfrak{m}_i$ \textit{mete} a $\af_i$ en $\af_{i-1}$, luego $\prod_{i=1}^n\mathfrak{m_i}=\langle 0_A\rangle.$
+
+($ii)\Leftrightarrow iii)$) Si $\prod_{i=1}^n\mathfrak{m_i}=\langle 0_A\rangle$ y $\p\in\Spec A$, entonces $\p\supset \prod_{i=1}^n\mathfrak{m_i}$ y, por ser $\p$ primo, $\p\supset\mathfrak{m_i}$ para cierta $i$; es decir, $\p=\mathfrak{m_i}.$ En el otro sentido, por ser $A$ noetheriano, el ideal $\langle O\rangle$ es intersección de primarios cuyos primos asociados son maximales. Así, $\sqrt{\langle 0\rangle}=\eta_A=\cap_{i=1}^l\mathfrak{m_i}$ con $\mathfrak{m_i}$ maximales distintos y, por tanto, $\cap_{i=1}^l=\prod_{i=1}^l\mathfrak{m_i}.$ Por ser los ideales finitamente generados, existe $\nu\in\N$ tal que
+$$\left(\prod_{i=1}^l\mathfrak{m_i}\right)^\nu=\prod_{i=1}^l(\mathfrak{m_i)\nu}=\langle 0\rangle.$$
+
+($ii)\Rightarrow i)$) Supongamos que $\langle 0\rangle=\mathfrak{m}_1^{e_1}\cdots\mathfrak{m}_r^{e_r}$ agrupando los ideles maximales iguales. Sabemos que el producto y la intersección de ideales maxiamles coinciden y son primarios, es decir, la anterior es una descomposición primaria del $\langle 0\rangle$ y la podemos suponer irrendundante. Procederemos por inducción sobre el menor número de maximales necesarios en esa factorización. Si éste es 1, el anillo $A$ es un cuerpo. Ahora, si $\mathfrak{m}_1^{e_1-1}\cdots\mathfrak{m}_r^{e_r}\neq\langle 0\rangle.$ Consideremos la sucesión exacta de $A$-módulos en la que todos son finitamente generados por ser $A$-noetherianos:
+$$0\rightarrow M':=\mathfrak{m}_1^{e_1-1}\cdots\mathfrak{m}_r^{e_r}\hookrightarrow A\rightarrow M'':=A/(\mathfrak{m}_1^{e_1-1}\cdots\mathfrak{m}_r^{e_r})\rightarrow 0.$$
+Veamos que la longitud de $A$ es finita viendo que la de los extremos lo es. Para esto vamos a aplicar la observación anterior. En primer lugar, $M'$ es un $A$-módulo de longitud finita porque $\mathfrak{m}_1\subset\anul_A(M')$ y lo es como $A/\mathfrak{m}_1$-módulo. Esto es así porque como $A/\mathfrak{m}_1$-módulo es un espacio vectorial finitamente general, luego de dimensión finita. Por otra parte, $M''$ es un $A$-módulo cuyo anulador contiene a $\mathfrak{m}_1^{e_1-1}\cdots\mathfrak{m}_r^{e_r}$ y, por lo tanto, es suficiente ver que tiene longitud finita como $A':=A/(\mathfrak{m}_1^{e_1-1}\cdots\mathfrak{m}_r^{e_r})$-módulo; esto es, como anillo sobre si mismo. En $A'$, $\langle 0_{A'}\rangle=\overline{\mathfrak{m}_1}^{e_1-1}\cdots\overline{\mathfrak{m}_r}^{e_r}$, con $\overline{\mathfrak{m}_i}:=\mathfrak{m}_i+\mathfrak{m}_1^{e_1-1}\cdots\mathfrak{m}_r^{e_r}$, verifica la hipótesis de inducción y es un anillo artiniano.
+\end{proof}
+
+\begin{proposition}Sea $A$ un anillo noetheriano y $M$ un $A$-módulo. Las siguientes afirmaciones son equivalentes.
+\begin{itemize}
+    \item[i)] $l(M)<\infty$.
+    \item[ii)] $M$ es noetheriano y los ideales de $\Ass_A(M)$ son maximales.
+    \item[iii)] $M$ es noetheriano y $\sqrt{\anul_A(M)}$ es producto de ideales maximales
+\end{itemize}
+\end{proposition}
+\begin{proof}
+($i)\Rightarrow ii)$) La noetherianidad ya está probada. Sea $\{0\}=M_0\subsetneq M_1\subsetneq\cdots\subsetneq M_n=M$ una sere de composición. Por recurrencia sobre $l(M)$, supongo cierto el resultado si $l(M')<l(M).$ Tenemos que
+$$0\rightarrow M_{n-1}\rightarrow M\rightarrow M/M_{n-1}\rightarrow 0$$
+es exacta y $M/M_{n-1}\cong A/\mathfrak{m}$, con $\mathfrak{m}$ un ideal maximal. Así, $\Ass_A(M)\subset \Ass_A(M_{n-1})\cup(\Ass_A(M/M_{n-1})=\Ass_A(M_{n-1})\cup\{\mathfrak{m}\}$ y, como $l(M_{n-1})<l(M)$, $\Ass_A(M_{n-1})$ son ideales maximales.
+
+($ii)\Rightarrow iii)$) Los ideales minimales de $\anul_A(M)$, están $\Ass_A(M)$, luego son un número finito. Así, $\sqrt{\anul_A(M)}=\cap_{\p\in\Ass_A(M)}\p=\mathfrak{m_1}\cap\cdots\cap\mathfrak{m_r}.$
+
+($iii)\Rightarrow i)$) Tenemos $\sqrt{\anul_A(M)}=\mathfrak{m_1}\cap\cdots\cap\mathfrak{m_r}$, con $\mathfrak{m_i}$ ideales maximales (distintos). Esta intersección es un producto por ser todos ellos comaximales dos a dos. Por tanto $\sqrt{\anul_A(M)}=\mathfrak{m_1}\cdots\mathfrak{m_r}$ y, por ser todos ellos finitamente generados, existe $\nu\in\N$ tal que $(\mathfrak{m_1}\cdots\mathfrak{m_r})^\nu\subset\anul_A(M).$ Ahora, aplicando de nuevo la observación anterior, basta ver que $M$ es de longitud finita como $A':=A/(\mathfrak{m_1}^\nu\cdots\mathfrak{m_r}^\nu)$-módulo. Como tenemos que $M$ es finitamente generado y $A'$ es de longitud finita (por la proposición anterior), así $M$ es un $A'$-módulo de logitud finita.
+\end{proof}
+
+\begin{remark}
+Sea $A$ un anillo noetheriano y $\q$ un ideal $\p$-primario con $\p$ ideal primo. Consideremos la localización $A_\p$, cuyo único ideal maximal es $\p^e.$ Sabemos que $\q^e$ es $\p^e$-primario. Es por esto que $\sqrt{\q^e}=\p^e$ y, por ser finitamente generado, existe $\nu\in\N$ tal que $(\p^e)\nu\subset \q^e.$ Así, el anillo $A_\p/(\p^e)\nu$ es un anillo artiniano y también un $A_\p$-módulo artiniano. Por esto, el cociente $A_\p/\q^e$ también lo será.
+\end{remark}
+
+\begin{definition}
+En las condiciones de la observación anterior, llamamos longitud de $\q$ a la longitud de $A_\p/\q^e.$
+\end{definition}
+\end{document}
