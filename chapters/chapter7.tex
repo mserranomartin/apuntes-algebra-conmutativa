@@ -176,4 +176,44 @@
 		Dada una extensión entera $A\subset B$, $\dimk A=\dimk B.$
 	\end{corollary}
 	
+	\section{Teorema \textit{going-up}.}
+	Antes de proceder con el teorema vamos a probar un lema auxiliar.
+	
+	\begin{lemma}
+		Sea $\phi:A\rightarrow B$ un homomorfismo de anillos y definamos
+		$$\begin{array}{rrcl}
+		\phi^*:&\Spec B&\rightarrow&\Spec{A}  \\
+		&\q&\mapsto&\phi^{-1}(\q) 
+		\end{array}.$$
+		Dado $\p\in\Spec A$, $\p$ es contraído de algún ideal $\q\in\Spec B$ si, y sólo si, $\p^{ec}=\p.$
+	\end{lemma}
+	\begin{proof}
+		($\Rightarrow$) Si existe $\q\in\Spec B$ tal que $\q^c=\p$, entonces $\p=\q^c=\q^{cec}=\p^{ec}.$
+		
+		($\Leftarrow$) Supongamos $\p^{ec}=\p$ y tomemos $S:=A\setminus\p$ como conjunto multiplicativamente cerrado. El conjunto $S':=\phi(S)\subset B$ es multiplicativamente cerrado. Tomando las aplicaciones correspondientes $\delta:=\delta_S$ y $\delta':=\delta_{S'}$ tenemos que la composición $\delta'\circ\phi$ es una aplicación que, por definición de $S'$ manda unidades de $S^{-1}A$ a unidades de $S'^{-1}B$, esto es, elementos de $S$ a elementos de $S'.$ De esta forma, por la propiedad universal del anillo de fracciones existe un homomorfismo $\Phi:S^{-1}A\rightarrow S'^{-1}B$ que cumple $$\delta'\circ\phi=\Phi\circ\delta.$$
+		Veamos ahora que $\p$ extendido a $S'^{-1}B$ es un ideal propio. En caso contrario, $1_B\in \p S'^{-1}B$, i.e., $1_B=\sum\phi(p_i)\frac{b_i}{\phi(s_i)}.$ Llamando $s'.=\prod\phi(s_i)$ y $s'=\sum\phi(p_i)b_i'$, tenemos $s'\in \p B$ y $\prod s_i\in \p^{ec}=\p$ y $s_i\in S$, pero esto es absurdo.
+		
+		Por ser propio, existe $\mathfrak{m}\subset S'^{-1}B$ maximal tal que $\mathfrak{m}\supset \p S'^{-1}B.$ $\Phi^{-1}(\mathfrak{m})$ es un ideal propio que necesariamente está contenido en $\p S^{-1}A$ por ser éste el único ideal maximal. Por otra parte, dado $\frac{p}{s}\in\p S^{-1}A$, $\frac{\phi(p)}{\phi(s)}\in\p S'^{-1}B\subset \mathfrak{m}$ y $\phi(\frac{p}{s})\in\mathfrak{m}$; es decir, $\frac{p}{s}\in\Phi^{-1}(\mathfrak{m)}.$ Con todo $\Phi^{-1}(m)=\p S^{-1}A.$
+		
+		Como el único ideal de $S^{-1}A$ que yace sobre $\p$ es $\p S^{-1}A$, también $\mathfrak{m}$ yace sobre $\p.$ Por último, $\delta'^{-1}(\mathfrak{m})$ es un ideal primo propio que por la conmutatividad del diagrama yace sobre $\p.$ 
+	\end{proof}
+	
+	\begin{theorem}[Going-down]Sea $A\subset B$ una extensión entera donde $A$ y $B$ son dominios de integridad y $A$ es íntegramente cerrado. Sean $\p_0,\p_1\in\Spec A$ y $\q_0\in\Spec B$ tales que $\p_0\supset\p_1$ y $\q_0\cap A=\p_0.$ Bajo estas hipótesis, existe $\q_1\in\Spec B$ tal que $\q_0\supset\q_1$ y $\q_1\cap A=\p_1.$
+	\end{theorem}
+	
+	\begin{proof}
+		Sean $A\hookrightarrow A_{\p_0}\hookrightarrow B_{\q_0}$ y $A\hookrightarrow B\hookrightarrow B_{\q_0}$ homomorfismo de anillos, todos inyectivos por ser $A$ y $B$ dominios de integridad.
+		
+		Dado que $\p_0^e=\q_0^{ce}\subset\q_0$, $\p_1B\subset\p_0B\subset\q_0$ y tenemos así que $\p_1B$ y $\p_1B_{\q_0}$ son ideales propios.
+		
+		Probaremos que $\p_1 B_{\q_0}\cap A=\p_1$ de forma que por el lema previo existe un ideal primo de $B_{\q_0}$ que se contrae a $\p_1$; es decir, existe $\q_1\in\Spec B$ tal que $\q_1\subset\q_0$ y $ºq_1B_{\q_0}\cap A=\p_1$, lo que implica que $\q_1\cap A=\p_1.$
+		
+		Sea $x\in \p_1 B_{\q_0}\cap A.$ Existen $y\in\p_1 B$ y $s\in B\setminus\q_0$ tales que $x=\frac{y}{s}.$ Por \ref{prop:polmin}, el polinomio mínimo de $y$ sobre $K_A$ tiene la forma
+		$$T^n+a_1T^{n-1}+\cdots+a_{n-1}T+a_n$$
+		donde $a_i\in\p_1.$
+		
+		Supongamos que $x\in\p_1 B_{\q_0}\cap A.$ Tomando $x^{-1}\in K_A$ podemos definir los coeficientes $v_i:=\frac{a_i}{x^i}$ de forma que el polinomio
+		$$T^n+v_1T^{n-1}+\cdots+v_{n-1}T+v_n$$
+		es el polinomio mínimo de $s$ sobre $K_A.$ Como $s\in B$ es entero, \ref{prop:polmin} nos da de nuevo que $v_i\in A.$ Por esto también $v_i x^i=a_i\in\p_1$, pero no todo $v_i\in\p_1$ pues, en caso contrario, $s^n$ pertenecería a $\p_1B\subset \q_0.$ Así, $x\in\p_1$ y tenemos la igualdad que buscábamos.
+	\end{proof}
 \end{document}
