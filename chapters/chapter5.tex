@@ -103,12 +103,15 @@ $(\Leftarrow)$ Si $\lambda\in A$ verifica $\lambda x=0_M$, $\frac{\lambda}{1}\in
 \end{proof}
 
 \begin{lemma}\label{contenidos_assa}
-Sea $A$ un anillo noetheriano, si la sucesión $$0\longrightarrow M'\longrightarrow M\longrightarrow M''\longrightarrow 0$$ es exacta, entonces se cumple $$\Ass_A(M')\subset\Ass_A(M)\subset\Ass_A(M'')\cup\Ass_A(M')$$ dándose la igualdad si la sucesión es escindida.
+Sea $A$ un anillo noetheriano, si la sucesión $$0\overset{f}{\longrightarrow} M'\longrightarrow M\overset{g}{\longrightarrow} M''\longrightarrow 0$$ es exacta, entonces se cumple $$\Ass_A(M')\subset\Ass_A(M)\subset\left (\Ass_A(M'')\cup\Ass_A(M')\right )$$ y se tiene la igualdad si la sucesión es escindida.
 \end{lemma}\label{contenidos_assa}
 \begin{proof}
-El primero de los contenidos es claro. Para el segundo, observemos primero que, si $z\in\ker(g)$, entonces $z=f(z')$ para cierto $z'\in M'$ y se tiene que $\anul_A(z)=\anul_A(z')$ por la inyectividad de $f.$ Sea ahora $\p\in\anul_A(M)\setminus\anul_A(M').$ Por la observación anterior, $x'':=g(x)\neq 0_{M''}.$ Veamos $\anul_A(x)=\anul_A(x'').$
+El primer contenido se tiene porque si $\mathfrak{p}$ es anulador de $x \in M'$, entonces para todo $a \in \mathfrak{p}$ tenemos que $af(x)  f(ax) = f(0_{M'}) = 0_M$, luego $\mathfrak{p}$ es anulador de $f(x)$.
 
-El contenido $\supset$ es claro. Tomemos entonces $\mu\in\anul_A(x'')\setminus\anul_A(x).$ Tenemos que $\mu x''=g(\mu x)=0_{M''}$ y existe $x'\in M'\setminus\{0_{M'}\}$ tal que $f(x')=\mu x.$ Sabemos que $\anul_A(x')=\anul_A(\mu x)\supset\anul_A(x)=\p$ y $\p\notin\Ass_A(M')$; es decir, el contenido $\anul_A(x')\supset\p$ es estricto existe $\alpha\in A$ tal que $\alpha x\neq 0_M$ y $\alpha\mu x=0_M.$ de esto se desprende que $\alpha\mu\in\p$, pero $\alpha,\mu\notin\p$, que es imposible.
+Para el segundo, distinguimos entre los elementos que pertenecen a $\ker g$ y los que no. Si $z\in\ker(g)= \im(f)$, entonces existe $z'\in M'$ con $z=f(z')$ y por la inyectividad de $f$ se tiene $0 = af(z') = f(az')$ si y solo si $az' = 0 $, luego $\anul_A(z)=\anul_A(z')$ y así si $\mathfrak{p}\in \Ass_A(M)$ es el anulador de un elemento de $\ker g$, pertenece a $\Ass_A(M')$. Tomemos ahora $\mathfrak{p}\in \Ass_A(M) \setminus \Ass_A(M') $ y sea $x\in M\setminus \ker g$ tal que $\mathfrak{p} = \anul_A(x)$.
+
+Llamamos $x'':=g(x)\neq 0_{M''}$ y vamos a ver que $\anul_A(x)=\anul_A(x'')$. Por la linealidad, $\anul_A(x) \subset \anul_A(x'')$. Supongamos, por reducción al absurdo, que el contenido es estricto y sea $b \in\anul_A(x'')\setminus\anul_A(x)$. Tenemos que $0_{M''} = b x''=g(b x)$ luego $bx \in \ker g = \im f$ y asi existe $x'\in M'\setminus\{0_{M'}\}$ tal que $f(x')=b x$.
+Como hemos visto antes $\anul_A(x')=\anul_A(b x)\supset\anul_A(x)=\p$ y como $\p\notin\Ass_A(M')$ el contenido es estricto. Por lo tanto, existe $\alpha \in \anul_A(b x) \setminus\anul_A(x) $, es decir, tal que $\alpha x\neq 0_M$ y $\alpha b x=0_M$, de donde $\alpha b\in \anul_A(x) = \p$, pero $\alpha,\mu\notin\p$, lo que contradice la primalidad de $\mathfrak{p}$.
 \end{proof}
 
 \begin{proposition}
@@ -118,16 +121,18 @@ En particular, $\Ass_AM\subset\{\p_1,\dots,\p_n\}$ es finito.
 \end{proposition}
 
 \begin{proof}
-Como $M\neq\{0\}$, existe $\p_1\in\Ass_A(M)\neq\varnothing$ y $\p_1=\anul_A(x_1)$ para cierto $x_1\in M.$ De esta forma $M_1:=\langle x_1\rangle\subset M$ es submódulo de $M$ y $M_1\cong A/{\p_1}$ considerando un homomorfismo que lleve $1_A$ a $x_1$ que tendrá por núcleo a $\p_1.$ Como $A/{\p_1}$ es dominio de integridad, $\anul_A(\overline{x})=\{\overline{0}\}$ y $\Ass_A(M_1)=\{p_1\}.$ También, por la proposición anterior $\Ass_A(M)\subset\Ass_A(M_1)\cup\Ass_A{(M/M_1)}.$
+Como $M\neq\{0\}$, existe $\p_1\in\Ass_A(M)\neq\varnothing$ y $\p_1=\anul_A(x_1)$ para cierto $x_1\in M.$ Sea el submódulo que genera\footnote{Al igual que en espacios vectoriales, se trata de todos los múltiplos $\lambda x_1$ con $\lambda\in A$.}
+$M_1:=\langle x_1\rangle\subset M$. Podemos definir un homomorfismo de $A$-módulos $A\to M_1$ dado por $1_A\mapsto x_1$, y el núcleo es $\mathfrak{p}_1$ por lo que tenemos el isomorfismo $M_1\cong A/{\p_1}$. En $A/{\p_1}$ está claro que los únicos anuladores son los elementos de $\mathfrak{p_1}$ y así $\Ass_A(M_1)=\Ass_A(A/\mathfrak{p}_1) = \{\p_1\}$.
+Por el lema anterior $\Ass_A(M)\subset \left ( \Ass_A(M_1)\cup\Ass_A{(M/M_1) } \right).$
 
-Ahora, si $M/M_1\neq 0$ (en caso contrario habríamos acabado), existe $\p_2\in\Ass_A(M/M_1)$ de la forma $\p_2=\anul_A(x_2+ M_1)$ para cierto $x_2+ M_1\in M/M_1\setminus\{0_{M/M_1}\}.$ Así, existe por el teorema de la correspondencia $M_2\subset M$ submódulo tal que $M_1\subset M_2\subset M$ y $A/{\p_2}\cong M_2/M_1$, de forma que $\Ass_A(M_2/M_1)=\{p_2\}$ y
-\begin{equation*}
-    \Ass_A(M)\subset\{p_1\}\cup\Ass_A(M_2/M_1)\cup\Ass_A((M/M_1)/(M_2/M_1))\\
-    =\{p_1\}\cup\{p_2\}\cup\Ass_A(M/M_2).
-\end{equation*}
+Si $M/M_1\neq 0$, existe $\p_2\in\Ass_A(M/M_1)$ de la forma $\p_2=\anul_A(x_2+ M_1)$ para cierto $x_2+ M_1\in M/M_1$ no nulo. De nuevo, consideramos el submódulo generado, que por el teorema de la correspondencia es de la forma $\langle x_2 + M_2 \rangle =: M_2/M_1$ para algún submódulo $M_2\subset M$ con $M_1\subset M_2$. Procediendo como antes, $A/{\p_2}\cong M_2/M_1$ y llegamos a que $\Ass_A(M_2/M_1)=\{\p_2\}$.
+Tenemos la sucesión exacta
+\begin{equation}
+  0 \to \faktor{M_2}{M_1} \to \faktor{M}{M_1} \to \faktor{M/M_1}{M_2/M_1} = \faktor{M}{M_2}  \to 0
+\end{equation}
 
-Reiterando el proceso obtenemos una sucesión, $\{0\}\subset M_1\subset M_2\cdots$, que se estabiliza por ser $M$ noetheriano, es decir, existe $n\in\N$ tal que $M_n=M.$
- \end{proof}
+de manera que $\Ass_A(M/M_1) \subset \left (\Ass_A (M_2/M_1) \cup \Ass_A(M/M_2) \right )$, y sustituyendo en lo de antes sacamos que $\Ass_A(M)\subset \{\p_1\}\cup\{\p_2\}\cup\Ass_A(M/M_2)$. Reiterando el proceso obtenemos una sucesión, $\{0\}\subset M_1\subset M_2\cdots$, que se estabiliza por ser $M$ noetheriano, es decir, existe $n\in\N$ tal que $M_n=M.$
+\end{proof}
 
 \begin{definition} Sea $M$ un $A$-módulo. \begin{enumerate}
     \item Un submódulo $N\varsubsetneq M$ se dice \textit{submódulo primario asociado} al ideal primo $\p$ si $\Ass_A(M/N)=\{\p\}$.
