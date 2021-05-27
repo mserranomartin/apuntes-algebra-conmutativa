@@ -222,7 +222,7 @@
 	\end{proof}
 
 	\begin{proposition}
-		Si $M'\overset{f}{\longrightarrow}M\overset{g}{\longrightarrow}M''$ es una sucesión exacta, entonces la sucesión $$S^{-1}M'\overset{S^{-1}f}{\longrightarrow}S^{-1}M\overset{S^{-1}g}{\longrightarrow}S^{-1}M''$$ también lo es.
+		Sea $A$ un anillo, $S\subset A$ un conjunto multiplicativamente cerrado, y sea una sucesión exacta $$0 \longrightarrow M'\overset{f}{\longrightarrow}M\overset{g}{\longrightarrow}M'' \longrightarrow 0$$ entonces la sucesión localizada  $$0\longrightarrow S^{-1}M'\overset{S^{-1}f}{\longrightarrow}S^{-1}M\overset{S^{-1}g}{\longrightarrow}S^{-1}M''\longrightarrow 0$$ también es exacta.
 	\end{proposition}
 
 	\begin{proof}
@@ -233,6 +233,10 @@
 		$$0_{S^{-1} M''}\equiv S^{-1}(g\circ f)=S^{-1} g\circ S^{-1} f,$$
 		es decir, $\operatorname{im} (S^{-1}f)\subseteq \ker(S^{-1}g)$. Por otra parte, dado $\frac{m}{s}\in\ker(S^{-1}g)$, tenemos que existe $t\in S$ tal que $tg(m)=0_{M''}$ y por ser $g$ homomorfismo esto implica que $tm\in\ker(g)$, es decir, existe a su vez $m'\in M'$ tal que $f(m')=tm$. Es por esto que basta considerar el elemento $\frac{m'}{ts}$ de forma que $f(\frac{m'}{ts})=\frac{tm}{ts}=\frac{m}{s}$ y $\ker(g)\subseteq\operatorname{im}(f)$.
 	\end{proof}
+
+	\begin{corollary}\label{cociente_localiza}
+	Sean $A$ un anillo, $S \subset A$ multiplicativamente cerrado, $M$ un $A$-módulo y $N \subset M$ un submódulo. Entonces $S^{-1}(M/N) = S^{-1}M / S^{-1}N$.
+	\end{corollary}
 
 	Podemos demostrar que el funtor $S^{-1}$ es exacto de una forma alternativa. Para ello, probemos antes algunos resultados.
 
@@ -563,7 +567,7 @@ Sea $A$ un anillo y $M$ un $A$-módulo. Las propiedades siguientes son equivalen
 \end{proposition}
 \begin{proof}
 	Basta ver que $3$ implica $1$. Por reducción al absurdo, supongamos que $M\neq 0$ y sean $x\in M \setminus \{0\}$ y $\af = \operatorname{anul}_A(x)$ que es un ideal propio. Por tanto, $\af \subset \mathfrak{m}$ para cierto ideal maximal de $A$.
-	Localizamos $M$ en $\mathfrak{m}$ y consideramos $\frac{x}{1}\in M_\mathfrak{m}$, y por hipótesis ha de ser $\frac{x}{1}=\frac{0}{1}$, lo que significa que existe $s\not\in \mathfrak{m}$ tal que $sx = 0_{M}$, es decir, $s\in \af \setminus \mathfrak{m}$, pero esto es absurdo porque $\af \subset \mathfrak{m}$. 
+	Localizamos $M$ en $\mathfrak{m}$ y consideramos $\frac{x}{1}\in M_\mathfrak{m}$, y por hipótesis ha de ser $\frac{x}{1}=\frac{0}{1}$, lo que significa que existe $s\not\in \mathfrak{m}$ tal que $sx = 0_{M}$, es decir, $s\in \af \setminus \mathfrak{m}$, pero esto es absurdo porque $\af \subset \mathfrak{m}$.
 \end{proof}
 
 \end{document}

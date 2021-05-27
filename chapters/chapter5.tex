@@ -235,21 +235,23 @@ Más aún, en el caso de un módulo finitamente generado, como puede ser un anil
 
 \begin{theorem}
 Sea $A$ un anillo noetheriano y sea $M$ un $A$-módulo finitamente generado.\begin{enumerate}
-    \item Dado $N\subset M$ un submódulo de $M$ $\p$-primario, Definimos
+    \item Sea $N\subset M$ un submódulo $\p$-primario y sea
     $$\begin{array}{rrcl}
 	\nu:&M&\longrightarrow&M_{\p}\\
-	&x&\longmapsto&\frac{x}{1}\\ \end{array}$$ Entonces, $N_{\p}\subset M_{\p}$ y $\nu^{-1}(N_{\p})=N$.
+	&x&\longmapsto&\frac{x}{1}\\ \end{array}$$ Entonces, $\nu^{-1}(N_{\p})=N$.
 	\item Sea $N\subset M$ y sea $N=\cap_{i=1}^rQ_i$ una descompsición irredundante ideales $\p_i$-primarios para cada $i=1,\dots,r$, cumpliéndose que $\Ass_A(M/N)=\{\p_1,\dots,\p_r\}$. Supongamos que $\p_1$ es un ideal minimal en $\Ass_A(M/N)$ y sea $\nu:M\longrightarrow M_{\p}$ definida como en el apartado anterior. Entonces, $Q_1=\nu^{-1}(N_{\p_1})$.
 
 	Esto significa que los ideales primarios que aparecen en la descomposición irredundante de un submódulo de $M$ y corresponden a ideales primos asociados minimales están unívocamente determinados.
 \end{enumerate}
 \end{theorem}
 \begin{proof}
-\textit{1.)} Teniendo en cuenta que $N\subset M$ implica $N_{\p}\subset M_{\p}$, se cumple $N\subset N':=\nu^{-1}(N_{\p})=\{m\in M:\exists\lambda\notin\p, \lambda m\in N\}$. Claramente, $N'$ es un submódulo de $M$ y $N_{\p}'=N_{\p}$: dado un elemento $\frac{m}{t}\in {N_\p}'$, existe $\lambda\notin\p$ tal que $\lambda x\in N$; así se tiene $\frac{m}{t}=\frac{\lambda m}{\lambda t}\in N_\p$ y ${N_\p}'\subset N'.$
+\textit{1.)} Sabemos que si $N\subset M$ es un submódulo, entonces $N_{\p}\subset M_{\p}$ es submódulo de manera que podemos tomar la preimagen $N':=\nu^{-1}(N_{\p})$ que es un submódulo de $M$ que contiene a $N$ y el enunciado tiene sentido.
 
-Por otro lado, tenemos que $N'/N\subset M/N$ es un submódulo y con ello $\Ass_A(N'/N)\subset\Ass_A(M/N)=\{p\}.$ Además, sabemos que $\Ass_A(N'/N)\subset\supp\{(N'/N)\}$, es decir,
-$$\Ass_A(N'/N)\subset\{p\}\cap\supp(N'/N).$$
-Ahora bien, como ${N_\p}'=N_\p$, se tiene que $(N'/N)_\p=\{0\}$, o lo que es lo mismo $\p\notin\supp(N'/N).$ Así, $\Ass_A(N'/N)=\varnothing$ y $N'/N=\{0_{M/N}\}$ con lo que $N'=N.$
+Vamos a ver que $N'/N = 0$. Tenemos que $N'/N\subset M/N$ es un submódulo por tanto $\Ass_A(N'/N)\subset\Ass_A(M/N)=\{\p\}$ pues $N$ es $\p$-primario. Además, sabemos que $\Ass_A(N'/N)\subset\supp\{(N'/N)\}$.
+Ambas cosas juntas dan que $\Ass_A(N'/N) \subset \left ( \{p\}\cap\supp(N'/N) \right).$ Si probamos que $\p\notin\supp(N'/N)$, ie. $(N'/N)_\p = 0$, tendremos que $\Ass_A(N'/N)=\varnothing$ y así $N'/N=0$ luego $N' = N$.
+
+Como $N \subset N'$, se tiene $N_\p \subset (N')_\p$. Además, $(N')_{\p} \subset N_{\p}$ ya que si $\frac{m}{t}\in (N')_\p$,
+entonces $m \in N' = \nu ^{-1} (N_\p)$ y así $\frac{m}{1} \in N_\p$, lo que quiere decir que $m \in N$, y por lo tanto $\frac{m}{t} \in N_\p$. Así hemos probado que $(N')_\p = N_\p$ y por el corolario \ref{cociente_localiza} se tiene $(N'/N)_\p \cong (N')_\p / N_\p = 0$ como queríamos ver.
 
 \textit{2.)} Para este segundo apartado, veamos que el homeomorfismo $\nu_1:M\longrightarrow M_{\p_1}$ conserva las intersecciones. Sean $N'$ y $N''$ submódulos de $M$. La inclusión $(N'\cap N'')_{\p_1}\subset {N_{\p_1}}'\cap{N_{\p_1}}''$ es clara. Veamos la inclusión $\supset.$ Dado un elemento $\omega\in {N_{\p_1}}'\cap{N_{\p_1}}''$, existen $n'\in N'$, $n''\in N''$ y $t,s\notin\p_1$ tales que $\omega=\frac{n'}{s}=\frac{n''}{t}.$ Por esto, también existe $\lambda\notin\p_1$ tal que $\lambda tn'=\lambda sn''=:\eta$; es decir, $\eta\in N'\cap N''$ y $\omega=\frac{\eta}{\lambda ts}.$ Es por esto que, si $N=\cap_{i=1}^r Q_i$, entonces $N_{\p_1}=\cap_{i=1}^r(Q_i)_{\p_1}.$
 
