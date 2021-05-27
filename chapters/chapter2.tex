@@ -1,80 +1,113 @@
 \documentclass[./main.tex]{subfiles}
 \begin{document}
-\section{Ideales}
-\begin{definition} Un \emph{anillo} conmutativo unitario es una terna $(A,+,\cdot)$ de un conjunto con dos operaciones internas, suma $+$ y producto $\cdot$, donde $(A,+)$ es un grupo conmutativo, el producto es asociativo y conmutativo, se cumple la propiedad distributiva, y existe $1\in  A$ tal que $a\cdot 1 = 1\cdot a = a$ para todo $a\in A$.
+
+\begin{definition} Sea $\varphi: A \to B$ homomorfismo de anillos (conmutativos unitarios). Se dice que $B$ es una $A$-álgebra.
 \end{definition}
 
-Todos los anillos con los que trabajaremos serán conmutativos y unitarios. Un subconjunto $S\subset A$ de un anillo es un \emph{subanillo} de $A$ si es un anillo con la suma y el producto de $A$.
+\begin{example}
+\begin{enumerate}
+  \item Si $A$ es un subanillo de $B$, entonces $B$ tiene estructura de $A$-álgebra via la inclusión $i:A\to B$.
+  \item En concreto, si $\mathbb K$ es un cuerpo, tenemos el ejemplo anterior para $B = \mathcal M_n(\mathbb K)$ y $A= \{D\in B:\; D \text{ es diagonal con } \operatorname{diag} (D) = (\lambda,\dots, \lambda)\}$.
+  \item Si consideramos un cociente de un anillo $A$ por un ideal suyo $\mathfrak a$, entonces la proyección canónica $p:A \to \faktor{A}{\mathfrak a}$ dota al cociente de estructura de $A$-álgebra.
+  \item Si $K$ es un cuerpo, entonces una extensión suya $L\vert K$ es una $K$-álgebra.
+\end{enumerate}
+\end{example}
+
+\begin{remark} En estos ejemplos se ve que el homomorfismo de anillos que da la estructura de álgebra no debe cumplir nada en particular: puede o no ser inyectivo, sobreyectivo, etc.
+\end{remark}
 
 \begin{definition}
-Un \emph{ideal} de un anillo $A$ es un subconjunto $\mathfrak{a}\subset A$ que cumple:
+  Sean $A$ un anillo y $B, C$ dos $A$-álgebras. Se dice que $f:B\to C$ es un homomorfismo de $A$-álgebras si es un homomorfismo de anillos que hace conmutativo el diagrama siguiente:
+
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt
+\centering
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+  %uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+
+  % Text Node
+  \draw (111,62.4) node [anchor=north west][inner sep=0.75pt]    {$A$};
+  % Text Node
+  \draw (176,62.4) node [anchor=north west][inner sep=0.75pt]    {$B$};
+  % Text Node
+  \draw (175,122.4) node [anchor=north west][inner sep=0.75pt]    {$C$};
+  % Text Node
+  \draw (137,42.4) node [anchor=north west][inner sep=0.75pt]    {$\varphi _{B}$};
+  % Text Node
+  \draw (121,100.4) node [anchor=north west][inner sep=0.75pt]    {$\varphi _{C}$};
+  % Text Node
+  \draw (191,82.4) node [anchor=north west][inner sep=0.75pt]    {$f$};
+  % Connection
+  \draw    (129,70) -- (171,70) ;
+  \draw [shift={(173,70)}, rotate = 180] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+  % Connection
+  \draw    (129,79.92) -- (170.55,119.18) ;
+  \draw [shift={(172,120.55)}, rotate = 223.38] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+  % Connection
+  \draw    (182.4,82) -- (182.12,116) ;
+  \draw [shift={(182.1,118)}, rotate = 270.48] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+\end{tikzpicture}
+\end{definition}
+
+\begin {definition} \label{modulo}
+Sea $A$ un anillo, se llama $A$-módulo a cualquier grupo abeliano $(M,+)$ sobre el que $A$ actúa linealmente, es decir, un grupo $M$ con junto con una operación externa $A\times M \to M$ que cumple que para todo $m,n \in M, a,b \in A$:
 \begin{enumerate}
-  \item Para todo $a,b \in \mathfrak a$ se tiene $a+b\in \mathfrak a$.
-  \item Para todo $a\in \mathfrak a$ y $x \in  A$ se tiene $ax \in \mathfrak a$.
+  \item $a(m+n) = am + an$
+  \item $(a+b)m = am+bm$
+  \item $(ab)m = a(bm)$
+  \item $1_Am = m$.
 \end{enumerate}
 \end{definition}
 
-Obviamente, si un ideal de un anillo $A$ contiene el $1\in A$, entonces es el total.
+\begin{example}
+\begin{enumerate}
+  \item Si $\mathbb K $ es un cuerpo, todo $\mathbb K$-espacio vectorial es un $\mathbb K$-módulo..
+  \item Si $V$ es un $\mathbb K$-espacio vectorial de dimensión finita y $f:V\to V$ un endomorfismo, entonces $V$ es un $\mathbb K[x]$-módulo via la aplicación
 
-Dado un subconjunto $S$ de un anillo $A$, se puede considerar $\gen S$ el menor ideal que lo contiene, que resulta ser
+  \begin{align*}
+    {\mathbb K[x]\times V} & \to     V                                 \\
+    {(p(x),v)}             & \mapsto p(f) = a_nf^{(n)}+\dots+a_1 f+a_0
+  \end{align*}
+  siendo $p(x) = a_nx^n+\dots+a_1x + a_0$ y $f^(k) = f\circ \overset{k)}{\dots} \circ f$.
+  \item Toda $A$-álgebra $B$ de un anillo $A$ es un $A$-módulo. $B$ es un anillo luego $(B,+)$ es un grupo abeliano. Por ser $A$-álgebra, existe un homomorfismo $\varphi:A\to B$, y entonces podemos definir la operación externa de la definición \ref{modulo} como $A\times B \to B$ que hace corresponder $(a,b) \mapsto\varphi(a)b$.
+\end{enumerate}
+\end{example}
 
-\[ \gen S = \left \{  \sum_{i=1}^{m} s_i  a_i \big \vert \; s_i \in S, a_i \in A, m \in \mathbb N  \right \} \]
-
-Dado un ideal $\mathfrak{a}$ se puede definir una relación de equivalencia $x\sim y \iff x-y \in \mathfrak a$ y el conjunto cociente resultante $\faktor{A}{\mathfrak a}$ se dota de estructura de anillo con las operaciones $(a+\mathfrak a) + (b+\mathfrak a) := (a+b)+\mathfrak a$ y $(a+\mathfrak a) \cdot (b+\mathfrak a) := ab + \mathfrak a$. Es necesario que sea un ideal para que el producto esté bien definido.
-
-\begin{definition} Un anillo $A$ es un dominio de integridad (DI) si para cualesquiera $a,b\in A$ tales que $ab = 0$ se tiene $a = 0$ o bien $b=0$.
-\end{definition}
-
-\begin{definition} Sean $A,B$ anillos, un \emph{homomorfismo de anillos} entre $A$ y $B$ es una aplicación $\varphi:A\to B$ que tal que para todo $x,y\in A$ respeta la suma $\varphi(x+_Ay) = \varphi(x) +_B  \varphi(y)$, respeta el producto $\varphi(x\cdot_Ay) =  \varphi(x)\cdot_B\varphi(y)$, y además $\varphi(1_A) = 1_B$.
-\end{definition}
-
-Dado un homomorfismo de anillos $\varphi:A\to B$ el núcleo $\ker \varphi$ es un ideal de $A$ y la imagen $\im \varphi$ es un subanillo de $B$. Además, para todo $\mathfrak b$ ideal de $B$, la preimagen $\varphi^{-1}(\mathfrak b)$ es un ideal de $A$.
-
-\begin{theorem} \textbf{\emph{(de isomorfía)}}
-Dado un homomorfismo de anillos $\varphi:A\to B$, se cumple $\faktor{A}{\ker \varphi} \cong \im \varphi$. En particular, si $\varphi$ es sobreyectivo, entonces $\faktor{A}{\ker \varphi} \cong B$.
-\end{theorem}
-
-\begin{theorem} \textbf{\emph{(de la correspondencia)}}
-Sea $A$ una anillo y $\mathfrak a$ un ideal de $A$. Existe una biyección entre los ideales de $A$ que contienen a $\mathfrak a$ y los ideales del cociente $\faktor{A}{\mathfrak a}$. En particular, todos los ideales de $\faktor{A}{\mathfrak a}$ son de la forma  $\faktor{\mathfrak b}{\mathfrak a} = \{ x + \mathfrak a:\; x \in \mathfrak b \}$ donde $\mathfrak b$ es un ideal que contiene a $\mathfrak a$.
-\end{theorem}
-
-\begin{definition}
-Un ideal $\mathfrak p$ de un anillo $A$ se dice $\emph {primo}$ si es propio y para cualesquiera $a,b \in A$ tales que $ab \in \mathfrak p$ se tiene que $a\in \mathfrak p$ o $b \in  \mathfrak p$. Un ideal $\mathfrak m $ de $A$ se dice maximal si es propio y no está contenido en ningún otro ideal propio de $A$.
-\end{definition}
-
-Comprobar que un ideal $\mathfrak m$ de una anillo $A$ es maximal consiste en ver que si $\mathfrak a \supset \mathfrak m$ para otro $\mathfrak a$ ideal propio, entonces $\mathfrak a = \mathfrak m$.
-
-Tanto la maximalidad como la primalidad se conservan por el teorema de la correspondencia, es decir, $\mathfrak b $ es primo / maximal en $A$ si y solo si $\faktor{\mathfrak b}{\mathfrak a}$ es primo / maximal en $\faktor{A}{\mathfrak a}$.
-
-\begin{proposition}
-Un ideal $\mathfrak p$ de un anillo $A$ es primo si y solo si $\faktor{\mathfrak A}{ \mathfrak p }$ es DI. Un ideal $\mathfrak m$ de $A$ es maximal si y solo si $\faktor{\mathfrak A}{\mathfrak m}$ es un cuerpo.
-\end{proposition}
-
-Como todo cuerpo es dominio de integridad tenemos probado automáticamente que
-
-\begin{corollary}
-Todo ideal maximal es primo.
-\end{corollary}
-
-\subsection{Operaciones con ideales}
-Sea $A$ un anillo y sean dos ideales $\mathfrak a_1, \mathfrak a_2 \subset A$. Se define la \emph{suma} de los ideales como
-
-\[ \mathfrak a_1 + \mathfrak a_2 = \left \{ x+y \big \vert \; x \in \mathfrak a_1, y \in \mathfrak a_2 \right \} \]
-
-y resulta ser el menor ideal que contiene a ambos. La \emph{intersección} de los ideales es la intersección conjuntista con las operaciones heredadas, y es el mayor ideal que está contenido en ambos ideales. El \emph{producto} de los ideales
-
-\[ \mathfrak a_1 \cdot \mathfrak a_2 = \left \{ \sum_{i=1}^m x_iy_i \big \vert \; x_i \in \mathfrak a_1, y_i \in \mathfrak a_2, m\in \mathbb N \right \} \]
-
-también es un ideal.
-
-\begin{remark}
-Se cumple $\mathfrak a_1 \cdot \mathfrak a_2 \subset \mathfrak a_1 \cap \mathfrak a_2$ (trivial), y se tiene la igualdad si $\mathfrak a_1 + \mathfrak a_2 = A$. Efectivamente, en tal caso, $1 = a_1 + a_2$ para ciertos $a_i \in \mathfrak a_i$, y entonces para todo $t\in \mathfrak a_1 \cap \mathfrak a_2$, $t = ta_1 + ta_2 \in \mathfrak a_1 \cdot \mathfrak a_2$.
-
-Cuando $\mathfrak a_1 + \mathfrak a_2 = A$ se dice que los ideales son \emph{comaximales}.
+\begin{remark} \label{prop_adicional}
+Atendiendo al último ejemplo resulta que dados dos anillos $A, B$, dar a $B$ estructura de $A$-álgebra es equivalente a darle estructura de $A$-módulo junto con la propiedad adicional de que
+\[\forall b, b' \in B, \; \forall a \in  A \quad a \cdot_{\text{ext}} (bb') = (a\cdot_{\text{ext}} b) b'\]
 \end{remark}
 
+\begin{definition}
+  Sea $B$ una $A$-álgebra mediante $f:A\to B$. Se dice que $B$ está finitamente generada si existen $b_1, \dots, b_r \in B$ tales que para todo $x \in B$ se cumpla
 
-\subsection{Uso del lema de Zorn en álgebra conmutativa}
+  \[x = \sum _{i_1, \dots, i_r} f(a_{i_1,\dots,i_r}) b_1^{i_1}\dots b_r^{i_r}\]
+\end{definition}
+
+\begin{remark}
+Sea $B$ una $A$-álgebra, si utilizamos la caracterización de la observación \ref{prop_adicional}, entonces $B$ es finitamente generada si y solo si existen $b_1,\dots, b_r \in B$ tales que para todo $x \in B$ se escribe $x = \sum _{i_1, \dots, i_r} a_{i_1,\dots,i_r} b_1^{i_1}\dots b_r^{i_r}$.
+
+En el caso particular en que $A\subset B$, entonces $B$ es una $A$-álgebra finitamente generada si y solo si $B = A[b_1, \dots, b_r]$ para ciertos $b_1,\dots, b_r \in B$, es decir, el menor anillo que contiene a $A$ y a los $b_i$.
+\end{remark}
+\begin{example}
+\begin{enumerate}
+    \item Si $A$ es un anillo, entonces $A\subset A[X_1, \dots, X_n]$ y el anillo de polinomios es una $A$-álgebra finitamente generada.
+    \item Sean $A$ subanillo de $B$, con $B$ una $A$-álgebra finitamente generada por $\{b_1,\dots,b_r\}$. Se puede tomar el anillo de polinomios $A[X_1,\dots,X_r]$ y el homomorfismo evaluación en los $b_i$:
+    \begin{align*}
+        \operatorname{eval}_{b_1,\dots, b_r}:A[X_1,\dots,X_r] &\to B\\
+        X_i &\mapsto b_i\\
+        A \ni a &\mapsto a
+    \end{align*}
+    El homomorfismo $\operatorname{eval}_{b_1,\dots, b_r}$ es suprayectivo porque los elementos de $B$ son expresiones polinomiales en $b_1,\dots, b_r$. Aplicando el primer teorema de isomorfía tenemos
+    \[\faktor{A[X_1,\dots,X_r]}{\ker \operatorname{eval}_{b_1,\dots, b_r}} \cong B\]
+    \item Más generalmente, si $B$ es una $A$-álgebra finitamente generada, también es una $f(A)$-álgebra finitamente generada y se puede repetir el ejemplo anterior con $f(A)$, que es subanillo de $B$.
+\end{enumerate}
+
+\end{example}
+
+\section{Uso del lema de Zorn en álgebra conmutativa}
 
 \begin{definition}
   Sea un conjunto parcialmente ordenado $(S,\leq)$. Una cadena $T \subset S$ es un subconjunto tal que para cualesquiera $x,y \in T$ se cumple $x\leq y$ o $ y \leq x$.
@@ -104,52 +137,6 @@ Para todo ideal $\mathfrak a$ de un anillo $A$ existe un ideal maximal que lo co
 Se aplica la proposición anteior al anillo $\faktor{A}{\mathfrak a}$ teniendo en cuenta que en el teorema de la correspondencia se conservar los ideales maximales.
 \end{proof}
 
-\begin{definition}
-  Dado un anillo $A$, definimos el \textit{ideal de Jacobson} como $$\mathfrak R:=\bigcap_{\underset{\mathfrak m\ \text{maximal}}{\mathfrak m\subset A}}\mathfrak m$$
-\end{definition}
-
-\begin{proposition}
-Sea $A$ un anillo. Se tiene que para cada $x\in A$, $x\in\mathfrak R$ si, y sólo si, $1-xy$ es unidad para toda $y\in A$.
-\end{proposition}
-\begin{proof}
-($\Rightarrow$) Sea $x\in\mathfrak{R}$ y supongamos que existe $y\in A$ tal que $1-xy$ no es unidad. Por ser así, existe $\mathfrak m\subset A$ maximal tal que $1-xy\in\mathfrak m$, pero por definición de $\mathfrak R$ se tiene que $1-xy+xy=1\in\mathfrak m$, que es absurdo.
-
-($\Leftarrow$) Supongamos ahora que $x\in A$ verifica las hipótesis pero existe $\mathfrak{m}\subset A$ maximal tal que $x\notin\mathfrak m$. Por la maximalidad de $\mathfrak m$, $\langle x\rangle\oplus \mathfrak m=\langle 1\rangle$; es decir, existen $y\in A$ y $m\in\mathfrak m$ tales que
-$$xy +m=1\Longleftrightarrow m=1-xy,$$
-pero esto es absurdo.
-\end{proof}
-
-\begin{definition}
-  Diremos que un anillo $A$ es un \textit{anillo local} si posee un único ideal maximal.
-\end{definition}
-
-En vista de lo anterior, tenemos la siguiente caracterización de los anillos locales.
-\begin{proposition}
-Sea $A$ un anillo. Son equivalentes
-\begin{itemize}
-    \item[1)] $A$ es un anillo local,
-    \item[2)] el único ideal maximal de $A$ es $\mathfrak R$,
-    \item[3)] dado un ideal maximal $\mathfrak m\subset A$, para cualesquiera $x\in\mathfrak m$ e $y\in A$, $1-xy$ es unidad de $A$ y,
-    \item[4)] para todo $x\in A$, $x$ es unidad o $1-xy$ es unidad para cada $y\in A$.
-\end{itemize}
-\end{proposition}
-\begin{proof}
-%($\Rightarrow$) Por ser $A$ local, existe un único ideal maximal $\mathfrak m\subset A$. Así, todo elemento $\lambda\in\A\setminus\mathfrak m$ es una unidad pues, en caso contrario, existiría un ideal maximal conteniendo a cada elemento no unidad, que es absurdo.
-
-%Por esto, dado $x\in A$: si $x\notin \mathfrak m$, $x$ es unidad y, si $x\in \mathfrak m$, basta tomar $u\in A\setminus\mathfrak m$ y se tiene que $\langle x,u\rangle=\langle 1\rangle$, es decir,
-%$$\lambda x+u=1\Longleftrightarrow 1-\lambda x=u$$
-%para cierto $\lambda\in A$.
-
-($1\Rightarrow2$), ($2\Rightarrow1$) y ($2\Rightarrow 3$) son obvias.
-
-($3\Rightarrow2$). Dado un ideal maximal $\mathfrak m\subset A$ verificando las hipótesis, tenemos por la caracterización del ideal $\mathfrak R$ que $\mathfrak m\subset \mathfrak R$. Como la inclusión $\mathfrak R\subset \mathfrak m$ se da siempre, tenemos la igualdad. Además, por ser $\mathfrak m$ arbitrario, tenemos que $\mathfrak R$ es el único ideal maximal de $A$.
-
-($3\Rightarrow 4$). Sea $x\in A$. Si $x$ no es unidad, entonces pertenece a algún ideal maximal y por la hipótesis tenemos lo que queremos probar.
-
-($4\Rightarrow 3$). Análogamente, dado un ideal maximal $\mathfrak m\subset A$ y un elemento $x\in\mathfrak m$, se tiene que $x$ no es unidad y por la hipótesis podemos concluir la prueba.
-
-\end{proof}
-
 \begin{proposition}
 Sea $A$ anillo, existe un ideal primo minimal\footnote{Un ideal primo que no contiene a ningún otro ideal primo.} $\mathfrak p$.
 \end{proposition}
@@ -157,8 +144,14 @@ Sea $A$ anillo, existe un ideal primo minimal\footnote{Un ideal primo que no con
 Sabemos que existe un ideal maximal $\mathfrak{p} \subset A$, y este es primo por ser maximal. Consideramos $\Sigma$ el conjunto de los ideales primos de $A$, que es no vacío porque $\mathfrak p \in \Sigma$, y lo ordenamos parcialmente con la inclusión tal que $\mathfrak p \leq \mathfrak p' \iff \mathfrak p \supset \mathfrak p'$ . Sea $\{\mathfrak{q}_{i}\}_{i \in I} \subset \Sigma$ una cadena y consideramos $\mathfrak{q}^{*}:=\bigcap_{i \in I} q_{i}$. Este es un ideal (la intersección siempre lo es) y $\mathfrak{q}^{*} \subset \mathfrak{q}_{i}$ para todo $i\in I$, por tanto es cota superior (para nuestro orden) de la cadena.
 
 Veamos que $\mathfrak{q}^{*}$ es primo. Sean $a b \in \mathfrak{q}^{*},$ por ser así, $a b \in \mathfrak{q}_{i}$ para toda $i \in I .$ Si $a \in \mathfrak{q}_{i} \forall i \in I,$ entonces $a \in \mathfrak{q}^{*}$. Por otra parte, si existe $i_{0} \in I$ tal que $a \notin \mathfrak{q}_{i_{0}}$
-entonces $b \in \mathfrak{q}_{j} \forall j \in I$ si $\mathfrak{q}_{i_{0}} \subseteq \mathfrak{q}_{j}$, como $b \in \mathfrak{q}_{i_{0}}$, se tiene que $b \in \mathfrak{q}_{j} \mathrm{y}$. Así se tiene $\mathfrak q^* \in \Sigma$
-y aplicando el lema de Zorn, existe un elemento maximal para el orden dado, equivalemente, minimal en sentido de la inclusión.
+$$
+\begin{array}{l}
+\text { entonces } b \in \mathfrak{q}_{j} \forall j \in I: \\
+\qquad \text { si } \mathfrak{q}_{i_{0}} \subseteq \mathfrak{q}_{j}, \text { como } b \in \mathfrak{q}_{i_{0}}, \text { se tiene que } b \in \mathfrak{q}_{j} \mathrm{y},
+\end{array}
+$$
+
+Así se tiene $\mathfrak q^* \in \Sigma$ y aplicando el lema de Zorn, existe un elemento maximal para el orden dado, equivalemente, minimal en sentido de la inclusión.
 \end{proof}
 
 \begin{corollary}
@@ -211,7 +204,7 @@ $\Rightarrow$) Obviamente todos los elementos de $\mathfrak N_{A/\mathfrak q}$ s
 $\Leftarrow)$ Si $ab \in \mathfrak q$ y supongamos que $a\not \in \mathfrak q$, entonces $0+\mathfrak q = ab+\mathfrak q =(a+\mathfrak q)(b+\mathfrak q)$. Como $a+\mathfrak q \neq 0+\mathfrak q$, o bien $b\in \mathfrak q$, o bien $b+\mathfrak q$ es un divisor de $0$, y por tanto está en el nilradical del cociente, y existe $n$ tal que $(b+\mathfrak q)^n = b^n+\mathfrak q = 0+\mathfrak q$, es decir, $b^n \in \mathfrak q$ como queríamos.
 \end{proof}
 
-\subsection{Extensión y contracción de ideales}
+\section{Extensión y contracción de ideales}
 
 \begin{definition}
 Sea $\phi:A\to B$ un homomorfismo de anillos y sea $\mathcal I(A), \mathcal I(B)$ los conjuntos de ideales de $A$ y $B$. Se define la \emph{extensión de ideales} como la aplicación
@@ -238,29 +231,6 @@ y la \emph{contracción de ideales} como
 \end{enumerate}
 \end{remark}
 
-\begin{lemma}\label{ext-cont}
-	Sea $f:A\to B$ un homomorfismo, entonces un ideal $\af \subset A$ es el contraido de uno de $B$ si y solo si $\af = \af^{ec}$.
-\end{lemma}
-\begin{proof}
-Supongamos $\af =\bfr^c$ para cierto ideal $\bfr \subset B$. Usando las dos últimas observaciones
-
-$$
-\af \subset \af{ec} = (\bfr^c)^{ec} = (\bfr^c)^{ec} = (\bfr^{ce})^c \subset \bfr^c = \af
-$$
-
-El recíproco es trivial porque $\af^e$ es un ideal de $B$.
-\end{proof}
-
-\begin{lemma}\label{ext-cont-ext}
-	Sea $f:A\to B$ un homomorfismo. Si $\af$ es un ideal de $A$, entonces $\af^e = \af^{ece}$. Si $\bfr$ es un ideal de $B$, entonces $\bfr^{cec} = \bfr^c$.
-\end{lemma}
-
-\begin{proof}
-	Sea $\af$ un ideal de $A$. Usando las propiedades de la observación \ref{prop_ext_con}, $\af \subset \af^{ec}$ y así $\af^e \subset \af^{ece}$. Recíprocamente, $\af^{ece} = (\af^e)^{ce} \subset \af ^e$.
-
-	Sea $\bfr$ ideal de $B$. Por una parte, $\bfr^{ce} \subset \bfr$ y así $\bfr^{cec} \subset \bfr^c$. Por otra, $\bfr^{cec} = (\bfr^c)^{ec} \supset \bfr^c$.
-\end{proof}
-
 \section{Lenguaje geométrico en álgebra conmutativa}
 
 \begin{definition}
@@ -276,7 +246,7 @@ Sea $K$ un cuerpo, se dice que es \emph{algebraicamente cerrado} si se cumple cu
 Para todo cuerpo $K$ existe una extensión $L|K$ algebraicamente cerrada.
 \end{proposition}
 \begin{proof}
-Ver teorema II.2.4 en \cite{gamboa}.
+Ver teorema II.2.4 en \citation{gamboa}.
 \end{proof}
 
 \begin{example}
@@ -303,7 +273,7 @@ Sea un cuerpo $K$ algebraicamente cerrado y estudiemos los conjuntos algebraicos
 \end{enumerate}
 \end{example}
 
-Si $K$ es un cuerpo, para todo $f\in K[x]$ se pueden encontrar $f_1,\dots, f_r$ sin factores irreducibles en $K[x]$ múltiples tales que $f = f_1 f_2^2 \dots f_r^r$. \footnote{Ver apéndice} En particular, $f_{\operatorname{red}} = f_1f_2 \dots f_r$ es un polinomio con mismos ceros que $f$ pero de multiplicidad $1$ \footnote{Ver apéndice.}. Esto es útil, porque como $K[X]$ es un DIP, todo ideal es de la forma $\mathfrak a = f K[x] $. Dicho $f$ puede ser en principio más complejo de lo que es necesario, por ejemplo, para definir el conjunto algebraico $\{x \in \mathbb R \vert \; x^2 = 0 \}$ podemos usar, en vez de $x^2$, el polinomio $x$.
+Si $K$ es un cuerpo, para todo $f\in K[x]$ se pueden encontrar $f_1,\dots, f_r$ sin factores irreducibles en $K[x]$ múltiples tales que $f = f_1 f_2^2 \dots f_r^r$. En particular, $f_{\operatorname{red}} = f_1f_2 \dots f_r$ es un polinomio con mismos ceros que $f$ pero de multiplicidad $1$ \footnote{Ver apéndice.}. Esto es útil, porque como $K[X]$ es un DIP, todo ideal es de la forma $\mathfrak a = f K[x] $. Dicho $f$ puede ser en principio más complejo de lo que es necesario, por ejemplo, para definir el conjunto algebraico $\{x \in \mathbb R \vert \; x^2 = 0 \}$ podemos usar, en vez de $x^2$, el polinomio $x$.
 
 \begin{lemma} \label{lemita}
 Sea $K$ un cuerpo, si $\mathfrak{a}\subset \mathfrak b$ son ideales de $K[X_1,\ldots, X_n]$, entonces $Z(\mathfrak{a}) \supset Z (\mathfrak b)$.
@@ -413,92 +383,12 @@ Demostración. Denotemos$$f(x):=f_1(x)f_2(x)^2\cdots f_r(x)^r$$donde $f_i$ es li
 \begin{theorem} \textbf{\emph{(Nullstellensatz)}}
 Sea $K$ un cuerpo algebraicamente cerrado y $\mathfrak a$ un ideal de $K[X_1,\dots,X_n]$, entonces
 
-\[\mathfrak I (\zeros{\mathfrak a}) := \{ f\big \vert \; f(a) = 0 \text{ para todo } a \in\zeros{\mathfrak a} \} = \sqrt{\mathfrak a}\]
+\[\mathfrak I (\zeros{\mathfrak a}) = \{ f\big \vert \; f(a) = 0 \text{ para todo } a \in\zeros{\mathfrak a} \} = \sqrt{\mathfrak a}\]
 \end{theorem}
 
 \begin{corollary}
  El mayor ideal $\bfr$ de $K[x_1,\dots,x_n]$ tal que $Z_K(\bfr)=Z_K(\af)$, para un $\af$ dado, es $\mathfrak{I}Z_K(\af)$.
 \end{corollary}
 
-\section{Álgebras}
-
-\begin{definition} Sea $\varphi: A \to B$ homomorfismo de anillos (conmutativos unitarios). Se dice que $B$ es una $A$-álgebra.
-\end{definition}
-
-\begin{example}
-\begin{enumerate}
-  \item Si $A$ es un subanillo de $B$, entonces $B$ tiene estructura de $A$-álgebra via la inclusión $i:A\to B$.
-  \item En concreto, si $\mathbb K$ es un cuerpo, tenemos el ejemplo anterior para $B = \mathcal M_n(\mathbb K)$ y $A= \{D\in B:\; D \text{ es diagonal con } \operatorname{diag} (D) = (\lambda,\dots, \lambda)\}$.
-  \item Si consideramos un cociente de un anillo $A$ por un ideal suyo $\mathfrak a$, entonces la proyección canónica $p:A \to \faktor{A}{\mathfrak a}$ dota al cociente de estructura de $A$-álgebra.
-  \item Si $K$ es un cuerpo, entonces una extensión suya $L\vert K$ es una $K$-álgebra.
-\end{enumerate}
-\end{example}
-
-\begin{remark} En estos ejemplos se ve que el homomorfismo de anillos que da la estructura de álgebra no debe cumplir nada en particular: puede o no ser inyectivo, sobreyectivo, etc.
-\end{remark}
-
-\begin{definition}
-  Sean $A$ un anillo y $B, C$ dos $A$-álgebras. Se dice que $f:B\to C$ es un homomorfismo de $A$-álgebras si es un homomorfismo de anillos que hace conmutativo el diagrama siguiente:
-
-
-\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt
-\centering
-\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
-  %uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
-
-
-  % Text Node
-  \draw (111,62.4) node [anchor=north west][inner sep=0.75pt]    {$A$};
-  % Text Node
-  \draw (176,62.4) node [anchor=north west][inner sep=0.75pt]    {$B$};
-  % Text Node
-  \draw (175,122.4) node [anchor=north west][inner sep=0.75pt]    {$C$};
-  % Text Node
-  \draw (137,42.4) node [anchor=north west][inner sep=0.75pt]    {$\varphi _{B}$};
-  % Text Node
-  \draw (121,100.4) node [anchor=north west][inner sep=0.75pt]    {$\varphi _{C}$};
-  % Text Node
-  \draw (191,82.4) node [anchor=north west][inner sep=0.75pt]    {$f$};
-  % Connection
-  \draw    (129,70) -- (171,70) ;
-  \draw [shift={(173,70)}, rotate = 180] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
-  % Connection
-  \draw    (129,79.92) -- (170.55,119.18) ;
-  \draw [shift={(172,120.55)}, rotate = 223.38] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
-  % Connection
-  \draw    (182.4,82) -- (182.12,116) ;
-  \draw [shift={(182.1,118)}, rotate = 270.48] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
-
-\end{tikzpicture}
-\end{definition}
-
-
-
-\begin{definition}
-  Sea $B$ una $A$-álgebra mediante $f:A\to B$. Se dice que $B$ está finitamente generada si existen $b_1, \dots, b_r \in B$ tales que para todo $x \in B$ se cumpla
-
-  \[x = \sum _{i_1, \dots, i_r} f(a_{i_1,\dots,i_r}) b_1^{i_1}\dots b_r^{i_r}\]
-\end{definition}
-
-\begin{remark}
-Sea $B$ una $A$-álgebra, si utilizamos la caracterización de la observación \ref{prop_adicional}, entonces $B$ es finitamente generada si y solo si existen $b_1,\dots, b_r \in B$ tales que para todo $x \in B$ se escribe $x = \sum _{i_1, \dots, i_r} a_{i_1,\dots,i_r} b_1^{i_1}\dots b_r^{i_r}$.
-
-En el caso particular en que $A\subset B$, entonces $B$ es una $A$-álgebra finitamente generada si y solo si $B = A[b_1, \dots, b_r]$ para ciertos $b_1,\dots, b_r \in B$, es decir, el menor anillo que contiene a $A$ y a los $b_i$.
-\end{remark}
-\begin{example}
-\begin{enumerate}
-    \item Si $A$ es un anillo, entonces $A\subset A[X_1, \dots, X_n]$ y el anillo de polinomios es una $A$-álgebra finitamente generada.
-    \item Sean $A$ subanillo de $B$, con $B$ una $A$-álgebra finitamente generada por $\{b_1,\dots,b_r\}$. Se puede tomar el anillo de polinomios $A[X_1,\dots,X_r]$ y el homomorfismo evaluación en los $b_i$:
-    \begin{align*}
-        \operatorname{eval}_{b_1,\dots, b_r}:A[X_1,\dots,X_r] &\to B\\
-        X_i &\mapsto b_i\\
-        A \ni a &\mapsto a
-    \end{align*}
-    El homomorfismo $\operatorname{eval}_{b_1,\dots, b_r}$ es suprayectivo porque los elementos de $B$ son expresiones polinomiales en $b_1,\dots, b_r$. Aplicando el primer teorema de isomorfía tenemos
-    \[\faktor{A[X_1,\dots,X_r]}{\ker \operatorname{eval}_{b_1,\dots, b_r}} \cong B\]
-    \item Más generalmente, si $B$ es una $A$-álgebra finitamente generada, también es una $f(A)$-álgebra finitamente generada y se puede repetir el ejemplo anterior con $f(A)$, que es subanillo de $B$.
-\end{enumerate}
-
-\end{example}
-
 \end{document}
+

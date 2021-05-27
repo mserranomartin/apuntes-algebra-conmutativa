@@ -1,0 +1,607 @@
+\documentclass[../main.tex]{subfiles}
+\begin{document}
+
+\section{Hoja 1}
+
+\paragraph{Ejercicio 1} Sea $u\in A$ una unidad y $x\in A$ un elemento nilpotente. Demostrar que $u+x$ es una unidad.
+
+Comenzamos probando que si $x\in \mathfrak N_A$, entonces $1+x\in \mathcal U(A)$. Existe $n>0$ tal que $x^n=0$, y entonces observamos que $(1+x)x^{n-1}=x^{n-1}$. Así:
+\begin{multline}
+(1+x^{n-1})(1+x) = 1+2x^{n-1} =1+2x^{n-1}(1+x)\\
+=(1+x^{n-1})(1+x)-2x^{n-1}(1+x)=1\\
+=(1+x^{n-1}-2x^{n-1})(1+x)=1\\
+=1-x^{n-1})(1+x)=1
+\end{multline}
+
+Por otra parte, si $u\in \mathcal U(A)$, existe $v\in A$ tal que $uv=1$. Además, por ser $\mathfrak N_A$ un ideal, $vx \in \mathfrak N_A$ con mismo índice de nilpotencia, y podemos aplicar lo anterior
+$$
+(1-(vx)^{n-1})(1+vx)=1
+$$
+Ahora podemos escribir $1+vx = v(u+x)$ y por tanto la anterior identidad queda escrita como
+$$
+[v(1-(vx)^{n-1})](u+x)=1
+$$
+
+
+\paragraph{Ejercicio 2} Sea $A,A_1,A_2$ anillos y supongamos que $A\cong A_1\times A_2$.
+\begin{enumerate}[label=(\roman*)]
+    \item Sea $\mathfrak a \subset A$ un ideal. Demostrar que $\mathfrak a \cong \mathfrak a' \times \mathfrak a''$ para ciertos ideales $\mathfrak a' \subset A_1$ y $\mathfrak a'' \subset A_2$.
+    \item Sea $\mathfrak p \subset A$ un ideal primo. Demostrar que $\mathfrak p \cong \mathfrak  p' \times A_2$ o bien $\mathfrak p \cong A_1 \mathfrak p''$ para ciertos ideales primos $\mathfrak p' \subset A_1$ y $\mathfrak p'' \subset A_2$.
+\end{enumerate}
+
+(i) En general, si $\phi:A\to B$ es un isomorfismo, y $\mathfrak a \subset A$ un ideal, entonces $\phi(\mathfrak a)$ es un ideal de $B$:
+
+- Para todo $\phi(x),\phi(y)\in \phi(\mathfrak a)$ tenemos que $\phi(x)+\phi(y) = \phi(\underset{\in \mathfrak a}{x+y}) \in \phi(\mathfrak a)$.
+- Para todo $\phi(x)\in \phi(\mathfrak a),z\in B$ existe $w\in A$ tal que $\phi(w) = z$, y entonces $z\phi(x) = \phi(\underset{\in \mathfrak a}{wx}) \in \phi(\mathfrak a)$.
+
+Y todo ideal del producto $\mathfrak b \subset A_1\times A_2$, es un producto de ideales $\mathfrak b_1 \times \mathfrak b_2$. Efectivamente, sea
+$$
+\mathfrak b_1 = \{x\in A_1: \; \exists y\in A_2//(x,y)\in \mathfrak b\}
+$$
+y veamos que es un ideal:
+
+- Para todo $x, x' \in \mathfrak b_1$ existen $y,y' \in A_2$ tales que $(x,y),(x',y')\in \mathfrak b$ y por ser un ideal tenemos $\mathfrak b \ni (x,y)+(x',y') = (x+x',y+y')$ y por tanto $x+x' \in \mathfrak b_1$.
+- Para todo $x\in \mathfrak b_1$ y todo $z\in A_1$ existe $y\in A_2$ tal que $(x,y)\in \mathfrak b$, y además $(z,0)\in A_1\times A_2$, y por ser un ideal se tiene $\mathfrak b\ni (x,y)(z,0) = (xz,0)$ con lo que $xz \in \mathfrak b_1$.
+
+Con esto queda probado que todo $\mathfrak a \subset A$ es isomorfo a un producto de ideales.
+
+(ii) En general, si $\phi:A\to B$ es un isomorfismo, y $\mathfrak p \subset A$ un ideal primo, entonces $\phi(\mathfrak p)$ es un ideal primo de $B$:
+
+- Sean $x',y' \in B$ tales que $x' = \phi(x), y' = \phi(y)\in \phi(\mathfrak p)$, entonces $\phi(\mathfrak p) \ni x'y' = \phi(x)\phi(y) = \phi(xy) $ por tanto $xy\in \mathfrak p$ y como es un ideal primo, $x \in \mathfrak p$ o $y\in \mathfrak p$ $\iff$ $x' \in \phi(\mathfrak p)$ o $y' \in \phi(\mathfrak p)$.
+
+Si $\mathfrak p \subset A_1\times A_2$ es un ideal primo, entonces sabemos de a)  que $\mathfrak p = \mathfrak a_1\times \mathfrak a_2$ producto de ideales. Veamos que o bien $\mathfrak p = \mathfrak p_1\times A_2$ con $\mathfrak p_1$ primo, o bien $\mathfrak p = A_1\times \mathfrak p_2$ con $\mathfrak p_2$ primo. Supongamos $\mathfrak p_1 \neq A_1$:
+
+- Para todo $x,y \in A_1$ tales que $xy\in \mathfrak p_1$  existe $z\in A_2$ tal que $(xy,z)\in \mathfrak p$. Entonces se tiene $\mathfrak p \ni (xy,z) = (x,z)(y,1)$ y por lo tanto $(x,z)\in \mathfrak p$ o bien $(y,1)\in \mathfrak p$ lo que implica que $x\in \mathfrak p_1$ o $y \in \mathfrak p_1$. Por tanto $\mathfrak p_1$ es un ideal primo.
+- Más aún, dado $x\in \mathfrak p_1$, obviamente se cumple $1\cdot x \in \mathfrak p_1$. Siguiendo lo de arriba, $(1,z)(x,1) \in \mathfrak p$, y como $\mathfrak p_1\neq A_1$ no puede ser que $(1,z)\in \mathfrak p$, luego necesariamente $(x,1)\in \mathfrak p$ y por lo tanto $1\in\mathfrak p_2$ y así $\mathfrak p_2 = A_2$.
+
+
+
+\paragraph{Ejercicio 3} Sea $\mathfrak a \subset A$ un ideal. Demostrar que:
+\[\sqrt{\mathfrak a} = \bigcap_{\substack{\mathfrak p\in \operatorname{Spec}(A)\\ \mathfrak a \subset \mathfrak p}} \mathfrak p\]
+
+Utilizando la caracterización que conocemos del nilradical de un anillo aplicado al cociente, y teniendo en cuenta que la biyección del teorema de la correspondencia conserva la primalidad, tenemos que:
+\begin{multline}
+x\in \sqrt {\mathfrak a} \iff x+\mathfrak a \in \mathfrak N_{A/\mathfrak a} = \bigcap_{\bar {\mathfrak p}\in \operatorname{Spec}(A/\mathfrak a)}\bar {\mathfrak p} \iff\\ \forall \bar {\mathfrak p} \in \operatorname{Spec}(A/\mathfrak a), \, x+\mathfrak a \in  \bar {\mathfrak p}  \iff\\ \forall \mathfrak p\in\operatorname{Spec}(A),\;  x\in \mathfrak p
+\end{multline}
+
+
+\paragraph{Ejercicio 4} Sea $A$ un anillo y $f=a_nX^n + \ldots + a_1 X+ a_0 \in A[X]$. Demostrar que $f$ es una unidad en $A[X]$ si y solo si $a_0$ es unidad y todos los $a_i$ son nilpotentes.
+
+$\Leftarrow)$ Sabemos que $\mathfrak N_A$ es un ideal, así que $\sum_{j=1}^n a_j X^j\in \mathfrak N_A$, y como $a_0\in \mathcal U(A)$, en virtud del ejercicio 1 se tiene que $\sum_{j=1}^n a_j X^j+a_0 = f \in \mathcal U(A)$.
+
+$\Rightarrow)$ Como $f$ es una unidad, existe $g =\sum_{j=1}^m b_j X^j \in A[X]$ tal que $fg = 1$. En primer lugar, esto implica que $a_0b_0 = 1$ luego $a_0\in \mathcal U(A)$.
+
+FALTA LA SEGUNDA PARTE
+
+\paragraph{Ejercicio 5} \textit{Sea $A$ un DIP. Si $\mathfrak a $ es un ideal propio, demostrar que son equivalentes
+\begin{enumerate}[label=\alph*)]
+    \item $\mathfrak a$ es un ideal primo,
+    \item $\mathfrak a$ es un ideal maximal,
+    \item existe $f\in A$ irreducible tal que $\mathfrak a = \gen{f}$.
+\end{enumerate}
+Si $a,b \in A \setminus \{0\}$ no son unidades, y $d,m\in A$ tales que $\gen{a} + \gen{b} = \gen{d}$, $\gen{a}\cap \gen{b} = \gen{m}$, demostrar que $d = \gcd(a,b)$ y $m = \operatorname{lcm}(a,b)$.}
+
+$a)\iff b)$ La implicación $\Leftarrow$ se tiene siempre. Sea $\mathfrak a = aA$ un ideal primo, y supongamos que existe $\mathfrak b = bA$ tal que $\mathfrak a\subsetneq \mathfrak b$. Existe $x\in A$ tal que $bx = a\in \mathfrak a$ primo, luego $b\in \mathfrak a$ o $x\in \mathfrak a$. No puede ser que $b\in \mathfrak a$ porque en tal caso existiría un $z\in A$ tal que $az = b$ y entonces para todo $t\in  A$ se tendría que $bt = a(zt) \in aA = \mathfrak a$ y por tanto $\mathfrak b \subseteq \mathfrak a$, en contra de nuestra hipótesis. Por tanto $x \in \mathfrak a$, y existe $w\in A$ tal que $x = aw$, entonces $a(bw) = a$ y por tanto $1=bw   \in \mathfrak b$, con lo que $\mathfrak b = A$. Así $\mathfrak a$ es maximal.
+
+$b)\iff c)$ Sea $\mathfrak a =aA$ un ideal, y supongamos que $a$ se puede expresar como $a=uv$ con $u,v\not\in \mathcal U(A)$. Entonces $\mathfrak a\subseteq uA$ y, además, $uA\neq A$ porque $u$ no es unidad. Veamos que $uA \not \subseteq \mathfrak a$, o equivalentemente, $u\not \in \mathfrak a$. Si $u\in \mathfrak a$ existe un $w$ tal que $u = aw =u(vw)$ y por tanto $u(1-vw)=0$ luego $1=vw$, ya que $u\neq 0$ pues si no $\mathfrak a = 0$ que no es maximal. Esto va en contra de la suposición de que $v \not \in \mathcal U(A)$. Así que $\mathfrak a \subsetneq uA\subsetneq A$ y por tanto no es un ideal maximal.
+
+Supongamos ahora que $a$ es irreducible, y existe $\mathfrak b=bA \supset \mathfrak a$. Existe $w \in A$ tal que $a = bw$, y como $a$ es irreducible entonces $b\in \mathcal U(A)$ o $w\in \mathcal U(A)$, en cualquier caso $\mathfrak b = A$, y por tanto $\mathfrak a$ es maximal.
+
+\paragraph{Ejercicio 6}\textit{
+\begin{enumerate}[label=(\roman*)]
+    \item Sea $A$ un anillo, demostrar que existe una biyección entre las descomposiciones $\Phi:A\to A_1 \times\ldots \times A_n$ via un isomorfismo de anillos y los conjuntos de idempotentes ortogonales de $A$, ie. $\{e_1,\ldots,e_n\}\subset A$ tales que $\sum_{i=1}^ne_i = 1_A$ y $e_ie_j  = \delta_{ij}e_i$.
+    \item Demostrar que dada una descomposición, los $A_i$ se identifican con ideales de $A$, no con subanillos. ¿Qué descomposición corresponde al conjunto de idempotentes $\{0_A, 1_A\}$.
+\end{enumerate}
+}
+
+(i) Veamos este apartado de dos formas: una donde los idempotentes son endomorfismos y otra donde son elementos de $A$.
+
+1. Si tenemos $A = A_1\times \dots \times A_n = \bigoplus_{i=1}^n A_i$, entonces podemos tomar la proyección $A\to A_i$ compuesta con la inclusión $A_i \to A$ que resulta en un endomorfismo de $A$ que denotamos $e_i$. Este endomorfismo es idempotente. Efectivamente, si tomamos $x=(x_1,\dots,x_n)\in A = \bigoplus_{i=1}^n A_i$ entonces $e_i\circ e_i(x) = e_i(0,\dots,0,x_i,0,\dots,0) = (0,\dots,0,x_i,0,\dots,0)$. Son ortogonales porque $e_j(0,\dots,0,x_i,0,\dots,0) = (0,\dots, 0)$. Y también tenemos que suman la identidad porque para cualquier $x\in A$:
+
+\begin{multline}
+e_1(x)+\ldots+e_i(x)+e_j(x)+\ldots +e_n(x)=\\=(x_1,0,\dots,0)+\dots+(0,\dots,x_i,0,\dots,0)+(0,\dots,0,x_j,\dots,0)+ (0,\dots,0,x_n) =\\= (x_1,\dots,x_i,x_j,\dots,x_n) = x
+\end{multline}
+
+​	Por otra parte, si tenemos un subconjunto $\{e_i\}_{i=1}^r$ tal que  $\sum_{i=1}^r e_i = 1$ y $e_ie_j=\delta_{ij}e_i$ podemos definir una descomposición de 	$A$ tomando $A_i$ las imágenes de los $e_i$.
+
+2. Dado el isomorfismo $\Phi:\bigoplus A_i \to A$, este determina un conjunto de idempotentes según a donde envíe a los elementos siguientes:
+\begin{align*}
+\Phi: A_1\times\ldots \times A_n &\to A\\
+(1,0,\dots,0)&\mapsto e_1\\
+(0,1,\dots,0)&\mapsto e_2\\
+&\vdots\\
+(0,0,\dots,1)&\mapsto e_n
+\end{align*}
+
+Efectivamente, por ser homomorfismo ha de cumplirse que
+
+\begin{align}
+   1_A&=\Phi(1,1,\dots,1) = \Phi(1,0,\ldots,0)+\dots+\Phi(0,0,\ldots, 1) = e_1+e_2+\ldots e_n\\
+   0_A &= \Phi(0,0,\dots,0) = \Phi((0,\dots,\overset{i)}{0},\dots,0)\cdot (0,\dots,\overset{j)}{0},\dots,0)) \quad i\neq j\\
+   e_i &= \Phi((0,\dots,\overset{i}{1},\ldots,0)\cdot(0,\dots,\overset{i}{1},\ldots,0)) = e_ie_i
+\end{align}
+
+Recíprocamente, dados $\{e_i\}_{i=1}^r$ tomemos los ideales $\mathfrak a_i =e_iA$ de $A$. Estos tienen estructura de anillo conmutativo unitario con las operaciones heredadas y tomando $1_{\mathfrak a_i} = e_i$. En efecto, todo el resto de propiedades se cumple automáticamente y comprobamos que esa es la unidad: para todo $x\in \mathfrak a_i$ existe $a\in A$ tal que $x=e_ia$ y entonces $xe_i = e_ix = e_i e_i a = e_i a = x$.
+
+Ahora consideramos $\phi_i:A\to \mathfrak a_i$ dado por $x\mapsto\phi_i(x) = xe_i$ que es un homomorfismo suprayectivo (esto segundo es obvio porque $\mathfrak a_i = e_iA$):
+
+\begin{align}
+    \phi_i(x+y) &= (x+y)e_i = xe_i+ye_i = \phi_i(x)+\phi_i(y)\\
+\phi_i(xy) &= xye_i = xye_ie_i = (xe_i)(ye_i) = \phi_i(x)\phi_i(y)
+\end{align}
+
+Finalmente podemos coger $\Phi:A\to \bigoplus\mathfrak a_i$ como $\Phi=\bigoplus_i\phi_i$ que es homomorfismo suprayectivo por serlo cada una de las coordendas, y además es inyectivo porque si $x\in A$ es tal que $0 = \Phi(x) = (xe_1,\dots,xe_n)$ entonces $0 = \sum_ixe_i  = x\sum_i e_i = x$. Por lo tanto $\Phi$ es el isomorfismo que buscabamos.
+
+(ii) Claramente $A_i \cong 0\times \ldots\times A_i\times \ldots \times 0$ y este es un ideal de $A_1\times \ldots\times A_n \cong A$ lo que demuestra la identificación. Efectivamente dados $a,b\in A_i$, y $(x_1,\ldots,x_n)\in A_1\times \ldots\times A_n$ tenemos
+
+\begin{equation}
+(0,\dots,\overset{i)}{a},\ldots,0)-(0,\dots,\overset{i)}{b},\ldots,0) = (0,\dots,\overset{i)}{a-b},\ldots,0)\in 0\times \ldots\times A_i\times \ldots \times 0
+\end{equation}
+\begin{equation}
+(x_1,\ldots,x_n)\cdot (0,\dots,\overset{i)}{a},\ldots,0) = (0,\dots,\overset{i)}{x_ia},\ldots,0) \in  0\times \ldots\times A_i\times \ldots \times 0
+\end{equation}
+
+No es un subanillo porque carece del elemento unidad de $A_1\times \ldots \times A_n$ que es la tupla con todo unos.
+
+Finalmente, si tomamos el conjunto de idempotentes ${0_A,1_A}$ obtenemos la descomposición trivial $A = \{0_A\}\times A$. Si seguimos la forma 2. de proceder, el isomorfismo $\Phi:A_1\times A_2 \to A$ debería asignar $(1,0)\mapsto 0_A$ y $(0,1)\mapsto 1_A$.  Está bien definido porque se cumple que $1_A = 0_A+1_A = \Phi(1,0)+\Phi(0,1) =\Phi(1,1)$ como debe ser.
+
+
+\paragraph{Ejercicio 7} \textit{Encontrar un sistema de idempotentes ortogonales no trivial y una descomposición asociada para
+\begin{enumerate}[label=(\roman*)]
+    \item $\Z_{nm}$ con $\gcd(n,m) = 1$.
+    \item $\Q[X]/\gen{x^2(x-1)}$.
+    \item $K[X]/\gen{fg}$ con $\gcd(f,g) = 1$.
+\end{enumerate}}
+
+(i) Sabemos que si $m,n$ son coprimos entonces $\mathbb Z_{mn} \cong \mathbb Z_m \times \mathbb Z_n$. Esta es nuestra descomposición. Para sacar los idempotentes ortogonales nos valemos de la identidad de Bezout: por ser coprimos existen $\mu, \nu $ tales que $\mu m+ \nu n = 1_\Z$. Además tenemos que
+\begin{align}
+[\mu m] +[\nu n] &= [1_\Z] = 1_{\Z_{mn}}\\
+[\mu m] [\nu n] &= [\mu \nu] [nm] = [0]\\
+[\mu m] [\mu m] &= [\mu m][1-\nu n] = [\mu m]
+\end{align}
+Por tanto, $e_1 = [\mu m]$ y $e_2 = [\nu n]$ son los elementos que buscamos. La descomposición viene dada por los ideales $[\mu m]\Z_{mn}$ y $[\nu n]\Z_{mn}$. Veamos que son precisamente $\Z_n$ y $\Z_m$ respectivamente. Los elementos del ideal $[\mu m]\Z_{mn}$ son los restos de la división $\frac{\mu m x}{mn} = \frac{\mu x}{n}$, es decir, son restos que determina una clase en $\Z_n$, por tanto $[\mu m]\Z_{mn} \subset \Z_n$. Pero además, si $[x],[y]\in \Z_{mn}$ son tales que $[\mu mx] = [\mu m y]$ en $\Z_{mn}$, entonces $\mu m(x-y)\in mn\Z$ por lo tanto $x-y \in n\Z$. Es decir, que hay exactamente $n$ clases en nuestro ideal, por tanto $[\mu m]\Z_{mn} = \Z_n$.
+
+(ii) $A=\Q[x] / \langle x^2(x-1)\rangle$. Este ejemplo es el mismo que el anterior pero en un anillo de polinomios. En ambos casos tenemos un dominio euclídeo y por tanto una identidad de Bezout para el máximo común divisor. En concreto, $\gcd(x^2,x-1) = 1$ que sale en la primera división $x^2 = x(x-1)+1$ o equivalentemente $x^2+x(1-x) = 1$, y podemos tomar como conjunto de idempotentes ortogonales $\{x^2, x(1-x)\}$ que cumplirán, análogamente a lo dicho en a), que $A = \Q[x]/\langle x^2\rangle \times \Q[x]/\langle x(1-x)\rangle$.
+
+(iii) Literalmente lo mismo que el (ii) pero ahora genérico. Se cumple exactamente lo mismo.
+
+\paragraph{Ejercicio 8}
+(a) Dado que $\langle x-1,y\rangle\supset\langle x^2+y^2-1\rangle$ los Teoremas de Isomorfía nos dan
+$$\faktor{\faktor{\R[x,y]}{\langle x^2+y^2-1\rangle}}{\faktor{\langle x-1,y\rangle}{\langle x^2+y^2-1\rangle}}\simeq\faktor{\R[x,y]}{\langle x-1,y\rangle}\simeq\R;$$
+es decir, $\af$ es maximal en $A$.
+
+Por otra parte, sea $p\in\R[x,y]$ de grado positivo y supongamos que $\{x,y\}\subset\langle p\rangle$. Se sigue de esto que existen $h,g\in\R[x,y]$ tales que
+\begin{align*}
+    ph=&x\hspace{15pt} \text{y}\\
+    pg=&y.
+\end{align*}
+De ser así, los grado de $p$ respecto de $x$ y de $y$ deben ser ambos menores o iguales que $1$, es decir, $p=ax+by+c$ para ciertos $a,b,c\in\R$. Si $a=0$ y $b\neq 0$, necesariamente el grado de $g$ respecto de $y$ debe ser $0$, lo que supone
+$$pg=(by+c)\left(\sum_{i\in F}\lambda_ix^{r_i}\right)=\sum_{i\in F}b\lambda_ix^{r_i}y+\sum_{i\in F}c\lambda_i x^{r_i}=y,$$
+pero esto es absurdo. Si $c\neq0$, entonces $g=0$. Por otro lado, si $c=0$, entonces podemos considerar $p=y$ y el grado de $ph$ respecto de $y$ es mayor que 0.
+El caso $a\neq0$ y $b=0$ es análogo.
+
+Ahora, si $\af$ fuera principal, se podría expresar como $\langle[p]\rangle$ para cierto $[p]\in A$. Sin embargo, por el mismo argumento dado al principio del apartado, se tendría que $\langle p\rangle$ es maximal en $\R[x,y]$, pero por lo que acabamos de ver $x\notin\langle p\rangle$ o $y\notin\langle p\rangle$. Suponiendo $x\notin \langle p\rangle$, $\langle p\rangle\subset\langle x\rangle +\langle p\rangle\subsetneq\R[x,y]$
+
+%En primer lugar, veamos que $f(x,y):=x^2-y^2-1$ es irreducible en $\R[x,y]$. Para ver esto, tomemos $(a_1x+a_2y+a_3),(b_1x+b_2y+b_3)\in\R[x,y]$, cuyo producto es:
+%\begin{align*}
+%    &(a_1x+a_2y+a_3)(b_1x+b_2y+b_3)=\\
+%     a_1b_1x^2+a_2b_2y^2+a_3&b_3+(a_1b_2+a_2b_1)xy+(a_1b_3+a_3b_1)x+(a_2b_3+a_3b_2)y.
+%\end{align*}
+%De esto se desprende que, en caso de que $f$ sea reducible, por ser de grado $2$ ambos factores deben tener grado $1$ y sus coeficientes deben verficar las ecuaciones
+%\begin{align*}
+%    a_1b_1=&\ 1,\\
+%    a_2b_2=&\ 1,\\
+%    a_3b_3=&-1,\\
+%    a_1b_2+a_2b_1=&0,\\
+%    a_1b_3+a_3b_1=&0\ \text{y}\\
+%    a_2b_3+a_3b_2=&0.
+%\end{align*}
+%Distingamos casos.\begin{itemize}
+%    \item Si $a_1>0$, entonces $b_1>0$. Igualmente, si %$a_2>0$, $b_2>0$ y $a_1b_2+a_2b_1>0$. De igual forma, si %$a_2<0$, $b_2<0$ y $a_1b_2+a_2b_1<0$. En ambos casos %llegamos a un absurdo.
+%    \item Si $a_1<0$, entonces $b_1<0$ y llegamos de forma %análoga al caso anterior a los mismos absurdos.
+%\end{itemize}
+%Así, tenemos que $f$ es irreducible en $\R[x,y]$. Como $\R[x,y]$ es DFU (basta verlo como $(\R[x])[y]$), tenemos que $\langle f\rangle$ es un ideal primo de $\R[x,y]$. Si $hg\in\langle f\rangle$, tenemos que $hg=\lambda f$ para cierto $\lambda\in\R[x,y]$. Por ser $f$ irreducible y la factorización de 
+%$$hg:=h_1\cdots h_rg_1\cdots g_s$$
+%única, $f=h_i$ para cierta $i\in\{1,\dots,r\}$ o $f=g_j$ %para cierta $j\in\{1,\dots, s\}$; en el primer caso %$h\in\langle f\rangle$ y en el segundo $h\in\langle %f\rangle$. 
+%
+%Por ser $\langle f\rangle$ primo, $A$ es un $DI$. %Supongamos $\af=[p]$ para cierto $[p]\in A$. De ser así, %se tendría que $[x-1]=[\lambda_1][p]$ y %$[y]=[\lambda_2][p]$ para ciertos %$[\lambda_1],[\lambda_2]\in A$ y
+%\begin{align*}
+%    0=[x^2+y^2-1]=[(x+1)(x-1)+y^2]=([x+1][\lambda_1]+[y][\%lambda_2])[p]
+%\end{align*}
+
+(b) Comprobemos ahora que $\langle[x-(1+iy)]\rangle=\bfr$. En primer lugar, teniendo en cuenta 
+\begin{align*}
+    \left(\left[\frac{-1}{2i}\right][x+(1+iy)]\right)[x-(1+iy)]&=\left[\frac{-1}{2i}\right][x^2-(1+iy)^2]=\\
+    &=\left[\frac{-1}{2i}\right][x^2-1-2iy+y^2]=\\
+    &=\left[\frac{-1}{2i}\right][-2iy]=[y]\in\langle [x-(1+iy)]\rangle,
+\end{align*}
+tenemos que
+\begin{align*}
+    [-x-iy][x-1-iy]=[x-x^2-y^2+iy]=[x-1]\in\langle [x-(1+iy)]\rangle.
+\end{align*}
+Por otra parte, como 
+$$[x-1-iy]=[x-1]-i[y]$$
+podemos concluir $\langle[x-(1+iy)]\rangle=\bfr$.
+
+\paragraph{Ejercicio 9} \textit{Sea $A$ un anillo y $\mathfrak a \subset A$ un ideal. Denotamos
+\[\mathfrak a [X] = \{ f \in A[X] \vert \; f \text{ tiene sus coeficientes en } \mathfrak a\}\]
+Demostrar que $\mathfrak a[X]$ es el extendido de $\mathfrak a$ via la inclusión. Si $\mathfrak p$ es ideal primo de $A$, ¿es $\mathfrak p[X]$ un ideal primo de $A[X]$?}
+
+Estamos considerando la extensión de $\mathfrak a$ por la inclusión $i:A\hookrightarrow A[X]$, entonces
+$$
+\mathfrak a^e = \langle \mathfrak i(a) \rangle \equiv \langle \mathfrak a\rangle_{A[X]} = \left\{\sum_{i=0}^n a_i g_i\big \vert\; a_i \in \mathfrak a, g_i \in A[X],n\in \N   \right\}
+$$
+Ahora bien, $\sum_{i=0}^n a_i g_i = \sum_{i=0}^n a_i \sum_{j=0}^m b^i_j X^j = \sum_{i,j}(a_ib^i_j) X^j$ y se cumple  $a_ib^i_j \in  \mathfrak a$ para todo $i,j$ por ser un ideal.
+
+% Lo que sigue está mal:
+%
+% ---
+%
+% Sea $\mathfrak p$ un ideal primo de $A$. Sean $f,g \in A[X]$ que identificamos con sucesiones $(a_n)_n,(b_n)_n$ donde a partir de algún término son todos nulos. Supongamos $h = fg \in \mathfrak p[X]$, de coeficientes $(c_n)_n$.
+%
+% Tenemos $a_0b_0 = c_0 \in \mathfrak p$. Supongamos $a_0 \not\in \mathfrak p$. El siguiente coeficiente del producto es $a_0b_1+a_1b_0 = c_1 \in \mathfrak p$. Por ser un ideal $a_1b_0\in\mathfrak p$, y por tanto $a_0b_1 = c_1-a_1b_0 \in \mathfrak p$. Tenemos entonces $b_1 \in \mathfrak p$. Si hubiésemos comenzado al contrario, tendríamos $a_0,a_1 \in \mathfrak p$. Observamos que para todos estos cálculos no hace falta suponer que ninguno de los términos es distinto de $0$.
+%
+% Suponemos entonces que para todo $k\leq n$ se cumple que $b_k\in \mathfrak p$ y comprobemos que $b_n \in \mathfrak p$. La primera vez que hace su aparición es en la expresión $c_n = \sum_{i+j = n} a_ib_j$. Por hipótesis de inducción $a_0b_n = c_n - \sum_{\substack{i+j = n\\j\neq n}} a_ib_j \in \mathfrak p$
+%
+% Tomamos el siguiente coeficiente $a_0b_2+a_1b_1+a_2b_0 = c_2 \in\mathfrak p$. Si $a_0 \not \in \mathfrak p$
+%
+% \paragraph{Ejercicio 10} \textit{Sea $A$ un anillo, $M$ un $A$-módulo y $\mathfrak a$ un ideal contenido en $\Ann (M)$. Demostrar que $M$ tiene estructura de $A/\mathfrak a$-módulo.}
+%
+% Solo hay que ver que la multiplicación por escalares de $A/\mathfrak a$ está bien definida. Si $x+\mathfrak a = y+\mathfrak a$ entonces $x-y \in \mathfrak a \subset \Ann(M)$, es decir, $(x-y)m = 0$ para todo $m\in M$, o equivalentemente $xm = ym$ para todo $m\in M$, lo que implica que $(x+\mathfrak a)m = (y+\mathfrak a)m$, y así el producto externo está bien definido.
+
+\paragraph{Ejercicio 11} \textit{Sea $A$ un anillo, $\mathfrak a$ un ideal, y $\mathfrak p_1, \ldots, \mathfrak p_n$ ideales primos. Si $\mathfrak a \subset \bigcup_{i=1}^n \mathfrak p_i$, entonces $\mathfrak a \subset \mathfrak p_i$ para algún $i\in \{1, \ldots, n\}$.}
+
+Probamos el contrarrecíproco por inducción sobre $n$. El caso $n=1$ es obvio. Supongamos que si tenemos $n$ ideales primos y $\mathfrak a \not \subset \mathfrak p_i$ para ningún $i$, entonces $\mathfrak a \not \subset \bigcup_{i=1}^n \mathfrak p_i$, y estudiamos el caso $n+1$.  Vamos a encontrar un elemento de $\mathfrak a$ que no pertenece a ningún $\mathfrak p_i$.
+
+Para cada $j$ consideramos un $z_j \in \mathfrak a \setminus \bigcup_{i\neq j} \mathfrak p_i \neq \varnothing$. La diferencia conjuntista es efectivamente no vacía por hipótesis de inducción, pues hay $n$ ideales primos en esa unión. Además, podemos suponer que $z_j \in \mathfrak p_j$ para cada $j$, pues en caso contrario existe algún $z_j$ que no pertenece a ninguno de los ideales primos y hemos terminado. Afirmamos que el elemento $z= z_1\cdot\ldots\cdot z_n + z_{n+1}\in \mathfrak a$ no pertenece a la unión.
+
+Si perteneciese, a algún $\mathfrak p_j$ para $j\leq n$, entonces $z_{n+1} = z_j -z_1\cdot\ldots\cdot z_n  \in \mathfrak p_j $, en contra de la construcción. Por otro lado, si $z\in \mathfrak p_{n+1}$, entonces $z_1\cdot\ldots\cdot z_n = z-z_{n+1} \in \mathfrak p_{m+1}$ y por ser este un ideal primo alguno de los $z_i$, con $1 \leq i \leq n$, pertenece a $\mathfrak p_{n+1}$, de nuevo en contra de la construcción de $z$.
+
+\paragraph{Ejercicio 13} Sea $A$ un anillo e $I\subset A[X_1,\ldots, X_n]$ un ideal. Demostrar que $A[X_1,\ldots, X_n]/I \cong A$ y que si $A$ es un cuerpo, $I$ es maximal.
+
+La última afirmación es evidente, porque un ideal es maximal si y solo si el cociente es un cuerpo.  Para ver el isomorfismo solo hace falta coger el homomorfismo suprayectivo $\operatorname{eval}_{a_1,\ldots, a_n}:A[X_1,\ldots,X_n]\to A$ cuyo núcleo son los polinomios de la forma $\sum_i (x_i-a_i)f$, pues todos sus términos deben anularse, y entonces $\ker \operatorname{eval}_{a_1,\ldots, a_n} = I$ y hemos terminado.
+
+
+\paragraph{Ejercicio 15}
+
+Se trata de repetir las demostraciones sobre extensiones finitas de cuerpos y la algebricidad de los generadores.
+
+$\Rightarrow$) Si $A$ es un $K$-espacio vectorial de dimensión finita $m$, entonces para cada $i$ las potencias $1, x_i, \ldots, x_i^m$ son $m+1$ vectores del espacio y por tanto son linealmente dependientes. Esto implica que existen $\lambda^i_0, \dots, \lambda^i_m \in K$ tales que $\lambda^i_0 + \lambda^i_1x_i + \ldots+\lambda^i_mx_i^m = 0$, es decir, que el polinomio no nulo $f_i(T) = \lambda^i_0 + \lambda^i_1 T + \ldots+\lambda^i_m T^m \in K[T]$ tiene a $x_i$ por raíz.
+
+$\Leftarrow$) Lo probamos por inducción. Escribimos solo el caso base $A=K[x_1]$. Consideramos el homomorfismo evaluación $\operatorname{eval}_{x_1}:K[T]\to A$. El núcleo $\ker \operatorname{eval}_{x_1}$ es un ideal primo de $K[T]$. Efectivamente, si $f, g \in K[T]$ son tales que $0 = fg (x_1) = f(x_1)g(x_1)$ entonces por ser $A$ un DI, $f(x_1)=0$ ó $g(x_1) = 0$, como queríamos probar. Por ser $K$ un cuerpo, $K[T]$ es un DIP (es dominio euclídeo) y así $\ker \operatorname{eval}_{x_1}$ es un ideal maximal, está generado por un elemento irreducible $f$, y entonces por la caracterización de maximales $K[T]/\gen{f} \cong \im \operatorname{eval}_{x_1}$ es un cuerpo. Dado que la imagen es un cuerpo que contiene a $K$ y a $x_1$ y está contenida en $A$, debe coincidir con A.
+
+Tomamos $f$ el único polinomio mónico irreducible que genera el núcleo. Resulta que el grado  $n$ de $f$ es la dimensión de $K[x_1]$. Efectivamente, $1+\gen{f}, \dots, T^{n-1}+\gen{f}$ es una base de $K[T]/\gen{f}$ (demostración en el libro de Gamboa). Además el isomorfismo $g+\gen{f} \mapsto g(x_1)$ entre $K[T]/\gen{f}$ e $\im \operatorname{eval}_{x_1}$ es un isomorfismo de $K$-espacios vectoriales porque deja fijos todos los elementos de $K$. Entonces $1, x_1, \ldots, x_1^{n-1}$ es una base de $A=K[x_1]$.
+
+\paragraph{Ejercicio 17} \textit{Sea $A$ un anillo y $f, g\in A[T]$ dos polinomios primitivos. Probar que $fg$ es un polinomio primitivo.}
+
+Supongamos que $fg$ no es primitivo. Entonces el ideal $\mathfrak a$ que generan sus coeficientes no es el total. Sea $\mathfrak m$ un ideal maximal que contiene a $\mathfrak a$.
+
+Consideramos $A[x]/\mathfrak m [T] \cong (A/\mathfrak m)[T]$. Esto es cierto, podemos definir el homomorfismo suprayectivo $A[T] \to (A/\mathfrak m)[T]$ dado por $f= \sum a_iT^i \mapsto \sum (a_i+\mathfrak m) T^i$, cuyo núcleo es $\mathfrak m[T]$. Por ser $(A/\mathfrak m)$ un cuerpo, tanto $(A/\mathfrak m)[x]$ como $A[x]/\mathfrak m[x]$ son dominios de integridad. Ahora bien, por un lado $[fg]=[0]$ por tenerse la inclusión $\text{cf}(fg)\subset\mathfrak m$. Sin embargo, por otro, como $f$ y $g$ son primitivos sus coeficientes generan $A$ y, si $[f]=[0]$ o $[g]=[0]$, se tendría $A=\mathfrak m$. Llegamos así al absurdo de que $[f]$ y $[g]$ sean divisores de $[0]$ en $A[x]/\mathfrak m[x]$
+
+\paragraph{Ejercicio 18} \textit{Sea $A$ un anillo y $M$ un $A$-módulo. Definimos en $A\times M$ la multiplicación $(a,m)(b,n) = (ab,an+bm)$ con la suma natural y el producto de $A$-módulo. Probar que $A\times M$ es una $A$-álgebra con la suma natural y ese producto. ¿Es el homomorfismo $a\mapsto (a,0_M)$ inyectivo?}
+
+Para ver que es $A$-álgebra solo hay que demostrar que $A\times M$ es un anillo (conmutativo unitario). Como $(A,+)$ y $(M,+)$ son grupos abelianos, $(A\times M, +)$. donde la suma es por coordenadas, también es un grupo abeliano.
+
+El producto es conmutativo $(b,n)(a,m) = (ba,bm+an) = (ab,an+bm) = (a,m)(b,n)$ y distributivo:
+\begin{multline}
+  (a,m)[(b,m)+(c,k)]=(a,m)(b+c,m+k) = \left(a(b+c),a(n+k)+(b+c)m\right) = (ab+ac,an+ak+bm+cm) =\\ (ab,an+bm)+(ac,ak+cm) = (a,m)(b,n)+(a,m)(c,k)
+\end{multline}
+y tiene unidad $(a,m)(1_A,0) = (a1_A,a0+1_A m) = (a,m)$.
+
+
+Obviamente la inclusión de un factor en un producto cartesiano es siempre inyectiva.
+
+\paragraph{Ejercicio 19}
+
+\subparagraph{Ejercicio 17 del Atiyah}
+
+Comprobamos las dos condiciones para ser base, a saber:
+\begin{itemize}
+    \item[1)] $\bigcup_{f\in A}X_f=\Spec A$ y
+    \item[2)] para cualesquiera $X_f$ y $X_g$, existe $h\in A$ tal que $X_h\subset X_f\cap X_g$.
+\end{itemize}
+En primer lugar $\bigcup_{f\in A}X_f = \bigcup_{f\in A}\Spec A \setminus V(f) = \Spec A \setminus \bigcap_{f\in A}V(f) = \Spec A$. Esto último es porque $V(f)\cap V(g) = V(\{f,g\})$ para cualesquiera $f,g \in A$, luego $\bigcap_{f\in A}V(f) = V(A) = V(\gen{1}) = \varnothing$. En segundo lugar, sean $f, g \in A$ y $\mathfrak p \in X_f\cap X_g = \Spec A \setminus (V(f) \cup V(g))$. Entonces $f, g\not\in \mathfrak p$, y por ser primo $fg \not \in \mathfrak p$, luego $\mathfrak p \in X_{fg}$. Más aún, si $\mathfrak q \in X_{fg}$, entonces $fg \not \in \mathfrak q$, lo que implica que $f \not \in \mathfrak q$ y $g \not \in \mathfrak q$, i.e., $X_{fg} \subset X_f \cap X_g$. Esto termina la demostración de que ese conjunto es base de la topología; además, tenemos los dos contenidos que prueban (i) $X_f \cap X_g = X_{fg}$.
+
+(ii) $\varnothing = \Spec A \setminus V(f) \iff V(f) = \Spec A \iff f \in \bigcap_{\mathfrak p \in \Spec A} \mathfrak p = \mathfrak N_A$.
+
+(iii) Sabemos que, si $f\not\in \mathcal U(A)$, entonces existe un ideal maximal que lo contiene que es a su vez primo. Por ser esto así, $V(f)\neq\varnothing$ y $X_f\neq \Spec A$. Por otra parte, si $f$ es unidad, no puede estar contenido en ningún ideal propio de $A$; en concreto, no puede estar contenido en ningún ideal primo.
+
+% en particular existe un ideal primo que lo contiene. Luego si ningún ideal primo lo contiene, no existe maximal que lo contenga, entonces no es unidad:  $\varnothing = V(f) \Rightarrow pf \not \in \mathfrak p \forall \mathfrak p \in \Spec A \Rightarrow f \not\in \mathcal U(A)$
+
+(iv) $X_f = X_g \iff V(f) = V(g)$, y $\gen{f}$ es el menor radical que contiene a $f$, luego $\forall \mathfrak p \in V(f)$ se tiene $\gen{f} \subset \mathfrak p$ y que $\sqrt{\gen{f}} = \bigcap_{\mathfrak p \in V(f)} \mathfrak p = \bigcap_{\mathfrak p \in V(g)} \mathfrak{p} = \sqrt{\gen{g}}$.
+Recíprocamente, si $\bigcap_{\mathfrak p \in V(f)} \mathfrak p = \bigcap_{\mathfrak q \in V(g)} \mathfrak{q}$, dado $\mathfrak p \in V(f)$, $ \bigcap_{\mathfrak{q} \in V(g)} \mathfrak{q} \subset \mathfrak{p}$ y por ende $g \in \mathfrak p$, luego $\mathfrak p \in V(g)$; el otro contenido es análogo. Luego $V(f) = V(g)$ y por tanto $X_f = X_g$.
+
+(v) Basta comprobarlo para un recubrimiento por abiertos de la base. Sea $\{X_{f_i}\}_{i\in I}$ recubrimiento de $\Spec A$, y comprobemos que $\gen{\{f_i\}_{i\in I}} = \gen{1}$. Efectivamente, como $\Spec A = \bigcup_{i\in I}X_{f_i} $, entonces
+
+\begin{equation}
+  \varnothing = \bigcap_{i\in I} V(f_i) = V(\{f_i\}_{i\in I}) = V(\gen{\{f_i\}_{i\in I}}),
+\end{equation}
+
+lo que quiere decir que no hay ningún primo que contenga a $\gen{\{f_i\}_{i\in I}}$, en particular no hay ningún maximal que lo contenga, es decir, que $\gen{\{f_i\}_{i\in I}} = \gen{1}$. Por ser así, existe $J\subset I$ finito y existen $\set{\lambda_j}_{j\in J}$ tales que $1 = \sum_{j\in J} \lambda_j f_j$.
+Por tanto $\gen{ \set{f_j}_{j\in J}} = \gen{ 1}$ y así  $V(\gen{\{f_j\}_{j\in J}} )= \varnothing$ lo que implica $\bigcup_{j\in J} X_{f_j} = \Spec A$. Con lo que $\set{X_{f_j}}_{j\in J}$ es subrecubrimiento finito de $\{X_{f_i}\}_{i\in I}$.
+
+(vi) Consideramos $(X_{g_i})_{i\in I}$ recubrimiento de $X_f$. Podemos suponer spg. que $X_f = \bigcup_{i\in I} X_{f_i}$ por ser abierto. Entonces, tenemos $V(f) = V(\gen{f_i}_{i\in I})$ y por tanto $f\in \sqrt{\gen{f_i}_{i\in I}}$ de forma que existe un $n>0$ tal que $f^n \in \gen{f_i}_{i\in I}$.
+Por tanto, existe $J\subset I$ finito y $\set{a_j}_{j\in J}$ tales que $f^n = \sum_{j\in J}a_j f_j$.
+
+Esto implica que para todo $\mathfrak p \in  V(\gen{f_j}_{j\in J})$ se cumple $\gen{f} \subset \mathfrak p$, y a su vez $f \in \mathfrak p$, de manera que $ V(\gen{f_j}_{j\in J}) \subset V(f)$. Los complementarios cumplen la inclusión contraria:
+
+\[ X_f = \Spec A \setminus V(f) \subset \Spec A \setminus V(\gen{f_j}_{j\in J}) = \bigcup_{j\in J} X_{f_j} \]
+
+y, así, $\set{X_{f_j}}_{j\in J}$ es un subrecubrimiento finito.
+
+(vii) $\Rightarrow)$ Supongamos que $A$ es abierto y compacto. Por ser abierto es unión de abiertos de la base, $A=\bigcup_{i\in I}X_{f_i}$, estos forman un recubrimiento y por ser compacto podemos quedarnos con un subrecubrimiento finito: $A=\bigcup_{i=1}^n X_{f_i}$.
+
+$\Leftarrow)$ Si $A=\bigcup_{i=1}^n X_{f_i}$, entonces es abierto por ser unión de abiertos. Sea $(X_{g_j})_{j\in J}$ un recubrimiento de $A$, en particular recubren cada $X_{f_i}$. Para cada $i=1,\dots, n$ por ser compacto existe $F_i \subset J$ finito tal que $X_{f_i}\subset \bigcup_{j \in F_i} X_{g_j}$. Por tanto $A \subset \bigcup_{i=1}^n \bigcup_{j \in F_i} X_{g_j}$.
+
+\section{Hoja 2}
+\paragraph{Ejericio 1} \textit{ Sea $A$ un anillo, $\mathfrak a$ un ideal de $A$, y $M$ un $A$-módulo. Probar que $A/\mathfrak a \otimes M \cong M/\mathfrak a M $.}
+
+Consideramos la cadena exacta $0\longrightarrow \mathfrak a \longrightarrow A \longrightarrow A/\mathfrak a \longrightarrow 0$ y la tensorizamos por $M$ tal que
+
+\[ \mathfrak a \otimes M \longrightarrow A\otimes M \longrightarrow A/\mathfrak a \otimes M \longrightarrow 0 \]
+
+que sabemos que es exacta. Por tanto, $\pi \otimes 1_M: A \otimes M \to A/\mathfrak a \otimes M $ es sobreyectiva, y aplicando el primer teorema de isomorfía $A \otimes M / \ker (\pi \otimes 1_M) \cong A/\mathfrak a \otimes M $. Por ser exacta, el núcleo coincide con la imagen de $i \otimes 1_M$, que es $\mathfrak a \otimes M$. Además, $A\otimes M \cong M$ vía el isomorfismo $a\otimes m \to am$, y la imagen de $\mathfrak a \otimes M \subset A\otimes M$ por esta aplicación es $\mathfrak a M$, lo que concluye la demostración.
+
+\paragraph{Ejercicio 2}
+
+Definimos las aplicaciones: $f_1:M\to \ker \phi$ dada por $f_2:x\mapsto x-\psi \circ \phi (x)$ y $M\to \im \psi$ dada por $x\mapsto \psi \circ \phi (x)$. La segunda es claro que está bien definida, y la primera se comprueba que $\phi(x-\psi\circ \phi(x)) = \phi(x)-\phi\circ \psi \circ \phi(x) = \phi(x)-\phi(x) = 0$.
+
+Tomamos $F=(f_1,f_2)$ y vemos que es nuestro isomorfismo. Es inyectiva porque si $(0,0) = (x-\psi \circ \phi (x), \psi \circ \phi (x))$ entonces $\psi \circ \phi (x) = 0$ y por tanto la primera coordenada dice $x=0$. Por otra parte, dado $(x,y)\in \ker \phi \oplus \im \psi$ definimos $m=x+y \in M$ y observamos que como $y\in \im \psi$ existe $z\in N$ con $y=\psi(z)$, y entonces: $f_2(m) =  \psi \circ \phi (y) = \psi \circ \phi \circ \psi(z) = \psi (z) = y $, y por tanto $f_1(m) = m - f_2(m) = (x+y)-y = x$.
+
+\paragraph{Ejercicio 5}
+\subparagraph{i)} Sean $\set{k_i}\subset K$ y $\set{a_i}\subset A$, $i\in\set{1,\dots,r}$ tales que
+$$\sum_{i}a_ik_i=0_K.$$
+De esta igualdad se sigue también $\sum_{i}a_ik_i=0_M$ entendiendo los elementos $k_i$ como elementos de $M$ mediante la inclusión. Dado que $M$ es plano, existen $\set{m_j'\in M}$ y $\lambda_{ij}\in A$, $j\in\set{1,\dots, s}$, tales que $k_i=\sum_j\lambda_{ij}m_j'$ y $\sum_i a_i\lambda_{ij}$ para cada $i$ y $j$. 
+
+De las anteriores igualdades se sigue que $0_N=\sum_j\lambda_{ij}[m_j']$ para cada $i$, es decir, existen $[m(i)_{l}'']\in N$ y $\mu(i)_{jl}\in A$, donde $l\in\set{(i,1),\dots,(i,n(i))}=:J(i)$, tales que $m_j'=\sum_l\mu(i)_{jl}m(i)_l''$ y $\sum_{j}\lambda_{ij}\mu(i)_{jl}=0_A.$ Así, existen $\set{k(i)_j'}\in K$ tales que
+$$m_j'=k(i)_j'+\sum_l\mu(i)_{jl}m(i)_l''\Longleftrightarrow k(i)_j'=m_{j}'-\sum_{l}\mu(i)_{jl}m(i)_l''.$$
+
+Definimos ahora, para cada $t\in\set{1,\dots,rs}$ los elementos
+$$k_t''=k(c(t))'_{r(t)},$$
+donde $t=c(t)s+r(t),$ y
+$$\gamma_{it}:=\left\{\begin{array}{cc}
+    \lambda_{i\ r(t)}&\text{si}\ c(t)=i\\
+    0&\text{si}\ c(t)\neq i
+\end{array}\right..$$
+
+De esta forma se tiene, fijada $i$,
+\begin{align*}
+    \sum_t\gamma_{it}k_t''=\sum_j\lambda_{ij}k(i)_{j}''&=\sum_j\lambda_{ij}m_j'-\sum_j\lambda_{ij}\left(\sum_l\mu(i)_{jl}m_{ij}''\right)\\
+    &=\sum_j\lambda_{ij}m_j'-\sum_l\left(\sum_j\lambda_{ij}\mu(i)_{jl}\right)m_{ij}''=k_i
+\end{align*}
+
+y, fijada $t$,
+$$\sum_i a_i\gamma_{it}=\sum_i a_i\lambda_{i\ r(t)}=\sum_i a_i\lambda_{ij}=0_A,$$
+donde $j=r(t)$. De esta forma, $K$ es plano.
+
+\subparagraph{ii)} Sean $\set{m_i}\subset M$ y $\set{a_i}\subset A$, $i\in\set{1,\dots,r}$ tales que
+$$\sum_{i}a_im_i=0_M.$$
+En particular, proyectando al cociente se tiene
+$$\sum_{i}a_i[m_i]=0_N$$
+y por ser plano existen $[m_j']\in N$ y $\lambda_{ij}\in A$, $j\in{1,\dots,s}$, de forma que $[m_i]=\sum_{j}\lambda_{ij}[m_j']=\left[\sum_{j}\lambda_{ij}m_j'\right]$ y $\sum_ia_i\lambda_{ij}=0_N$. De esta forma, existen $\set{k_i}\subset K$ tales que
+$$m_i=k_i+\sum_{j}\lambda_{ij}m_j'.$$
+Considerando de nuevo la suma inicial resulta
+$$\sum_i a_im_i=\sum_i\left(k_i+\sum_{j}\lambda_{ij}m_j'\right)=\sum_i a_ik_i +\sum_j\left(\sum_ia_i\lambda_{ij}\right)m_j'=\sum_i a_ik_i,$$
+es decir, $\sum_i a_ik_i=0_M$. Como $\sum_i a_ik_i\in K$, también $\sum_i a_ik_i\in K=0_K$ y existen $k_l'\in K$ y $\mu_{il}\in A$ tales que $k_i=\sum_l\mu_{il}k_l'$ y $\sum_i a_i\mu_{il}=0_A.$
+
+Para concluir basta definir los siguientes elementos:
+$$m_t'':=\left\{\begin{array}{cc}
+    m_{t}'&t\in\set{1,\dots,j}  \\
+    k_{t-j}'&t\in\set{j+1,\dots,j+l} 
+\end{array}\right.$$
+y
+$$\gamma_{it}:=\left\{\begin{array}{cc}
+    \lambda_{it}&t\in\set{1,\dots,j}  \\
+    \mu_{i\ t-j}&t\in\set{j+1,\dots,j+l} 
+\end{array}\right..$$
+Tenemos así, fijada $i$,
+$$\sum_t\gamma_{it}m_t''=\sum_{j}\lambda_{ij}m_j'+\sum_l\mu_{il}k_l'=\sum_{j}\lambda_{ij}m_j'+k_i= m_i$$
+y, fijada $t$ ($t\in\set{1,\dots,j}$ o $t\in\set{j+1,\dots,j+l}$),
+$$\sum_i a_i\gamma_{it}=0_A$$
+
+\paragraph{Ejercicio 8} Sea $M$ un $A$-módulo proyectivo. Sabemos que existen $I$ conjunto de índices y $K$ $A$-módulo tales que
+$$A^{(I)}\overset{\varphi}{\cong} K\oplus M.$$
+Para cada $a\in A^{(I)}$, denotamos a su imagen por $\varphi$ como $(\varphi(a)_K,\varphi(a)_M)$.
+
+Ahora, dada una sucesión exacta
+$$0\longrightarrow N'\overset{f}{\longrightarrow}N$$
+se tiene que la sucesión
+$$0\longrightarrow A^{(I)}\otimes N'\overset{\operatorname{Id}_{A^{(I)}}\otimes f}{\longrightarrow} A^{(I)}\otimes N$$
+también lo es. 
+
+Es claro que $\Phi:=\varphi\otimes \operatorname{Id}_{N'}: A^{(I)}\otimes N'\longrightarrow (K\otimes N')\oplus(M\otimes N')$, $\Psi:=\varphi\otimes \operatorname{Id}_{N}A^{(I)}\otimes N\longrightarrow (K\otimes N)\oplus(M\otimes N)$ son dos isomorfismos. Consideremos la sucesión
+\begin{equation}\label{Hoja2ej8}
+    0\longrightarrow (K\otimes N')\oplus(M\otimes N')\overset{(\operatorname{Id}_{K}\otimes f)\oplus (\operatorname{Id}_{M}\otimes f)}{\longrightarrow} (K\otimes N)\oplus(M\otimes N)
+\end{equation}
+y veamos que se da la igualdad
+$$\Psi^{-1}\circ(\operatorname{Id}_{K}\otimes f)\oplus (\operatorname{Id}_{M}\otimes f)\circ\Phi=\operatorname{Id}_{A^{(I)}}\otimes f,$$
+es decir, que los diagramas conmutan: dado $(a,n')\in A^{(I)}\otimes N'$ arbitrario, se tiene
+\begin{align*}
+    [\Psi^{-1}\circ&(\operatorname{Id}_{K}\otimes f)\oplus (\operatorname{Id}_{M}\otimes f)\circ\Phi]\ (a\otimes n')=\\
+    &=[\Psi^{-1}\circ(\operatorname{Id}_{K}\otimes f)\oplus (\operatorname{Id}_{M}\otimes f)](\varphi(a)_K\otimes n',\varphi(a)_M\otimes n')=\\
+    &=\Psi^{-1}(\varphi(a)_K\otimes f(n'),\varphi(a)_M\otimes f(n'))=(a,f(n'))=\operatorname{Id}_{A^{(I)}}\otimes f(a,n').
+\end{align*}
+Por esto que acabamos de ver, la sucesión ($\ref{Hoja2ej8}$) es exacta, es decir, la aplicación $F:=(\operatorname{Id}_{K}\otimes f)\oplus (\operatorname{Id}_{M}\otimes f)$ es inyectiva. 
+Así, para cada $m\otimes n'\in M\otimes n$, si $F(m\otimes n')=\operatorname{Id}_{M}\otimes f(m\otimes n')=0,$ entonces $m\otimes n'=0_{(K\otimes N')\oplus(M\otimes N')}$ y $m\otimes n'=0_{(M\otimes N')}$; es decir, $\operatorname{Id}_{M}\otimes f$ es inyectiva y $M$ plano.
+
+\paragraph{Ejercicio 10}
+\subparagraph{i)} Procedamos como indica el enunciado por inducción sobre $n$.
+
+Para $k=1$, por ser $M$ un submódulo de $A$, tenemos que
+\begin{itemize}
+    \item para cualesquiera $m_1,m_2\in M$ se verifica $m_1-m_2\in M$ y,
+    \item dados $m\in M$ y $a\in A$, $am\in M;$
+\end{itemize}
+es decir, $M$ es un ideal de $A$. Por ser $A$ DIP existe $m\in A$ tal que $M=\langle m\rangle$. Más aún, ser DIP implica ser DFU y, por esto, para todo $x\in M$ existe $a\in A$ tal que $x=am$ y esta expresión es única. Así, tenemos que $\{m\}$ es base de $M$ y por la caracterización de los módulos libres, $M$ lo es: concretamente, $M\cong A$.
+
+Supongamos cierto el resultado para toda $k<n$ y veámoslo para $k=n$. En primer lugar, la sucesión
+$$0\longrightarrow A^{(n-1)}\longrightarrow A^{(n)}\longrightarrow A\longrightarrow 0$$
+es escindida en virtud de que $A^{(n)}\cong A^{(n)}\oplus A$ y de la caracterización de las sucesiones escindidas.
+
+Por otra parte, supongamos que no existe $k<n$ tal que $M\subseteq A^{(n-1)}$ y veamos que se tienen los isomorfismos $M':=A^{(n-1)}\cap M\cong A^{(n-1)}$ y $M'':=M/{A^{(n-1)}\cap M}\cong A$. 
+Comencemos por el segundo de ellos. La suposición nos asegura que $M/{A^{(n-1)}}\neq \{0_M\}$ y concretamente $M/{A^{(n-1)}}\subseteq A^{(n)}/{A^{(n-1)}}\cong A$ y $M''\overset{\Phi}{\cong}A$ por el caso base. 
+Sean $\Phi^{-1}=:\overline{m},m\in M$ y consideremos $[m]\in M''$. Existe un único $a_m\in A$ tal que $m=a_m\overline{m}$. Así, podemos definir
+$$\begin{array}{rrcl}
+    \sigma:&M''&\longrightarrow&M\\
+    &[m]&\longrightarrow&a_m\overline{m}
+\end{array},$$
+de forma que $\sigma\circ g=\operatorname{Id}_M,$ donde
+\begin{equation}\label{equation:Hoja2ej10}
+    0\overset{}{\longrightarrow}M'\overset{f}{\longrightarrow}M\overset{g}{\longrightarrow}M''.
+\end{equation}
+De esto resulta que ($\ref{equation:Hoja2ej10}$) es escindida y $M\cong M'\oplus M''$.
+
+Sigamos con el otro isomorfismo. Es claro que $M'$ es submódulo de $A^{(n-1)}$, de esta forma la hipótesis de inducción nos dice que $M'\cong A^{(s)}$ para cierta $s\le n-1$. Ahora bien, necesariamente $s=n-1$ pues en caso contrario, por lo que acabamos de ver, $M\cong A^{s}\oplus A$, que es absurdo.
+
+Con todo,
+$$M\cong M'\oplus M''\cong A^{(n-1)}\oplus A\cong A^{(n)}.$$
+
+\subparagraph{ii)} Estas comprobaciones son rutinarias.
+
+En primer lugar, dados $m_1,m_2\in T(M)$ existen $a_1,a_2\in A$ tales que $a_im_i=0_M$. Así, $a_1a_2(m_1-m_2)=0_M$ y $m_1-m_2\in T(M).$ Por otra parte, para todo $a\in A$ se tiene que $a_1(am_1)=a(a_1m_1)=0_M,$ es decir, $am_1\in T(M)$. Vemos así que $T(M)$ es submódulo de $M$.
+
+Ahora, la igualdad
+$$T(M)=\bigcup_{a\in A\setminus\{0_A\}}\ker(\mu_a)$$ nos dice que $T(M)=\{0_M\}$ si, y sólo si, $\mu_a$ es inyectiva para toda $a\in A\setminus\{0_A\}.$
+
+Por último, dados $[m]\in M/T(M)$ y $a\in A$
+$$a[m]=[0_M]\Longleftrightarrow [am]=[0_M]\Longleftrightarrow [m]=[0_M].$$
+
+\subparagraph{iii)} Veamos que $\{x_1,\dots,x_r\}$ es base de $N$. En primer lugar, por la propia definición de $N$, para cada $n\in N$ existen $\{\lambda_i\}_i$ tales que
+\begin{equation}\label{equation:Hoja2ej102}
+    n=\sum_{i=1}^r\lambda_ix_i.
+\end{equation}
+Veamos que son únicos. Supongamos que el conjunto $\{\lambda_i'\}_i$ también verifica ($\ref{equation:Hoja2ej102}$), por ser así
+$$\sum_{i=1}^r(\lambda_i-\lambda_i')x_i.$$
+Dado que $N$ es un $A$-módulo sin torsión $(\lambda_i-\lambda_i')x_i\neq 0_N$ para toda $i$, además, como $\{x_1,\dots,x_r\}$ es un sistema de generadores linealmente independiente tenemos $\lambda_i=\lambda_i'$ para toda $i$.
+De esta forma, $N$ es un $A$-módulo libre de rango $r$.
+
+Ahora, por la condición de maximalidad del sistema de generadores de $N$, tenemos que para cada $i\in\{r+1,\dots,s\}$ existen $\lambda_i\neq 0_A$ y $\{\alpha_j\}_{j=1}^r\subset A$ tales que
+$$\lambda_ix_i=\sum_{j=1}^r\alpha_jx_j.$$
+Definamos los elementos $\gamma:=\prod_{j=r+1}^s\lambda_j$ y $\gamma_i:=\prod_{j\in\set{r+1,\dots,s}\setminus\{i\}}\lambda_j$ y sea $x\in M$. Como $M=\langle x_1,\dots, x_s\rangle$, existen $\{\mu_i\}_{i=1}^s\subset A$ tales que $x=\sum_i\mu_ix_i$ y resulta
+$$\gamma x=\sum_{i=1}^s\gamma\mu_ix_i=\sum_{i=1}^r\gamma\mu_ix_i+\sum_{i=r+1}^s\lambda\mu_ix_i=\sum_{i=1}^r\gamma\mu_ix_i+\sum_{i=r+1}^s(\gamma_i\mu_i)(\lambda_ix_i),$$
+es decir, $\gamma x\in N$. Así, $\gamma M\subset N$.
+
+\subparagraph{iv)} Para concluir el ejercicio, hagamos uso de los apartados anteriores. Sea $M$ un $A$-módulo sin torsión finitamente generado, digamos por los elementos $\{x_1,\dots,x_s\}$. Sabemos que existen un submódulo de $M$, $N$, finitamente generado y $A$-módulo libre y un elemento $a\in A$ tal que $aM\subset N$. Así, podemos considerar $aM$ un submódulo de $A^{(r)}$, donde $r$ es el rango de $N$; es decir, $aM$ es $A$-módulo libre. Por último, dado que $M$ está libre de torsión, la aplicación $\mu_a$ (definida en ii)) es un isomorfismo sobre $\operatorname{im}(\mu_a)\subset aM$ y podemos considerar de nuevo $M$ como submódulo de $A^{(s)}$ para cierta $s\in\N$. Con esto concluimos que $M$ es $A$-módulo libre.
+
+\paragraph{Ejercicio 14} Por definición de conjunto multiplicativamente cerrado tenemos tanto que $0_A\neq S$ como que $1_A\in S$. De lo primero se deduce que $s^n\neq 0_A$ para toda $n\in\N$ y, de lo segundo, que $s$ no es divisor de cero. Lo primero es inmediato, veamos lo segundo.
+
+En primer lugar, si existe $k\in\N$ tal que existe $a\in A$ de forma que $s^ka=0_A$, entonces basta tomar $a':=s^{k-1}a$ y se tiene que $sa'=0_A$. Así, $s$ no es divisor de cero si, y sólo si, toda potencia suya verifica no ser divisor de cero. Por otra parte, tenemos que existe $n_0$ (que podemos considerar mínima) de forma que $s^{n_0}=1_A$. Supongamos que $sa=0_A$ para cierto $a\in A$, por ser así, se tiene $0_A=s^{n_0-1}(sa)=s^{n_0}a=a$ y $s$ no es divisor de cero.
+
+Estamos ya en condiciones de demostrar lo que se nos pide. Definamos el siguiente homomorfismo
+$$\begin{array}{rrcl}
+    i:&A[T]&\longrightarrow&S^{-1}A[T]\\
+    &\operatorname{p}(T):=\sum_{i=1}^ra_iT^i&\longrightarrow&\overline{\operatorname{p}}(T):=\sum_{i=1}^r\delta_S(a_i)T^i
+\end{array}.$$
+Dado que $S\cap\operatorname{Div}_0A=\varnothing$, $\delta_S$ es inyectiva y así lo es también $i$. Ahora, considerando el homomorfismo evaluación en $\frac{1}{s}$,
+$$\begin{array}{rrcl}
+    \operatorname{ev}_{\frac{1}{s}}:&S^{-1}A[T]&\longrightarrow&S^{-1}A\\
+    &\overline{\operatorname{p}}(T)&\longrightarrow&\overline{\operatorname{p}}\left(\frac{1}{s}\right) 
+\end{array}$$
+tenemos el homomorfismo $\operatorname{ev}_{\frac{1}{s}}\circ\  i:A[T]\longrightarrow S^{-1}A.$
+
+Veamos que $\ker(\operatorname{ev}_{\frac{1}{s}}\circ\  i)=\langle sT-1\rangle.$ La inclusión $\langle sT-1\rangle\subset \ker(\operatorname{ev}_{\frac{1}{s}}\circ\  i)$ es obvia, comprobemos la recíproca.
+
+Sea $i(\operatorname{p})(T):=\sum_{i=0}^{r+1}\delta_S(p_i)T^i\in S^{-1}A[T]$, donde $\operatorname{p}\in A[T]$ y $r\in\N$ y tal que $i(\operatorname{p})(\frac{1}{s})=0_{S^{-1}A}.$ Sea también $\operatorname{h}(T):=\sum_{i=0}^r\frac{a_i}{s^{n_i}}T^i$ verificando
+$$(\delta(s)T-\delta(1))\operatorname{h}(T)=\operatorname{p}(T).$$
+Veamos que para cada $\set{1,\dots, r}$ se tiene $\frac{a_i}{s^{n_i}}=\frac{a^*_i}{1_A}$ para ciertas $a^*_i\in A$. Para ello, realizamos la multiplicación e igualamos coeficientes.
+\begin{equation}
+    \begin{split}
+        (\delta(s)T-\delta(1))\operatorname{h}(T)&=\sum_{i=0}^{r}\frac{a_i}{s^{n_i-1}}T^{i+1}-\sum_{i=0}^r\frac{a_i}{s^{n_i}}T^i=\sum_{i=1}^{r+1}\frac{a_{i-1}}{s^{n_{i-1}-1}}T^{i}-\sum_{i=0}^r\frac{a_i}{s^{n_i}}T^i\\
+        &=\frac{a_r}{s^{n_r-1}}T^{r+1}+\sum_{i=1}^r\frac{s^{n_i}a_{i-1}-s^{n_{i-1}-1}a_{i}}{s^{n_{i-1}-1}s^{n_i}}T^{i}+\frac{a_0}{s^{n_0}}.
+    \end{split}
+\end{equation}
+Así, surgen las ecuaciones
+\begin{equation}\label{equation:Hoja10ej14}
+    \begin{split}
+        a_r&=s^{n_r-1}p_{r+1}\\
+        s^{n_i}a_{i-1}-s^{n_{i-1}-1}a_{i}&=s^{n_{i-1}-1}s^{n_i}p_i\\
+        a_0&=s_0p_0
+    \end{split}
+\end{equation}
+y se desprende de la del medio que
+$$s^{n_{i-1}-1}a_i=s^{n_i}a_{i-1}-s^{n_{i-1}-1}s^{n_i}p_i.$$
+Probemos por inducción sobre $i$ que
+$$a_i=s^{n_i}(s^ip_0-\sum_{k=1}^is^{i-k}p_k).$$
+El caso base es obvio atendiendo a ($\ref{equation:Hoja10ej14}$). Si ahora lo suponemos para $t=i-1$, vemos que se cumple para $t=i$:
+\begin{equation}
+    \begin{split}
+        s^{n_{i-1}-1}a_i&=s^{n_i}a_{i-1}-s^{n_{i-1}-1}s^{n_i}p_i\\
+        s^{n_{i-1}-1}a_i&=s^{n_i}s^{n_{i-1}}(s^{i-1}p_0-\sum_{k=1}^{i-1}s^{i-1-k}p_k)-s^{n_{i-1}-1}s^{n_i}p_i\\
+        a_i&=s^{n_i}s(s^{i-1}p_0-\sum_{k=1}^{i-1}s^{i-1-k}p_k)-s^{n_i}p_i\\
+        a_i&=s^{n_i}(s^ip_0-\sum_{k=1}^is^{i-k}p_k).
+    \end{split}
+\end{equation}
+De esta forma, tenemos que para toda $i\in\set{1,\dots, r}$ se cumple
+$$\frac{a_i}{s^{n_i}}=\frac{s^ip_0-\sum_{k=1}^is^{i-k}p_k}{1_A}$$
+y, además, se desprende que $s|p_{r+1}.$
+
+Con todo, definiendo $\widetilde{\operatorname{h}}(T):=\sum_{i=1}^r\left[s^ip_0-\sum_{k=1}^is^{i-k}p_k\right]T^i$ tenemos que $(sT-1)\widetilde{\operatorname{h}}(T)=\operatorname{p}(T)$ y $\operatorname{p}\in\langle sT-1\rangle,$ es decir, si $\operatorname{p}\in A[T]$ verifica $\operatorname{ev}_{\frac{1}{s}}\circ\ i(\operatorname{p})=0_{S^{-1}A},$ entonces $\operatorname{p}\in \langle sT-1\rangle$ y $\ker(\operatorname{ev}_{\frac{1}{s}}\circ\ i)\subset\langle sT-1\rangle.$
+
+Podemos concluir así por el Primer Teorema de Isomorfía que $S^{-1}A\cong A[T]/\langle sT-1\rangle.$
+
+
+%definamos, dado $p\in A[T]$, $\operatorname{ev}_{\frac{1}{s}}(p):=\frac{a_p}{s^{n_p}}$. Así, $\operatorname{ev}_{\frac{1}{s}}(p)=0_{S^{-1}A}$ si, y sólo si, existe $k\in\N$ tal que $s^ka_p=0.$
+
+%Si $p(T)=\sum_{i=1}^r\alpha_iT^i,$ se tiene
+%$$p\left(\frac{1}{s}\right)=\sum_{i=1}^r\alpha_i\frac{1}{s^i}=\frac{\sum_{i=1}^r\alpha_is^{r-i}}{s^r}$$
+%y vemos así que
+
+
+
+%Es claro que $p(\frac{1}{s})=0_{S^{-1}A}\Longleftrightarrow s^rp(\frac{1}{s})$, donde $r:=\operatorname{deg}(p)$.
+ 
+\paragraph{Ejercicio 23}
+\subparagraph{i)} Veamos que $I:=\langle x_{i_1}^{\alpha_1},\dots,x_{i_r}^{\alpha_r}\rangle$ es irreducible. Sean $I_1$ e $I_2$ ideales tales que $I=I_1\cap I_2.$ Supongamos además que están generados respectivamente por $\langle b_1,\dots,b_s\rangle$ y $\langle c_1,\dots,c_t\rangle.$
+
+Se tiene la inclusión $I\subset I_i$ para $i\in\{1,2\}.$ Consideremos sin pérdida de generalidad $i=1.$ Tomemos a su vez un generador arbitrario $x_{i_j}^{\alpha_j}.$ Existen $\gamma_l$ tales que
+$$x_{i_j}^{\alpha_j}=\sum_{l=1}^s\gamma_l b_l.$$
+Por ser así se tiene
+$$\operatorname{gr}_{x_{i_m}}(x_{i_j}^{\alpha_j})=\operatorname{gr}_{x_{i_m}}{\sum_{l=1}^s\gamma_l b_l}=\left\{\begin{array}{cc}
+    \alpha_j&\text{si }j=m\\
+    0&\text{si }j\neq m
+\end{array}\right.$$
+y, además,
+$$\operatorname{gr}_{x_{i_m}}{\sum_{l=1}^s\gamma_l b_l}=\max\{\operatorname{gr}_{x_{i_m}}\gamma_l b_l\}.$$
+Sea $k\in\{1,\dots,s\}$ tal que $\operatorname{gr}_{x_{i_j}}\gamma_kb_k=\alpha_j$ (que sabemos que existe). Esto implica que $\gamma_k b_k\neq 0.$ Así, tomando $m\neq j$, si $\operatorname{gr}_{x_{i_m}}\gamma_k b_k>0$, entonces $\operatorname{gr}_{x_{i_m}}x_{i_j}^{\alpha_j}>0$ que es absurdo. Con todo, $\gamma_kb_k=\delta_k x_{i_j}^{\alpha_j}.$
+
+Ahora, reuniendo los valores $k\in\{1,\dots,s\}$ tales que $\operatorname{gr}_{x_{i_j}}\gamma_kb_k=\alpha_j$ en un subconjunto $P$, tenemos que
+$$x_{i_j}^{\alpha_j}-\sum_{k\in P}\gamma_kb_k=\sum_{k\notin P}\gamma_kb_k$$
+y así, evaluando grados,
+$$x_{i_j}^{\alpha_j}-\sum_{k\in P}\gamma_kb_k=\sum_{k\notin P}\gamma_kb_k=0.$$
+De esto se desprende a su vez que
+$$x_{i_j}^{\alpha_j}=\left(\sum_{k\in P}\delta_k\right)x_{i_j}^{\alpha_j}\Leftrightarrow \sum_{k\in P}\delta_k=1\Leftrightarrow \delta_k\in P\text{ para toda }k\in P.$$
+Denotando $\gamma'_k:=\gamma_k(\delta_k)^{-1}$ tenemos pues
+$$\gamma'_kb_k=x_{i_j}^{\alpha_j}$$
+y, salvo multiplicación por escalares, la factorización única nos da $b_k=x_{i_j}^{\alpha_k}$ para cierto $\alpha_k\le\alpha_j.$ Tomando $j_0$ tal que $\alpha_{j_0}:=\min\{\alpha_k\}$ tenemos que $\langle b_k\rangle\subset\langle b_{j_0}\rangle$ para toda $k\in P$; es decir, podemos suponer que $b_{j_0}$ es único. Con todo, hemos probado que $I_1=\langle x_{i_j}^{\alpha_{j_0}}\rangle$ e $I_2=\langle x_{i_j}^{\beta_{j_0}}\rangle$ donde los $\alpha_{j_0}$ y $\beta_{j_0}$ se ha construido de forma análoga al anterior.
+
+Ahora bien, si tanto $\alpha_{j_0}<\alpha_j$ como $\beta_{j_0}<\alpha_j$ para alguna $j$, entonces $\alpha:=\max\{\alpha_{j_0},\beta_{j_0}\}<\alpha_j$ y $x_{i_j}^{\alpha}\in I_1\cap I_2=I$, que es absurdo. Más aún, o bien $I_1=I$, o bien $I_2=I.$ Supongamos que existen $j_1$ y $j_2$ tales que $\alpha_{{j_1}_0}<\alpha_{j_1}$, $\beta_{{j_1}_0}=\alpha_{j_1}$, $\alpha_{{j_2}_0}=\alpha_{j_2}$ y $\beta_{{j_2}_0}<\alpha_{j_2}.$ En caso de ser así, se tendría $$x_{i_{j_1}}^{\alpha_{{j_1}_0}}x_{i_{j_2}}^{\alpha_{{j_2}_0}}\in I_1\cap I_2=I,$$ que es de nuevo absurdo.
+
+Vemos así que $I$ es irreducible.
+
+\subparagraph{ii)} Caractericemos ahora los ideales radicales generados por monomios. Comencemos por considerar el ideal $I:=\langle x_1^{\alpha_1}\cdots x_r^{\alpha_r}\rangle.$ Tenemos que
+$$\sqrt{I}=\bigcap_{j=1}^r\langle x_j\rangle=\langle x_1\cdots x_r\rangle,$$
+es decir, $I$ será radical si, y sólo si, $\alpha_j=1$ para toda $j\in\{1,\dots,r\}.$ Consideremos ahora un ideal $I:=\langle x_{i_1}\cdots x_{i_r},x_{j_1}\cdots x_{j_s}\rangle$ y veamos que es radical. Calculamos de nuevo su raíz por el teorema de los ceros. Tenemos
+\begin{align*}
+    Z(I)=\{x_{i_1}\cdots x_{i_r}=0\}&\cap\{x_{j_1}\cdots x_{j_s}=0\}=\left\{\bigvee_{k}x_{i_k}=0\}\wedge\{\bigvee_{l} x_{j_l}=0\right\}\\
+    =&\bigvee_{k,l}\{x_{i_k}=0\ \wedge\  x_{j_l}=0\},
+\end{align*}
+es decir,
+$$\sqrt{I}=\mathcal{I}Z(I)=\bigcap_{k,l}\langle x_{i_k},x_{j_l}\rangle.$$
+El contenido $I\subseteq\sqrt{I}$ es claro, comprobemos el otro. Para ello tomemos $f\in\sqrt{I}$ y dividámoslo por $x_{i_1}\cdots x_{i_r}$ respecto a $x_{i_1}$:
+$$f=p_1 x_{i_1}\cdots x_{i_r} + x_{i_1}p_2+p_3,$$
+donde ni $p_2$ ni $p_3$ dependen de $x_{i_1}.$ Como $f\in\sqrt{I}$, se tiene que $p_3\in\langle x_{i_1},x_{j_l}\rangle$ para cada $l\in\{1,\dots,s\}$, es decir, $x_{j_l}|p_3$ para cada $l\in\{1,\dots,s\}$. Así, $x_{j_1}\cdots x_{j_s}|p_3$ y $p_3\in I.$ Por otra parte, si $x_{i_1}p_2\neq 0$, entonces existe $k\in\{1,\dots,r\}$ tal que $x_{i_k}\not|p_2$ y con un argumento análogo al anterior tenemos que $p_2\in I$. Con todo $f\in I$ y $\sqrt{I}=I$.
+
+Para terminar, supongamos sin pérdida de generalidad que el ideal anterior fuera $I:=\langle x_{i_1}^2x_{i_2}\cdots x_{i_r},x_{j_1}\cdots x_{j_s}\rangle$. En tal caso, se tendría de nuevo $\sqrt{I}=\bigcap_{k,l}\langle x_{i_k},x_{j_l}\rangle$ y, sin embargo, el elemento $x_{i_1}\cdots x_{i_r}\notin I$. Supongamos que fuera así: existirían $p_1$ y $p_2$ tales que
+$$x_{i_1}\cdots x_{i_r}=p_1 x_{i_1}^2\cdots x_{i_r}+p_2x_{j_1}\cdots x_{j_s};$$
+pero esto no es posible puesto que el grado en $x_{i_1}$ del término de la izquierda es $1$ y el de la derecha tiene grado en $x_{i_1}$ mayor o igual que $2.$
+
+Así, un ideal generado por monomios será radical si, y sólo si, los monomios generadores están libres de variables al cuadrado.
+\subparagraph{iii)} 
+
+\subparagraph{iv)}Procedamos por inducción sobre $n.$ Para $n=1$ $I=\langle x_1\rangle$ y es claro que es monomial. Si lo suponemos para $n-1$ tenemos que
+$$\langle x_1\rangle\cdots\langle x_1\cdots x_{n-1}\rangle=\langle m_1,\dots,m_r\rangle$$
+para ciertos monomios $m_i$, $i\in\{1,\dots,r\}.$ Así,
+$$I=\langle m_1,\dots,m_r\rangle\langle x_1,\dots,x_n\rangle=\sum_{i=1}^r\langle m_i\rangle\sum_{j=1}^{n}\langle x_j\rangle=\sum_{i,j}\langle m_i x_j\rangle=\langle m_i x_j\rangle_{i,j}$$
+es monomial.
+\end{document}
+

@@ -10,7 +10,6 @@
 \usepackage{tikz}
 \usepackage{faktor}
 \usepackage{subfiles}
-\usepackage{caption}
 \usepackage{hyperref}
 \usepackage{amsfonts}
 \usepackage{amssymb}
@@ -19,7 +18,6 @@
 \usepackage{appendix}
 \usepackage{amsthm}
 \usepackage{csquotes}
-\usepackage{braket}
 \usepackage{polyglossia}
 \setdefaultlanguage{spanish}
 \usepackage[citestyle=alphabetic,bibstyle=authortitle]{biblatex}
@@ -30,7 +28,6 @@
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\Q}{\mathbb{Q}}
-\newcommand{\C}{\mathbb{C}}
 \newcommand{\K}{\mathbb{K}}
 \newcommand{\A}{\mathbb{A}}
 \newcommand{\x}{\texttt{x}}
@@ -41,21 +38,23 @@
 \newcommand{\cf}{\mathfrak{c}}
 \newcommand{\Nf}{\mathfrak{N}}
 \newcommand{\I}{\mathfrak{I}}
-\newcommand{\grad}{\operatorname{grad}}
-\newcommand{\Hom}{\operatorname{Hom}}
-\renewcommand{\ker}{\operatorname{Ker}}
-\newcommand{\im}{\operatorname{Im}}
+\newcommand{\grad}{\text{grad}}
+\newcommand{\Hom}{\text{Hom}}
+\newcommand{\im}{\text{Im}}
 \newcommand{\gen}[1]{\langle #1 \rangle }
 \newcommand{\zeros}[1]{\mathcal{Z}(#1)}
-\newcommand{\Ann}{\operatorname{Ann}}
-\newcommand{\Mod}{\operatorname{Mod}}
-\newcommand{\Obj}{\operatorname{Obj}}
-\newcommand{\Spec}{\operatorname{Spec}}
-\newcommand{\Bil}{\operatorname{Bil}}
+\newcommand{\Ann}{\text{Ann}}
+\newcommand{\Mod}{\text{Mod}}
+\newcommand{\Obj}{\text{Obj}}
+\newcommand{\Spec}[1]{\text{Spec}(#1)}
+\newcommand{\set}[1]{\{#1\}}
+\newcommand{\Bil}{\text{Bil}}
 \newcommand{\Ass}{\text{Ass}}
 \newcommand{\anul}{\operatorname{anul}}
 \newcommand{\supp}{\operatorname{supp}}
 \newcommand{\Div}{\operatorname{Div}_0}
+\newcommand{\dimk}{\dim_{\text{Krull}}}
+\newcommand{\hit}[1]{\operatorname{ht}(#1)}
 
 % THEOREMS
 \newtheorem{theorem}{Teorema}[section]
@@ -70,7 +69,7 @@
 
 \title{Álgebra conmutativa}
 \author{Iñaki Garrido and Pedro Montealegre and Miguel Serrano}
-\date{2021}
+\date{\today \\ v.0.5}
 
 \begin{document}
 \maketitle
@@ -92,5 +91,6 @@
 \subfile{chapters/appendix-categories}
 \chapter{Ejemplo factorización polinomio}
 \subfile{chapters/appendix-ejemplo}
-
+\chapter{Ejercicios}
+\subfile{chapters/ejercicios}
 \end{document}

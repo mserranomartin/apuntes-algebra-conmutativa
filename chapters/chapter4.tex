@@ -552,4 +552,18 @@ $$
 Por la hipótesis de inducción, dado que $\bar x_2, \dots, \bar x_r$ es un conjunto de $r-1$ vectores $A/\mathfrak{m}$-linealmente independientes, $ x_2, \dots, x_r$ son $A$-linealmente independientes. Deducimos entonces que $a_i=0_A$ para todo $i=2,\dots,r$, y por (\ref{despejado}) también $a_1 = 0_A$.
 
 \end{proof}
+
+\begin{proposition}
+Sea $A$ un anillo y $M$ un $A$-módulo. Las propiedades siguientes son equivalentes:
+\begin{enumerate}
+	\item $M= 0$.
+	\item $M_\mathfrak{p} = 0$ para todo ideal primo $\mathfrak{p}$ de $A$.
+	\item $M_{\mathfrak{m}} = 0$ para todo ideal maximal $\mathfrak{m}$ de $A$.
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+	Basta ver que $3$ implica $1$. Por reducción al absurdo, supongamos que $M\neq 0$ y sean $x\in M \setminus \{0\}$ y $\af = \operatorname{anul}_A(x)$ que es un ideal propio. Por tanto, $\af \subset \mathfrak{m}$ para cierto ideal maximal de $A$.
+	Localizamos $M$ en $\mathfrak{m}$ y consideramos $\frac{x}{1}\in M_\mathfrak{m}$, y por hipótesis ha de ser $\frac{x}{1}=\frac{0}{1}$, lo que significa que existe $s\not\in \mathfrak{m}$ tal que $sx = 0_{M}$, es decir, $s\in \af \setminus \mathfrak{m}$, pero esto es absurdo porque $\af \subset \mathfrak{m}$. 
+\end{proof}
+
 \end{document}

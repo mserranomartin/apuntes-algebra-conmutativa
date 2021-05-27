@@ -12,7 +12,7 @@
 
 \begin{example}
 	\begin{enumerate}
-		\item Si $\mathbb K $ es un cuerpo, todo $\mathbb K$-espacio vectorial es un $\mathbb K$-módulo..
+		\item Si $\mathbb K $ es un cuerpo, todo $\mathbb K$-espacio vectorial es un $\mathbb K$-módulo.
 		\item Si $V$ es un $\mathbb K$-espacio vectorial de dimensión finita y $f:V\to V$ un endomorfismo, entonces $V$ es un $\mathbb K[x]$-módulo via la aplicación
 
 		\begin{align*}
@@ -965,10 +965,12 @@ y estudiemos su comportamiento respecto de sucesiones exactas. Antes de comenzar
 	es exacta.
 
 	Consideramos la sucesión
-	\begin{align*}\label{equation: ext4}
-	0\longrightarrow\Hom_A(M,\Hom_A(N'',P))\overset{(g^{*_P})_{*_M}}{\longrightarrow}&\Hom_A(M,\Hom_A(N,P))\overset{(f^{*_P})_{*_M}}{\longrightarrow}\\
-	\overset{(f^{*_P})_{*_M}}{\longrightarrow}&\Hom_A(M,\Hom_A(N',P)),
-	\end{align*}
+	\begin{equation}\label{equation: ext4}
+	\begin{split}
+	    0\longrightarrow\Hom_A(M,\Hom_A(N'',P))\overset{(g^{*_P})_{*_M}}{\longrightarrow}&\Hom_A(M,\Hom_A(N,P))\overset{(f^{*_P})_{*_M}}{\longrightarrow}\\
+	    \overset{(f^{*_P})_{*_M}}{\longrightarrow}&\Hom_A(M,\Hom_A(N',P)),
+	\end{split}
+	\end{equation}
 	donde $(f^{*_P})_{*_M}:=\Hom_A(M,\Hom_A(f,P))$ y $(g^{*_P})_{*_M}:=\Hom_A(M,\Hom_A(g,P))$, surge de aplicar en primer lugar el funtor $\Hom_A(\_,P)$ a la sucesión $\ref{equation: ext1}$ y después aplicar el funtor $\Hom_A(M,\_)$ al resultado anterior. Así, $\ref{pry}$ nos dice que es exacta.
 
 	Observemos ahora que, para cada $X\in\set{N,N',N''}$ se tiene la cadena de isomorfismos de $A$-módulos
