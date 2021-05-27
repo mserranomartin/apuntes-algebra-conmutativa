@@ -114,7 +114,7 @@ Llamamos $x'':=g(x)\neq 0_{M''}$ y vamos a ver que $\anul_A(x)=\anul_A(x'')$. Po
 Como hemos visto antes $\anul_A(x')=\anul_A(b x)\supset\anul_A(x)=\p$ y como $\p\notin\Ass_A(M')$ el contenido es estricto. Por lo tanto, existe $\alpha \in \anul_A(b x) \setminus\anul_A(x) $, es decir, tal que $\alpha x\neq 0_M$ y $\alpha b x=0_M$, de donde $\alpha b\in \anul_A(x) = \p$, pero $\alpha,\mu\notin\p$, lo que contradice la primalidad de $\mathfrak{p}$.
 \end{proof}
 
-\begin{proposition}
+\begin{proposition}\label{cadena_assa}
 Sea $A$ un anillo noetheriano y $M$ un $A$-módulo no vacío finitamente generado. Entonces, existe una sucesión ascendente de submódulos $$\{0_M\}=:M_0\subset M_1\subset\dots\subset M_{n-1}\subset M_n:=M$$ con $\Ass_A(M_i/M_{i-1})=\p_i$ para cada $i=1,\dots,n$.
 
 En particular, $\Ass_AM\subset\{\p_1,\dots,\p_n\}$ es finito.
@@ -157,13 +157,13 @@ induce una sucesión
 $$0\longrightarrow M/(N_1\cap N_2)\longrightarrow M/N_1\oplus M/N_2$$
 exacta. Así, $\varnothing\neq \Ass_A(M/(N_1\cap N_2))\subset \{p\}$ y $N_1\cap N_2$ es $\p$-primario.
 
-$(ii)$ Sea $\{0\}\neq N\subsetneq M$ un submódulo y supongamos que $N$ no es primario para comprobar que tampoco es irreducible. Existe $\p_1\in\Ass_A(M/N)$, (i.e., existe un submódulo de $M/N$) verificando $N\subset N_1$, $N_1/N\cong A/{\p_1}$ y $\Ass_A(N_1/N)=\{\p_1\}.$
-
-Como $N$ no es primario, existe $\p_2\in\Ass_A(M/N)$ distinto de $\p_1.$ Como antes, existe $N_2\supset N$ con $N_2/N\cong\Ass_A(N_2/N)$ y $\Ass_A(N_2/N)=\{\p_2\}.$ Así
+$(ii)$ Sea $\{0\}\neq N\subsetneq M$ un submódulo y supongamos que $N$ no es primario para comprobar que tampoco es irreducible. Como no es el 0 existe algún $\p_1\in\Ass_A(M/N)$ y por la proposición \ref{cadena_assa} existe un submódulo de $N_1 / N \subset M/N$ tal que $\Ass_A(N_1/N)=\{\p_1\}$.
+Ahora, como $N$ no es primario, existe $\p_2\in\Ass_A(M/N)$ distinto de $\p_1$ y como antes existe $N_2 / N \subset N_1/N$  con $\Ass_A(N_2/N)=\{\p_2\}.$
+Entonces, utilizando el lema \ref{contenidos_assa} podemos ver que
 $$\Ass_A((N_1\cap N_2)/N)\subset\Ass_A(N_1/N)=\{\p_1\}$$
 y
 $$\Ass_A((N_1\cap N_2)/N)\subset\Ass_A(N_2/N)=\{\p_2\}.$$
-Esto implica $\Ass_A((N_1\cap N_2)/N)=\varnothing$ y $N_1\cap N_2=N$, pero $N_i\supsetneq N$, es decir, $N$ no es irreducible.
+pero esto implica $\Ass_A((N_1\cap N_2)/N)=\varnothing$ y por lo tanto $(N_1\cap N_2)/N = 0$, es decir, $N_1\cap N_2=N$ y como $N_i\supsetneq N$ llegamos a que $N$ es reducible.
 \end{proof}
 
 \begin{lemma}
@@ -206,12 +206,14 @@ Podemos repetir este argumento para cada $i\in\set{1,\dots,r}$ y así se concluy
 \end{proof}
 
 \begin{definition}
-    De forma análoga a como hemos definido el anulador de un elemento $x\in M$ para cierto $A$-módulo $M$, definimos
-    $$\operatorname{anul}_A(M):=\{\lambda\in A\ :\ \lambda x=0_M,\ \forall\ x\in M\}.$$
+    Sea $A$ un anillo y $M$ un $A$-módulo, se define $\operatorname{anul}_A(M)$ como el ideal de los $\lambda\in A$ tales que $\lambda x=0_M$ para todo $x\in M$.
 \end{definition}
 
-Se verifica que $\anul_A M$ es un ideal de $A$. Veamos ahora la relación de contenido que existe entre $\supp M$ y $V(\anul_A M).$ Sea $\p\subset A$ un ideal primo y supongamos que existe $\lambda\in(\anul_A M)\setminus\p$; por ser así, para todo $x\in M$ se tendría $\lambda x=0_M$, es decir, $\frac{x}{1}=0_{M_\p}$ y $\p\notin\supp M.$ Tras esto tenemos que
+\begin{remark}\textbf{{Relación entre $\supp M, V(\anul_A M)$ y $\Ass_A M$}}
+
+Sea $\p\subset A$ un ideal primo y supongamos que existe $\lambda\in(\anul_A M)\setminus\p$; por ser así, para todo $x\in M$ se tendría $\lambda x=0_M$, es decir, $\frac{x}{1}=0_{M_\p}$ y $\p\notin\supp M.$ Tras esto tenemos que
 $$\supp M\subset V(\anul_A M)=\{\p\subset A\ :\ \p\supset\anul_A M\}.$$
+
 Más aún, si $M$ es finitamente generado, se tiene la igualdad. Para ver esto, tomemos $\p\notin\supp M$, es decir, $M_\p=\{0\}.$ Sean $x_1,\dots,x_s$ los generadores de $M$, por la igualdad $M_\p=\{0\}$ tenemos que existe $\lambda_i\notin\p$ para cada $i\in\{1,\dots,s\}$ de forma que $\lambda_i x_i=0_M.$ Definiendo $\lambda:=\prod_{i=1}^s\lambda_i,$ $\lambda\in\anul_A M$ pero $\lambda\notin\p$; es decir, $\anul_A M\not\subset\p$ y $\supp M\supset V(\anul_A M)=\{\p\subset A\ :\ \p\supset\anul_A M\}.$
 
 \begin{lemma}
@@ -224,6 +226,12 @@ Así, resulta la biyección
 $$\Ass_{A_\p}(M_\p)\leftrightarrow\Ass_A(M)\cap\{\p'\in\operatorname{Spec(A):\p'\subset\p}\}.$$
 Sea ahora $\p$ verificando las hipótesis del lema.  Como $M_\p\neq\{0\}$, $\Ass_{A_\p} M_\p\neq\varnothing$ y existe $\p'\in \Ass_A(M)\cap\{\p'\in\operatorname{Spec(A):\p'\subset\p}\}$ por lo que acabamos de ver. De esta forma, la minimalidad de $\p$ en $\supp M$ nos permite concluir que $\p\subset\p'$ y $\p\in \Ass_A M.$
 \end{proof}
+
+Por el lema tenemos que todos los primos minimales de $\supp M$ son elementos de $\Ass_A M$, y como sabemos que $\Ass_A M \subset \supp M$, en particular son minimales entre los elementos $\Ass_A M$, así que si tomamos un minimal en $\Ass_A M$ tiene que ser minimal de $\supp M$. Esto completa la prueba de que $\operatorname{min}(\Ass_A M) = \operatorname{min}(\supp M)$.
+
+Más aún, en el caso de un módulo finitamente generado, como puede ser un anillo de polinomios y sus cocientes por ideales, tenemos por el desarrollo anterior que también ha de coincidir con $\operatorname{min}(V(\anul_A(M)))$.
+
+\end{remark}
 
 \begin{theorem}
 Sea $A$ un anillo noetheriano y sea $M$ un $A$-módulo finitamente generado.\begin{enumerate}
