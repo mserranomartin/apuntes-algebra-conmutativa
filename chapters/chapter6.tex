@@ -6,13 +6,13 @@ Sea $M$ es un $A$-módulo. Decimos que $M$ es un $A$-módulo \textit{simple} si 
 \end{definition}
 
 \begin{remark}
-Si $M$ es un $A$-módulo simple $\forall m\in M\setminus\{0\}$, $\langle m\rangle=M$, entonces $A\overset{f}{\rightarrow} M$ definida como $1\mapsto m$ factoriza $A/\ker{f}\cong M.$ Como $M$ es simple, $\ker f$ es un ideal maximal.
+Si $M$ es un $A$-módulo simple, sea $m\in M$ no nulo, entonces el homomorfismo de $A$-módulos $A\overset{f}{\rightarrow} M$ dado por $1_A\mapsto m$, es suprayectivo ya que $\im f = \langle m \rangle$ que es submódulo de $M$ no nulo, luego $\im f = M$. Por el primer teorema de isomorfía,  $A/\ker{f}\cong M$. Además, el isomorfismo nos dice que $A/\ker f$ no tiene submódulos (ideales) no triviales, luego $A/\ker f$ es un cuerpo y por lo tanto $\ker f$ es un ideal maximal.
 \end{remark}
 
 \begin{definition}
 Decimos que un $A$-módulo $M$ tiene \textit{longitud finita} si posee una cadena de submódulos
 $$\{0_M\}=M_0\subsetneq M_1\cdots M_{n-1}\subsetneq M_n=M$$
-tales que los cocientes $M_i/M_{i-1}$ son módulos simples. A dicha cadena la llamamos serie de composición. Si $M$ posee una serie de composición, llamamos \textit{longitud} de $M$, y lo denotamos por $l(M)$, a la menor serie de composición. Si $M$ no posee una serie de composición decimos que tiene longitud infinita $l(M)=\infty.$
+tales que los cocientes $M_i/M_{i-1}$ son módulos simples. A dicha cadena la llamamos serie de composición. Si $M$ posee una serie de composición, llamamos \textit{longitud} de $M$, y lo denotamos por $l(M)$, al cardinal de la menor serie de composición. Si $M$ no posee una serie de composición decimos que tiene longitud infinita $l(M)=\infty.$
 \end{definition}
 
 Esta noción mimetiza para módulos la idea de espacio vectorial de dimensión finita.
@@ -20,25 +20,38 @@ Esta noción mimetiza para módulos la idea de espacio vectorial de dimensión f
 \begin{theorem}
 Sea $M$ un $A$-módulo.
 \begin{itemize}
-    \item[i)] Si $N$ es un submódulo de $M$, $l(N)\le l(M)$ y si $l(M)<\infty$ y $N\subsetneq M$, entonces $l(N)<l(M).$
+    \item[i)] Si $N\subsetneq M$ es un submódulo, entonces $l(N)\leq l(M)$ y $l(N)<l(M)$ si $l(M)<\infty$.
     \item[ii)] Todas las series de composición de un módulo de longitud finita tienen el mismo cardinal, $l(M).$
-    \item[iii)] Si
+    \item[iii)] (Transitividad) Si
     $$0\rightarrow M'\overset{f}{\rightarrow} M\overset{g}{\rightarrow}M''\rightarrow 0$$
-    es una sucesión exacta de $A$-módulos, $l(M)<\infty$ si, y sólo si, $l(M'),l(M'')<\infty.$ Más aún, si se da cualquiera de esas condiciones se verifica 
+    es una sucesión exacta de $A$-módulos, $l(M)<\infty$ si, y sólo si, $l(M'),l(M'')<\infty.$ Más aún, si se da cualquiera de esas condiciones se verifica
     $$l(M)=l(M')+l(M'').$$
     \item[iv)] Si $l(M)<\infty$, cada cadena de submódulos de $M$ se puede refinar a una serie de descomposición.
 \end{itemize}
 \end{theorem}
 \begin{proof}
-Comenzamos con \textit{i)}. Supongamos que $l(M)=n<\infty$ y sea $\{0\}=M_0\subsetneq M_1\cdots M_{n-1}\subsetneq M_n=M$ una serie de composición. Intersecando con $N$ y borrando los términos redundantes, i.e., prescindiendo de $M_i\cap N$ sin $M_{i-1}\cap N=M_i\cap N$, obtenemos una serie de composición de $N.$ En efecto, si $M_i\cap N\neq M_{i-1}\cap N$, entonces como $(M_i\cap N)/(M_{i-1}\cap N)\hookrightarrow M_i/M_{i-1}$ y $M_i/M_{i-1}$ es simple, ambos coinciden. Así, si $n'$ es el número de eslabones distintos que han quedado, tendremos $l(N)\le n'$ y, si $n'=n$, entonces $M=N.$
 
-Veamos ahora \textit{ii)}. Lo probaremos por inducción sobre la longitud de alguna cadena de composición. Si $M$ tiene una cadena de composición de un elemento, entonces $M\cong A/\p$ donde $\p$ es maximal y el resultado es claro. Sea
+\textit{i)} Supongamos que $l(M)=n<\infty$ y sea $$\{0\}=M_0\subsetneq M_1\cdots M_{n-1}\subsetneq M_n=M$$ una serie de composición. Veamos que intersecando con $N$ y, si acaso borrando los términos redundantes, obtenemos una serie de composición de $N$. Si $0 \neq M_{i-1}\cap N\subsetneq M_{i}\cap N$, entonces la inyeccion $(M_i\cap N)/(M_{i-1}\cap N)\hookrightarrow M_i/M_{i-1}$ está bien definida y como $M_i/M_{i-1}$ es simple y $0 \neq (M_i\cap N)/(M_{i-1}\cap N)$ es un submódulo, han de ser iguales. Así, si $n'$ es el número de eslabones distintos que han quedado, tendremos $l(N)\le n'$ y, si $n'=n$, entonces $M=N.$
+
+\textit{ii)} Lo probaremos por inducción sobre la longitud de alguna cadena de composición. Si  $M$ tiene una cadena de composición de un elemento, entonces el propio $M$ es simple y no tiene más submódulos que puedan alargar la cadena. Supongamos que es cierto que si un módulo $M$ tiene una serie de longitud $n-1$, todas las cadenas tienen esa longitud. Supongamos que $M$ tiene una serie de composición
 $$\{0\}=M_0\subsetneq M_1\subsetneq\cdots\subsetneq M_n=M$$
-una serie de composición de longitud $n.$ Por hipótesis de inducción $l(M_{n-1})=n-1.$ Así, $n-1=l(M_{n-1})<l(M_n)\le n$, es decir, $l(M_n)=n.$
+El submódulo $M_{n-1}$ tiene la serie de composición $\{0\}=M_0\subsetneq M_1\subsetneq\cdots\subsetneq M_{n-1}$, luego por hipótesis de inducción $n-1=l(M_{n-1})<l(M_n)\le n$, y por tanto $l(M_n)=n.$
 
-Seguimos con \textit{iii)}. Si $n'=l(M)<\infty$ y $n''=l(M'')<\infty$, como $M'\cong \ker g\subset M$ y $M''\cong M/\ker g$, $M$ tiene un submódulo y un cociente que poseen series de composición, $\{M'_i\}_{i=1}^s$ y $\{\overline{M_i}\}_{i=1}^r$ respectivamente. De esta forma,
+\textit{iii)} Si $l(M)< \infty$, por la inyectividad de $f$ podemos ver $M'$ como submódulo y entonces por \textit{i)} se tiene $l(M') \leq l(M)< \infty$. Para cualquier cociente cociente $M/N$, en particular para $N = \ker g$, si $\{0\}=M_0\subsetneq M_1\subsetneq\cdots\subsetneq M_n=M$ es una serie de composición, podemos tomar
+$$
+\{0_{M/N}\}\subsetneq \faktor{(M_1+N)}{N}\subsetneq\cdots\subsetneq \faktor{M_{n-1}+N}{N} \subsetneq M/N
+$$
+El homomorfismo de A-módulos $M_i/M_{i-1} \to (Mi + N)/(M_{i-1} + N)$ dado por $x + M_{i-1} \mapsto x + (M_{i-1} + N)$ es suprayectivo y como $M_i/M_{i-1}$ es simple o bien el núcleo es el nulo y obtenemos un isomorfismo, o bien es el total, y por tanto $(Mi + N) = (M_{i-1} + N)$.
+
+Si $n'=l(M)<\infty$ y $n''=l(M'')<\infty$, entonces $M'$ tiene una serie de composición $\{M'_i\}_{i=1}^s$, y $M''\cong M/\ker g$ tiene una serie de composición $\{M_i/ \ker g\}_{i=1}^r$. Como los submódulos embotellados del cociente son submódulos embotellados de $M$ que contienen a $\ker g \cong M'$, podemos encajar la primera con la segunda tal que
 $$M_0'\subsetneq M_1'\subsetneq\cdots\subsetneq\ker g\subsetneq M_1\subsetneq\cdots\subsetneq M_{n-1}\subsetneq M$$
 es una serie de composición para $M.$ Este argumento prueba la aditividad.
+
+\textit{iv)} Sea una cadena de submódulos $\{0\}=M_0\subsetneq M_1\subsetneq\cdots\subsetneq M_n=M$. Supongamos que $1 \leq i \leq n$ es tal que $M_i/M_{i-1}$ no es simple. Como $l(M) < \infty$, hemos visto en \textit{iii)} que $l(M/M_{i-1})< \infty$ luego por \textit{i)} tenemos $l(M_i/M_{i-1})< \infty$ también.
+Tiene una serie de composición $0 = M_{i-1}/M_{i-1} \subsetneq \dots \subsetneq M_i/M_{i-1}$, que se traduce en una cadena de submódulos $M_{i-1} \subsetneq \dots \subsetneq M_i$, y cada cociente
+$$M'_k/M_{k-1}' \cong (M'_k / M_{i-1}) / (M_{k-1}/M_{i-1}$$
+y el segundo es simple porque es uno de los de la serie de composición del cociente. Podemos repetir esta operación con cada otro par de eslabones cuyo cociente no sea simple. 
+
 \end{proof}
 
 \begin{definition}
