@@ -88,6 +88,7 @@
 		3) El núcleo de $\delta_S$ es el conjunto $\{a\in A:[(a,1)]=[(0,s)], s\in S\}$, esto es, existe un $s^{\ast}$ tal que $s^{\ast}(a-0)=s^{\ast}a=0$. Una condición suficiente para que $\delta_S$ sea inyectiva es que $A$ sea dominio de integridad. Concretamente, $\delta_S$ es inyectiva si, y sólo si, $S\cap\operatorname{Div_0}(A)=\varnothing$.
 	\end{remark}
 
+
 	\subsection{Propiedad universal del anillo de fracciones}
 	\begin{theorem}\textbf{(Propiedad universal del anillo de fracciones)} Sean $A$ y $B$ anillos, $S\subset A$ un subconjunto multiplicativamente cerrado de $A$ y $\varphi:A\longrightarrow B$ de forma que $\varphi(s)$ es unidad en $B$ para toda $s\in S$. Bajo estas hipótesis, existe un único homomorfismo $\Phi:S^{-1}A\longrightarrow B$ que cumple
 		$$\varphi=\Phi\circ\delta_S$$
@@ -108,7 +109,7 @@
 	\begin{remark}
 		1) El enunciado del teorema se puede reescribir pidiendo que $B$ sea una $A$-álgebra mediante un homomorfismo $\varphi$.
 
-		2) De la Propiedad universal del anillo de fracciones se deduce que, en el caso de que $A$ sea un DI y $S=\operatorname{Div_0}(A)$, $S^{-1}A$ es el menor cuerpo que contiene a $A$.
+		2) De la Propiedad universal del anillo de fracciones se deduce que, en el caso de que $A$ sea un DI y $S=A \setminus \operatorname{Div_0}(A) = A \setminus \{0\}$, $S^{-1}A$ es el menor cuerpo que contiene a $A$, el cuerpo de fracciones de $A$.
 
 		Supongamos $K$ cuerpo tal que $A\subset K$. Como ya hemos comentado en ($\ref{iny}$), $\delta_S$ es un homomorfismo inyectivo, luego también se tiene $A\subset S^{-1}A$. Además, por ser $S^{-1}A$ un cuerpo, $\Phi$ (definido como en el teorema) es de igual forma inyectivo, por lo que $S^{-1}A\subset K$.
 
@@ -116,6 +117,14 @@
 
 		Hay que destacar igualmente que $\Phi$ no es necesariamente inyectiva, puede existir cierto elemento $\frac{a}{s}\in{S_1}^{-1}A$ tal que $\frac{a}{s}\neq0_{{S_1}^{-1}A}$ y cumpla $\frac{a}{s}=0_{{S_2}^{-1}A}$ visto como elemento de ${S_2}^{-1}A$. Una condición suficiente para la inyectividad de $\Phi$ es que se tenga $S_2\cap\operatorname{Div_0}(A)=\varnothing$.
 	\end{remark}
+
+\begin{theorem}\textnormal{\textbf{(de la raíz racional)}}\label{rational_root}
+	Sea $A$ un DFU, $K_A$ su cuerpo de fracciones, y $f = \sum_{i=0}^n a_i X^i \in A[X]$ un polinomio. Si $\alpha=\frac{p}{q}\in K_A$ es una raíz de $f$ con $p$ y $q$ coprimos, entonces $a_0 \in \langle p \rangle $ y $a_n \in \langle q \rangle$.
+\end{theorem}
+\begin{proof}
+Si $f(\alpha) = 0$, multiplicando por $q^n$ y despejando el término en $a_0$ obtenemos $$ a_0q^n = a_np^n + a_{n-1}p^{n-1} + \dots a_1pq^{n-1} = p(a_np^{n-1} + a_{n-1}p^{n-2} + \dots a_1q^{n-1}) $$
+y como $p$ y $q$ son coprimos, entonces $p$ divide a $a_0$. Razonando análogamente se obtiene que $q$ divide a $a_n$.
+\end{proof}
 
 	\section{Módulo de fracciones}
 	De forma similar a como hemos procedido, consideremos $A$ un anillo, $S\subset A$ un conjunto multiplicativamente cerrado y $M$ un $A$-módulo. Consideremos el conjunto $M\times S$ y definamos en él la siguiente relación de equivalencia $\sim$: dados $(m_1,s_1),(m_2,s_2)\in M\times S$ se tiene

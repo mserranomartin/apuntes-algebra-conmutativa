@@ -9,7 +9,7 @@ Sean $A\subset B$ dos anillos. Diremos que un elemento $x\in B$ es \textit{enter
 donde $a_i\in A$ para toda $i\in\{1,\dots,n\}.$ Si todo $x\in B$ es entero sobre $A$, entonces decimos que $B$ es una \textit{extensión entera} de $A$
 \end{definition}
 
-\begin{definition}Diremos que un $A$-módulo $M$ es \textit{certificado} (\textit{faithful}) si, dado $a\in A\setminus\{0\}$, existe $x\in M$ ral que $ax\neq 0$, esto es, $\anul_A(M)=\{0\}.$
+\begin{definition}Diremos que un $A$-módulo $M$ es \textit{fiel}\footnote{Seguimos la traducción del Atiyah para \emph{faithful module}} si, dado $a\in A\setminus\{0\}$, existe $x\in M$ ral que $ax\neq 0$, esto es, $\anul_A(M)=\{0\}.$
 \end{definition}
 
 \begin{proposition}\label{prop:entcarac}Las siguientes afirmaciones son equivalentes.
@@ -17,42 +17,39 @@ donde $a_i\in A$ para toda $i\in\{1,\dots,n\}.$ Si todo $x\in B$ es entero sobre
     \item[i)] $x\in B$ es entero sobre $A.$
     \item[ii)] $A[x]$ es un $A$-módulo finitamente generado.
     \item[iii)] $A[x]$ está contenido en un subanillo $C$ de $B$ finitamente generado como $A$-módulo.
-    \item[iv)] Existe un $A[x]$-módulo certificado $M$ que es finitamente generado como $A$-módulo.
+    \item[iv)] Existe un $A[x]$-módulo \emph{fiel} $M$ que es finitamente generado como $A$-módulo.
 \end{itemize}
 \end{proposition}
 \begin{proof}
-($i)\Rightarrow ii)$) Por \ref{eq:depent} tenemos
+$i)\Rightarrow ii)$ Para todo $r\neq0$, si sustituimos $x^r$  en (\ref{eq:depent}) obtenemos
 $$x^{n+r}=-(a_1x^{n+r-1}+\cdots+a_nx^r)$$
-para toda $r\ge 0$, así, procediendo por inducción, tenemos que todas las potencias de $x$ pertenecen al $A$-módulo $\langle 1,x,\dots,x^{n-1}\rangle_A.$ De esta forma $A[x]$ está generado como $A$-módulo por $\{1,x,\dots,x^{n-1}\}.$
+Recursivamente podemos sustituir todas las potencias $\geq n$ por una expresión dependiente solo de las potencias $x^k$ con $k\<n$, y así todas las potencias de $x$ pertenecen al $A$-módulo $\langle 1,x,\dots,x^{n-1}\rangle_A$, por lo que $A[x]$ está generado como $A$-módulo por $\{1,x,\dots,x^{n-1}\}.$
 
-($ii)\Rightarrow iii)$) Basta tomar $C=A[x].$
+$ii)\Rightarrow iii)$ Basta tomar $C=A[x].$
 
-($iii)\Rightarrow iv)$) Análogamente, basta tomar $M=C.$
+$iii)\Rightarrow iv)$ Análogamente, basta tomar $M=C.$
 
-($iv)\Rightarrow i)$) Para esta implicación haremos uso del lema de Cayley-Hamilton. Sea $\phi:M\rightarrow M$, $m\mapsto xm$ y $\af:= A.$ Así, como $M$ es certificado, $\{0\}\neq xM\subseteq M$ y existen $a_i\in A$ de forma que
+$iv)\Rightarrow i)$ Para esta implicación haremos uso del lema de Cayley-Hamilton. Sea $\phi:M\rightarrow M$, $m\mapsto xm$ y $\af:= A.$ Así, como $M$ es fiel, $\{0\}\neq xM\subseteq M$ y existen $a_i\in A$ de forma que
 $$\phi^n+a_1\phi^{n-1}+\cdots+a_n\equiv 0,$$
-es decir,
-$$x^n+a_1x^{n-1}+\cdots+a_n= 0.$$
+y particularizando para $\phi(1_A) = x$ tenemos
+$$x^n+a_1x^{n-1}+\cdots+a_n= 0$$
+y $x$ es entero.
 \end{proof}
 
 \begin{corollary}
 Sean $\{x_i\}_{i=1}^n\subset B$ elementos enteros sobre $A.$ Se tiene que el anillo $A[x_1,\dots,x_n]$ es un $A$-módulo finitamente generado.
 \end{corollary}
 
-\begin{proof}
-Para probar este resultado basta proceder por inducción sobre el número de elementos y aplicar el resultado anterior.
-\end{proof}
-
 \begin{corollary}
 El conjunto de los elementos enteros de $B$ sobre $A$ es un subanillo de $B$ que contiene a $A.$
 \end{corollary}
 
 \begin{proof}
-Denotemos por $C$ al conjunto definido en el corolario y tomemos $x,y\in C.$ Como acabamos de ver $A[x,y]$ es un $A$-módulo finitamente generado y, por lo tanto, $iii)$ de \ref{prop:entcarac} nos da que tanto $x\pm y$ como $xy$ son enteros sobre $A$: $A[x\pm y],A[xy]\subset A[x,y].$
+Denotemos por $C$ al conjunto definido en el corolario y tomemos $x,y\in C$. Sabemos que $A[x,y]$ es un $A$-módulo finitamente generado. Como $A[x\pm y],A[xy]\subset A[x,y]$, por $iii)$ de \ref{prop:entcarac} se tiene que $x\pm y$ como $xy$ son enteros sobre $A$.
 \end{proof}
 
 \begin{definition}
-El anillo $C$ definido en la prueba anterior se llama \textit{clausura entera} del anillo $A$ en $B$ y la denotamos por $\overline{A}^B.$ Si $A=\overline{A}^B$, $A$ se dice \textit{íntegramente cerrado} en $B$. Por otra parte, si $\overline{A}^B$, $B$ se dice \textit{entero sobre $A$}.
+Sean $A\subset B$ dos anillos, el anillo $\overline{A}^B$ de los elementos enteros de $B$ sobre $A$ se llama \textit{clausura entera} del anillo $A$ en $B$. Si $A=\overline{A}^B$, se dice que  $A$ es \textit{íntegramente cerrado} en $B$. Si $\overline{A}^B = B$, se dice que $B$ es \textit{entero} sobre $A$.
 \end{definition}
 
 \begin{corollary}[Transitividad de la dependencia entera] Si $A\subseteq B\subseteq C$ son anillos, $B$ es entero sobre $A$ y $C$ es entero sobre $B$, entonces $C$ es entero sobre $A.$
@@ -66,43 +63,38 @@ Sean $A\subseteq B$ anillos. $\overline{A}^B$ es íntegramente cerrado sobre $B.
 \begin{itemize}
     \item[i)] Si $B$ es un cuerpo, entonces $A$ es un cuerpo.
     \item[ii)] Si $A$ es un cuerpo y $B$ un dominio de integridad, entonces $B$ es un cuerpo.
-    \item[iii)] Sean $\q\in\Spec B$ y $\p:=\q\cap A.$ Se verifica que $A/\p\hookrightarrow B/\q$ es una extensión entera.
+    \item[iii)] Sean $\mathfrak{b}$ un ideal de $B$ y $\af:=\mathfrak{b}\cap A$, entonces $A/\af\hookrightarrow B/\mathfrak{p}$ es una extensión entera\footnote{En este caso, se entiende que los elementos de $B/\mathfrak{b}$ han de cumplir una ecuación con coeficientes en la imagen de $A/\mathfrak{p} = A/\mathfrak{q}$. En verdad esto es equivalente a pensar en términos de $A/\af$ módulos como en la proposición \ref{prop:entcarac}, porque el producto externo es $(a+\af)(b+\mathfrak{b}) =(a+\mathfrak{b})(b+\mathfrak{b}) = ab \mathfrak{b} $}.
     \item[iv)] Sea $S\subset A$ un conjunto mult. cerrado. El $S^{-1}A$-módulo $S^{-1}B$ es un anillo y $S^{-1}A\hookrightarrow S^{-1}B$ es una extensión entera.
 \end{itemize}
 \end{proposition}
 \begin{proof}
-\textit{(i)} Dado $a\in A\setminus\{0\}$, existe $b\in B $ tal que $ab=1.$ Además,
+\textit{i)} Dado $a\in A\setminus\{0\}$, existe $b\in B $ tal que $ab=1.$ Además,
 $$b^n+a_1b^{n-1}+\cdots+a_n=0$$
 para ciertos $a_i\in A.$ Multiplicando la ecuación anterior por $a^n$ resulta:
 $$1+a_1a+\cdots+a_na^n=0\Longleftrightarrow a(-a_1-\cdots-a_na^{n-1})=1.$$
 
-\textit{(ii)} Sea  $b\in B\setminus\{0\}.$ De nuevo, tenemos una ecuación de la forma
+\textit{ii)} Sea  $b\in B\setminus\{0\}.$ De nuevo, tenemos una ecuación de la forma
 $$b^n+a_1b^{n-1}+\cdots+a_n=0$$
 para ciertos $a_i\in A.$ Como $B$ es DI, se tiene $a_n\neq0.$ Por hipótesis existe $a\in A$ de forma que $aa_n=1$ y, multiplicando la ecuación por este elemento, obtenemos de forma análoga al caso anterior un inverso para elemento $b.$
 
-\textit{(iv)} Es claro que la aplicación es inyectiva. Sea $s\in S$ y $b\in B$ y una ecuación
+\textit{iii)} Sea $x\in B$ que es entero sobre $A$ y por tanto cumple una ecuación $x^n+a_1x^{n-1}+\cdots+a_n=0$ con $a_i \in A$. Tomamos clases módulo $\mathfrak{b}$ y observamos que $a_i+ \mathfrak{a}+ \af \mapsto a_i +\mathfrak{b}$.
+
+\textit{iv)} Es claro que la aplicación es inyectiva. Sea $s\in S$ y $b\in B$ y una ecuación
 $$b^n+a_1b^{n-1}+\cdots+a_n=0$$
 para ciertos $a_i\in A.$ En $S^{-1}B$ multiplicamos por $\frac{1}{s^n}$ y tenemos la ecuación
 $$\frac{b^n}{s^n}+\frac{a_1}{s}\frac{b^{n-1}}{s^{n-1}}+\cdots+\frac{a_n}{s^n}=0.$$
 \end{proof}
 
 \begin{lemma}\label{lemma:idext}
-Sean $A\subset B$ una extensión entera y $\af\subset A$ un ideal. Se verifica la siguiente igualdad:
-$$\sqrt{\af B}=\{b\in B\ :\ \exists\ b^n+a_1 b^{n-1}+\cdots+a_{n-1}b+a_n=0,\ a_i\in\af\}=:\overline{\af}^B.$$
-Además, $\sqrt{\af B}\cap A=\sqrt{\af}.$
+Sean $A\subset B$ una extensión entera y $\af\subset A$ un ideal, entonces la clausura del ideal $\overline{\af}^B$ \footnote{Los $b\in B$ enteros con coeficientes en $\mathfrak{a}$} coincide con $\sqrt{\af B}$. Además, $\sqrt{\af B}\cap A=\sqrt{\af}.$
 \end{lemma}
 \begin{proof}
-En primer lugar, si $b\in B$ verifica \ref{eq:depent}, $b^n\in\af B$ y $b\in\sqrt{\af B}.$
-
-Por otra parte, si $b\in\sqrt{\af B}$, para cierto $r\in\N$, $\{b_1,\dots,b_s\}\subset B$ y $\{\alpha_1,\dots,\alpha_s\}\subset\af$ de forma que
-$$b^r=\sum_{i=1}^sb_i\alpha_i.$$
-Los elementos $b_i$ son enteros sobre $A$; así, $C:=A[b_1,\dots,b_s]$ es un $A$-módulo finito que contiene a $b^r.$ Concretamente, $b^r\in\af C.$
-
-Consideremos ahora $\phi: C\rightarrow C$ definida por $c\mapsto b^r c.$ Claramente es un homomorfismo de $A$-módulos y su imagen está contenida en $\af C. $ De esta forma podemos aplicar Cayley-Hamilton resultando que existen $a_i\in\af$ tales que
+Por un lado, si $b\in B$ tiene una ecuación de la forma (\ref{eq:depent}), por lo tanto $b^n\in\af B$ y así $b\in\sqrt{\af B}$. Recíprocamente, si $b\in\sqrt{\af B}$, existe $r\in\N$ tal que $b \in \af B$ y se escribirá tal que $b^r=\sum_{i=1}^sb_i\alpha_i$ para ciertos $b_i \in B$ y $\alpha_i \in \af$.
+Los elementos $b_i$ son enteros sobre $A$; así, $C:=A[b_1,\dots,b_s]$ es un $A$-módulo finitamente generado que contiene a $b^r$, en particular, $b^r\in\af C$. Vamos a aplicar Cayley-Hamilton: consideremos el homomorfismo de $A$-módulos $\phi: C\rightarrow C$ definida por $c\mapsto b^r c$, cuya imagen está contenida en $\af C$. Por Cayley existen $a_i\in\af$ tales que
 $$\phi^n+a_1\phi^{n-1}+\cdots+a_{n-1}\phi+a_n\equiv 0.$$
-Evaluando en $1\in C$ resulta
+y evaluando en $1\in C$ resulta
 $$(b^r)^n+a_1(b^r)^{n-1}+\cdots+a_{n-1}(b^r)+a_n= 0$$
-y tenemos lo que queríamos.
+luego $b^r$ es entero con coeficientes en $\af$.
 
 Por último, si $x\in\sqrt{\af}$, existe $n\in\N$ tal que $x^n\in\af$, es decir, $x^n\in\sqrt{\af B}.$
 \end{proof}
@@ -111,20 +103,22 @@ Por último, si $x\in\sqrt{\af}$, existe $n\in\N$ tal que $x^n\in\af$, es decir,
 En las condiciones del lema anterior, se dice que los elementos $x\in\sqrt{\af B}$ dependen íntegramente del ideal $\af.$
 \end{definition}
 
-Dado un anillo A, si éste es dominio de integridad, su anillo de fracciones es concretamente un cuerpo de fracciones. Denotemos este cuerpo por $K_A.$
+Recordamos del capítulo 3 que dado un dominio de integridad A, el anillo de fracciones $S^{-1}A$ con $S = A \setminus \operatorname{Div}_0A = A\setminus \{0\}$ es el cuerpo de fracciones (el menor cuerpo que contiene a $A$). Denotemos este cuerpo por $K_A.$
 
 \begin{definition}
 Diremos que un anillo $A$ es \textit{íntegramente cerrado} si lo es sobre su cuerpo de fracciones $K_A$, es decir, si $A=\overline{A}^{K_A}.$
 \end{definition}
 
 \begin{lemma}
-Todo DFU es íntegramente cerrado en su cuerpo de fracciones. Es decir
-$$A=\overline{A}^{K_A}=\left\{\frac{a_1}{a_2}\in K_A\ :\ \frac{a_1}{a_2}\text{ entero sobre }A\right\}.$$
+Si $A$ es DFU, entonces es íntegramente cerrado en su cuerpo de fracciones: $A=\overline{A}^{K_A}$.
 \end{lemma}
+\begin{proof}
+Hay que probar que todo elemento entero de $K_A$ es un elemento de $A$. Sea $\frac{a}{b}$ es entero sobre $A$, como $A$ es DFU podemos expresarlo como cociente de dos elementos coprimos. Es raíz de un polinomio mónico con coeficientes en $A$, así por el teorema \ref{rational_root} (de la raíz racional) $b$ divide a $1$, luego es una unidad y así $\frac{a}{b} = \frac{ab^{1}b}{b} = ab^{-1}\in A$.
+\end{proof}
 
-\begin{remark}
+\begin{corollary}
 Todo anillo de polinomios sobre un cuerpo es cerrado sobre su cuerpo de fracciones.
-\end{remark}
+\end{corollary}
 
 \begin{proposition}\label{prop:polmin}
 Sean $A$ y $B$ dominios de integridad, $A$ íntegramente cerrado sobre $B$ y $A\subset B$ extensión entera. Para cada $b\in B$, $b$ es entero sobre $K_A$ y su polinomio mínimo sobre $K_A$ tiene coeficientes en $A$. Si además es entero sobre un ideal $\af$ de $A$, el polinomio mínimo de $b$ sobre $K_A$ tiene sus coeficientes sobre $\sqrt{\af}.$
