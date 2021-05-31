@@ -1,0 +1,73 @@
+\documentclass[../main.tex]{subfiles}
+\begin{document}
+\section{Recodatorio teoría de cuerpos}
+Sea $K \subset L$ una extensión de cuerpos. Un elemento $u \in L$ es \emph{transcendente} sobre $K$ si ningún polinomio no nulo de $K[T]$ se anula sobre este, es decir, $p(u)=0 \Rightarrow p=0 \in K[T]$.
+
+Dados $\left\{u_{1}, \ldots, u_{s}\right\} \subset L$ se dice que son \emph{algebraicamente independientes} sobre $K$ si no hay ningún polinomio en $p\in K[T_1,\dots, T_s]$ no nulo que tal que $p\left(u_{1}, \ldots, u_{s}\right)=0$.
+Se desprende de la definición que si $\{u_{1}, \ldots, u_{s}\}$ son algebraicamente independientes entonces el menor subcuerpo de $L$ que contiene a $K$ y a los $u_i$, que notaremos $K(u_{1}, \ldots, u_{s})$, es isomorfo a un anillo de polinomios:
+$K(u_{1}, \ldots, u_{s}) \cong K[T_{1}, \ldots, T_{s}]$.
+
+Sea $K \subset L=K\left(\theta_{1}, \ldots, \theta_{n}\right)$ una extensión de cuerpos finitamente generada, entonces existe $\{\theta_{i_{1}}, \ldots, \theta_{i_{r}}\}\subset \{\theta_{1}, \ldots, \theta_{n}\}$ algebraicamente
+independientes sobre $K$ tales que $K\left(\theta_{i_{1}}, \ldots, \theta_{i_{r}}\right) = L$. El conjunto $\left\{\theta_{i_{1}}, \ldots, \theta_{i_{r}}\right\}$ se denomina \emph{base de trascendencia}. Su cardinal es común a todas las bases de trascendencia y se denomina \emph{grado de trascendencia} de $L$ sobre $K$.
+
+Si $A \subset B$ son D.I se puede hablar de grado de trascendencia de $B$ sobre $A$ como el correspondiente a la extensión entre sus respectivos cuerpos de fracciones.
+
+\begin{remark}[\textbf{(Notación)}]
+Durante el capítulo, las letras mayúsculas denotarán elementos algebraicamente independientes.
+\end{remark}
+
+\section{Lema de normalización de Noether}
+\begin{lemma}
+Sea $K$ un cuerpo infinito y $F\in K[X_1, \dots, X_n]$ un polinomio homogéneo no nulo. Entonces existe $(a_1, \dots, a_{n-1}) \in K^{n-1}$ tales que $F(a_1, \dots, a_{n-1},1)\neq 0$.
+\end{lemma}
+\begin{proof}
+Por inducción sobre $n$. El caso para $n=1$ es trivial porque $F(X_1) = aX_1$ con $a\neq 0$. Suponemos el resultado cierto para $n>1$ y escribimos $F = \sum_{k=0}^d F_k X_1^k$ donde $F_k \in K[X_2,\dots, X_n]$ son polinomios homogéneos de grado $d-k$.  Si $F\neq 0$, al menos algún $F_k$ es no nulo.
+Por inducción podemos escoger $(a_2, \dots, a_{n-1}) \in K^{n-2}$ tal que $F_k(a_2, \dots, a_{n-1},1)\neq 0$. Entonces $F(.,a_2, \dots, a_{n-1},1) \in K[X_1]$ es un polinomio no nulo y tiene por tanto un número finito de raíces. Como $K$ es infinito, existe algún $a_1 \in K$ tal que $F(a_1,a_2, \dots, a_{n-1},1) \neq 0$.
+\end{proof}
+\begin{remark}\label{obs_import}
+Sea $K\left[X_{1}, \ldots, X_{n}\right]$ el anillo de polinomios sobre un cuerpo $K$ infinito,  y sea $F \in K\left[X_{1}, \ldots, X_{n}\right] \setminus K$ un polinomio no constante. Podemos escribir $F$ en componentes homogéneas: $F=F_{r}+\ldots+F_{s}$ donde el subíndice indica el grado de la componente, con $r \leq s$ y con $F_{s} \neq 0 .$
+
+Por el lema, existe $\left(\alpha_{1}, \ldots, \alpha_{n-1}\right) \in K^{n-1}$ tal que $F_{s}\left(\alpha_{1}, \ldots, \alpha_{n-1}, 1\right) \neq 0$. Realizamos el siguiente cambio de variable
+$$
+\begin{cases}
+  Y_{i}:=X_{i}-\alpha_{i} X_{n} & i=1 \dots n-1\\
+  Y_n := X_n
+\end{cases}
+$$
+Entonces, podemos sustituir el cambio en $F$ y separar en componentes homogéneas:
+\begin{multline}
+  F\left(Y_{1}+\alpha_{1} X_{n}, \ldots, Y_{n-1}+\alpha_{n-1} X_{n}, X_{n}\right)=\\
+  =\left (\sum_{i_{1}+\cdots+i_{n}=s} a_{i_{1} i_{2} \ldots i_{n}}\left(Y_{1}+\alpha_{1} X_{n}\right)^{i_{1}} \left(Y_{1}+\alpha_{1} X_{n}\right)^{i_{2}} \ldots \left(Y_{n-1}+\alpha_{n-1} X_{n}\right)^{i_{n-1}}  X_{n}^{i_{n}} \right )+ G = \\
+  =F_{s}\left(\alpha_{1}, \ldots, \alpha_{n-1}, 1\right) X_{n}^{s}+ G = cX_n^s+G
+\end{multline}
+donde $G$ agrupa los términos de menor grado en $X_n$. De otra forma, $c X_{n}^{s}+ G-F=0$ y acabamos de comprobar que $A:=K\left[Y_{1}, \ldots, Y_{n-1}, F\right] \subset K\left[X_{1}, \ldots, X_{n}\right]$ es una extensión entera, ya que $X_{n}$ es entero sobre $A$ y $\left\{Y_{1}, \ldots, Y_{n-1}, F\right\}$ son algebraicamente independientes sobre $K$.
+\end{remark}
+
+\begin{theorem}[\textbf{(de normalización)}]
+Sea $K$ cuerpo infinito, $A=K\left[x_{1}, \ldots, x_{n}\right]$ una $K$-álgebra finitamente generada\footnote{Es útil pensarlo como un cociente del anillo de polinomios por un ideal.} e $I$ un ideal propio de $A$. Entonces existen $d \leq n, \delta \leq d, Y_{1}, \ldots, Y_{d} \in A$ algebraicamente independientes
+sobre $K$ tal que
+\begin{enumerate}
+  \item la extensión $A \supset A^{\prime}:=K\left[Y_{1}, \ldots, Y_{d}\right]$ es entera; ie. A es un $K\left[Y_{1}, \ldots, Y_{d}\right]$ -módulo finito.
+  \item $I \cap K[Y_{1}, \ldots, Y_{d}]=\left\langle Y_{\delta+1}, \ldots, Y_{d}\right\rangle$,
+  \item los $Y_{1}, \ldots, Y_{\delta}$ son combinaciones lineales de $\operatorname{los} x_{1}, \ldots, x_{n}$ con coeficientes en $K$.
+\end{enumerate}
+\end{theorem}
+
+\begin{remark}
+Si $\delta=d$, significa $I=\langle 0\rangle$. Además, $d=0$ cuando $A$ es una extensión algebraica de $K$.
+\end{remark}
+
+\begin{remark}
+Cuando $I=\langle 0\rangle$,se predican (i) y (ii) se tiene el \emph{Lema de normalización de Noether} usual.
+\end{remark}
+
+\begin{proof}
+Distinguiremos varios casos:
+
+\paragraph{Caso 1:} Supongamos que los generadores de $A$ son algebraicamente independientes, ie. $A\cong K[X_1, \dots, X_n]$, y que el ideal es principal $I = \langle F \rangle$. Podemos hacer el cambio de variable de la observación \ref{obs_import} y así sabemos que $A':= K[Y_1, \dots, Y_{n-1}, Y_n] \subset K[X_1, \dots, X_n]$ es una extensión entera, donde hemos llamado $Y_n := F$. Como el grado de trascendencia de $K[X_1, \dots, X_n]$ sobre $K$ es $n$ por ser algebraicamente independientes, tenemos que $Y_1, \dots, Y_n$ son algebraicamente independientes.
+Entonces $A'$ es un anillo de polinomios con coeficientes en un cuerpo, luego es un $DFU$ y por tanto es integramente cerrado sobre su cuerpo de fracciones.
+
+Comprobamos que $A' \cap I = \langle Y_n \rangle_{A'}$.
+\end{proof}
+
+\end{document}
