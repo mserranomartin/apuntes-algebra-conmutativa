@@ -70,4 +70,78 @@ Entonces $A'$ es un anillo de polinomios con coeficientes en un cuerpo, luego es
 Comprobamos que $A' \cap I = \langle Y_n \rangle_{A'}$.
 \end{proof}
 
+
+\section{Nullstellensatz}
+\begin{theorem}[forma débil]
+	Sea $K$ un cuerpo y $A:=K[x_1,\dots,x_n]$ una $K$-álgebra finitamente generada que es un cuerpo, entonces $A$ es una extensión algebraica de $K.$
+\end{theorem}
+
+\begin{proof}Aplicamos a $A$ el lema de normalización con ideal $\langle 0\rangle$, y existen $Y_1,\dots,Y_d\in A$, algebraicamente independientes sobre $K$ (y combinaciones lineales de las variables $x_i$ si $K$ es infinito), tales que $K[Y_1,\dots,Y_d]\subset A$ es entera. Como $A$ es cuerpo, $K[Y_1,\dots,Y_d]]$ es cuerpo. Pero si $d\neq 0$, $K[Y_1,\dots,Y_d]$ es un anillo de polinomios y $\frac{1}{Y_1}\notin K[Y_1,\dots,Y_d]$ es un anillo de polinomios y $\frac{1}{Y_1}\notin K[Y_1,\dots,Y_d]$, que es absurdo. Así, necesariamente $d=0$ y $A$ es extensión algebraica de $K.$
+\end{proof}
+
+\begin{theorem}[forma débil]
+	Sea $K$ cuerpo algebraicamente cerrado $K[X_1,\dots,X_n]$ el anillo de polinomios y $\mathfrak{m}$ un ideal maximal, entonces existe $(a_1,\dots,a_n)\in K^n$ tal que $\mathfrak{m}=\langle X_1+a_1,\dots,X_n-a_n\rangle.$
+\end{theorem}
+
+\begin{proof}
+	Por lo anterior, $K\hookrightarrow K[X_1,\dots,X_n]/\mathfrak{m}$, $c\mapsto c+\mathfrak{m}$ es una extensión algebraica, pero como $K$ es algebraicamente cerrado la aplicación es suprayectiva. Así, para $X_i+\mathfrak{m}$ existe $a_i\in K$ tal que $a_i+\mathfrak{m}=X_i+\mathfrak{m}$, es decir, $X_i-a_i\in\mathfrak{m}.$ Como $\mathfrak{m}$ es un ideal maximal de $K[X_1,\dots, X_n]$ y $\mathfrak{m}\supset\langle X_1-a_1,\dots, X_n-a_n\rangle$, que también es maximal, ambos coinciden.
+\end{proof}
+
+\begin{theorem}[forma usual]
+	Sea $K$ un cuerpo algebraicamente cerrado, $K[x_1,\dots,X_n]$ un anillo de polinomios e $I$ un ideal propio. Entonces $\mathcal{Z}(I)\neq\varnothing$ y
+	$$\mathcal{I}(\mathcal{Z}(I))=\sqrt{I}.$$
+\end{theorem}
+
+\begin{proof}
+	Sea $\mathfrak{m}\supset I$ un ideal maximal de $K[X_1,\dots,X_n]$ que contiene a $I.$ En primer lugar, $\mathcal{Z}(I)\supset\mathcal{Z}(\mathfrak{m})$ por el teorema débil.
+	
+	Veamos el segundo contenido. Por el teorema de la base, $I=\langle f_1,\dots,f_r\rangle$, para ciertos $f_i\in K[X_1,\dots,X_n].$ Sea $g(X_1,\dots,X_n)\in\mathcal{I}(\mathcal{Z}(I))$ y sea $T$ una nueva variable. En $K[X_1,\dots,X_n,T]$ consideremos el ideal $I_1:=\langle f_1,\dots,f_r,Tg-1\rangle.$ Como $g\in\mathcal{I}(\zeros I)$, $\zeros {I_1}=\varnothing$ en $K^{n+1}.$ Por la primera parte $1\in I_1$; es decir, existen $H_i\in K[X_1,\dots,X_n,T]$ para $i\in\{1,\dots,r+1\}$ tales que
+	$$1=\sum_{i=1}^rH_i f_i+H_{r+1}(Tg-1)$$
+	Ésta es una identidad polinomial y, evaluando en $T=\frac{1}{g}$ en $K(X_1,\dots,X_n):=K_{K[X_1,\dots,X_n]}$ y operando, tenemos $g^N=\sum_{i=1}^rH_i^*f_i$ para cierto $N\in \N$ y $H_i^*\in K[X_1,\dots,X_n]$; i.e., $g\in\sqrt I.$
+\end{proof}
+
+\section{Dimensión de Krull de una $K$-ágebra finitamente generada.}
+\begin{theorem}
+	Sea $A$ una $K$-álgebra finitamente generada, $A:=K[x_1,\dots,x_n]$, y $K[Y_1,\dots,Y_d]\subset A$ una normalización de Noether. Bajo estas circunstancias $\dimk A=d.$ En particular, si $A$ es dominio de integridad, $\dimk A=\operatorname{grtr}_K A.$
+\end{theorem}
+
+\begin{proof}
+	Sabemos por \textit{going-up} que $\dimk A=\dimk {K[Y_1,\dots,Y_n]}.$ Tenemos que ver que dicha dimensión es $d.$ Si $d=0$, claramente la dimensión de Krull de un cuerpo es $0.$ Así, podemos suponer que $d\ge 1.$ Además, en tal caso, dicha dimensión es $\ge d$ pues $\langle 0\rangle\subsetneq\langle Y_1\rangle\subsetneq\cdots\subsetneq\langle Y_1,\dots, Y_n\rangle.$
+	
+	Sea $\p_0\subsetneq\p_1\subsetneq\cdots\subsetneq\p_m$ una cadena estricta de ideales primos en $K[Y_1,\dots,Y_d$ y vemos que $m\le d.$ Si $m=0$, el resultado es claro. Si $m\ge 1$, $\p_1\neq 0.$ Así, por el teorema de normalización existen $d'(=d), \delta\le d$, y $T_i\in K[Y_1,\dots,Y_d]$ tales que $A_1':=K[T_1,\dots,T_d]\subset A_1:=K[Y_1,\dots Y_d]$ es entera y $\p_1\cap K[T_1,\dots, T_d]=\langle T_{\delta+1},\dots,T_d\rangle$, $\delta\le d-1$, pues $\p_1\neq 0.$ 
+	
+	Considero los ideales $\p_i':=\p_i\cap K[T_1,\dots,T_d]$ que, por ser $A_1'\subset A_1$, entera mantienen la relación de contenido estricto. Tomando cociente por $\p_1$,
+	$$\langle 0\rangle\subsetneq \faktor{\p_2'}{\p_1'}\subsetneq\cdots\subsetneq\faktor{\p_m'}{\p_1'}$$
+	es una cadena estricta de ideales en $K[T_1,ºdots, T_\delta].$ Por hipótesis de inducción: $m-1\le\delta\le d-1.$ Así, $m\le d.$
+\end{proof}
+
+\begin{theorem}
+	Sea $A$ una $K$-álgebra finitamente generada, $A=K[x_1,\dots, x_n]$. Si $A$ es dominio de integridad, todas las cadenas maximales de ideales primos de $A$ tienen la misma longitud, $d+1$, siendo $d=\dimk A.$
+\end{theorem}
+
+\begin{proof}
+	Probemos primero que una cadena estricta y maximal de ideales primos de $A$
+	\begin{equation}\label{eq:cadenaprimos1}
+	\p_m\supsetneq\cdots\supsetneq\p_0
+	\end{equation}
+	se contrae en una normalización $A':=K[Y_1,\dots,Y_d]$ a una cadena estricta maximal de ideales primos de $A'$
+	\begin{equation}\label{eq:cadenaprimos2}
+	\p_m'\supsetneq\cdots\supsetneq\p_0'.
+	\end{equation}
+	La cadena es estricta por ser $A'\subset A$ extensión entera. Como $A$ es dominio de integridad, $\p_0=\langle 0\rangle$ y $\p_m$ es maximal. Si (\ref{eq:cadenaprimos2}) no es maximal, existe $\p'\subset A'$ ideal primo tal que $\p_{i+1}'\supset\p'\supset\p_i'.$ Si $i=0$, aplicamos \textit{going-down} a la extensión $A'\subset A$ y a los ideales $\p_1\cap A'=\p_1'\supsetneq \p'$ y existe $\p$ ideal primo en $A$ tal que $A'\cap\p'=\p$ y $\p_1\supset\p\neq 0$; pero esto contradice la maximalidad de (\ref{eq:cadenaprimos1}).
+	
+	Si $i\ge 1$, sea $A'':0K[T_1,\dots, T_d]\subset A'$ entera y $\p_i'\cap A''\langle T_{\delta+1},\dots, T_d\rangle$, con $\delta\le d.$ Llamo $\p_j'':=\p_j'\cap A''$ y $\p'':=\p'\cap A''$ y tenemos extensiones $B':=K[T_1,\dots,T_\delta]\cong A''/\p_i''\hookrightarrow A'/\p_i'\hookrightarrow A/\p_i=:B$ extensiones enteras. De hecho, $B'$ es una normalización de $B.$ Entre $B$ y $B'$ tenemos $\p_{i+1}''/\p_i''=\p_{i+1}'\cap K[T_1,\dots,T\delta]=\p_{i+1}\cap K[T_1,\dots, T_\delta]\supsetneq \p''/\p_i''=\p'\cap K[T_1,\dots T_\delta].$ Por \textit{going-down} existe $0\neq \p/\p_i\subset\p_{i+1}/\p_i$ ideal primo de $A/\p_i$ que se contrae a $\p''/\p_i$, contradiciendo la maximalidad de (\ref{eq:cadenaprimos1}).
+	
+	Ahora es suficiente demostrar que toda cadena maximal de ideales primos en un anillo de polinomios $C:=K[Y_1,\dots,Y_d]$ tiene $d+1$ términos.
+	
+	Razonamos por inducción sobre $d.$ Si $d=0$, es obvio. Sea $d\ge 1$ de nuevo una cadena maximal de ideales primos en $C$ como en (\ref{eq:cadenaprimos1}), donde $\p_0=0.$ Sea $C'=K[Z_1,\dots,Z_d]\subset C$ una extensión entera tal que $\p_1\cap K[Z_1,\dots, Z_d]=\langle Z_{\delta+1},\dots, Z_d\rangle=:\p_1'.$
+	
+	Tenemos que $\p_1\neq 0$, $\delta\le d-1$,¡ y $\hit(\p_1)=1$ (por ser (\ref{eq:cadenaprimos1}) maximal). Además, se verifican las hipótesis de \textit{going-down} entre $C$ y $C'.$ Así, $\hit{\p_1'}=1$ y no puede ser $\delta+1\le d.$ Así, $\delta=d-1$ y $C_1':=K[Z_1,\dots, Z_{d-1}]\cong C'/\p_1'\subset C/\p_1=:C_1$ es una normalización. Como (\ref{eq:cadenaprimos1}) proporciona una cadena maximal en $C_1$ (por el teorema de la correspondencia), $\p_m/\p_1\supsetneq\cdots\supsetneq\p_1/\p_1$ y, por (\ref{eq:cadenaprimos1}) la primera parte de su traza en $C_1'$ es también una cadena maximal. $C_1'$ es un anillo de polinomios y por inducción será $d-1\le m-1.$
+\end{proof}
+
+Esto que hemos visto tiene consecuencias geométricas. Sea $K$ un cuerpo algebraicamente cerrado y $V\subset \A^n(K)$ un conjunto algebraico irreucible de dimensión $d$, (i.e. $\mathcal{I}(V)\subset K[X_1,\dots,X_n]$ es un ideal primo y $\dimk{K[X_1,\dots,X_n]/\mathcal{I}(I)}=d$), entonces las cadenas maximales de subconjuntos algebraicos irreducibles propios de $V$ (i.e., cerrados irreducibles en la topología de Zariski contenidos estrictamente en $V$) tienen longitud $d$ y cualquier cadena estricta de subconjuntos algebraicos irreducibles de $V$ se puede refinar a una maximal. Esto último significa que las dimensiones disminuyen en uno por cada paso.
+
+
+\end{document}
+
 \end{document}
