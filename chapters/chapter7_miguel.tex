@@ -64,10 +64,61 @@ Cuando $I=\langle 0\rangle$,se predican (i) y (ii) se tiene el \emph{Lema de nor
 \begin{proof}
 Distinguiremos varios casos:
 
-\paragraph{Caso 1:} Supongamos que los generadores de $A$ son algebraicamente independientes, ie. $A\cong K[X_1, \dots, X_n]$, y que el ideal es principal $I = \langle F \rangle$. Podemos hacer el cambio de variable de la observación \ref{obs_import} y así sabemos que $A':= K[Y_1, \dots, Y_{n-1}, Y_n] \subset K[X_1, \dots, X_n]$ es una extensión entera, donde hemos llamado $Y_n := F$. Como el grado de trascendencia de $K[X_1, \dots, X_n]$ sobre $K$ es $n$ por ser algebraicamente independientes, tenemos que $Y_1, \dots, Y_n$ son algebraicamente independientes.
+\paragraph{Caso 1:} Supongamos que los generadores de $A$ son algebraicamente independientes, ie. $A\cong K[X_1, \dots, X_n]$, y que el ideal es principal $I = \langle f \rangle$. Podemos hacer el cambio de variable de la observación \ref{obs_import} y así sabemos que $A':= K[Y_1, \dots, Y_{n-1}, Y_n] \subset K[X_1, \dots, X_n]$ es una extensión entera, donde hemos llamado $Y_n := f$. Como el grado de trascendencia de $K[X_1, \dots, X_n]$ sobre $K$ es $n$ por ser algebraicamente independientes, tenemos que $Y_1, \dots, Y_n$ son algebraicamente independientes.
+
 Entonces $A'$ es un anillo de polinomios con coeficientes en un cuerpo, luego es un $DFU$ y por tanto es integramente cerrado sobre su cuerpo de fracciones.
 
-Comprobamos que $A' \cap I = \langle Y_n \rangle_{A'}$.
+Comprobamos que $A' \cap I = \langle Y_n \rangle_{A'}$. Recordamos que $Y_n = f$, luego el contenido $\supset$ es automático. Sea ahora $h = g f \in I \cap A'$ (es de esa forma por pertenecer a $I$). Entonces $g$ pertence a $K_{A'}$ el cuerpo de fracciones de $A'$ y es entero sobre $A'$, por lo tanto $g \in A'$ así efectivamente $h$ es un múltiplo de $Y_n$ en $A'$.
+
+\paragraph{Caso 2:} Supongamos de nuevo que $A= K[X_1,\dots, X_n]$ es un anillo de polinomios y ahora tomemos un ideal $I$ arbitrario. Por inducción sobre $n$. Si $n=1$, $K[X_1]$ es DIP y estamos en caso 1. Supongamos el resultado cierto para todo $k< n$ y lo probamos para $n$.
+
+Si $I=\langle 0\rangle$ es trivial. En otro caso, sea $F \in I \backslash\{0\}$, y realizando la construcción anterior obtenemos la extensión entera $B:=K\left[Y_{1}, \ldots, Y_{n-1}, Y_{n}=F\right] \subset A$ que cumple que $I \cap B \supset\langle Y_{n}\rangle_{B}$.
+
+Sea $A_{1}:=K[Y_{1}, \ldots, Y_{n-1}]$ y el ideal
+$I_{1}:=I \cap A_{1}$. Por la hipótesis de inducción existen $d'$ y $\delta'$ con $\delta' \leq d'$ tales que
+\begin{itemize}[]
+  \item[(a)] $K\left[T_{1}, \ldots, T_{d^{\prime}}\right] \subset A_{1}$ es una extensión entera,
+  \item[(b)] $I_{1} \cap K\left[T_{1}, \ldots, T_{d^{\prime}}\right]=\left\langle T_{\delta^{\prime}+1}, \ldots, T_{d}^{\prime}\right\rangle, \mathrm{y}$,
+  \item[(c)] $T_{1}, \ldots, T_{\delta^{\prime}}$ son
+  combinaciónes lineales de $Y_{1}, \ldots, Y_{n-1}$
+\end{itemize}
+
+Por (a) tenemos $d^{\prime}=n-1$ y
+$$A^{\prime}:=K\left[T_{1}, \ldots, T_{n-1}, Y_{n}\right] \subset K\left[Y_{1}, \ldots, Y_{n-1}, Y_{n}\right] \subset A$$
+donde $A$ es $A^{\prime}$ módulo finito, por transitividad.
+
+Tomemos $d:=n$, $\delta:=\delta^{\prime}$, y $T_{n}:=Y_{n}$. Es claro que $T_{\delta^{\prime}+1}, \ldots, T_{n-1}, Y_{n} \in I \cap A^{\prime} $. Asimismo si
+$g \in I \cap A^{\prime}$, entonces $$g=g_{1}\left(T_{1}, \ldots, T_{n-1}\right)+Y_{n} g_{2}\left(T_{1}, \ldots, T_{n-1}, Y_{n}\right)$$
+Como $Y_{n} \cdot g_{2} \in I \cap A^{\prime}$, se tiene que $$g_{1} \in I \cap K\left[T_{1}, \ldots, T_{n-1}\right]=I_{1} \cap K\left[T_{1}, \ldots, T_{n-1}\right]=\left\langle T_{\delta^{\prime}+1}, \ldots, T_{d^{\prime}}\right\rangle$$
+Así $\left\langle T_{\delta^{\prime}+1}, \ldots, T_{n-1}, Y_{n}\right\rangle_{A^{\prime}}=I \cap A^{\prime}$.
+
+Finalmente, $T_1, \dots, T_{\delta'}$ son combinaciones lineales de los $Y_1, \dots, Y_{n-1}$ que a su vez era combinaciones lineales de $X_1, \dots, X_n$, y tenemos el resultado.
+
+\paragraph{Caso general:} Sea $A=K\left[x_{1} \ldots, x_{n}\right]$ e $/$ un ideal. Por caracterización general de álgebras finitamente generadas, existen ideales $J, I_0 \subset K[X_1, \dots, X_n]$ con $J \subset I_0$ tales que  $A \cong K\left[X_{1}, \ldots, X_{n}\right] / J$ e  $I=I_{0} / J$.
+
+Aplicamos el caso 2 a $K\left[X_{1}, \ldots, X_{n}\right]$ y $J$. Se obtienen así $d'=n$, $\delta' \leq n$ y $Y_1, \dots Y_n \in A$ tales que
+\begin{itemize}
+  \item $K\left[Y_{1}, \ldots, Y_{n}\right] \subset K\left[X_{1}, \ldots, X_{n}\right]$ extensión entera,
+  \item $J \cap K\left[Y_{1}, \ldots, Y_{n}\right]=\left\langle Y_{\delta^{\prime}+1}, \ldots, Y_{n}\right\rangle$
+  \item $Y_{1}, \ldots, Y_{\delta^{\prime}}$ son combinaciones lineales de los $X_{i}$.
+\end{itemize}
+
+Así $K\left[Y_{1}, \ldots, Y_{\delta^{\prime}}\right] \cap J=\langle 0\rangle$ y $K\left[Y_{1}, \ldots, Y_{\delta^{\prime}}\right] \hookrightarrow A=K\left[X_{1}, \ldots, X_{n}\right] / J$ es una extensión entera.
+
+Sea $d:=\delta'$. Aplicando el caso 2 a $A_{1}:=K\left[Y_{1}, \ldots, Y_{d}\right]$ y a $I_{1}:=I_{0} \cap K[Y_{1}, \ldots, Y_{d}]$ existen $\delta'', d''$ con $\delta'' \leq d''$, y existen $T_1, \dots, T_{d''} \in A_{1}$ de manera que
+\begin{itemize}
+  \item $K\left[T_{1}, \ldots, T_{d^{\prime \prime}}\right] \subset A_{1}$ es extensión entera,
+  \item $I_{1} \cap K\left[T_{1}, \ldots, T_{d^{\prime \prime}}\right]=\left\langle T_{\delta^{\prime \prime}+1}, \ldots, T_{d^{\prime \prime}}\right\rangle$\footnote{Observamos que $d^{\prime \prime}=d$.},
+  \item $T_{1}, \ldots, T_{\delta^{\prime \prime}}$ son combinaciones lineales de $Y_{1}, \ldots, Y_{d}$
+\end{itemize}
+
+Con todo esto, finalmente tenemos que
+\begin{enumerate}
+  \item  $K\left[T_{1}, \ldots, T_{d}\right] \subset A_{1} \hookrightarrow A$ son extensiones enteras,
+  \item  $I \cap K\left[T_{1}, \ldots, T_{d}\right]=\left(I_{0} \cap K\left[Y_{1}, \ldots, Y_{d}\right]\right) \cap K\left[T_{1}, \ldots, T_{d}\right]=\left\langle T_{\delta^{\prime \prime}+1}, \ldots, T_{d}\right\rangle$,
+  \item las $T_1, \dots, T_{\delta''}$ son combinaciones lineales de las $X_1, \dots, X_n$.
+\end{enumerate}
+como queríamos demostrar.
 \end{proof}
 
 \end{document}
